@@ -33,7 +33,7 @@ class TagFactory
      */
     public static function getFromRDFTagname($tagname)
     {
-        $classname = self::classnameFromTagname($tagname);
+        $classname = static::classnameFromTagname($tagname);
 
         if ( ! class_exists($classname)) {
             throw new TagUnknown(sprintf('Unknown tag %s', $tagname));
@@ -44,7 +44,7 @@ class TagFactory
 
     public static function hasFromRDFTagname($tagname)
     {
-        return class_exists(self::classnameFromTagname($tagname));
+        return class_exists(static::classnameFromTagname($tagname));
     }
 
     protected static function classnameFromTagname($tagname)
