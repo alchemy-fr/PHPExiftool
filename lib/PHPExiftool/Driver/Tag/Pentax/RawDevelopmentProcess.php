@@ -89,11 +89,15 @@ class RawDevelopmentProcess extends AbstractTag
         ),
         13 => array(
             'Id' => 13,
-            'Label' => '13 (K-3)',
+            'Label' => '13 (K-3,K-3II)',
         ),
         14 => array(
             'Id' => 14,
             'Label' => '14 (645Z)',
+        ),
+        15 => array(
+            'Id' => 15,
+            'Label' => '15 (K-S1,K-S2)',
         ),
     );
 

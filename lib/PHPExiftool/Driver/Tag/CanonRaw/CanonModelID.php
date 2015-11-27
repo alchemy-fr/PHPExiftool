@@ -809,7 +809,7 @@ class CanonModelID extends AbstractTag
         ),
         57147392 => array(
             'Id' => 57147392,
-            'Label' => 'PowerShot ELPH 140 IS / IXUS 150',
+            'Label' => 'PowerShot ELPH 140 IS / IXUS 150 / IXY 130',
         ),
         57212928 => array(
             'Id' => 57212928,
@@ -822,6 +822,78 @@ class CanonModelID extends AbstractTag
         57737216 => array(
             'Id' => 57737216,
             'Label' => 'PowerShot ELPH 150 IS / IXUS 155 / IXY 140',
+        ),
+        57933824 => array(
+            'Id' => 57933824,
+            'Label' => 'EOS M3',
+        ),
+        57999360 => array(
+            'Id' => 57999360,
+            'Label' => 'PowerShot SX60 HS',
+        ),
+        58064896 => array(
+            'Id' => 58064896,
+            'Label' => 'PowerShot SX520 HS',
+        ),
+        58130432 => array(
+            'Id' => 58130432,
+            'Label' => 'PowerShot SX400 IS',
+        ),
+        58195968 => array(
+            'Id' => 58195968,
+            'Label' => 'PowerShot G7 X',
+        ),
+        58261504 => array(
+            'Id' => 58261504,
+            'Label' => 'PowerShot N2',
+        ),
+        58720256 => array(
+            'Id' => 58720256,
+            'Label' => 'PowerShot SX530 HS',
+        ),
+        58851328 => array(
+            'Id' => 58851328,
+            'Label' => 'PowerShot SX710 HS',
+        ),
+        58916864 => array(
+            'Id' => 58916864,
+            'Label' => 'PowerShot SX610 HS',
+        ),
+        58982400 => array(
+            'Id' => 58982400,
+            'Label' => 'EOS M10',
+        ),
+        59047936 => array(
+            'Id' => 59047936,
+            'Label' => 'PowerShot G3 X',
+        ),
+        59113472 => array(
+            'Id' => 59113472,
+            'Label' => 'PowerShot ELPH 165 HS / IXUS 165 / IXY 160',
+        ),
+        59179008 => array(
+            'Id' => 59179008,
+            'Label' => 'PowerShot ELPH 160 / IXUS 160',
+        ),
+        59244544 => array(
+            'Id' => 59244544,
+            'Label' => 'PowerShot ELPH 350 HS / IXUS 275 HS / IXY 640',
+        ),
+        59310080 => array(
+            'Id' => 59310080,
+            'Label' => 'PowerShot ELPH 170 IS / IXUS 170',
+        ),
+        59834368 => array(
+            'Id' => 59834368,
+            'Label' => 'PowerShot SX410 IS',
+        ),
+        59965440 => array(
+            'Id' => 59965440,
+            'Label' => 'PowerShot G9 X',
+        ),
+        60096512 => array(
+            'Id' => 60096512,
+            'Label' => 'PowerShot G5 X',
         ),
         67371008 => array(
             'Id' => 67371008,
@@ -946,6 +1018,10 @@ class CanonModelID extends AbstractTag
         1074257321 => array(
             'Id' => 1074257321,
             'Label' => 'HF G25',
+        ),
+        1074257844 => array(
+            'Id' => 1074257844,
+            'Label' => 'XC10',
         ),
         2147483649 => array(
             'Id' => 2147483649,
@@ -1079,6 +1155,10 @@ class CanonModelID extends AbstractTag
             'Id' => 2147484296,
             'Label' => 'EOS Rebel T3 / 1100D / Kiss X50',
         ),
+        2147484297 => array(
+            'Id' => 2147484297,
+            'Label' => 'EOS 7D Mark II',
+        ),
         2147484311 => array(
             'Id' => 2147484311,
             'Label' => 'WFT-E2 II',
@@ -1119,9 +1199,25 @@ class CanonModelID extends AbstractTag
             'Id' => 2147484486,
             'Label' => 'EOS Rebel SL1 / 100D / Kiss X7',
         ),
+        2147484487 => array(
+            'Id' => 2147484487,
+            'Label' => 'EOS Rebel T6s / 760D / 8000D',
+        ),
         2147484501 => array(
             'Id' => 2147484501,
             'Label' => 'EOS M2',
+        ),
+        2147484546 => array(
+            'Id' => 2147484546,
+            'Label' => 'EOS 5DS',
+        ),
+        2147484563 => array(
+            'Id' => 2147484563,
+            'Label' => 'EOS Rebel T6i / 750D / Kiss X8i',
+        ),
+        2147484673 => array(
+            'Id' => 2147484673,
+            'Label' => 'EOS 5DS R',
         ),
     );
 
