@@ -96,7 +96,7 @@ class ClassesBuilder extends Command
 
         $this->output->writeln('Generating classes... ');
 
-        $this->extractDump($dump);
+        $this->extractDump($dump, $output);
 
         if ( ! $input->getOption('write')) {
             $this->output->writeln(
@@ -199,6 +199,7 @@ class ClassesBuilder extends Command
             case 'int16uRev':
             case 'int32s':
             case 'int32u':
+            case 'int32uRev':
             case 'int64s':
             case 'int64u':
             case 'rational32s':
@@ -339,11 +340,21 @@ class ClassesBuilder extends Command
         return;
     }
 
-    protected function extractDump($dump)
+    protected function extractDump($dump, OutputInterface $output)
     {
+        $progress = $this->getHelper('progress');
 
         $crawler = new Crawler();
         $crawler->addContent($dump);
+
+        $tag_count = null;
+        if ($output->getVerbosity() >= OutputInterface::VERBOSITY_QUIET) {
+            $output->write('Compute tag count...');
+            $tag_count = count($crawler->filter('table>tag'));
+            $output->writeln(sprintf('%d', $tag_count));
+        }
+
+        $progress->start($output, $tag_count);
 
         foreach ($crawler->filter('table') as $table) {
             $table_crawler = new Crawler();
@@ -463,8 +474,10 @@ class ClassesBuilder extends Command
                 }
 
                 $this->createTagClass($subspace, $classname, $properties);
+                $progress->advance();
             }
         }
+        $progress->finish();
 
         $this->generateTypes();
     }
