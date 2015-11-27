@@ -1,6 +1,6 @@
 # PHP-Exiftool
 
-[![Build Status](https://secure.travis-ci.org/romainneutron/PHPExiftool.png?branch=master)](http://travis-ci.org/romainneutron/PHPExiftool)
+[![Build Status](https://secure.travis-ci.org/alchemy-fr/PHPExiftool.png?branch=master)](http://travis-ci.org/alchemy-fr/PHPExiftool)
 
 PHP Exiftool is an Object Oriented driver for Phil Harvey's Exiftool (see
 http://www.sno.phy.queensu.ca/~phil/exiftool/).
