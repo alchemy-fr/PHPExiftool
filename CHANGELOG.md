@@ -1,6 +1,14 @@
 CHANGELOG
 ---------
 
+* 0.5.0 (2015-11-27)
+
+  * all classes generated with included exiftool (10.07) (@bburnichon)
+  * add progress bar to command (@bburnichon)
+  * Make TagFactory extendable (@bburnichon)
+  * Added option "--with-mwg" to classes-builder (@jygaulier)
+  * Added a "copy" method in writer: Copy metadata from one file to another (@jygaulier)
+
 * 0.4.1 (2014-09-19)
 
   * Fix some incompatibilities with exiftool v9.70 (@nlegoff)
