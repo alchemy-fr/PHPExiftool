@@ -264,7 +264,7 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
         $reader = new Reader($this->getExiftool(), new RDFParser());
         $metadatasRead = $reader->files($this->inPlace)->first()->getMetadatas();
 
-        $this->assertLessThan(30, count($metadatasRead));
+        $this->assertLessThan(50, count($metadatasRead));
 
         $this->assertEquals('Beautiful Object', $metadatasRead->get('IPTC:ObjectName')->getValue()->asString());
         $this->assertEquals(array('Romain', 'Nicolas'), $metadatasRead->get('XMP-iptcExt:PersonInImage')->getValue()->asArray());
