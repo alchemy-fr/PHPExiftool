@@ -5,11 +5,16 @@
     "keywords": ["metadata","exiftool"],
     "license": "MIT",
     "authors": [
-    {
-        "name": "Romain Neutron",
-        "email": "imprec@gmail.com",
-        "homepage": "http://www.lickmychip.com/"
-    }
+        {
+            "name": "Romain Neutron",
+            "email": "imprec@gmail.com",
+            "homepage": "http://www.lickmychip.com/"
+        },
+        {
+            "name": "Benoit Burnichon",
+            "email": "bburnichon@alchemy.fr",
+            "role": "Lead Developer"
+        }
     ],
     "require": {
         "php"                  : ">=5.3.3",
@@ -36,6 +41,11 @@
     "autoload": {
         "psr-0": {
             "PHPExiftool": "lib"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.5.x-dev"
         }
     }
 }
