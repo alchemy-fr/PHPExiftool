@@ -1,8 +1,9 @@
 CHANGELOG
 ---------
 
-* 0.5.0 (2015-11-27)
+* 0.5.0 (2015-11-30)
 
+  * add compatibility up to PHP7 (@bburnichon)
   * all classes generated with included exiftool (10.07) (@bburnichon)
   * add progress bar to command (@bburnichon)
   * Make TagFactory extendable (@bburnichon)
