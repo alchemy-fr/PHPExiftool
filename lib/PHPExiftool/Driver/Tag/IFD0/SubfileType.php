@@ -87,8 +87,8 @@ class SubfileType extends AbstractTag
             'Id' => 65537,
             'Label' => 'Alternate reduced-resolution image',
         ),
-        4294967295 => array(
-            'Id' => 4294967295,
+        '4294967295' => array(
+            'Id' => '4294967295',
             'Label' => 'invalid',
         ),
     );

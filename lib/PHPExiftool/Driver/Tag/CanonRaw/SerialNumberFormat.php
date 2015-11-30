@@ -43,12 +43,12 @@ class SerialNumberFormat extends AbstractTag
     protected $flag_Permanent = true;
 
     protected $Values = array(
-        2415919104 => array(
-            'Id' => 2415919104,
+        '2415919104' => array(
+            'Id' => '2415919104',
             'Label' => 'Format 1',
         ),
-        2684354560 => array(
-            'Id' => 2684354560,
+        '2684354560' => array(
+            'Id' => '2684354560',
             'Label' => 'Format 2',
         ),
     );

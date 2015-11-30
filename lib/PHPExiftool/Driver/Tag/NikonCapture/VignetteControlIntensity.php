@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class VignetteControlIntensity extends AbstractTag
 {
 
-    protected $Id = 2892748224;
+    protected $Id = '2892748224';
 
     protected $Name = 'VignetteControlIntensity';
 

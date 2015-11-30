@@ -72,15 +72,15 @@ class LongExposureNoiseReduction extends AbstractTag
             'Label' => 'On (dark subtracted)',
         ),
         7 => array(
-            'Id' => 4294901760,
+            'Id' => '4294901760',
             'Label' => 'Off (65535)',
         ),
         8 => array(
-            'Id' => 4294901761,
+            'Id' => '4294901761',
             'Label' => 'On (65535)',
         ),
         9 => array(
-            'Id' => 4294967295,
+            'Id' => '4294967295',
             'Label' => 'n/a',
         ),
         10 => array(

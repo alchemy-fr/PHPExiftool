@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class XMP extends AbstractTag
 {
 
-    protected $Id = 4294902006;
+    protected $Id = '4294902006';
 
     protected $Name = 'XMP';
 

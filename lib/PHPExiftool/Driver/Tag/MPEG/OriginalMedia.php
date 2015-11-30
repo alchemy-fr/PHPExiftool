@@ -43,11 +43,11 @@ class OriginalMedia extends AbstractTag
     protected $Values = array(
         0 => array(
             'Id' => 0,
-            'Label' => False,
+            'Label' => false,
         ),
         1 => array(
             'Id' => 1,
-            'Label' => True,
+            'Label' => true,
         ),
     );
 

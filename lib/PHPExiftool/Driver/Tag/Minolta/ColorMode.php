@@ -236,7 +236,7 @@ class ColorMode extends AbstractTag
             'Label' => 'Autumn Leaves',
         ),
         48 => array(
-            'Id' => 4294967295,
+            'Id' => '4294967295',
             'Label' => 'n/a',
         ),
         49 => array(

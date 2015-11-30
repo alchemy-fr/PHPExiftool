@@ -43,8 +43,8 @@ class Contrast extends AbstractTag
     protected $flag_Permanent = true;
 
     protected $Values = array(
-        2147483647 => array(
-            'Id' => 2147483647,
+        '2147483647' => array(
+            'Id' => '2147483647',
             'Label' => 'MAX',
         ),
     );

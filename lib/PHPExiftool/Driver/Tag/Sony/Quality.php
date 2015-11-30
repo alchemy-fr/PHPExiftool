@@ -124,7 +124,7 @@ class Quality extends AbstractTag
             'Label' => 'Compressed RAW + JPEG',
         ),
         20 => array(
-            'Id' => 4294967295,
+            'Id' => '4294967295',
             'Label' => 'n/a',
         ),
     );

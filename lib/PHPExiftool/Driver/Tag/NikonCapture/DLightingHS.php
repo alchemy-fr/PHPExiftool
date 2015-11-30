@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class DLightingHS extends AbstractTag
 {
 
-    protected $Id = 3461698730;
+    protected $Id = '3461698730';
 
     protected $Name = 'D-LightingHS';
 

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class PhotoEffectHistoryXML extends AbstractTag
 {
 
-    protected $Id = 3915716657;
+    protected $Id = '3915716657';
 
     protected $Name = 'PhotoEffectHistoryXML';
 

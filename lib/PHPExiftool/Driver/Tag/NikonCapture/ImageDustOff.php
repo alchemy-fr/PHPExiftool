@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ImageDustOff extends AbstractTag
 {
 
-    protected $Id = 4265884229;
+    protected $Id = '4265884229';
 
     protected $Name = 'ImageDustOff';
 

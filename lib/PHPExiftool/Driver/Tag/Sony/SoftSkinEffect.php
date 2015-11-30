@@ -59,8 +59,8 @@ class SoftSkinEffect extends AbstractTag
             'Id' => 3,
             'Label' => 'High',
         ),
-        4294967295 => array(
-            'Id' => 4294967295,
+        '4294967295' => array(
+            'Id' => '4294967295',
             'Label' => 'n/a',
         ),
     );

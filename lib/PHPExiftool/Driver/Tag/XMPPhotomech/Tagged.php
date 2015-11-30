@@ -41,12 +41,12 @@ class Tagged extends AbstractTag
     protected $Description = 'Tagged';
 
     protected $Values = array(
-        False => array(
-            'Id' => False,
+        false => array(
+            'Id' => false,
             'Label' => 'No',
         ),
-        True => array(
-            'Id' => True,
+        true => array(
+            'Id' => true,
             'Label' => 'Yes',
         ),
     );

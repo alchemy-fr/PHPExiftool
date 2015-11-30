@@ -49,8 +49,8 @@ class MPImageFlags extends AbstractTag
             'Id' => 1073741824,
             'Label' => 'Dependent child image',
         ),
-        2147483648 => array(
-            'Id' => 2147483648,
+        '2147483648' => array(
+            'Id' => '2147483648',
             'Label' => 'Dependent parent image',
         ),
     );
