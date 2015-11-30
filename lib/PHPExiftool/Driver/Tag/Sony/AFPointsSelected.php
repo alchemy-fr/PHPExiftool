@@ -135,8 +135,8 @@ class AFPointsSelected extends AbstractTag
             'Id' => 394688,
             'Label' => 'Left Zone',
         ),
-        2147483647 => array(
-            'Id' => 2147483647,
+        '2147483647' => array(
+            'Id' => '2147483647',
             'Label' => '(all)',
         ),
     );

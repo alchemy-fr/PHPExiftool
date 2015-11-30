@@ -11,16 +11,16 @@
 
 namespace PHPExiftool\Tool\Command;
 
-use Monolog\Logger;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use PHPExiftool\ClassUtils\Builder;
 use PHPExiftool\ClassUtils\TagProviderBuilder;
 use PHPExiftool\Exiftool;
 use PHPExiftool\InformationDumper;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -481,18 +481,69 @@ class ClassesBuilder extends Command
 
         $this->generateTypes();
     }
-    protected static $reservedNames =
-        array(
-        'abstract', 'and', 'array', 'as', 'break', 'case'
-        , 'catch', 'function', 'class', 'clone'
-        , 'const', 'continue', 'declare', 'default', 'do'
-        , 'else', 'elseif', 'enddeclare', 'endfor'
-        , 'endforeach', 'endif', 'endswitch', 'endwhile', 'extends', 'final'
-        , 'for', 'foreach', 'function', 'global', 'goto', 'if'
-        , 'implements', 'interface'
-        , 'instanceof', 'namespace', 'new', 'old_function'
-        , 'or', 'private', 'protected', 'public', 'static'
-        , 'switch', 'throw', 'try', 'use', 'var', 'while', 'xor'
+
+    protected static $reservedNames = array(
+        'abstract',
+        'and',
+        'array',
+        'as',
+        'bool',
+        'break',
+        'case',
+        'catch',
+        'class',
+        'clone',
+        'const',
+        'continue',
+        'declare',
+        'default',
+        'do',
+        'else',
+        'elseif',
+        'enddeclare',
+        'endfor',
+        'endforeach',
+        'endif',
+        'endswitch',
+        'endwhile',
+        'extends',
+        'false',
+        'final',
+        'float',
+        'for',
+        'foreach',
+        'function',
+        'function',
+        'global',
+        'goto',
+        'if',
+        'implements',
+        'instanceof',
+        'int',
+        'interface',
+        'mixed',
+        'namespace',
+        'new',
+        'null',
+        'numeric',
+        'object',
+        'old_function',
+        'or',
+        'private',
+        'protected',
+        'public',
+        'resource',
+        'static',
+        'string',
+        'switch',
+        'throw',
+        'true',
+        'try',
+        'use',
+        'var',
+        'while',
+        'xor',
+        'yield',
     );
 
     /**

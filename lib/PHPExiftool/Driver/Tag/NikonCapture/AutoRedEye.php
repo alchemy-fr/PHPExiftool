@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AutoRedEye extends AbstractTag
 {
 
-    protected $Id = 4264076367;
+    protected $Id = '4264076367';
 
     protected $Name = 'AutoRedEye';
 

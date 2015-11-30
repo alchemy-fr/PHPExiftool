@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class LocaleIndicator extends AbstractTag
 {
 
-    protected $Id = 2147483648;
+    protected $Id = '2147483648';
 
     protected $Name = 'LocaleIndicator';
 

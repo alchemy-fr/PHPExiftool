@@ -43,20 +43,20 @@ class ActionAdvised extends AbstractTag
     protected $MaxLength = 2;
 
     protected $Values = array(
-        01 => array(
-            'Id' => 01,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Object Kill',
         ),
-        02 => array(
-            'Id' => 02,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Object Replace',
         ),
-        03 => array(
-            'Id' => 03,
+        3 => array(
+            'Id' => 3,
             'Label' => 'Object Append',
         ),
-        04 => array(
-            'Id' => 04,
+        4 => array(
+            'Id' => 4,
             'Label' => 'Object Reference',
         ),
         '' => array(

@@ -43,13 +43,13 @@ class FlashFired extends AbstractTag
     protected $local_g2 = 'Camera';
 
     protected $Values = array(
-        False => array(
-            'Id' => False,
-            'Label' => False,
+        false => array(
+            'Id' => false,
+            'Label' => false,
         ),
-        True => array(
-            'Id' => True,
-            'Label' => True,
+        true => array(
+            'Id' => true,
+            'Label' => true,
         ),
     );
 

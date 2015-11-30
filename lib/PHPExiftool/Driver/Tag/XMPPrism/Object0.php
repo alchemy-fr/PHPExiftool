@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Driver\Tag\XMPPrm;
+namespace PHPExiftool\Driver\Tag\XMPPrism;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use PHPExiftool\Driver\AbstractTag;
@@ -17,20 +17,20 @@ use PHPExiftool\Driver\AbstractTag;
 /**
  * @ExclusionPolicy("all")
  */
-class Yield extends AbstractTag
+class Object0 extends AbstractTag
 {
 
-    protected $Id = 'yield';
+    protected $Id = 'object';
 
-    protected $Name = 'Yield';
+    protected $Name = 'Object';
 
-    protected $FullName = 'XMP::prm';
+    protected $FullName = 'XMP::prism';
 
-    protected $GroupName = 'XMP-prm';
+    protected $GroupName = 'XMP-prism';
 
     protected $g0 = 'XMP';
 
-    protected $g1 = 'XMP-prm';
+    protected $g1 = 'XMP-prism';
 
     protected $g2 = 'Document';
 
@@ -38,8 +38,12 @@ class Yield extends AbstractTag
 
     protected $Writable = true;
 
-    protected $Description = 'Yield';
+    protected $Description = 'Object';
 
     protected $flag_Avoid = true;
+
+    protected $flag_List = true;
+
+    protected $flag_Bag = true;
 
 }

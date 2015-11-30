@@ -51,8 +51,8 @@ class VignettingCorrection extends AbstractTag
             'Id' => 2,
             'Label' => 'Auto',
         ),
-        4294967295 => array(
-            'Id' => 4294967295,
+        '4294967295' => array(
+            'Id' => '4294967295',
             'Label' => 'n/a',
         ),
     );

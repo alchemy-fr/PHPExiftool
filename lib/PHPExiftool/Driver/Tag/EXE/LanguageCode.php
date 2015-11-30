@@ -41,284 +41,284 @@ class LanguageCode extends AbstractTag
     protected $Description = 'Language Code';
 
     protected $Values = array(
-        0000 => array(
-            'Id' => 0000,
+        0 => array(
+            'Id' => 0,
             'Label' => 'Neutral',
         ),
-        0400 => array(
-            'Id' => 0400,
+        400 => array(
+            'Id' => 400,
             'Label' => 'Process default',
         ),
-        0401 => array(
-            'Id' => 0401,
+        401 => array(
+            'Id' => 401,
             'Label' => 'Arabic',
         ),
-        0402 => array(
-            'Id' => 0402,
+        402 => array(
+            'Id' => 402,
             'Label' => 'Bulgarian',
         ),
-        0403 => array(
-            'Id' => 0403,
+        403 => array(
+            'Id' => 403,
             'Label' => 'Catalan',
         ),
-        0404 => array(
-            'Id' => 0404,
+        404 => array(
+            'Id' => 404,
             'Label' => 'Chinese (Traditional)',
         ),
-        0405 => array(
-            'Id' => 0405,
+        405 => array(
+            'Id' => 405,
             'Label' => 'Czech',
         ),
-        0406 => array(
-            'Id' => 0406,
+        406 => array(
+            'Id' => 406,
             'Label' => 'Danish',
         ),
-        0407 => array(
-            'Id' => 0407,
+        407 => array(
+            'Id' => 407,
             'Label' => 'German',
         ),
-        0408 => array(
-            'Id' => 0408,
+        408 => array(
+            'Id' => 408,
             'Label' => 'Greek',
         ),
-        0409 => array(
-            'Id' => 0409,
+        409 => array(
+            'Id' => 409,
             'Label' => 'English (U.S.)',
         ),
-        0410 => array(
-            'Id' => 0410,
+        410 => array(
+            'Id' => 410,
             'Label' => 'Italian',
         ),
-        0411 => array(
-            'Id' => 0411,
+        411 => array(
+            'Id' => 411,
             'Label' => 'Japanese',
         ),
-        0412 => array(
-            'Id' => 0412,
+        412 => array(
+            'Id' => 412,
             'Label' => 'Korean',
         ),
-        0413 => array(
-            'Id' => 0413,
+        413 => array(
+            'Id' => 413,
             'Label' => 'Dutch',
         ),
-        0414 => array(
-            'Id' => 0414,
+        414 => array(
+            'Id' => 414,
             'Label' => 'Norwegian (Bokml)',
         ),
-        0415 => array(
-            'Id' => 0415,
+        415 => array(
+            'Id' => 415,
             'Label' => 'Polish',
         ),
-        0416 => array(
-            'Id' => 0416,
+        416 => array(
+            'Id' => 416,
             'Label' => 'Portuguese (Brazilian)',
         ),
-        0417 => array(
-            'Id' => 0417,
+        417 => array(
+            'Id' => 417,
             'Label' => 'Rhaeto-Romanic',
         ),
-        0418 => array(
-            'Id' => 0418,
+        418 => array(
+            'Id' => 418,
             'Label' => 'Romanian',
         ),
-        0419 => array(
-            'Id' => 0419,
+        419 => array(
+            'Id' => 419,
             'Label' => 'Russian',
         ),
-        0420 => array(
-            'Id' => 0420,
+        420 => array(
+            'Id' => 420,
             'Label' => 'Urdu',
         ),
-        0421 => array(
-            'Id' => 0421,
+        421 => array(
+            'Id' => 421,
             'Label' => 'Indonesian',
         ),
-        0422 => array(
-            'Id' => 0422,
+        422 => array(
+            'Id' => 422,
             'Label' => 'Ukrainian',
         ),
-        0423 => array(
-            'Id' => 0423,
+        423 => array(
+            'Id' => 423,
             'Label' => 'Belarusian',
         ),
-        0424 => array(
-            'Id' => 0424,
+        424 => array(
+            'Id' => 424,
             'Label' => 'Slovenian',
         ),
-        0425 => array(
-            'Id' => 0425,
+        425 => array(
+            'Id' => 425,
             'Label' => 'Estonian',
         ),
-        0426 => array(
-            'Id' => 0426,
+        426 => array(
+            'Id' => 426,
             'Label' => 'Latvian',
         ),
-        0427 => array(
-            'Id' => 0427,
+        427 => array(
+            'Id' => 427,
             'Label' => 'Lithuanian',
         ),
-        0428 => array(
-            'Id' => 0428,
+        428 => array(
+            'Id' => 428,
             'Label' => 'Maori',
         ),
-        0429 => array(
-            'Id' => 0429,
+        429 => array(
+            'Id' => 429,
             'Label' => 'Farsi',
         ),
-        0430 => array(
-            'Id' => 0430,
+        430 => array(
+            'Id' => 430,
             'Label' => 'Sutu',
         ),
-        0431 => array(
-            'Id' => 0431,
+        431 => array(
+            'Id' => 431,
             'Label' => 'Tsonga',
         ),
-        0432 => array(
-            'Id' => 0432,
+        432 => array(
+            'Id' => 432,
             'Label' => 'Tswana',
         ),
-        0433 => array(
-            'Id' => 0433,
+        433 => array(
+            'Id' => 433,
             'Label' => 'Venda',
         ),
-        0434 => array(
-            'Id' => 0434,
+        434 => array(
+            'Id' => 434,
             'Label' => 'Xhosa',
         ),
-        0435 => array(
-            'Id' => 0435,
+        435 => array(
+            'Id' => 435,
             'Label' => 'Zulu',
         ),
-        0436 => array(
-            'Id' => 0436,
+        436 => array(
+            'Id' => 436,
             'Label' => 'Afrikaans',
         ),
-        0437 => array(
-            'Id' => 0437,
+        437 => array(
+            'Id' => 437,
             'Label' => 'Georgian',
         ),
-        0438 => array(
-            'Id' => 0438,
+        438 => array(
+            'Id' => 438,
             'Label' => 'Faeroese',
         ),
-        0439 => array(
-            'Id' => 0439,
+        439 => array(
+            'Id' => 439,
             'Label' => 'Hindi',
         ),
-        0440 => array(
-            'Id' => 0440,
+        440 => array(
+            'Id' => 440,
             'Label' => 'Kyrgyz',
         ),
-        0441 => array(
-            'Id' => 0441,
+        441 => array(
+            'Id' => 441,
             'Label' => 'Swahili',
         ),
-        0443 => array(
-            'Id' => 0443,
+        443 => array(
+            'Id' => 443,
             'Label' => 'Uzbek',
         ),
-        0444 => array(
-            'Id' => 0444,
+        444 => array(
+            'Id' => 444,
             'Label' => 'Tatar',
         ),
-        0445 => array(
-            'Id' => 0445,
+        445 => array(
+            'Id' => 445,
             'Label' => 'Bengali',
         ),
-        0446 => array(
-            'Id' => 0446,
+        446 => array(
+            'Id' => 446,
             'Label' => 'Punjabi',
         ),
-        0447 => array(
-            'Id' => 0447,
+        447 => array(
+            'Id' => 447,
             'Label' => 'Gujarati',
         ),
-        0448 => array(
-            'Id' => 0448,
+        448 => array(
+            'Id' => 448,
             'Label' => 'Oriya',
         ),
-        0449 => array(
-            'Id' => 0449,
+        449 => array(
+            'Id' => 449,
             'Label' => 'Tamil',
         ),
-        0450 => array(
-            'Id' => 0450,
+        450 => array(
+            'Id' => 450,
             'Label' => 'Mongolian',
         ),
-        0456 => array(
-            'Id' => 0456,
+        456 => array(
+            'Id' => 456,
             'Label' => 'Galician',
         ),
-        0457 => array(
-            'Id' => 0457,
+        457 => array(
+            'Id' => 457,
             'Label' => 'Konkani',
         ),
-        0458 => array(
-            'Id' => 0458,
+        458 => array(
+            'Id' => 458,
             'Label' => 'Manipuri',
         ),
-        0459 => array(
-            'Id' => 0459,
+        459 => array(
+            'Id' => 459,
             'Label' => 'Sindhi',
         ),
-        0460 => array(
-            'Id' => 0460,
+        460 => array(
+            'Id' => 460,
             'Label' => 'Kashmiri',
         ),
-        0461 => array(
-            'Id' => 0461,
+        461 => array(
+            'Id' => 461,
             'Label' => 'Nepali',
         ),
-        0465 => array(
-            'Id' => 0465,
+        465 => array(
+            'Id' => 465,
             'Label' => 'Divehi',
         ),
-        0490 => array(
-            'Id' => 0490,
+        490 => array(
+            'Id' => 490,
             'Label' => 'Walon',
         ),
-        0491 => array(
-            'Id' => 0491,
+        491 => array(
+            'Id' => 491,
             'Label' => 'Cornish',
         ),
-        0492 => array(
-            'Id' => 0492,
+        492 => array(
+            'Id' => 492,
             'Label' => 'Welsh',
         ),
-        0493 => array(
-            'Id' => 0493,
+        493 => array(
+            'Id' => 493,
             'Label' => 'Breton',
         ),
-        0800 => array(
-            'Id' => 0800,
+        800 => array(
+            'Id' => 800,
             'Label' => 'Neutral 2',
         ),
-        0804 => array(
-            'Id' => 0804,
+        804 => array(
+            'Id' => 804,
             'Label' => 'Chinese (Simplified)',
         ),
-        0807 => array(
-            'Id' => 0807,
+        807 => array(
+            'Id' => 807,
             'Label' => 'German (Swiss)',
         ),
-        0809 => array(
-            'Id' => 0809,
+        809 => array(
+            'Id' => 809,
             'Label' => 'English (British)',
         ),
-        0810 => array(
-            'Id' => 0810,
+        810 => array(
+            'Id' => 810,
             'Label' => 'Italian (Swiss)',
         ),
-        0813 => array(
-            'Id' => 0813,
+        813 => array(
+            'Id' => 813,
             'Label' => 'Dutch (Belgian)',
         ),
-        0814 => array(
-            'Id' => 0814,
+        814 => array(
+            'Id' => 814,
             'Label' => 'Norwegian (Nynorsk)',
         ),
-        0816 => array(
-            'Id' => 0816,
+        816 => array(
+            'Id' => 816,
             'Label' => 'Portuguese',
         ),
         1009 => array(

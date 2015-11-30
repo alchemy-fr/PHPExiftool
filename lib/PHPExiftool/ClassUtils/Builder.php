@@ -182,12 +182,18 @@ class Builder
 
     protected function quote($value)
     {
-
         if (ctype_digit(trim($value))) {
-            return $value;
+            $data = strval(intval($value));
+
+            // Do not use PHP_INT_MAX as 32/64 bit dependant
+            if ($data <= -2147483648 || $data >= 2147483647) {
+                return "'" . $value . "'";
+            }
+
+            return $data;
         }
         if (in_array(strtolower($value), array('true', 'false'))) {
-            return $value;
+            return strtolower($value);
         }
 
         return "'" . str_replace(array('\\', '\''), array('\\\\', '\\\''), $value) . "'";
