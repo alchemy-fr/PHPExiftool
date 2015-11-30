@@ -1,5 +1,5 @@
 {
-    "name": "phpexiftool/phpexiftool",
+    "name": "alchemy/phpexiftool",
     "type": "library",
     "description": "Exiftool driver for PHP",
     "keywords": ["metadata","exiftool"],
@@ -40,7 +40,7 @@
     },
     "autoload": {
         "psr-0": {
-            "PHPExiftool": "lib"
+            "PHPExiftool\\": "lib/"
         }
     },
     "extra": {
