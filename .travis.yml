@@ -12,9 +12,8 @@ php:
 
 matrix:
   fast_finish: true
-  allow_failures:
-    - php: 5.6
-    - php: 7.0
 
+pre_install:
+  - phpenv config-rm xdebug.ini
 install:
-  - composer update --prefer-source --dev
+  - composer update --prefer-source
