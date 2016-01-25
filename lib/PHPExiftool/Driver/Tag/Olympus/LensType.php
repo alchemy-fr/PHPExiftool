@@ -213,6 +213,10 @@ class LensType extends AbstractTag
             'Id' => '0 24 00',
             'Label' => 'Olympus Zuiko Digital ED 40-150mm F4.0-5.6',
         ),
+        '0 24 10' => array(
+            'Id' => '0 24 10',
+            'Label' => 'Olympus M.Zuiko Digital ED 300mm F4.0 IS Pro',
+        ),
         '0 25 10' => array(
             'Id' => '0 25 10',
             'Label' => 'Olympus M.Zuiko Digital ED 8mm F1.8 Fisheye Pro',

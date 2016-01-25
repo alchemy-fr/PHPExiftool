@@ -957,6 +957,10 @@ class LensType extends AbstractTag
             'Id' => '8 60',
             'Label' => 'HD PENTAX-D FA* 70-200mm F2.8 ED DC AW',
         ),
+        '8 62' => array(
+            'Id' => '8 62',
+            'Label' => 'HD PENTAX-D FA 24-70mm F2.8 ED SDM WR',
+        ),
         '8 198' => array(
             'Id' => '8 198',
             'Label' => 'smc PENTAX-DA L 18-50mm F4-5.6 DC WR RE',

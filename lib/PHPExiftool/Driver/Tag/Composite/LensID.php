@@ -43,30 +43,6 @@ class LensID extends AbstractTag
     protected $local_g2 = 'Camera';
 
     protected $Values = array(
-        'RL1' => array(
-            'Id' => 'RL1',
-            'Label' => 'GR Lens A12 50mm F2.5 Macro',
-        ),
-        'RL2' => array(
-            'Id' => 'RL2',
-            'Label' => 'Ricoh Lens S10 24-70mm F2.5-4.4 VC',
-        ),
-        'RL3' => array(
-            'Id' => 'RL3',
-            'Label' => 'Ricoh Lens P10 28-300mm F3.5-5.6 VC',
-        ),
-        'RL5' => array(
-            'Id' => 'RL5',
-            'Label' => 'GR Lens A12 28mm F2.5',
-        ),
-        'RL6' => array(
-            'Id' => 'RL6',
-            'Label' => 'Ricoh Lens A16 24-85mm F3.5-5.5',
-        ),
-        'RL8' => array(
-            'Id' => 'RL8',
-            'Label' => 'Mount A12',
-        ),
         '00 00 00 00 00 00 00 01' => array(
             'Id' => '00 00 00 00 00 00 00 01',
             'Label' => 'Manual Lens No CPU',
@@ -1831,6 +1807,10 @@ class LensID extends AbstractTag
             'Id' => 'AC 38 53 8E 34 3C AE 0E',
             'Label' => 'AF-S DX VR Nikkor 55-300mm f/4.5-5.6G ED',
         ),
+        'AC 3C A6 A6 30 30 C7 4E' => array(
+            'Id' => 'AC 3C A6 A6 30 30 C7 4E',
+            'Label' => 'AF-S Nikkor 600mm f/4E FL ED VR',
+        ),
         'AD 3C 2D 8E 2C 3C AF 0E' => array(
             'Id' => 'AD 3C 2D 8E 2C 3C AF 0E',
             'Label' => 'AF-S DX Nikkor 18-300mm f/3.5-5.6G ED VR',
@@ -1934,6 +1914,10 @@ class LensID extends AbstractTag
         'E6 41 3C 8E 2C 40 1C 02' => array(
             'Id' => 'E6 41 3C 8E 2C 40 1C 02',
             'Label' => 'Sigma 28-300mm F3.5-6.3 DG Macro',
+        ),
+        'E8 4C 44 44 14 14 DF 0E' => array(
+            'Id' => 'E8 4C 44 44 14 14 DF 0E',
+            'Label' => 'Tamron SP 35mm f/1.8 VC',
         ),
         'E9 48 27 3E 24 24 DF 0E' => array(
             'Id' => 'E9 48 27 3E 24 24 DF 0E',
@@ -2090,6 +2074,30 @@ class LensID extends AbstractTag
         'FF 40 2D 80 2C 40 4B 06' => array(
             'Id' => 'FF 40 2D 80 2C 40 4B 06',
             'Label' => 'Sigma 18-200mm F3.5-6.3 DC',
+        ),
+        'RL1' => array(
+            'Id' => 'RL1',
+            'Label' => 'GR Lens A12 50mm F2.5 Macro',
+        ),
+        'RL2' => array(
+            'Id' => 'RL2',
+            'Label' => 'Ricoh Lens S10 24-70mm F2.5-4.4 VC',
+        ),
+        'RL3' => array(
+            'Id' => 'RL3',
+            'Label' => 'Ricoh Lens P10 28-300mm F3.5-5.6 VC',
+        ),
+        'RL5' => array(
+            'Id' => 'RL5',
+            'Label' => 'GR Lens A12 28mm F2.5',
+        ),
+        'RL6' => array(
+            'Id' => 'RL6',
+            'Label' => 'Ricoh Lens A16 24-85mm F3.5-5.5',
+        ),
+        'RL8' => array(
+            'Id' => 'RL8',
+            'Label' => 'Mount A12',
         ),
     );
 

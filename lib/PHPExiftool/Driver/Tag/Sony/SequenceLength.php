@@ -103,6 +103,10 @@ class SequenceLength extends AbstractTag
             'Id' => 5,
             'Label' => '5 files',
         ),
+        15 => array(
+            'Id' => 10,
+            'Label' => '10 files',
+        ),
     );
 
 }

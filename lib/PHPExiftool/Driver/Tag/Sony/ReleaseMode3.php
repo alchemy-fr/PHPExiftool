@@ -55,6 +55,10 @@ class ReleaseMode3 extends AbstractTag
             'Id' => 2,
             'Label' => 'Bracketing',
         ),
+        4 => array(
+            'Id' => 4,
+            'Label' => 'Continuous - Burst',
+        ),
         5 => array(
             'Id' => 5,
             'Label' => 'Continuous - Speed/Advance Priority',
