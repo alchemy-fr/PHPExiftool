@@ -1,7 +1,8 @@
 CHANGELOG
 ---------
-* master
+* 0.5.1 (2016-02-05)
 
+  * Update to exiftool 10.10 which is a production release (@bburnichon)
   * Add support to external ExifTool binary (@gioid)
   * Fix README (@bburnichon & @michalsanger)
 
