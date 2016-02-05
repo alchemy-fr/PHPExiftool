@@ -2,13 +2,15 @@
 
 [![Build Status](https://secure.travis-ci.org/alchemy-fr/PHPExiftool.png?branch=master)](http://travis-ci.org/alchemy-fr/PHPExiftool)
 
+This project is a fork of [phpexiftool/phpexiftool](https://github.com/phpexiftool/phpexiftool).
+
 PHP Exiftool is an Object Oriented driver for Phil Harvey's Exiftool (see
 http://www.sno.phy.queensu.ca/~phil/exiftool/).
-Exiftool is a powerfull library and command line utility for reading, writing
+Exiftool is a powerful library and command line utility for reading, writing
 and editing meta information written in Perl.
 
 PHPExiftool provides an intuitive object oriented interface to read and write
-metadatas.
+metadata.
 
 You will find some example below.
 This driver is not suitable for production, it is still under heavy development.
@@ -20,7 +22,7 @@ The recommended way to install PHP-Exiftool is [through composer](http://getcomp
 ```JSON
 {
     "require": {
-        "phpexiftool/phpexiftool": "~0.1.0"
+        "alchemy/phpexiftool": "^0.5.0"
     }
 }
 ```
@@ -29,7 +31,7 @@ The recommended way to install PHP-Exiftool is [through composer](http://getcomp
 
 ### Exiftool Reader
 
-A simple example : how to read a file metadatas :
+A simple example : how to read metadata from a file:
 
 ```php
 <?php
@@ -43,11 +45,11 @@ use PHPExiftool\Driver\Value\ValueInterface;
 $logger = new Logger('exiftool');
 $reader = Reader::create($logger);
 
-$metadatas = $reader->files(__FILE__)->first();
+$metadataBag = $reader->files(__FILE__)->first();
 
-foreach ($metadatas as $metadata) {
+foreach ($metadataBag as $metadata) {
     if (ValueInterface::TYPE_BINARY === $metadata->getValue()->getType()) {
-        echo sprintf("\t--> Field %s has binary datas" . PHP_EOL, $metadata->getTag());
+        echo sprintf("\t--> Field %s has binary data" . PHP_EOL, $metadata->getTag());
     } else {
         echo sprintf("\t--> Field %s has value(s) %s" . PHP_EOL, $metadata->getTag(), $metadata->getValue()->asString());
     }
@@ -62,20 +64,20 @@ use PHPExiftool\Reader;
 use PHPExiftool\Driver\Value\ValueInterface;
 
 $logger = new Logger('exiftool');
-$Reader = Reader::create($logger);
+$reader = Reader::create($logger);
 
-$Reader
+$reader
   ->in(array('documents', '/Picture'))
   ->extensions(array('doc', 'jpg', 'cr2', 'dng'))
   ->exclude(array('test', 'tmp'))
   ->followSymLinks();
 
-foreach ($Reader as $MetaDatas) {
-    echo "found file " . $MetaDatas->getFile() . "\n";
+foreach ($reader as $data) {
+    echo "found file " . $data->getFile() . PHP_EOL;
 
-    foreach ($MetaDatas as $metadata) {
+    foreach ($data as $metadata) {
         if (ValueInterface::TYPE_BINARY === $metadata->getValue()->getType()) {
-            echo sprintf("\t--> Field %s has binary datas" . PHP_EOL, $metadata->getTag());
+            echo sprintf("\t--> Field %s has binary data" . PHP_EOL, $metadata->getTag());
         } else {
             echo sprintf("\t--> Field %s has value(s) %s" . PHP_EOL, $metadata->getTag(), $metadata->getValue()->asString());
         }
@@ -86,18 +88,24 @@ foreach ($Reader as $MetaDatas) {
 ### Exiftool Writer
 
 ```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Monolog\Logger;
 use PHPExiftool\Writer;
-use PHPExiftool\Driver\Metadata;
-use PHPExiftool\Driver\MetadataBag;
+use PHPExiftool\Driver\Metadata\Metadata;
+use PHPExiftool\Driver\Metadata\MetadataBag;
 use PHPExiftool\Driver\Tag\IPTC\ObjectName;
 use PHPExiftool\Driver\Value\Mono;
 
-$Writer = Writer::create();
+$logger = new Logger('exiftool');
+$writer = Writer::create($logger);
 
 $bag = new MetadataBag();
 $bag->add(new Metadata(new ObjectName(), new Mono('Pretty cool subject')));
 
-$Writer->write('image.jpg', $bag);
+$writer->write('image.jpg', $bag);
 ```
 
 ## License
