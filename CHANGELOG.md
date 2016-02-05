@@ -1,5 +1,9 @@
 CHANGELOG
 ---------
+* master
+
+  * Add support to external ExifTool binary (@gioid)
+  * Fix README (@bburnichon & @michalsanger)
 
 * 0.5.0 (2015-11-30)
 
