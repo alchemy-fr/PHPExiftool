@@ -1,7 +1,7 @@
 <?php
 
-/*
- * This file is part of the PHPExifTool package.
+/**
+ * This file is part of the PHPExiftool package.
  *
  * (c) Alchemy <support@alchemy.fr>
  *
