@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of PHPExifTool.
+ * This file is part of the PHPExifTool package.
  *
- * (c) 2012 Romain Neutron <imprec@gmail.com>
+ * (c) Alchemy <support@alchemy.fr>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,9 +20,9 @@ namespace PHPExiftool\ClassUtils;
 class Builder
 {
     protected $license = '/*
- * This file is part of PHPExifTool.
+ * This file is part of the PHPExifTool package.
  *
- * (c) 2012 Romain Neutron <imprec@gmail.com>
+ * (c) Alchemy <support@alchemy.fr>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
