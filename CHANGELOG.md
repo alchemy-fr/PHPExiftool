@@ -1,8 +1,13 @@
 CHANGELOG
 ---------
 * Unreleased
+  * *No unreleased changes*
 
-  - fix ValueInterface::TYPE_BINARY const typo (@CedCannes)
+* 0.6.0 (2016-09-29)
+
+  * Add support for Symfony 3 components
+  * Remove support for old PHP versions (5.3.x, 5.4.X)
+  * fix ValueInterface::TYPE_BINARY const typo (@CedCannes)
 
 * 0.5.1 (2016-02-05)
 
