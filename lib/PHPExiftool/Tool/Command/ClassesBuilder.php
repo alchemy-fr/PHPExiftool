@@ -19,6 +19,7 @@ use PHPExiftool\ClassUtils\TagProviderBuilder;
 use PHPExiftool\Exiftool;
 use PHPExiftool\InformationDumper;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -342,7 +343,6 @@ class ClassesBuilder extends Command
 
     protected function extractDump($dump, OutputInterface $output)
     {
-        $progress = $this->getHelper('progress');
 
         $crawler = new Crawler();
         $crawler->addContent($dump);
@@ -354,7 +354,13 @@ class ClassesBuilder extends Command
             $output->writeln(sprintf('%d', $tag_count));
         }
 
-        $progress->start($output, $tag_count);
+        if (!$this->getHelperSet()->has('progress')) {
+            $progress = new ProgressBar($output);
+            $progress->start($tag_count);
+        } else {
+            $progress = $this->getHelper('progress');
+            $progress->start($output, $tag_count);
+        }
 
         foreach ($crawler->filter('table') as $table) {
             $table_crawler = new Crawler();
