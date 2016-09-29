@@ -5,7 +5,7 @@ CHANGELOG
 
 * 0.6.0 (2016-09-29)
 
-  * Add support for Symfony 3 components
+  * Add support for Symfony 3 components (@temp)
   * Remove support for old PHP versions (5.3.x, 5.4.X)
   * fix ValueInterface::TYPE_BINARY const typo (@CedCannes)
 
