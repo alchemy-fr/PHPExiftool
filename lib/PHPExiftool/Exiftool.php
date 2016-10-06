@@ -85,6 +85,8 @@ class Exiftool implements LoggerAwareInterface
 
             if (is_executable($location)) {
                 return $binary = realpath($location);
+            } elseif (file_exists($location)) {
+                throw new RuntimeException('Found exiftool binary but it not executable');
             }
         }
 
