@@ -2,6 +2,9 @@ CHANGELOG
 ---------
 * Unreleased
   * *No unreleased changes*
+  
+* 0.7
+  * Add timeout to reader and writer (default 60 sec.)
 
 * 0.6.0 (2016-09-29)
 

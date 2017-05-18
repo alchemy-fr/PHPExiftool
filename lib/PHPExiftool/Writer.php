@@ -54,11 +54,19 @@ class Writer
     protected $erase;
     private $exiftool;
     private $eraseProfile;
+    protected $timeout = 60;
 
     public function __construct(Exiftool $exiftool)
     {
         $this->exiftool = $exiftool;
         $this->reset();
+    }
+
+    public function setTimeout($timeout)
+    {
+        $this->timeout = $timeout;
+
+        return $this;
     }
 
     public function reset()
@@ -163,7 +171,7 @@ class Writer
             throw new InvalidArgumentException(sprintf('dest %s does not exists', $file_dest));
         }
         $command = "-overwrite_original_in_place -tagsFromFile " . escapeshellarg($file_src) . " " . escapeshellarg($file_dest);
-        $ret = $this->exiftool->executeCommand($command);
+        $ret = $this->exiftool->executeCommand($command, $this->timeout);
 
         // exiftool may print (return) a bunch of lines, even for a single command
         // eg. deleting tags of a file with NO tags may return 2 lines...
@@ -282,7 +290,7 @@ class Writer
 
         $command = join(" -execute ", $commands) . ' ' . $common_args;
 
-        $ret = $this->exiftool->executeCommand($command);
+        $ret = $this->exiftool->executeCommand($command, $this->timeout);
 
         // exiftool may print (return) a bunch of lines, even for a single command
         // eg. deleting tags of a file with NO tags may return 2 lines...
