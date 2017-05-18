@@ -64,6 +64,7 @@ class Reader implements \IteratorAggregate
     protected $sort = array();
     protected $parser;
     protected $exiftool;
+    protected $timeout = 60;
 
     /**
      *
@@ -85,6 +86,13 @@ class Reader implements \IteratorAggregate
     {
         $this->parser = null;
         $this->collection = null;
+    }
+
+    public function setTimeout($timeout)
+    {
+        $this->timeout = $timeout;
+
+        return $this;
     }
 
     public function reset()
@@ -379,7 +387,7 @@ class Reader implements \IteratorAggregate
         $result = '';
 
         try {
-            $result = trim($this->exiftool->executeCommand($this->buildQuery()));
+            $result = trim($this->exiftool->executeCommand($this->buildQuery(), $this->timeout));
         } catch (RuntimeException $e) {
             /**
              * In case no file found, an exit code 1 is returned
