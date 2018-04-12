@@ -13,8 +13,9 @@ namespace PHPExiftool\Test;
 use Monolog\Logger;
 use Monolog\Handler\NullHandler;
 use PHPExiftool\Exiftool;
+use \PHPUnit\Framework\TestCase;
 
-class ExiftoolTest extends \PHPUnit_Framework_TestCase
+class ExiftoolTest extends TestCase
 {
 
     /**

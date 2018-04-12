@@ -12,8 +12,9 @@ namespace PHPExiftool\Test\Driver\Value;
 
 use PHPExiftool\Driver\Value\Mono;
 use PHPExiftool\Driver\Value\ValueInterface;
+use \PHPUnit\Framework\TestCase;
 
-class MonoTest extends \PHPUnit_Framework_TestCase
+class MonoTest extends TestCase
 {
     /**
      * @var Mono

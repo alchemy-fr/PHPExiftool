@@ -124,12 +124,13 @@ class ClassesBuilder extends Command
     /**
      *
      * @return ClassesBuilder
+     * @throws \Exception
      */
     protected function writeClasses($force = false)
     {
         $n = 0;
 
-        $classesBuffer = new TagProviderBuilder('', 'TagProvider', array(), '\\Pimple');
+        $classesBuffer = new TagProviderBuilder('', 'TagProvider', array(), '\\Pimple\\Container');
         $buffer = array();
 
         foreach ($this->classes as $class) {

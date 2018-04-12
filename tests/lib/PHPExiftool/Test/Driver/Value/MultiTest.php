@@ -12,8 +12,9 @@ namespace PHPExiftool\Test\Driver\Value;
 
 use PHPExiftool\Driver\Value\Multi;
 use PHPExiftool\Driver\Value\ValueInterface;
+use \PHPUnit\Framework\TestCase;
 
-class MultiTest extends \PHPUnit_Framework_TestCase
+class MultiTest extends TestCase
 {
     /**
      * @var Multi

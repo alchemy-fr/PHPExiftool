@@ -11,8 +11,9 @@
 namespace PHPExiftool\Test\Driver;
 
 use Symfony\Component\Finder\Finder;
+use \PHPUnit\Framework\TestCase;
 
-class TagTest extends \PHPUnit_Framework_TestCase {
+class TagTest extends TestCase {
 
     /**
      * @var Tag

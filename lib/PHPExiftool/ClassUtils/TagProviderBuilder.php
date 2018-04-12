@@ -40,7 +40,7 @@ class TagProviderBuilder extends Builder
 
         foreach ($this->classes as $groupname => $group) {
 
-            $content .= "<spaces><spaces>\$this['$groupname'] = \$this->share(function(){\n";
+            $content .= "<spaces><spaces>\$this['$groupname'] = function(){\n";
             $content .= "<spaces><spaces><spaces>return array(\n";
 
             foreach ($group as $tagname => $classname) {
@@ -48,7 +48,7 @@ class TagProviderBuilder extends Builder
             }
 
             $content .= "<spaces><spaces><spaces>);\n";
-            $content .= "<spaces><spaces>});\n";
+            $content .= "<spaces><spaces>};\n";
         }
 
         $content .= "\n<spaces>}\n";

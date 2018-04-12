@@ -12,8 +12,9 @@ namespace PHPExiftool\Test;
 
 use PHPExiftool\PHPExiftoolServiceProvider;
 use Silex\Application;
+use \PHPUnit\Framework\TestCase;
 
-class PHPExiftoolServiceProviderTest extends \PHPUnit_Framework_TestCase
+class PHPExiftoolServiceProviderTest extends TestCase
 {
 
     public function testRegister()

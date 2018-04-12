@@ -11,8 +11,9 @@
 namespace PHPExiftool\Test;
 
 use PHPExiftool\ExiftoolServer;
+use \PHPUnit\Framework\TestCase;
 
-class ExiftoolServerTest extends \PHPUnit_Framework_TestCase
+class ExiftoolServerTest extends TestCase
 {
     protected $exiftool;
 

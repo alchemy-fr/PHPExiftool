@@ -11,8 +11,9 @@
 namespace PHPExiftool\Test;
 
 use PHPExiftool\RDFParser;
+use \PHPUnit\Framework\TestCase;
 
-class RDFParserTest extends \PHPUnit_Framework_TestCase
+class RDFParserTest extends TestCase
 {
     /**
      * @var RDFParser

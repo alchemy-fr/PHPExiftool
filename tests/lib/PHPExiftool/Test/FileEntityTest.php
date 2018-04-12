@@ -12,8 +12,9 @@ namespace PHPExiftool\Test;
 
 use PHPExiftool\FileEntity;
 use PHPExiftool\RDFParser;
+use \PHPUnit\Framework\TestCase;
 
-class FileEntityTest extends \PHPUnit_Framework_TestCase
+class FileEntityTest extends TestCase
 {
     /**
      * @var FileEntity

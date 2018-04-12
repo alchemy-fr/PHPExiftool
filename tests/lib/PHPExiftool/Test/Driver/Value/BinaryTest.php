@@ -12,8 +12,9 @@ namespace PHPExiftool\Test\Driver\Value;
 
 use PHPExiftool\Driver\Value\Binary;
 use PHPExiftool\Driver\Value\ValueInterface;
+use \PHPUnit\Framework\TestCase;
 
-class BinaryTest extends \PHPUnit_Framework_TestCase
+class BinaryTest extends TestCase
 {
     /**
      * @var Binary

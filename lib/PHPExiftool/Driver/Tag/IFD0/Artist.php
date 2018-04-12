@@ -41,7 +41,4 @@ class Artist extends AbstractTag
     protected $Description = 'Artist';
 
     protected $local_g2 = 'Author';
-
-    protected $flag_List = true;
-
 }

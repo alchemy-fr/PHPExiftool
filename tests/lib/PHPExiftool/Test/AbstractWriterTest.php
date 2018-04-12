@@ -14,8 +14,9 @@ use PHPExiftool\Driver;
 use PHPExiftool\Writer;
 use PHPExiftool\Reader;
 use PHPExiftool\RDFParser;
+use \PHPUnit\Framework\TestCase;
 
-abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractWriterTest extends TestCase
 {
     /**
      * @var Writer

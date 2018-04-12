@@ -11,8 +11,9 @@
 namespace PHPExiftool\Test;
 
 use PHPExiftool\PreviewExtractor;
+use \PHPUnit\Framework\TestCase;
 
-abstract class AbstractPreviewExtractorTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractPreviewExtractorTest extends TestCase
 {
 
     /**

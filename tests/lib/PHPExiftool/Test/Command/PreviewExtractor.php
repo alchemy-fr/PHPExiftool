@@ -14,7 +14,7 @@ require_once __DIR__ . '/../AbstractPreviewExtractorTest.php';
 
 use Monolog\Logger;
 use Monolog\Handler\NullHandler;
-use PHPExiftool\AbstractPreviewExtractorTest;
+use PHPExiftool\Test\AbstractPreviewExtractorTest;
 use PHPExiftool\Exiftool;
 
 class PreviewExtractor extends AbstractPreviewExtractorTest

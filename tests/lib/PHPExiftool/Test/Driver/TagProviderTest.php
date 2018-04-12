@@ -11,8 +11,9 @@
 namespace PHPExiftool\Test\Driver;
 
 use PHPExiftool\Driver\TagProvider;
+use \PHPUnit\Framework\TestCase;
 
-class TagProviderTest extends \PHPUnit_Framework_TestCase
+class TagProviderTest extends TestCase
 {
     private $object;
     protected function setUp()

@@ -14,8 +14,9 @@ use Monolog\Logger;
 use Monolog\Handler\NullHandler;
 use PHPExiftool\InformationDumper;
 use PHPExiftool\Exiftool;
+use \PHPUnit\Framework\TestCase;
 
-class InformationDumperTest extends \PHPUnit_Framework_TestCase
+class InformationDumperTest extends TestCase
 {
     /**
      * @var InformationDumper

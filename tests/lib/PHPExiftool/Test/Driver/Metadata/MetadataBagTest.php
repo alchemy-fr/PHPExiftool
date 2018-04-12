@@ -11,8 +11,9 @@
 namespace PHPExiftool\Test\Driver\Metadata;
 
 use PHPExiftool\Driver\Metadata\MetadataBag;
+use \PHPUnit\Framework\TestCase;
 
-class MetadataBagTest extends \PHPUnit_Framework_TestCase
+class MetadataBagTest extends TestCase
 {
     /**
      * @var MetadataBag

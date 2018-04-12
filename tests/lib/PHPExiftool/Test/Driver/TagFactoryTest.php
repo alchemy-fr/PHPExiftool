@@ -11,8 +11,9 @@
 namespace PHPExiftool\Test\Driver;
 
 use PHPExiftool\Driver\TagFactory;
+use \PHPUnit\Framework\TestCase;
 
-class TagFactoryTest extends \PHPUnit_Framework_TestCase
+class TagFactoryTest extends TestCase
 {
     /**
      * @var TagFactory

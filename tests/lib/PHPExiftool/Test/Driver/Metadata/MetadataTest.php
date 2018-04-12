@@ -13,8 +13,9 @@ namespace PHPExiftool\Test\Driver\Metadata;
 use PHPExiftool\Driver\AbstractTag;
 use PHPExiftool\Driver\Value\Mono;
 use PHPExiftool\Driver\Metadata\Metadata;
+use \PHPUnit\Framework\TestCase;
 
-class MetadataTest extends \PHPUnit_Framework_TestCase
+class MetadataTest extends TestCase
 {
     /**
      * @var Metadata

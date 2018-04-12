@@ -11,8 +11,9 @@
 namespace PHPExiftool\Test;
 
 use PHPExiftool\Reader;
+use \PHPUnit\Framework\TestCase;
 
-abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
+abstract class AbstractReaderTest extends TestCase {
 
     /**
      * @var Reader
