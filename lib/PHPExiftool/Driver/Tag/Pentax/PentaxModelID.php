@@ -571,6 +571,10 @@ class PentaxModelID extends AbstractTag
             'Id' => 77960,
             'Label' => 'WG-5 GPS',
         ),
+        77970 => array(
+            'Id' => 77970,
+            'Label' => 'K-1',
+        ),
         77980 => array(
             'Id' => 77980,
             'Label' => 'K-3 II',

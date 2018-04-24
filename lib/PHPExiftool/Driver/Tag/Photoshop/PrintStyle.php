@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class PrintStyle extends AbstractTag
 {
 
-    protected $Id = 1083;
+    protected $Id = 'mixed';
 
     protected $Name = 'PrintStyle';
 
-    protected $FullName = 'Photoshop::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Photoshop';
 
@@ -34,10 +34,25 @@ class PrintStyle extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = '?';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 
     protected $Description = 'Print Style';
+
+    protected $Values = array(
+        0 => array(
+            'Id' => 0,
+            'Label' => 'Centered',
+        ),
+        1 => array(
+            'Id' => 1,
+            'Label' => 'Size to Fit',
+        ),
+        2 => array(
+            'Id' => 2,
+            'Label' => 'User Defined',
+        ),
+    );
 
 }

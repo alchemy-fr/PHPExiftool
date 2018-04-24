@@ -893,9 +893,37 @@ class DR4CameraModel extends AbstractTag
             'Id' => 60096512,
             'Label' => 'PowerShot G5 X',
         ),
+        60227584 => array(
+            'Id' => 60227584,
+            'Label' => 'PowerShot G7 X Mark II',
+        ),
+        60358656 => array(
+            'Id' => 60358656,
+            'Label' => 'PowerShot ELPH 360 HS / IXUS 285 HS / IXY 650',
+        ),
+        67174400 => array(
+            'Id' => 67174400,
+            'Label' => 'PowerShot SX540 HS',
+        ),
+        67239936 => array(
+            'Id' => 67239936,
+            'Label' => 'PowerShot SX420 IS',
+        ),
+        67305472 => array(
+            'Id' => 67305472,
+            'Label' => 'PowerShot ELPH 190 IS / IXUS 180 / IXY 190',
+        ),
         67371008 => array(
             'Id' => 67371008,
             'Label' => 'PowerShot G1',
+        ),
+        67371009 => array(
+            'Id' => 67371009,
+            'Label' => 'IXY 180',
+        ),
+        67436544 => array(
+            'Id' => 67436544,
+            'Label' => 'PowerShot SX720 HS',
         ),
         100925440 => array(
             'Id' => 100925440,
@@ -1189,6 +1217,10 @@ class DR4CameraModel extends AbstractTag
             'Id' => '2147484455',
             'Label' => 'EOS Rebel T5 / 1200D / Kiss X70',
         ),
+        '2147484456' => array(
+            'Id' => '2147484456',
+            'Label' => 'EOS-1D X MARK II',
+        ),
         '2147484465' => array(
             'Id' => '2147484465',
             'Label' => 'EOS M',
@@ -1200,6 +1232,10 @@ class DR4CameraModel extends AbstractTag
         '2147484487' => array(
             'Id' => '2147484487',
             'Label' => 'EOS Rebel T6s / 760D / 8000D',
+        ),
+        '2147484496' => array(
+            'Id' => '2147484496',
+            'Label' => 'EOS 80D',
         ),
         '2147484501' => array(
             'Id' => '2147484501',
@@ -1216,6 +1252,10 @@ class DR4CameraModel extends AbstractTag
         '2147484673' => array(
             'Id' => '2147484673',
             'Label' => 'EOS 5DS R',
+        ),
+        '2147484676' => array(
+            'Id' => '2147484676',
+            'Label' => 'EOS Rebel T6 / 1300D / Kiss X80',
         ),
     );
 

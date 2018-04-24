@@ -91,6 +91,14 @@ class ColorDataVersion extends AbstractTag
             'Id' => 12,
             'Label' => '12 (5DS/5DSR)',
         ),
+        12 => array(
+            'Id' => 13,
+            'Label' => '13 (80D)',
+        ),
+        13 => array(
+            'Id' => 14,
+            'Label' => '14 (1300D)',
+        ),
     );
 
 }

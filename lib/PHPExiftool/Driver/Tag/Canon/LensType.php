@@ -529,7 +529,7 @@ class LensType extends AbstractTag
         ),
         '137.6' => array(
             'Id' => '137.6',
-            'Label' => 'Sigma 17-70mm f/2.8-4 DC Macro OS HSM',
+            'Label' => 'Sigma 17-70mm f/2.8-4 DC Macro OS HSM | C',
         ),
         '137.7' => array(
             'Id' => '137.7',
@@ -593,7 +593,11 @@ class LensType extends AbstractTag
         ),
         143 => array(
             'Id' => 143,
-            'Label' => 'Canon EF 500mm f/4L IS',
+            'Label' => 'Canon EF 500mm f/4L IS or Sigma Lens',
+        ),
+        '143.1' => array(
+            'Id' => '143.1',
+            'Label' => 'Sigma 17-70mm f/2.8-4 DC Macro OS HSM',
         ),
         144 => array(
             'Id' => 144,
@@ -723,6 +727,10 @@ class LensType extends AbstractTag
             'Id' => '160.4',
             'Label' => 'Tokina AT-X 116 AF Pro DX 11-16mm f/2.8',
         ),
+        '160.5' => array(
+            'Id' => '160.5',
+            'Label' => 'Tokina AT-X 11-20 F2.8 PRO DX Aspherical 11-20mm f/2.8',
+        ),
         161 => array(
             'Id' => 161,
             'Label' => 'Canon EF 28-70mm f/2.8L or Sigma or Tamron Lens',
@@ -781,7 +789,11 @@ class LensType extends AbstractTag
         ),
         168 => array(
             'Id' => 168,
-            'Label' => 'Canon EF 28mm f/1.8 USM',
+            'Label' => 'Canon EF 28mm f/1.8 USM or Sigma Lens',
+        ),
+        '168.1' => array(
+            'Id' => '168.1',
+            'Label' => 'Sigma 50-100mm f/1.8 DC HSM | A',
         ),
         169 => array(
             'Id' => 169,
@@ -1121,7 +1133,7 @@ class LensType extends AbstractTag
         ),
         '234.1' => array(
             'Id' => '234.1',
-            'Label' => 'Tokina AT-X 12-28mm f/4 PRO DX',
+            'Label' => 'Tokina AT-X 12-28 PRO DX 12-28mm f/4',
         ),
         235 => array(
             'Id' => 235,
@@ -1354,6 +1366,14 @@ class LensType extends AbstractTag
         4156 => array(
             'Id' => 4156,
             'Label' => 'Canon EF 50mm f/1.8 STM',
+        ),
+        36912 => array(
+            'Id' => 36912,
+            'Label' => 'Canon EF-S 18-135mm f/3.5-5.6 IS USM',
+        ),
+        65535 => array(
+            'Id' => 65535,
+            'Label' => 'n/a',
         ),
     );
 

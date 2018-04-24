@@ -749,7 +749,7 @@ class CameraType extends AbstractTag
         ),
         'D4585' => array(
             'Id' => 'D4585',
-            'Label' => 'SH-2',
+            'Label' => 'SH-2 / SH-3',
         ),
         'D4586' => array(
             'Id' => 'D4586',
@@ -758,6 +758,10 @@ class CameraType extends AbstractTag
         'D4587' => array(
             'Id' => 'D4587',
             'Label' => 'TG-860',
+        ),
+        'D4591' => array(
+            'Id' => 'D4591',
+            'Label' => 'TG-870',
         ),
         'D4809' => array(
             'Id' => 'D4809',
@@ -910,6 +914,10 @@ class CameraType extends AbstractTag
         'S0059' => array(
             'Id' => 'S0059',
             'Label' => 'E-M10MarkII',
+        ),
+        'S0061' => array(
+            'Id' => 'S0061',
+            'Label' => 'PEN-F',
         ),
         'SR45' => array(
             'Id' => 'SR45',
