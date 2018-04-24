@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class PixelAspectRatio extends AbstractTag
 {
 
-    protected $Id = 1064;
+    protected $Id = 4;
 
     protected $Name = 'PixelAspectRatio';
 
-    protected $FullName = 'Photoshop::Main';
+    protected $FullName = 'Photoshop::PixelInfo';
 
     protected $GroupName = 'Photoshop';
 
@@ -34,7 +34,7 @@ class PixelAspectRatio extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = '?';
+    protected $Type = 'double';
 
     protected $Writable = false;
 

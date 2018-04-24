@@ -40,4 +40,6 @@ class URLList extends AbstractTag
 
     protected $Description = 'URL List';
 
+    protected $flag_List = true;
+
 }

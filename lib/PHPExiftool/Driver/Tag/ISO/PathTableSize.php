@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Driver\Tag\Matroska;
+namespace PHPExiftool\Driver\Tag\ISO;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use PHPExiftool\Driver\AbstractTag;
@@ -17,27 +17,27 @@ use PHPExiftool\Driver\AbstractTag;
 /**
  * @ExclusionPolicy("all")
  */
-class Void extends AbstractTag
+class PathTableSize extends AbstractTag
 {
 
-    protected $Id = 108;
+    protected $Id = 132;
 
-    protected $Name = 'Void';
+    protected $Name = 'PathTableSize';
 
-    protected $FullName = 'Matroska::Main';
+    protected $FullName = 'ISO::PrimaryVolume';
 
-    protected $GroupName = 'Matroska';
+    protected $GroupName = 'ISO';
 
-    protected $g0 = 'Matroska';
+    protected $g0 = 'ISO';
 
-    protected $g1 = 'Matroska';
+    protected $g1 = 'ISO';
 
-    protected $g2 = 'Video';
+    protected $g2 = 'Other';
 
-    protected $Type = '?';
+    protected $Type = 'int32u';
 
     protected $Writable = false;
 
-    protected $Description = 'Void';
+    protected $Description = 'Path Table Size';
 
 }

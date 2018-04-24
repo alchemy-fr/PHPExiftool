@@ -548,6 +548,7 @@ class ClassesBuilder extends Command
         'try',
         'use',
         'var',
+        'void',
         'while',
         'xor',
         'yield',

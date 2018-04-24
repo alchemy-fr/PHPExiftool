@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Driver\Tag\Photoshop;
+namespace PHPExiftool\Driver\Tag\RAF;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use PHPExiftool\Driver\AbstractTag;
@@ -17,27 +17,27 @@ use PHPExiftool\Driver\AbstractTag;
 /**
  * @ExclusionPolicy("all")
  */
-class Slices extends AbstractTag
+class RelativeExposure extends AbstractTag
 {
 
-    protected $Id = 1050;
+    protected $Id = 37376;
 
-    protected $Name = 'Slices';
+    protected $Name = 'RelativeExposure';
 
-    protected $FullName = 'Photoshop::Main';
+    protected $FullName = 'FujiFilm::RAF';
 
-    protected $GroupName = 'Photoshop';
+    protected $GroupName = 'RAF';
 
-    protected $g0 = 'Photoshop';
+    protected $g0 = 'RAF';
 
-    protected $g1 = 'Photoshop';
+    protected $g1 = 'RAF';
 
     protected $g2 = 'Image';
 
-    protected $Type = '?';
+    protected $Type = 'rational32s';
 
     protected $Writable = false;
 
-    protected $Description = 'Slices';
+    protected $Description = 'Relative Exposure';
 
 }

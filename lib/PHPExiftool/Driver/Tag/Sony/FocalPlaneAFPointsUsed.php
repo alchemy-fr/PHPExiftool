@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class FocalPlaneAFPointsUsed extends AbstractTag
 {
 
-    protected $Id = 8226;
+    protected $Id = 'mixed';
 
     protected $Name = 'FocalPlaneAFPointsUsed';
 
-    protected $FullName = 'Sony::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Sony';
 
@@ -34,7 +34,7 @@ class FocalPlaneAFPointsUsed extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = '?';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 
