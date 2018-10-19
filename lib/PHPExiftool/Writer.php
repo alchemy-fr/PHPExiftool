@@ -211,13 +211,14 @@ class Writer
      * @param string      $file        The input file
      * @param MetadataBag $metadatas   A bag of metadatas
      * @param string      $destination The output file
+     * @param array       $resolutionXY  The dpi resolution array(xresolution, yresolution)
      *
      * @return int the number "write" operations, or null if exiftool returned nothing we understand
      *         event for no-op (file unchanged), 1 is returned so the caller does not think the command failed.
      *
      * @throws InvalidArgumentException
      */
-    public function write($file, MetadataBag $metadatas, $destination = null)
+    public function write($file, MetadataBag $metadatas, $destination = null, array $resolutionXY = array())
     {
         if ( ! file_exists($file)) {
             throw new InvalidArgumentException(sprintf('%s does not exists', $file));
@@ -241,6 +242,11 @@ class Writer
              * anything else.
              */
             $commands[] = '-all:all= ' . ($this->eraseProfile ? '' : '--icc_profile:all') ;
+        }
+
+        if(count($resolutionXY) == 2 && is_int(current($resolutionXY)) && is_int(end($resolutionXY)) ){
+            reset($resolutionXY);
+            $commands[] = '-xresolution=' . current($resolutionXY) .  ' -yresolution=' . end($resolutionXY);
         }
 
         if(count($metadatas) > 0) {
