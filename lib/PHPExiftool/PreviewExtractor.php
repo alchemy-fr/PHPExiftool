@@ -38,7 +38,9 @@ class PreviewExtractor extends Exiftool
             . "-if " . escapeshellarg('$jpgfromraw') . " -b -jpgfromraw "
             . "-w " . escapeshellarg(realpath($outputDir) . '/JpgFromRaw%c.jpg') . " -execute "
             . "-if " . escapeshellarg('$previewimage') . " -b -previewimage "
-            . "-w " . escapeshellarg(realpath($outputDir) . '/PreviewImage%c.jpg') . " "
+            . "-w " . escapeshellarg(realpath($outputDir) . '/PreviewImage%c.jpg') . " -execute "
+            . "-if " . escapeshellarg('$xmp:pageimage') . " -b -xmp:pageimage "
+            . "-w " . escapeshellarg(realpath($outputDir) . '/XmpPageimage%c.jpg') . " "
             . "-common_args -q -m " . $pathfile;
 
         try {
