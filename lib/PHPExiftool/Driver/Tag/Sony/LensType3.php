@@ -187,6 +187,18 @@ class LensType3 extends AbstractTag
             'Id' => 32817,
             'Label' => 'Sony FE PZ 28-135mm F4 G OSS',
         ),
+        32821 => array(
+            'Id' => 32821,
+            'Label' => 'Sony FE 24-70mm F2.8 GM',
+        ),
+        32823 => array(
+            'Id' => 32823,
+            'Label' => 'Sony FE 85mm F1.4 GM',
+        ),
+        32824 => array(
+            'Id' => 32824,
+            'Label' => 'Sony FE 50mm F1.8',
+        ),
         32826 => array(
             'Id' => 32826,
             'Label' => 'Sony FE 21mm F2.8 (SEL28F20 + SEL075UWC)',
@@ -194,6 +206,14 @@ class LensType3 extends AbstractTag
         32827 => array(
             'Id' => 32827,
             'Label' => 'Sony FE 16mm F3.5 Fisheye (SEL28F20 + SEL057FEC)',
+        ),
+        32828 => array(
+            'Id' => 32828,
+            'Label' => 'Sony FE 70-300mm F4.5-5.6 G OSS',
+        ),
+        32830 => array(
+            'Id' => 32830,
+            'Label' => 'Sony FE 70-200mm F2.8 GM OSS',
         ),
         49216 => array(
             'Id' => 49216,
@@ -203,9 +223,21 @@ class LensType3 extends AbstractTag
             'Id' => 49217,
             'Label' => 'Zeiss Batis 85mm F1.8',
         ),
+        49218 => array(
+            'Id' => 49218,
+            'Label' => 'Zeiss Batis 18mm F2.8',
+        ),
+        49232 => array(
+            'Id' => 49232,
+            'Label' => 'Zeiss Loxia 50mm F2',
+        ),
         49234 => array(
             'Id' => 49234,
             'Label' => 'Zeiss Loxia 21mm F2.8',
+        ),
+        50480 => array(
+            'Id' => 50480,
+            'Label' => 'Sigma 30mm F1.4 DC DN | C',
         ),
     );
 

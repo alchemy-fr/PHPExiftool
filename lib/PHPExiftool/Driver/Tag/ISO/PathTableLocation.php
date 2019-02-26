@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Driver\Tag\Photoshop;
+namespace PHPExiftool\Driver\Tag\ISO;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use PHPExiftool\Driver\AbstractTag;
@@ -17,27 +17,27 @@ use PHPExiftool\Driver\AbstractTag;
 /**
  * @ExclusionPolicy("all")
  */
-class VersionInfo extends AbstractTag
+class PathTableLocation extends AbstractTag
 {
 
-    protected $Id = 1057;
+    protected $Id = 140;
 
-    protected $Name = 'VersionInfo';
+    protected $Name = 'PathTableLocation';
 
-    protected $FullName = 'Photoshop::Main';
+    protected $FullName = 'ISO::PrimaryVolume';
 
-    protected $GroupName = 'Photoshop';
+    protected $GroupName = 'ISO';
 
-    protected $g0 = 'Photoshop';
+    protected $g0 = 'ISO';
 
-    protected $g1 = 'Photoshop';
+    protected $g1 = 'ISO';
 
-    protected $g2 = 'Image';
+    protected $g2 = 'Other';
 
-    protected $Type = '?';
+    protected $Type = 'int32u';
 
     protected $Writable = false;
 
-    protected $Description = 'Version Info';
+    protected $Description = 'Path Table Location';
 
 }

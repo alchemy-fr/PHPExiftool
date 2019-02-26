@@ -935,7 +935,7 @@ class LensType extends AbstractTag
         ),
         '8 30' => array(
             'Id' => '8 30',
-            'Label' => 'Sigma 17-70mm F2.8-4 DC Macro HSM Contemporary',
+            'Label' => 'Sigma 17-70mm F2.8-4 DC Macro HSM | C',
         ),
         '8 31' => array(
             'Id' => '8 31',
@@ -957,9 +957,17 @@ class LensType extends AbstractTag
             'Id' => '8 60',
             'Label' => 'HD PENTAX-D FA* 70-200mm F2.8 ED DC AW',
         ),
+        '8 61' => array(
+            'Id' => '8 61',
+            'Label' => 'HD PENTAX-D FA 28-105mm F3.5-5.6 ED DC WR',
+        ),
         '8 62' => array(
             'Id' => '8 62',
             'Label' => 'HD PENTAX-D FA 24-70mm F2.8 ED SDM WR',
+        ),
+        '8 63' => array(
+            'Id' => '8 63',
+            'Label' => 'HD PENTAX-D FA 15-30mm F2.8 ED SDM WR',
         ),
         '8 198' => array(
             'Id' => '8 198',

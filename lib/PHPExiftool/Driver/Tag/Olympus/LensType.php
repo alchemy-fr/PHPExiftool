@@ -289,6 +289,10 @@ class LensType extends AbstractTag
             'Id' => '1 06 00',
             'Label' => 'Sigma APO 50-500mm F4.0-6.3 EX DG HSM',
         ),
+        '1 06 10' => array(
+            'Id' => '1 06 10',
+            'Label' => 'Sigma 30mm F1.4 DC DN | C',
+        ),
         '1 07 00' => array(
             'Id' => '1 07 00',
             'Label' => 'Sigma Macro 105mm F2.8 EX DG',
@@ -441,6 +445,10 @@ class LensType extends AbstractTag
             'Id' => '2 22 10',
             'Label' => 'Leica DG Summilux 15mm F1.7 Asph.',
         ),
+        '2 23 10' => array(
+            'Id' => '2 23 10',
+            'Label' => 'Lumix G Vario 35-100mm F4.0-5.6 Asph. Mega OIS',
+        ),
         '2 24 10' => array(
             'Id' => '2 24 10',
             'Label' => 'Lumix G Macro 30mm F2.8 Asph. Mega OIS',
@@ -448,6 +456,18 @@ class LensType extends AbstractTag
         '2 25 10' => array(
             'Id' => '2 25 10',
             'Label' => 'Lumix G 42.5mm F1.7 Asph. Power OIS',
+        ),
+        '2 26 10' => array(
+            'Id' => '2 26 10',
+            'Label' => 'Lumix G 25mm F1.7 Asph.',
+        ),
+        '2 27 10' => array(
+            'Id' => '2 27 10',
+            'Label' => 'Leica DG Vario-Elmar 100-400mm F4.0-6.3 Asph. Power OIS',
+        ),
+        '2 28 10' => array(
+            'Id' => '2 28 10',
+            'Label' => 'Lumix G Vario 12-60mm F3.5-5.6 Asph. Power OIS',
         ),
         '3 01 00' => array(
             'Id' => '3 01 00',
