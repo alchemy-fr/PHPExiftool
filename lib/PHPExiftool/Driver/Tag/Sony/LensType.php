@@ -507,6 +507,10 @@ class LensType extends AbstractTag
             'Id' => '128.20',
             'Label' => 'Sigma 18-35mm F1.8 DC HSM',
         ),
+        '128.21' => array(
+            'Id' => '128.21',
+            'Label' => 'Sigma 50-500mm F4.5-6.3 APO DG OS HSM',
+        ),
         129 => array(
             'Id' => 129,
             'Label' => 'Tamron Lens (129)',
@@ -809,7 +813,7 @@ class LensType extends AbstractTag
         ),
         2565 => array(
             'Id' => 2565,
-            'Label' => 'Minolta AF 600mm F4',
+            'Label' => 'Minolta AF 600mm F4 APO',
         ),
         2566 => array(
             'Id' => 2566,
@@ -913,7 +917,7 @@ class LensType extends AbstractTag
         ),
         2593 => array(
             'Id' => 2593,
-            'Label' => 'Minolta AF 200mm F2.8 G APO',
+            'Label' => 'Minolta AF 200mm F2.8 APO',
         ),
         2594 => array(
             'Id' => 2594,
@@ -1001,7 +1005,7 @@ class LensType extends AbstractTag
         ),
         2628 => array(
             'Id' => 2628,
-            'Label' => 'Minolta AF 80-200mm F2.8 G',
+            'Label' => 'Minolta AF 80-200mm F2.8 HS-APO G',
         ),
         2629 => array(
             'Id' => 2629,
@@ -1217,86 +1221,114 @@ class LensType extends AbstractTag
         ),
         '6553.28' => array(
             'Id' => '6553.28',
-            'Label' => 'Sony FE 21mm F2.8 (SEL28F20 + SEL075UWC)',
+            'Label' => 'Sony FE 24-70mm F2.8 GM',
         ),
         '6553.29' => array(
             'Id' => '6553.29',
-            'Label' => 'Sony FE 16mm F3.5 Fisheye (SEL28F20 + SEL057FEC)',
+            'Label' => 'Sony FE 85mm F1.4 GM',
         ),
         '6553.30' => array(
             'Id' => '6553.30',
-            'Label' => 'Sigma 19mm F2.8 [EX] DN',
+            'Label' => 'Sony FE 50mm F1.8',
         ),
         '6553.31' => array(
             'Id' => '6553.31',
-            'Label' => 'Sigma 30mm F2.8 [EX] DN',
+            'Label' => 'Sony FE 21mm F2.8 (SEL28F20 + SEL075UWC)',
         ),
         '6553.32' => array(
             'Id' => '6553.32',
-            'Label' => 'Sigma 60mm F2.8 DN',
+            'Label' => 'Sony FE 16mm F3.5 Fisheye (SEL28F20 + SEL057FEC)',
         ),
         '6553.33' => array(
             'Id' => '6553.33',
-            'Label' => 'Tamron 18-200mm F3.5-6.3 Di III VC',
+            'Label' => 'Sony FE 70-300mm F4.5-5.6 G OSS',
         ),
         '6553.34' => array(
             'Id' => '6553.34',
-            'Label' => 'Zeiss Batis 25mm F2',
+            'Label' => 'Sony FE 70-200mm F2.8 GM OSS',
         ),
         '6553.35' => array(
             'Id' => '6553.35',
-            'Label' => 'Zeiss Batis 85mm F1.8',
+            'Label' => 'Sigma 19mm F2.8 [EX] DN',
         ),
         '6553.36' => array(
             'Id' => '6553.36',
-            'Label' => 'Zeiss Loxia 21mm F2.8',
+            'Label' => 'Sigma 30mm F2.8 [EX] DN',
         ),
         '6553.37' => array(
             'Id' => '6553.37',
-            'Label' => 'Zeiss Loxia 35mm F2',
+            'Label' => 'Sigma 60mm F2.8 DN',
         ),
         '6553.38' => array(
             'Id' => '6553.38',
-            'Label' => 'Zeiss Loxia 50mm F2',
+            'Label' => 'Sigma 30mm F1.4 DC DN | C',
         ),
         '6553.39' => array(
             'Id' => '6553.39',
-            'Label' => 'Zeiss Touit 12mm F2.8',
+            'Label' => 'Tamron 18-200mm F3.5-6.3 Di III VC',
         ),
         '6553.40' => array(
             'Id' => '6553.40',
-            'Label' => 'Zeiss Touit 32mm F1.8',
+            'Label' => 'Zeiss Batis 25mm F2',
         ),
         '6553.41' => array(
             'Id' => '6553.41',
-            'Label' => 'Zeiss Touit 50mm F2.8 Macro',
+            'Label' => 'Zeiss Batis 85mm F1.8',
         ),
         '6553.42' => array(
             'Id' => '6553.42',
-            'Label' => 'Arax MC 35mm F2.8 Tilt+Shift',
+            'Label' => 'Zeiss Batis 18mm F2.8',
         ),
         '6553.43' => array(
             'Id' => '6553.43',
-            'Label' => 'Arax MC 80mm F2.8 Tilt+Shift',
+            'Label' => 'Zeiss Loxia 21mm F2.8',
         ),
         '6553.44' => array(
             'Id' => '6553.44',
-            'Label' => 'Zenitar MF 16mm F2.8 Fisheye M42',
+            'Label' => 'Zeiss Loxia 35mm F2',
         ),
         '6553.45' => array(
             'Id' => '6553.45',
-            'Label' => 'Samyang 500mm Mirror F8.0',
+            'Label' => 'Zeiss Loxia 50mm F2',
         ),
         '6553.46' => array(
             'Id' => '6553.46',
-            'Label' => 'Pentacon Auto 135mm F2.8',
+            'Label' => 'Zeiss Touit 12mm F2.8',
         ),
         '6553.47' => array(
             'Id' => '6553.47',
-            'Label' => 'Pentacon Auto 29mm F2.8',
+            'Label' => 'Zeiss Touit 32mm F1.8',
         ),
         '6553.48' => array(
             'Id' => '6553.48',
+            'Label' => 'Zeiss Touit 50mm F2.8 Macro',
+        ),
+        '6553.49' => array(
+            'Id' => '6553.49',
+            'Label' => 'Arax MC 35mm F2.8 Tilt+Shift',
+        ),
+        '6553.50' => array(
+            'Id' => '6553.50',
+            'Label' => 'Arax MC 80mm F2.8 Tilt+Shift',
+        ),
+        '6553.51' => array(
+            'Id' => '6553.51',
+            'Label' => 'Zenitar MF 16mm F2.8 Fisheye M42',
+        ),
+        '6553.52' => array(
+            'Id' => '6553.52',
+            'Label' => 'Samyang 500mm Mirror F8.0',
+        ),
+        '6553.53' => array(
+            'Id' => '6553.53',
+            'Label' => 'Pentacon Auto 135mm F2.8',
+        ),
+        '6553.54' => array(
+            'Id' => '6553.54',
+            'Label' => 'Pentacon Auto 29mm F2.8',
+        ),
+        '6553.55' => array(
+            'Id' => '6553.55',
             'Label' => 'Helios 44-2 58mm F2.0',
         ),
         25501 => array(
@@ -1493,7 +1525,7 @@ class LensType extends AbstractTag
         ),
         25651 => array(
             'Id' => 25651,
-            'Label' => 'Minolta AF 600mm F4',
+            'Label' => 'Minolta AF 600mm F4 APO',
         ),
         25661 => array(
             'Id' => 25661,
@@ -1597,7 +1629,7 @@ class LensType extends AbstractTag
         ),
         25931 => array(
             'Id' => 25931,
-            'Label' => 'Minolta AF 200mm F2.8 G APO',
+            'Label' => 'Minolta AF 200mm F2.8 APO',
         ),
         25941 => array(
             'Id' => 25941,
@@ -1685,7 +1717,7 @@ class LensType extends AbstractTag
         ),
         26281 => array(
             'Id' => 26281,
-            'Label' => 'Minolta AF 80-200mm F2.8 G',
+            'Label' => 'Minolta AF 80-200mm F2.8 HS-APO G',
         ),
         26291 => array(
             'Id' => 26291,
@@ -1901,86 +1933,114 @@ class LensType extends AbstractTag
         ),
         '65535.28' => array(
             'Id' => '65535.28',
-            'Label' => 'Sony FE 21mm F2.8 (SEL28F20 + SEL075UWC)',
+            'Label' => 'Sony FE 24-70mm F2.8 GM',
         ),
         '65535.29' => array(
             'Id' => '65535.29',
-            'Label' => 'Sony FE 16mm F3.5 Fisheye (SEL28F20 + SEL057FEC)',
+            'Label' => 'Sony FE 85mm F1.4 GM',
         ),
         '65535.30' => array(
             'Id' => '65535.30',
-            'Label' => 'Sigma 19mm F2.8 [EX] DN',
+            'Label' => 'Sony FE 50mm F1.8',
         ),
         '65535.31' => array(
             'Id' => '65535.31',
-            'Label' => 'Sigma 30mm F2.8 [EX] DN',
+            'Label' => 'Sony FE 21mm F2.8 (SEL28F20 + SEL075UWC)',
         ),
         '65535.32' => array(
             'Id' => '65535.32',
-            'Label' => 'Sigma 60mm F2.8 DN',
+            'Label' => 'Sony FE 16mm F3.5 Fisheye (SEL28F20 + SEL057FEC)',
         ),
         '65535.33' => array(
             'Id' => '65535.33',
-            'Label' => 'Tamron 18-200mm F3.5-6.3 Di III VC',
+            'Label' => 'Sony FE 70-300mm F4.5-5.6 G OSS',
         ),
         '65535.34' => array(
             'Id' => '65535.34',
-            'Label' => 'Zeiss Batis 25mm F2',
+            'Label' => 'Sony FE 70-200mm F2.8 GM OSS',
         ),
         '65535.35' => array(
             'Id' => '65535.35',
-            'Label' => 'Zeiss Batis 85mm F1.8',
+            'Label' => 'Sigma 19mm F2.8 [EX] DN',
         ),
         '65535.36' => array(
             'Id' => '65535.36',
-            'Label' => 'Zeiss Loxia 21mm F2.8',
+            'Label' => 'Sigma 30mm F2.8 [EX] DN',
         ),
         '65535.37' => array(
             'Id' => '65535.37',
-            'Label' => 'Zeiss Loxia 35mm F2',
+            'Label' => 'Sigma 60mm F2.8 DN',
         ),
         '65535.38' => array(
             'Id' => '65535.38',
-            'Label' => 'Zeiss Loxia 50mm F2',
+            'Label' => 'Sigma 30mm F1.4 DC DN | C',
         ),
         '65535.39' => array(
             'Id' => '65535.39',
-            'Label' => 'Zeiss Touit 12mm F2.8',
+            'Label' => 'Tamron 18-200mm F3.5-6.3 Di III VC',
         ),
         '65535.40' => array(
             'Id' => '65535.40',
-            'Label' => 'Zeiss Touit 32mm F1.8',
+            'Label' => 'Zeiss Batis 25mm F2',
         ),
         '65535.41' => array(
             'Id' => '65535.41',
-            'Label' => 'Zeiss Touit 50mm F2.8 Macro',
+            'Label' => 'Zeiss Batis 85mm F1.8',
         ),
         '65535.42' => array(
             'Id' => '65535.42',
-            'Label' => 'Arax MC 35mm F2.8 Tilt+Shift',
+            'Label' => 'Zeiss Batis 18mm F2.8',
         ),
         '65535.43' => array(
             'Id' => '65535.43',
-            'Label' => 'Arax MC 80mm F2.8 Tilt+Shift',
+            'Label' => 'Zeiss Loxia 21mm F2.8',
         ),
         '65535.44' => array(
             'Id' => '65535.44',
-            'Label' => 'Zenitar MF 16mm F2.8 Fisheye M42',
+            'Label' => 'Zeiss Loxia 35mm F2',
         ),
         '65535.45' => array(
             'Id' => '65535.45',
-            'Label' => 'Samyang 500mm Mirror F8.0',
+            'Label' => 'Zeiss Loxia 50mm F2',
         ),
         '65535.46' => array(
             'Id' => '65535.46',
-            'Label' => 'Pentacon Auto 135mm F2.8',
+            'Label' => 'Zeiss Touit 12mm F2.8',
         ),
         '65535.47' => array(
             'Id' => '65535.47',
-            'Label' => 'Pentacon Auto 29mm F2.8',
+            'Label' => 'Zeiss Touit 32mm F1.8',
         ),
         '65535.48' => array(
             'Id' => '65535.48',
+            'Label' => 'Zeiss Touit 50mm F2.8 Macro',
+        ),
+        '65535.49' => array(
+            'Id' => '65535.49',
+            'Label' => 'Arax MC 35mm F2.8 Tilt+Shift',
+        ),
+        '65535.50' => array(
+            'Id' => '65535.50',
+            'Label' => 'Arax MC 80mm F2.8 Tilt+Shift',
+        ),
+        '65535.51' => array(
+            'Id' => '65535.51',
+            'Label' => 'Zenitar MF 16mm F2.8 Fisheye M42',
+        ),
+        '65535.52' => array(
+            'Id' => '65535.52',
+            'Label' => 'Samyang 500mm Mirror F8.0',
+        ),
+        '65535.53' => array(
+            'Id' => '65535.53',
+            'Label' => 'Pentacon Auto 135mm F2.8',
+        ),
+        '65535.54' => array(
+            'Id' => '65535.54',
+            'Label' => 'Pentacon Auto 29mm F2.8',
+        ),
+        '65535.55' => array(
+            'Id' => '65535.55',
             'Label' => 'Helios 44-2 58mm F2.0',
         ),
     );

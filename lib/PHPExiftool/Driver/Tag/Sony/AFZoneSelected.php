@@ -51,15 +51,39 @@ class AFZoneSelected extends AbstractTag
         ),
         1 => array(
             'Id' => 1,
-            'Label' => 'Zone 1',
+            'Label' => 'Center',
+        ),
+        2 => array(
+            'Id' => 2,
+            'Label' => 'Top',
+        ),
+        3 => array(
+            'Id' => 3,
+            'Label' => 'Right',
         ),
         4 => array(
             'Id' => 4,
-            'Label' => 'Zone 4',
+            'Label' => 'Left',
         ),
         5 => array(
             'Id' => 5,
-            'Label' => 'Zone 5',
+            'Label' => 'Bottom',
+        ),
+        6 => array(
+            'Id' => 6,
+            'Label' => 'Bottom Right',
+        ),
+        7 => array(
+            'Id' => 7,
+            'Label' => 'Bottom Left',
+        ),
+        8 => array(
+            'Id' => 8,
+            'Label' => 'Top Left',
+        ),
+        9 => array(
+            'Id' => 9,
+            'Label' => 'Top Right',
         ),
     );
 

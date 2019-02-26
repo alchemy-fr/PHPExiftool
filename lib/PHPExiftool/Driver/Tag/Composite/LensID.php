@@ -1585,7 +1585,7 @@ class LensID extends AbstractTag
         ),
         '8E 3C 2B 5C 24 30 4B 0E' => array(
             'Id' => '8E 3C 2B 5C 24 30 4B 0E',
-            'Label' => 'Sigma 17-70mm F2.8-4 DC Macro OS HSM Contemporary',
+            'Label' => 'Sigma 17-70mm F2.8-4 DC Macro OS HSM | C',
         ),
         '8F 40 2D 72 2C 3C 91 06' => array(
             'Id' => '8F 40 2D 72 2C 3C 91 06',
@@ -1741,7 +1741,7 @@ class LensID extends AbstractTag
         ),
         'A2 40 2D 53 2C 3C BD 0E' => array(
             'Id' => 'A2 40 2D 53 2C 3C BD 0E',
-            'Label' => 'AF-S DX VR Nikkor 18-55mm f/3.5-5.6G II',
+            'Label' => 'AF-S DX Nikkor 18-55mm f/3.5-5.6G VR II',
         ),
         'A2 48 5C 80 24 24 A4 0E' => array(
             'Id' => 'A2 48 5C 80 24 24 A4 0E',
@@ -1777,7 +1777,7 @@ class LensID extends AbstractTag
         ),
         'A5 4C 44 44 14 14 C0 06' => array(
             'Id' => 'A5 4C 44 44 14 14 C0 06',
-            'Label' => 'AF-S Nikkor 35mm f/1.8G',
+            'Label' => 'AF-S Nikkor 35mm f/1.8G ED',
         ),
         'A6 48 37 5C 24 24 4B 06' => array(
             'Id' => 'A6 48 37 5C 24 24 4B 06',
@@ -1786,6 +1786,10 @@ class LensID extends AbstractTag
         'A6 48 8E 8E 24 24 A8 0E' => array(
             'Id' => 'A6 48 8E 8E 24 24 A8 0E',
             'Label' => 'AF-S VR Nikkor 300mm f/2.8G IF-ED II',
+        ),
+        'A6 48 98 98 24 24 C1 0E' => array(
+            'Id' => 'A6 48 98 98 24 24 C1 0E',
+            'Label' => 'AF-S Nikkor 400mm f/2.8E FL ED VR',
         ),
         'A7 3C 53 80 30 3C C2 0E' => array(
             'Id' => 'A7 3C 53 80 30 3C C2 0E',
@@ -1827,6 +1831,10 @@ class LensID extends AbstractTag
             'Id' => 'AA 48 37 5C 24 24 C5 4E',
             'Label' => 'AF-S Nikkor 24-70mm f/2.8E ED VR',
         ),
+        'AB 3C A0 A0 30 30 C6 4E' => array(
+            'Id' => 'AB 3C A0 A0 30 30 C6 4E',
+            'Label' => 'AF-S Nikkor 500mm f/4E FL ED VR',
+        ),
         'AC 38 53 8E 34 3C AE 0E' => array(
             'Id' => 'AC 38 53 8E 34 3C AE 0E',
             'Label' => 'AF-S DX VR Nikkor 55-300mm f/4.5-5.6G ED',
@@ -1839,9 +1847,13 @@ class LensID extends AbstractTag
             'Id' => 'AD 3C 2D 8E 2C 3C AF 0E',
             'Label' => 'AF-S DX Nikkor 18-300mm f/3.5-5.6G ED VR',
         ),
+        'AD 48 28 60 24 30 C8 0E' => array(
+            'Id' => 'AD 48 28 60 24 30 C8 0E',
+            'Label' => 'AF-S DX Nikkor 16-80mm f/2.8-4E ED VR',
+        ),
         'AD 48 28 60 24 30 C8 4E' => array(
             'Id' => 'AD 48 28 60 24 30 C8 4E',
-            'Label' => 'AF-S VR DX 16-80mm f/2.8-4.0E ED',
+            'Label' => 'AF-S DX Nikkor 16-80mm f/2.8-4E ED VR',
         ),
         'AE 3C 80 A0 3C 3C C9 0E' => array(
             'Id' => 'AE 3C 80 A0 3C 3C C9 0E',
@@ -1887,6 +1899,10 @@ class LensID extends AbstractTag
             'Id' => 'B5 4C 3C 3C 14 14 B7 06',
             'Label' => 'AF-S Nikkor 28mm f/1.8G',
         ),
+        'B6 3C B0 B0 3C 3C B8 0E' => array(
+            'Id' => 'B6 3C B0 B0 3C 3C B8 0E',
+            'Label' => 'AF-S VR Nikkor 800mm f/5.6E FL ED',
+        ),
         'B6 48 37 56 24 24 1C 02' => array(
             'Id' => 'B6 48 37 56 24 24 1C 02',
             'Label' => 'Sigma 24-60mm F2.8 EX DG',
@@ -1898,6 +1914,10 @@ class LensID extends AbstractTag
         'B8 40 2D 44 2C 34 BA 06' => array(
             'Id' => 'B8 40 2D 44 2C 34 BA 06',
             'Label' => 'AF-S Nikkor 18-35mm f/3.5-4.5G ED',
+        ),
+        'CC 4C 50 68 14 14 4B 06' => array(
+            'Id' => 'CC 4C 50 68 14 14 4B 06',
+            'Label' => 'Sigma 50-100mm F1.8 DC HSM | A',
         ),
         'CD 3D 2D 70 2E 3C 4B 0E' => array(
             'Id' => 'CD 3D 2D 70 2E 3C 4B 0E',

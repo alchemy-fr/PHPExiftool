@@ -165,9 +165,57 @@ class RetouchHistory extends AbstractTag
             'Id' => 38,
             'Label' => 'Selective Color',
         ),
+        39 => array(
+            'Id' => 39,
+            'Label' => 'Glamour',
+        ),
         40 => array(
             'Id' => 40,
             'Label' => 'Drawing',
+        ),
+        44 => array(
+            'Id' => 44,
+            'Label' => 'Pop',
+        ),
+        45 => array(
+            'Id' => 45,
+            'Label' => 'Toy Camera Effect 1',
+        ),
+        46 => array(
+            'Id' => 46,
+            'Label' => 'Toy Camera Effect 2',
+        ),
+        47 => array(
+            'Id' => 47,
+            'Label' => 'Cross Process (red)',
+        ),
+        48 => array(
+            'Id' => 48,
+            'Label' => 'Cross Process (blue)',
+        ),
+        49 => array(
+            'Id' => 49,
+            'Label' => 'Cross Process (green)',
+        ),
+        50 => array(
+            'Id' => 50,
+            'Label' => 'Cross Process (yellow)',
+        ),
+        51 => array(
+            'Id' => 51,
+            'Label' => 'Super Vivid',
+        ),
+        52 => array(
+            'Id' => 52,
+            'Label' => 'High-contrast Monochrome',
+        ),
+        53 => array(
+            'Id' => 53,
+            'Label' => 'High Key',
+        ),
+        54 => array(
+            'Id' => 54,
+            'Label' => 'Low Key',
         ),
     );
 

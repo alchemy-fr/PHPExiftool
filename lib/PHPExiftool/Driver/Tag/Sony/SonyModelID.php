@@ -291,6 +291,18 @@ class SonyModelID extends AbstractTag
             'Id' => 350,
             'Label' => 'ILCE-7SM2',
         ),
+        353 => array(
+            'Id' => 353,
+            'Label' => 'ILCA-68',
+        ),
+        355 => array(
+            'Id' => 355,
+            'Label' => 'DSC-RX10M3',
+        ),
+        357 => array(
+            'Id' => 357,
+            'Label' => 'ILCE-6300',
+        ),
     );
 
 }

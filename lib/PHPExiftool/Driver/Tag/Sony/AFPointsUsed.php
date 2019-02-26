@@ -63,7 +63,7 @@ class AFPointsUsed extends AbstractTag
         ),
         4 => array(
             'Id' => 8,
-            'Label' => 'B2',
+            'Label' => 'H2',
         ),
         5 => array(
             'Id' => 16,
@@ -79,19 +79,19 @@ class AFPointsUsed extends AbstractTag
         ),
         8 => array(
             'Id' => 128,
-            'Label' => 'H6',
+            'Label' => 'B6',
         ),
         9 => array(
             'Id' => 256,
-            'Label' => 'B7',
+            'Label' => 'H7',
         ),
         10 => array(
             'Id' => 512,
-            'Label' => 'B8',
+            'Label' => 'H8',
         ),
         11 => array(
             'Id' => 1024,
-            'Label' => 'H9',
+            'Label' => 'B9',
         ),
         12 => array(
             'Id' => 2048,
@@ -103,7 +103,7 @@ class AFPointsUsed extends AbstractTag
         ),
         14 => array(
             'Id' => 8192,
-            'Label' => 'I6',
+            'Label' => 'C2',
         ),
         15 => array(
             'Id' => 16384,
@@ -475,7 +475,7 @@ class AFPointsUsed extends AbstractTag
         ),
         106 => array(
             'Id' => 2,
-            'Label' => 'G10',
+            'Label' => 'A6',
         ),
         107 => array(
             'Id' => 4,
@@ -491,7 +491,7 @@ class AFPointsUsed extends AbstractTag
         ),
         110 => array(
             'Id' => 32,
-            'Label' => 'B4',
+            'Label' => 'H4',
         ),
         111 => array(
             'Id' => 64,
@@ -499,19 +499,19 @@ class AFPointsUsed extends AbstractTag
         ),
         112 => array(
             'Id' => 128,
-            'Label' => 'B6',
+            'Label' => 'H6',
         ),
         113 => array(
             'Id' => 256,
-            'Label' => 'H7',
+            'Label' => 'B7',
         ),
         114 => array(
             'Id' => 512,
-            'Label' => 'H8',
+            'Label' => 'B8',
         ),
         115 => array(
             'Id' => 1024,
-            'Label' => 'B9',
+            'Label' => 'H9',
         ),
         116 => array(
             'Id' => 2048,
@@ -519,15 +519,15 @@ class AFPointsUsed extends AbstractTag
         ),
         117 => array(
             'Id' => 4096,
-            'Label' => 'I5',
+            'Label' => 'C1',
         ),
         118 => array(
             'Id' => 8192,
-            'Label' => 'C2',
+            'Label' => 'I6',
         ),
         119 => array(
             'Id' => 16384,
-            'Label' => 'I7',
+            'Label' => 'C3',
         ),
         120 => array(
             'Id' => 32768,
