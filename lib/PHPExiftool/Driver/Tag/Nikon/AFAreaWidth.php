@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AFAreaWidth extends AbstractTag
 {
 
-    protected $Id = 24;
+    protected $Id = 'mixed';
 
     protected $Name = 'AFAreaWidth';
 

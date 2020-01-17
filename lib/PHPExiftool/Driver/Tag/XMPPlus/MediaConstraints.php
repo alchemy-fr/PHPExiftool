@@ -24,7 +24,7 @@ class MediaConstraints extends AbstractTag
 
     protected $Name = 'MediaConstraints';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class BatteryVoltage extends AbstractTag
 {
 
-    protected $Id = 42;
+    protected $Id = 'mixed';
 
     protected $Name = 'BatteryVoltage';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 

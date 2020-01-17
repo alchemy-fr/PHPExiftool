@@ -47,16 +47,16 @@ class Rotation extends AbstractTag
             'Id' => 0,
             'Label' => 'Horizontal (normal)',
         ),
-        32 => array(
-            'Id' => 32,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Rotate 180',
         ),
-        64 => array(
-            'Id' => 64,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Rotate 90 CW',
         ),
-        96 => array(
-            'Id' => 96,
+        3 => array(
+            'Id' => 3,
             'Label' => 'Rotate 270 CW',
         ),
     );

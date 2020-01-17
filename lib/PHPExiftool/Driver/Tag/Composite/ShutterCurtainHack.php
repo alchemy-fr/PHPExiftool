@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ShutterCurtainHack extends AbstractTag
 {
 
-    protected $Id = 'ShutterCurtainHack';
+    protected $Id = 'Canon::ShutterCurtainHack';
 
     protected $Name = 'ShutterCurtainHack';
 

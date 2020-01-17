@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class VerticalFuncButton extends AbstractTag
 {
 
-    protected $Id = '42.2';
+    protected $Id = 'mixed';
 
     protected $Name = 'VerticalFuncButton';
 
-    protected $FullName = 'NikonCustom::SettingsD4';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'NikonCustom';
 
@@ -75,49 +75,205 @@ class VerticalFuncButton extends AbstractTag
             'Id' => 7,
             'Label' => 'AF Lock Only',
         ),
-        10 => array(
+        8 => array(
             'Id' => 10,
             'Label' => 'Bracketing Burst',
         ),
-        11 => array(
+        9 => array(
             'Id' => 11,
             'Label' => 'Matrix Metering',
         ),
-        12 => array(
+        10 => array(
             'Id' => 12,
             'Label' => 'Center-weighted Metering',
         ),
-        13 => array(
+        11 => array(
             'Id' => 13,
             'Label' => 'Spot Metering',
         ),
-        14 => array(
+        12 => array(
             'Id' => 14,
             'Label' => 'Playback',
         ),
-        15 => array(
+        13 => array(
             'Id' => 15,
             'Label' => 'My Menu Top Item',
         ),
-        16 => array(
+        14 => array(
             'Id' => 16,
             'Label' => '+NEF(RAW)',
         ),
-        17 => array(
+        15 => array(
             'Id' => 17,
             'Label' => 'Virtual Horizon',
         ),
-        18 => array(
+        16 => array(
             'Id' => 18,
             'Label' => 'My Menu',
         ),
-        20 => array(
+        17 => array(
             'Id' => 20,
             'Label' => 'Grid Display',
         ),
-        26 => array(
+        18 => array(
             'Id' => 26,
             'Label' => 'Flash Disable/Enable',
+        ),
+        19 => array(
+            'Id' => 0,
+            'Label' => 'None',
+        ),
+        20 => array(
+            'Id' => 1,
+            'Label' => 'Preview',
+        ),
+        21 => array(
+            'Id' => 2,
+            'Label' => 'FV Lock',
+        ),
+        22 => array(
+            'Id' => 3,
+            'Label' => 'AE/AF Lock',
+        ),
+        23 => array(
+            'Id' => 4,
+            'Label' => 'AE Lock Only',
+        ),
+        24 => array(
+            'Id' => 5,
+            'Label' => 'AE Lock (reset on release)',
+        ),
+        25 => array(
+            'Id' => 6,
+            'Label' => 'AE Lock (hold)',
+        ),
+        26 => array(
+            'Id' => 7,
+            'Label' => 'AF Lock Only',
+        ),
+        27 => array(
+            'Id' => 8,
+            'Label' => 'AF-On',
+        ),
+        28 => array(
+            'Id' => 10,
+            'Label' => 'Bracketing Burst',
+        ),
+        29 => array(
+            'Id' => 11,
+            'Label' => 'Matrix Metering',
+        ),
+        30 => array(
+            'Id' => 12,
+            'Label' => 'Center-weighted Metering',
+        ),
+        31 => array(
+            'Id' => 13,
+            'Label' => 'Spot Metering',
+        ),
+        32 => array(
+            'Id' => 14,
+            'Label' => 'Playback',
+        ),
+        33 => array(
+            'Id' => 15,
+            'Label' => 'My Menu Top Item',
+        ),
+        34 => array(
+            'Id' => 16,
+            'Label' => '+NEF(RAW)',
+        ),
+        35 => array(
+            'Id' => 17,
+            'Label' => 'Virtual Horizon',
+        ),
+        36 => array(
+            'Id' => 18,
+            'Label' => 'Reset Focus Point',
+        ),
+        37 => array(
+            'Id' => 19,
+            'Label' => 'Grid Display',
+        ),
+        38 => array(
+            'Id' => 20,
+            'Label' => 'My Menu',
+        ),
+        39 => array(
+            'Id' => 22,
+            'Label' => 'Remote Release Only',
+        ),
+        40 => array(
+            'Id' => 23,
+            'Label' => 'Preset Focus Point',
+        ),
+        41 => array(
+            'Id' => 26,
+            'Label' => 'Flash Disable/Enable',
+        ),
+        42 => array(
+            'Id' => 27,
+            'Label' => 'Highlight-weighted Metering',
+        ),
+        43 => array(
+            'Id' => 36,
+            'Label' => 'AF-Area Mode (Single)',
+        ),
+        44 => array(
+            'Id' => 37,
+            'Label' => 'AF-Area Mode (Dynamic Area 25 Points)',
+        ),
+        45 => array(
+            'Id' => 38,
+            'Label' => 'AF-Area Mode (Dynamic Area 72 Points)',
+        ),
+        46 => array(
+            'Id' => 39,
+            'Label' => 'AF-Area Mode (Dynamic Area 152 Points)',
+        ),
+        47 => array(
+            'Id' => 40,
+            'Label' => 'AF-Area Mode (Group Area AF)',
+        ),
+        48 => array(
+            'Id' => 41,
+            'Label' => 'AF-Area Mode (Auto Area AF)',
+        ),
+        49 => array(
+            'Id' => 42,
+            'Label' => 'AF-Area Mode + AF-On (Single)',
+        ),
+        50 => array(
+            'Id' => 43,
+            'Label' => 'AF-Area Mode + AF-On (Dynamic Area 25 Points)',
+        ),
+        51 => array(
+            'Id' => 44,
+            'Label' => 'AF-Area Mode + AF-On (Dynamic Area 72 Points)',
+        ),
+        52 => array(
+            'Id' => 45,
+            'Label' => 'AF-Area Mode + AF-On (Dynamic Area 152 Points)',
+        ),
+        53 => array(
+            'Id' => 46,
+            'Label' => 'AF-Area Mode + AF-On (Group Area AF)',
+        ),
+        54 => array(
+            'Id' => 47,
+            'Label' => 'AF-Area Mode + AF-On (Auto Area AF)',
+        ),
+        55 => array(
+            'Id' => 49,
+            'Label' => 'Sync Release (Master Only)',
+        ),
+        56 => array(
+            'Id' => 50,
+            'Label' => 'Sync Release (Remote Only)',
+        ),
+        57 => array(
+            'Id' => 54,
+            'Label' => 'Highlight Active Focus Point',
         ),
     );
 

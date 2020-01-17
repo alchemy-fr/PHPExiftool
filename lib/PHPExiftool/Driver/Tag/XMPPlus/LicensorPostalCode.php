@@ -24,7 +24,7 @@ class LicensorPostalCode extends AbstractTag
 
     protected $Name = 'LicensorPostalCode';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

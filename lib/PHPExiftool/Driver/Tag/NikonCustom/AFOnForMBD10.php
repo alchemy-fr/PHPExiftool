@@ -47,28 +47,28 @@ class AFOnForMBD10 extends AbstractTag
             'Id' => 0,
             'Label' => 'AF-On',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => 'AE/AF Lock',
         ),
-        32 => array(
-            'Id' => 32,
+        2 => array(
+            'Id' => 2,
             'Label' => 'AE Lock Only',
         ),
-        48 => array(
-            'Id' => 48,
+        3 => array(
+            'Id' => 3,
             'Label' => 'AE Lock (reset on release)',
         ),
-        64 => array(
-            'Id' => 64,
+        4 => array(
+            'Id' => 4,
             'Label' => 'AE Lock (hold)',
         ),
-        80 => array(
-            'Id' => 80,
+        5 => array(
+            'Id' => 5,
             'Label' => 'AF Lock Only',
         ),
-        96 => array(
-            'Id' => 96,
+        6 => array(
+            'Id' => 6,
             'Label' => 'Same as FUNC Button',
         ),
     );

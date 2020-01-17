@@ -45,16 +45,16 @@ class CompressionClass extends AbstractTag
             'Id' => 0,
             'Label' => 'Class 1 - 35mm film; Pictoral hard copy',
         ),
-        32 => array(
-            'Id' => 32,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Class 2 - Large format film',
         ),
-        64 => array(
-            'Id' => 64,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Class 3 - Text and graphics, high resolution',
         ),
-        96 => array(
-            'Id' => 96,
+        3 => array(
+            'Id' => 3,
             'Label' => 'Class 4 - Text and graphics, high dynamic range',
         ),
     );

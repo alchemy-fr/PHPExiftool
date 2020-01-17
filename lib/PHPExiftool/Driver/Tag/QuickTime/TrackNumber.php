@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class TrackNumber extends AbstractTag
 {
 
-    protected $Id = 'mixed';
+    protected $Id = 'TRACKNUMBER';
 
     protected $Name = 'TrackNumber';
 
-    protected $FullName = 'mixed';
+    protected $FullName = 'QuickTime::iTunesInfo';
 
     protected $GroupName = 'QuickTime';
 
@@ -34,7 +34,7 @@ class TrackNumber extends AbstractTag
 
     protected $g2 = 'Audio';
 
-    protected $Type = 'mixed';
+    protected $Type = '?';
 
     protected $Writable = false;
 

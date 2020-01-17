@@ -57,11 +57,11 @@ class Contrast extends AbstractTag
         ),
         3 => array(
             'Id' => 3,
-            'Label' => '-1 (med low)',
+            'Label' => '-1 (medium low)',
         ),
         4 => array(
             'Id' => 4,
-            'Label' => '+1 (med high)',
+            'Label' => '+1 (medium high)',
         ),
         5 => array(
             'Id' => 5,

@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class AmbientTemperatureFahrenheit extends AbstractTag
 {
 
-    protected $Id = 19;
+    protected $Id = 'mixed';
 
     protected $Name = 'AmbientTemperatureFahrenheit';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 

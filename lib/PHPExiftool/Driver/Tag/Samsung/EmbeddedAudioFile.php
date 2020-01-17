@@ -40,6 +40,8 @@ class EmbeddedAudioFile extends AbstractTag
 
     protected $Description = 'Embedded Audio File';
 
+    protected $local_g2 = 'Audio';
+
     protected $flag_Binary = true;
 
     protected $flag_Permanent = true;

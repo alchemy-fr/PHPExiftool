@@ -24,7 +24,7 @@ class SerialNumber extends AbstractTag
 
     protected $Name = 'SerialNumber';
 
-    protected $FullName = 'Nikon::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 
@@ -34,9 +34,9 @@ class SerialNumber extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'string';
+    protected $Type = 'mixed';
 
-    protected $Writable = true;
+    protected $Writable = false;
 
     protected $Description = 'Serial Number';
 

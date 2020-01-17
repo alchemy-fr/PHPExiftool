@@ -48,39 +48,39 @@ class PlaybackMenusTime extends AbstractTag
             'Label' => '8 s',
         ),
         1 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '12 s',
         ),
         2 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         3 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         4 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '10 min',
         ),
         5 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '8 s',
         ),
         6 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '20 s',
         ),
         7 => array(
-            'Id' => 160,
+            'Id' => 5,
             'Label' => '1 min',
         ),
         8 => array(
-            'Id' => 192,
+            'Id' => 6,
             'Label' => '5 min',
         ),
         9 => array(
-            'Id' => 224,
+            'Id' => 7,
             'Label' => '10 min',
         ),
     );

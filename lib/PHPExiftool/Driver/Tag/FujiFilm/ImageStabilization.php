@@ -57,6 +57,10 @@ class ImageStabilization extends AbstractTag
             'Id' => 2,
             'Label' => 'Sensor-shift',
         ),
+        3 => array(
+            'Id' => 3,
+            'Label' => 'OIS Lens',
+        ),
         512 => array(
             'Id' => 512,
             'Label' => 'Digital',

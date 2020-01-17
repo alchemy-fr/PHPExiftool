@@ -48,15 +48,7 @@ class RearDisplay extends AbstractTag
             'Label' => 'ISO',
         ),
         1 => array(
-            'Id' => 128,
-            'Label' => 'Exposures Remaining',
-        ),
-        2 => array(
-            'Id' => 0,
-            'Label' => 'ISO',
-        ),
-        3 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Exposures Remaining',
         ),
     );

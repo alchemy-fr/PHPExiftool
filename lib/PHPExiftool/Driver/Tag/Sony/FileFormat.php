@@ -81,6 +81,14 @@ class FileFormat extends AbstractTag
             'Id' => '3 3 2 0',
             'Label' => 'ARW 2.3.2',
         ),
+        '3 3 3 0' => array(
+            'Id' => '3 3 3 0',
+            'Label' => 'ARW 2.3.3',
+        ),
+        '3 3 5 0' => array(
+            'Id' => '3 3 5 0',
+            'Label' => 'ARW 2.3.5',
+        ),
     );
 
 }

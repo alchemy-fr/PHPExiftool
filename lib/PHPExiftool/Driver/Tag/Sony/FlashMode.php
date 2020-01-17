@@ -136,104 +136,104 @@ class FlashMode extends AbstractTag
             'Label' => 'Rear Sync',
         ),
         23 => array(
-            'Id' => 0,
-            'Label' => 'Autoflash',
+            'Id' => 6,
+            'Label' => 'Wireless',
         ),
         24 => array(
-            'Id' => 1,
-            'Label' => 'Fill-flash',
+            'Id' => 0,
+            'Label' => 'Autoflash',
         ),
         25 => array(
-            'Id' => 2,
-            'Label' => 'Flash Off',
+            'Id' => 1,
+            'Label' => 'Fill-flash',
         ),
         26 => array(
-            'Id' => 3,
-            'Label' => 'Slow Sync',
+            'Id' => 2,
+            'Label' => 'Flash Off',
         ),
         27 => array(
-            'Id' => 4,
-            'Label' => 'Rear Sync',
+            'Id' => 3,
+            'Label' => 'Slow Sync',
         ),
         28 => array(
-            'Id' => 0,
-            'Label' => 'Autoflash',
+            'Id' => 4,
+            'Label' => 'Rear Sync',
         ),
         29 => array(
-            'Id' => 1,
-            'Label' => 'Fill-flash',
+            'Id' => 6,
+            'Label' => 'Wireless',
         ),
         30 => array(
-            'Id' => 2,
-            'Label' => 'Flash Off',
+            'Id' => 0,
+            'Label' => 'Autoflash',
         ),
         31 => array(
-            'Id' => 3,
-            'Label' => 'Slow Sync',
+            'Id' => 1,
+            'Label' => 'Fill-flash',
         ),
         32 => array(
-            'Id' => 4,
-            'Label' => 'Rear Sync',
+            'Id' => 2,
+            'Label' => 'Flash Off',
         ),
         33 => array(
-            'Id' => 0,
-            'Label' => 'Autoflash',
+            'Id' => 3,
+            'Label' => 'Slow Sync',
         ),
         34 => array(
-            'Id' => 1,
-            'Label' => 'Fill-flash',
+            'Id' => 4,
+            'Label' => 'Rear Sync',
         ),
         35 => array(
-            'Id' => 2,
-            'Label' => 'Flash Off',
+            'Id' => 6,
+            'Label' => 'Wireless',
         ),
         36 => array(
-            'Id' => 3,
-            'Label' => 'Slow Sync',
+            'Id' => 0,
+            'Label' => 'Autoflash',
         ),
         37 => array(
-            'Id' => 4,
-            'Label' => 'Rear Sync',
+            'Id' => 1,
+            'Label' => 'Fill-flash',
         ),
         38 => array(
-            'Id' => 0,
-            'Label' => 'Autoflash',
+            'Id' => 2,
+            'Label' => 'Flash Off',
         ),
         39 => array(
-            'Id' => 1,
-            'Label' => 'Fill-flash',
-        ),
-        40 => array(
-            'Id' => 2,
-            'Label' => 'Flash Off',
-        ),
-        41 => array(
             'Id' => 3,
             'Label' => 'Slow Sync',
         ),
-        42 => array(
+        40 => array(
             'Id' => 4,
             'Label' => 'Rear Sync',
         ),
-        43 => array(
+        41 => array(
+            'Id' => 6,
+            'Label' => 'Wireless',
+        ),
+        42 => array(
             'Id' => 0,
             'Label' => 'Autoflash',
         ),
-        44 => array(
+        43 => array(
             'Id' => 1,
             'Label' => 'Fill-flash',
         ),
-        45 => array(
+        44 => array(
             'Id' => 2,
             'Label' => 'Flash Off',
         ),
-        46 => array(
+        45 => array(
             'Id' => 3,
             'Label' => 'Slow Sync',
         ),
-        47 => array(
+        46 => array(
             'Id' => 4,
             'Label' => 'Rear Sync',
+        ),
+        47 => array(
+            'Id' => 6,
+            'Label' => 'Wireless',
         ),
         48 => array(
             'Id' => 0,
@@ -256,24 +256,80 @@ class FlashMode extends AbstractTag
             'Label' => 'Rear Sync',
         ),
         53 => array(
+            'Id' => 6,
+            'Label' => 'Wireless',
+        ),
+        54 => array(
             'Id' => 0,
             'Label' => 'Autoflash',
         ),
-        54 => array(
+        55 => array(
             'Id' => 1,
             'Label' => 'Fill-flash',
         ),
-        55 => array(
+        56 => array(
             'Id' => 2,
             'Label' => 'Flash Off',
         ),
-        56 => array(
+        57 => array(
             'Id' => 3,
             'Label' => 'Slow Sync',
         ),
-        57 => array(
+        58 => array(
             'Id' => 4,
             'Label' => 'Rear Sync',
+        ),
+        59 => array(
+            'Id' => 6,
+            'Label' => 'Wireless',
+        ),
+        60 => array(
+            'Id' => 0,
+            'Label' => 'Autoflash',
+        ),
+        61 => array(
+            'Id' => 1,
+            'Label' => 'Fill-flash',
+        ),
+        62 => array(
+            'Id' => 2,
+            'Label' => 'Flash Off',
+        ),
+        63 => array(
+            'Id' => 3,
+            'Label' => 'Slow Sync',
+        ),
+        64 => array(
+            'Id' => 4,
+            'Label' => 'Rear Sync',
+        ),
+        65 => array(
+            'Id' => 6,
+            'Label' => 'Wireless',
+        ),
+        66 => array(
+            'Id' => 0,
+            'Label' => 'Autoflash',
+        ),
+        67 => array(
+            'Id' => 1,
+            'Label' => 'Fill-flash',
+        ),
+        68 => array(
+            'Id' => 2,
+            'Label' => 'Flash Off',
+        ),
+        69 => array(
+            'Id' => 3,
+            'Label' => 'Slow Sync',
+        ),
+        70 => array(
+            'Id' => 4,
+            'Label' => 'Rear Sync',
+        ),
+        71 => array(
+            'Id' => 6,
+            'Label' => 'Wireless',
         ),
     );
 

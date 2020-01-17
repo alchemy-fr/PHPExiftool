@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class FirmwareVersion extends AbstractTag
 {
 
-    protected $Id = 1;
+    protected $Id = 'mixed';
 
     protected $Name = 'FirmwareVersion';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 
@@ -34,7 +34,7 @@ class FirmwareVersion extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'int16u';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 
@@ -42,6 +42,6 @@ class FirmwareVersion extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $MaxLength = 3;
+    protected $MaxLength = 'mixed';
 
 }

@@ -24,7 +24,7 @@ class ImageSupplier extends AbstractTag
 
     protected $Name = 'ImageSupplier';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

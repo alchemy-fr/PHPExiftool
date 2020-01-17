@@ -99,7 +99,7 @@ class LensType extends AbstractTag
         ),
         13 => array(
             'Id' => 13,
-            'Label' => 'Saumsun NX 16-50mm F2-2.8 S ED OIS',
+            'Label' => 'Samsung NX 16-50mm F2-2.8 S ED OIS',
         ),
         14 => array(
             'Id' => 14,

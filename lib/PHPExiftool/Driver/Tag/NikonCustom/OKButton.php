@@ -48,15 +48,15 @@ class OKButton extends AbstractTag
             'Label' => 'Off',
         ),
         1 => array(
-            'Id' => 8,
+            'Id' => 1,
             'Label' => 'Select Center Focus Point',
         ),
         2 => array(
-            'Id' => 16,
+            'Id' => 2,
             'Label' => 'Highlight Active Focus Point',
         ),
         3 => array(
-            'Id' => 24,
+            'Id' => 3,
             'Label' => 'Not Used',
         ),
         4 => array(
@@ -64,15 +64,15 @@ class OKButton extends AbstractTag
             'Label' => 'Not Used',
         ),
         5 => array(
-            'Id' => 8,
+            'Id' => 1,
             'Label' => 'Select Center Focus Point',
         ),
         6 => array(
-            'Id' => 16,
+            'Id' => 2,
             'Label' => 'Highlight Active Focus Point',
         ),
         7 => array(
-            'Id' => 24,
+            'Id' => 3,
             'Label' => 'Not Used',
         ),
     );

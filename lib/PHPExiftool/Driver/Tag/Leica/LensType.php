@@ -71,6 +71,14 @@ class LensType extends AbstractTag
             'Id' => 9,
             'Label' => 'Elmarit-M 135mm f/2.8 (I/II)',
         ),
+        11 => array(
+            'Id' => 11,
+            'Label' => 'Summaron-M 28mm f/5.6',
+        ),
+        12 => array(
+            'Id' => 12,
+            'Label' => 'Thambar-M 90mm f/2.2',
+        ),
         16 => array(
             'Id' => 16,
             'Label' => 'Tri-Elmar-M 16-18-21mm f/4 ASPH.',
@@ -147,6 +155,10 @@ class LensType extends AbstractTag
             'Id' => 40,
             'Label' => 'Macro-Adapter M',
         ),
+        41 => array(
+            'Id' => 41,
+            'Label' => 'Apo-Summicron-M 50mm f/2 ASPH.',
+        ),
         42 => array(
             'Id' => 42,
             'Label' => 'Tri-Elmar-M 28-35-50mm f/4 ASPH.',
@@ -189,7 +201,15 @@ class LensType extends AbstractTag
         ),
         52 => array(
             'Id' => 52,
-            'Label' => 'Super-Elmar-M 18mm f/3.8 ASPH.',
+            'Label' => 'Apo-Telyt-M 18mm f/3.8 ASPH.',
+        ),
+        53 => array(
+            'Id' => 53,
+            'Label' => 'Apo-Telyt-M 135mm f/3.4',
+        ),
+        58 => array(
+            'Id' => 58,
+            'Label' => 'Noctilux-M 75mm f/1.25 ASPH.',
         ),
         '0 0' => array(
             'Id' => '0 0',
@@ -229,7 +249,7 @@ class LensType extends AbstractTag
         ),
         '41 3' => array(
             'Id' => '41 3',
-            'Label' => 'Apo-Summicron-M 50mm f/2 Asph',
+            'Label' => 'Apo-Summicron-M 50mm f/2 ASPH.',
         ),
         '42 1' => array(
             'Id' => '42 1',

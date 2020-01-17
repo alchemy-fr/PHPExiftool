@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class LightValue extends AbstractTag
 {
 
-    protected $Id = 'LightValue';
+    protected $Id = 'Exif::LightValue';
 
     protected $Name = 'LightValue';
 

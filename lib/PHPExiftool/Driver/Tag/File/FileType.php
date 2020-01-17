@@ -40,4 +40,6 @@ class FileType extends AbstractTag
 
     protected $Description = 'File Type';
 
+    protected $local_g2 = 'Other';
+
 }

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AvgBitrate extends AbstractTag
 {
 
-    protected $Id = 'AvgBitrate';
+    protected $Id = 'QuickTime::AvgBitrate';
 
     protected $Name = 'AvgBitrate';
 

@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class PreviewImage extends AbstractTag
 {
 
-    protected $Id = 'RTHU';
+    protected $Id = 'mixed';
 
     protected $Name = 'PreviewImage';
 
-    protected $FullName = 'QuickTime::UserData';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'QuickTime';
 
@@ -32,14 +32,18 @@ class PreviewImage extends AbstractTag
 
     protected $g1 = 'QuickTime';
 
-    protected $g2 = 'Video';
+    protected $g2 = 'mixed';
 
-    protected $Type = '?';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 
     protected $Description = 'Preview Image';
 
     protected $local_g2 = 'Preview';
+
+    protected $flag_Binary = true;
+
+    protected $Index = 'mixed';
 
 }

@@ -80,54 +80,62 @@ class HighISONoiseReduction extends AbstractTag
             'Label' => 'Low',
         ),
         9 => array(
+            'Id' => 17,
+            'Label' => 'High',
+        ),
+        10 => array(
             'Id' => 19,
             'Label' => 'Auto',
         ),
-        10 => array(
+        11 => array(
             'Id' => 0,
             'Label' => 'Off',
         ),
-        11 => array(
+        12 => array(
             'Id' => 1,
             'Label' => 'Low',
         ),
-        12 => array(
+        13 => array(
             'Id' => 2,
             'Label' => 'Normal',
         ),
-        13 => array(
+        14 => array(
             'Id' => 3,
             'Label' => 'High',
         ),
-        14 => array(
+        15 => array(
             'Id' => 256,
             'Label' => 'Auto',
         ),
-        15 => array(
+        16 => array(
             'Id' => 65535,
             'Label' => 'n/a',
         ),
-        16 => array(
+        17 => array(
             'Id' => 16,
             'Label' => 'Low',
         ),
-        17 => array(
+        18 => array(
+            'Id' => 17,
+            'Label' => 'High',
+        ),
+        19 => array(
             'Id' => 19,
             'Label' => 'Auto',
         ),
-        18 => array(
+        20 => array(
             'Id' => 0,
             'Label' => 'Off',
         ),
-        19 => array(
+        21 => array(
             'Id' => 1,
             'Label' => 'Low',
         ),
-        20 => array(
+        22 => array(
             'Id' => 2,
             'Label' => 'Normal',
         ),
-        21 => array(
+        23 => array(
             'Id' => 3,
             'Label' => 'High',
         ),

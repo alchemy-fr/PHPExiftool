@@ -24,7 +24,7 @@ class ImageFileConstraints extends AbstractTag
 
     protected $Name = 'ImageFileConstraints';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

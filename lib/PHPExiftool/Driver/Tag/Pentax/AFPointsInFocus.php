@@ -129,7 +129,7 @@ class AFPointsInFocus extends AbstractTag
         ),
         21 => array(
             'Id' => 0,
-            'Label' => 'Fixed Center or Multiple',
+            'Label' => '(none)',
         ),
         22 => array(
             'Id' => 1,
@@ -137,151 +137,151 @@ class AFPointsInFocus extends AbstractTag
         ),
         23 => array(
             'Id' => 2,
-            'Label' => 'Top-center',
-        ),
-        24 => array(
-            'Id' => 3,
-            'Label' => 'Top-right',
-        ),
-        25 => array(
-            'Id' => 4,
-            'Label' => 'Left',
-        ),
-        26 => array(
-            'Id' => 5,
-            'Label' => 'Center',
-        ),
-        27 => array(
-            'Id' => 6,
-            'Label' => 'Right',
-        ),
-        28 => array(
-            'Id' => 7,
-            'Label' => 'Bottom-left',
-        ),
-        29 => array(
-            'Id' => 8,
-            'Label' => 'Bottom-center',
-        ),
-        30 => array(
-            'Id' => 9,
-            'Label' => 'Bottom-right',
-        ),
-        31 => array(
-            'Id' => 65535,
-            'Label' => 'None',
-        ),
-        32 => array(
-            'Id' => 0,
-            'Label' => '(none)',
-        ),
-        33 => array(
-            'Id' => 1,
-            'Label' => 'Top-left',
-        ),
-        34 => array(
-            'Id' => 2,
             'Label' => 'Top Near-left',
         ),
-        35 => array(
+        24 => array(
             'Id' => 4,
             'Label' => 'Top',
         ),
-        36 => array(
+        25 => array(
             'Id' => 8,
             'Label' => 'Top Near-right',
         ),
-        37 => array(
+        26 => array(
             'Id' => 16,
             'Label' => 'Top-right',
         ),
-        38 => array(
+        27 => array(
             'Id' => 32,
             'Label' => 'Upper-left',
         ),
-        39 => array(
+        28 => array(
             'Id' => 64,
             'Label' => 'Upper Near-left',
         ),
-        40 => array(
+        29 => array(
             'Id' => 128,
             'Label' => 'Upper-middle',
         ),
-        41 => array(
+        30 => array(
             'Id' => 256,
             'Label' => 'Upper Near-right',
         ),
-        42 => array(
+        31 => array(
             'Id' => 512,
             'Label' => 'Upper-right',
         ),
-        43 => array(
+        32 => array(
             'Id' => 1024,
             'Label' => 'Far Left',
         ),
-        44 => array(
+        33 => array(
             'Id' => 2048,
             'Label' => 'Left',
         ),
-        45 => array(
+        34 => array(
             'Id' => 4096,
             'Label' => 'Near-left',
         ),
-        46 => array(
+        35 => array(
             'Id' => 8192,
             'Label' => 'Center',
         ),
-        47 => array(
+        36 => array(
             'Id' => 16384,
             'Label' => 'Near-right',
         ),
-        48 => array(
+        37 => array(
             'Id' => 32768,
             'Label' => 'Right',
         ),
-        49 => array(
+        38 => array(
             'Id' => 65536,
             'Label' => 'Far Right',
         ),
-        50 => array(
+        39 => array(
             'Id' => 131072,
             'Label' => 'Lower-left',
         ),
-        51 => array(
+        40 => array(
             'Id' => 262144,
             'Label' => 'Lower Near-left',
         ),
-        52 => array(
+        41 => array(
             'Id' => 524288,
             'Label' => 'Lower-middle',
         ),
-        53 => array(
+        42 => array(
             'Id' => 1048576,
             'Label' => 'Lower Near-right',
         ),
-        54 => array(
+        43 => array(
             'Id' => 2097152,
             'Label' => 'Lower-right',
         ),
-        55 => array(
+        44 => array(
             'Id' => 4194304,
             'Label' => 'Bottom-left',
         ),
-        56 => array(
+        45 => array(
             'Id' => 8388608,
             'Label' => 'Bottom Near-left',
         ),
-        57 => array(
+        46 => array(
             'Id' => 16777216,
             'Label' => 'Bottom',
         ),
-        58 => array(
+        47 => array(
             'Id' => 33554432,
             'Label' => 'Bottom Near-right',
         ),
-        59 => array(
+        48 => array(
             'Id' => 67108864,
             'Label' => 'Bottom-right',
+        ),
+        49 => array(
+            'Id' => 0,
+            'Label' => 'Fixed Center or Multiple',
+        ),
+        50 => array(
+            'Id' => 1,
+            'Label' => 'Top-left',
+        ),
+        51 => array(
+            'Id' => 2,
+            'Label' => 'Top-center',
+        ),
+        52 => array(
+            'Id' => 3,
+            'Label' => 'Top-right',
+        ),
+        53 => array(
+            'Id' => 4,
+            'Label' => 'Left',
+        ),
+        54 => array(
+            'Id' => 5,
+            'Label' => 'Center',
+        ),
+        55 => array(
+            'Id' => 6,
+            'Label' => 'Right',
+        ),
+        56 => array(
+            'Id' => 7,
+            'Label' => 'Bottom-left',
+        ),
+        57 => array(
+            'Id' => 8,
+            'Label' => 'Bottom-center',
+        ),
+        58 => array(
+            'Id' => 9,
+            'Label' => 'Bottom-right',
+        ),
+        59 => array(
+            'Id' => 65535,
+            'Label' => 'None',
         ),
         60 => array(
             'Id' => 0,
@@ -332,6 +332,8 @@ class AFPointsInFocus extends AbstractTag
             'Label' => 'Lower-right',
         ),
     );
+
+    protected $MaxLength = 'mixed';
 
     protected $Index = 'mixed';
 

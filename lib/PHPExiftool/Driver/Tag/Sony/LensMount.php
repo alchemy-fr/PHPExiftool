@@ -127,6 +127,30 @@ class LensMount extends AbstractTag
             'Id' => 2,
             'Label' => 'E-mount',
         ),
+        21 => array(
+            'Id' => 0,
+            'Label' => 'Unknown',
+        ),
+        22 => array(
+            'Id' => 1,
+            'Label' => 'A-mount',
+        ),
+        23 => array(
+            'Id' => 2,
+            'Label' => 'E-mount',
+        ),
+        24 => array(
+            'Id' => 0,
+            'Label' => 'Unknown',
+        ),
+        25 => array(
+            'Id' => 1,
+            'Label' => 'A-mount',
+        ),
+        26 => array(
+            'Id' => 2,
+            'Label' => 'E-mount',
+        ),
     );
 
 }

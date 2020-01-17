@@ -48,47 +48,7 @@ class LCDIllumination extends AbstractTag
             'Label' => 'Off',
         ),
         1 => array(
-            'Id' => 8,
-            'Label' => 'On',
-        ),
-        2 => array(
-            'Id' => 0,
-            'Label' => 'Off',
-        ),
-        3 => array(
-            'Id' => 32,
-            'Label' => 'On',
-        ),
-        4 => array(
-            'Id' => 0,
-            'Label' => 'Off',
-        ),
-        5 => array(
-            'Id' => 8,
-            'Label' => 'On',
-        ),
-        6 => array(
-            'Id' => 0,
-            'Label' => 'Off',
-        ),
-        7 => array(
-            'Id' => 32,
-            'Label' => 'On',
-        ),
-        8 => array(
-            'Id' => 0,
-            'Label' => 'Off',
-        ),
-        9 => array(
-            'Id' => 32,
-            'Label' => 'On',
-        ),
-        10 => array(
-            'Id' => 0,
-            'Label' => 'Off',
-        ),
-        11 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

@@ -34,7 +34,7 @@ class PixelAspectRatio extends AbstractTag
 
     protected $g2 = 'mixed';
 
-    protected $Type = 'int16u';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 

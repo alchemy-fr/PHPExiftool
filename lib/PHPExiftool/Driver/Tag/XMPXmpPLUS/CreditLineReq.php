@@ -40,4 +40,6 @@ class CreditLineReq extends AbstractTag
 
     protected $Description = 'Credit Line Req';
 
+    protected $flag_Avoid = true;
+
 }

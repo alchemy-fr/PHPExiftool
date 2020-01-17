@@ -32,7 +32,7 @@ class HDRSmoothing extends AbstractTag
 
     protected $g1 = 'Nikon';
 
-    protected $g2 = 'Location';
+    protected $g2 = 'Image';
 
     protected $Type = 'int8u';
 

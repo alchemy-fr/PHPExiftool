@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class BlackLevel extends AbstractTag
 {
 
-    protected $Id = 61;
+    protected $Id = 'mixed';
 
     protected $Name = 'BlackLevel';
 
-    protected $FullName = 'Nikon::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 
@@ -42,6 +42,6 @@ class BlackLevel extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $MaxLength = 4;
+    protected $MaxLength = 'mixed';
 
 }

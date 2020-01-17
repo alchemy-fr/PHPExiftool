@@ -44,15 +44,15 @@ class AutoISOMax extends AbstractTag
 
     protected $Values = array(
         0 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 400,
         ),
         1 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 800,
         ),
         2 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 1600,
         ),
         3 => array(
@@ -60,15 +60,15 @@ class AutoISOMax extends AbstractTag
             'Label' => 200,
         ),
         4 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 400,
         ),
         5 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 800,
         ),
         6 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 1600,
         ),
     );

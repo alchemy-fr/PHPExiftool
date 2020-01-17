@@ -171,6 +171,10 @@ class ClassesBuilder extends Command
 
             $classname = self::generateClassname($type);
 
+            if ($classname == '') {
+                continue;
+            }
+
             $properties = array(
                 'ExiftoolName' => $data,
                 'PHPMap'       => $this->getTypeMap($type),
@@ -241,6 +245,8 @@ class ClassesBuilder extends Command
             case 'binary':
 
             # Source unknown ...
+            case 'var_ue7':
+            case 'struct':
             case 'var_undef':
             case '?':
             case 'null':
@@ -254,6 +260,8 @@ class ClassesBuilder extends Command
             case 'pstring':
             case 'var_string':
             case 'var_pstr32':
+            case 'var_ustr32':
+            case 'unicode':
 
             # Apple data structures in PICT images
             case 'Arc':
@@ -299,6 +307,10 @@ class ClassesBuilder extends Command
     protected function createTagClass($namespace, $classname, array $properties)
     {
         if ($classname == 'Reserved') {
+            return;
+        }
+
+        if ($namespace == '*') {
             return;
         }
 
@@ -506,6 +518,7 @@ class ClassesBuilder extends Command
         'do',
         'else',
         'elseif',
+        'empty',
         'enddeclare',
         'endfor',
         'endforeach',
@@ -547,6 +560,7 @@ class ClassesBuilder extends Command
         'try',
         'use',
         'var',
+        'void',
         'while',
         'xor',
         'yield',

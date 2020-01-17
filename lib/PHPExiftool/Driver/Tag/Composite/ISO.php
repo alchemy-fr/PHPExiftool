@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ISO extends AbstractTag
 {
 
-    protected $Id = 'ISO';
+    protected $Id = 'Canon::ISO';
 
     protected $Name = 'ISO';
 

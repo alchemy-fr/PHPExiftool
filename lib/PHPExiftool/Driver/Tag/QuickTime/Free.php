@@ -24,7 +24,7 @@ class Free extends AbstractTag
 
     protected $Name = 'Free';
 
-    protected $FullName = 'mixed';
+    protected $FullName = 'QuickTime::Main';
 
     protected $GroupName = 'QuickTime';
 
@@ -42,6 +42,6 @@ class Free extends AbstractTag
 
     protected $flag_Binary = true;
 
-    protected $Index = 1;
+    protected $Index = 2;
 
 }

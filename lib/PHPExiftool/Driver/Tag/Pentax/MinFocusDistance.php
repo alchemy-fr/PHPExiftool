@@ -47,84 +47,84 @@ class MinFocusDistance extends AbstractTag
             'Id' => 0,
             'Label' => '0.13-0.19 m',
         ),
+        1 => array(
+            'Id' => 1,
+            'Label' => '0.20-0.24 m',
+        ),
+        2 => array(
+            'Id' => 2,
+            'Label' => '0.25-0.28 m',
+        ),
+        3 => array(
+            'Id' => 3,
+            'Label' => '0.28-0.30 m',
+        ),
+        4 => array(
+            'Id' => 4,
+            'Label' => '0.35-0.38 m',
+        ),
+        5 => array(
+            'Id' => 5,
+            'Label' => '0.40-0.45 m',
+        ),
+        6 => array(
+            'Id' => 6,
+            'Label' => '0.49-0.50 m',
+        ),
+        7 => array(
+            'Id' => 7,
+            'Label' => '0.6 m',
+        ),
         8 => array(
             'Id' => 8,
-            'Label' => '0.20-0.24 m',
+            'Label' => '0.7 m',
+        ),
+        9 => array(
+            'Id' => 9,
+            'Label' => '0.8-0.9 m',
+        ),
+        10 => array(
+            'Id' => 10,
+            'Label' => '1.0 m',
+        ),
+        11 => array(
+            'Id' => 11,
+            'Label' => '1.1-1.2 m',
+        ),
+        12 => array(
+            'Id' => 12,
+            'Label' => '1.4-1.5 m',
+        ),
+        13 => array(
+            'Id' => 13,
+            'Label' => '1.5 m',
+        ),
+        14 => array(
+            'Id' => 14,
+            'Label' => '2.0 m',
+        ),
+        15 => array(
+            'Id' => 15,
+            'Label' => '2.0-2.1 m',
         ),
         16 => array(
             'Id' => 16,
-            'Label' => '0.25-0.28 m',
-        ),
-        24 => array(
-            'Id' => 24,
-            'Label' => '0.28-0.30 m',
-        ),
-        32 => array(
-            'Id' => 32,
-            'Label' => '0.35-0.38 m',
-        ),
-        40 => array(
-            'Id' => 40,
-            'Label' => '0.40-0.45 m',
-        ),
-        48 => array(
-            'Id' => 48,
-            'Label' => '0.49-0.50 m',
-        ),
-        56 => array(
-            'Id' => 56,
-            'Label' => '0.6 m',
-        ),
-        64 => array(
-            'Id' => 64,
-            'Label' => '0.7 m',
-        ),
-        72 => array(
-            'Id' => 72,
-            'Label' => '0.8-0.9 m',
-        ),
-        80 => array(
-            'Id' => 80,
-            'Label' => '1.0 m',
-        ),
-        88 => array(
-            'Id' => 88,
-            'Label' => '1.1-1.2 m',
-        ),
-        96 => array(
-            'Id' => 96,
-            'Label' => '1.4-1.5 m',
-        ),
-        104 => array(
-            'Id' => 104,
-            'Label' => '1.5 m',
-        ),
-        112 => array(
-            'Id' => 112,
-            'Label' => '2.0 m',
-        ),
-        120 => array(
-            'Id' => 120,
-            'Label' => '2.0-2.1 m',
-        ),
-        128 => array(
-            'Id' => 128,
             'Label' => '2.1 m',
         ),
-        136 => array(
-            'Id' => 136,
+        17 => array(
+            'Id' => 17,
             'Label' => '2.2-2.9 m',
         ),
-        144 => array(
-            'Id' => 144,
+        18 => array(
+            'Id' => 18,
             'Label' => '3.0 m',
         ),
-        152 => array(
-            'Id' => 152,
+        19 => array(
+            'Id' => 19,
             'Label' => '4-5 m',
         ),
-        160 => array(
-            'Id' => 160,
+        20 => array(
+            'Id' => 20,
             'Label' => '5.6 m',
         ),
     );

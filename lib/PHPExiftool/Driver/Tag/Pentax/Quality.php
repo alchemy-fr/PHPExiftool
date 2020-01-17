@@ -72,18 +72,22 @@ class Quality extends AbstractTag
             'Label' => 'RAW (pixel shift enabled)',
         ),
         7 => array(
+            'Id' => 8,
+            'Label' => 'Dynamic Pixel Shift',
+        ),
+        8 => array(
             'Id' => 65535,
             'Label' => 'n/a',
         ),
-        8 => array(
+        9 => array(
             'Id' => 0,
             'Label' => 'Good',
         ),
-        9 => array(
+        10 => array(
             'Id' => 1,
             'Label' => 'Better',
         ),
-        10 => array(
+        11 => array(
             'Id' => 2,
             'Label' => 'Best',
         ),

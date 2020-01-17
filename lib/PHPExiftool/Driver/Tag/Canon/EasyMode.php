@@ -295,6 +295,22 @@ class EasyMode extends AbstractTag
             'Id' => 62,
             'Label' => 'Soft Focus',
         ),
+        68 => array(
+            'Id' => 68,
+            'Label' => 'Food',
+        ),
+        84 => array(
+            'Id' => 84,
+            'Label' => 'HDR Art Standard',
+        ),
+        85 => array(
+            'Id' => 85,
+            'Label' => 'HDR Art Vivid',
+        ),
+        93 => array(
+            'Id' => 93,
+            'Label' => 'HDR Art Bold',
+        ),
         257 => array(
             'Id' => 257,
             'Label' => 'Spotlight',

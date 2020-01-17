@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class Copyright extends AbstractTag
 {
 
-    protected $Id = 'mixed';
+    protected $Id = 'cprt';
 
     protected $Name = 'Copyright';
 
-    protected $FullName = 'mixed';
+    protected $FullName = 'QuickTime::Pittasoft';
 
     protected $GroupName = 'QuickTime';
 
@@ -32,14 +32,12 @@ class Copyright extends AbstractTag
 
     protected $g1 = 'QuickTime';
 
-    protected $g2 = 'mixed';
+    protected $g2 = 'Other';
 
     protected $Type = '?';
 
     protected $Writable = false;
 
     protected $Description = 'Copyright';
-
-    protected $local_g2 = 'Author';
 
 }

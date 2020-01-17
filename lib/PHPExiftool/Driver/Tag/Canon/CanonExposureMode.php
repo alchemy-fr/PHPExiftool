@@ -75,6 +75,10 @@ class CanonExposureMode extends AbstractTag
             'Id' => 7,
             'Label' => 'Bulb',
         ),
+        8 => array(
+            'Id' => 8,
+            'Label' => 'Flexible-priority AE',
+        ),
     );
 
 }

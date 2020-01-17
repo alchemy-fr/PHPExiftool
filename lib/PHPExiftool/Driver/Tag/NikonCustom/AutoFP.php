@@ -48,15 +48,7 @@ class AutoFP extends AbstractTag
             'Label' => 'Off',
         ),
         1 => array(
-            'Id' => 4,
-            'Label' => 'On',
-        ),
-        2 => array(
-            'Id' => 0,
-            'Label' => 'Off',
-        ),
-        3 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ImageReferencePoints extends AbstractTag
 {
 
-    protected $Id = 32952;
+    protected $Id = 32953;
 
     protected $Name = 'ImageReferencePoints';
 

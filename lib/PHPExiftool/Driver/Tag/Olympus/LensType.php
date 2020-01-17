@@ -221,9 +221,29 @@ class LensType extends AbstractTag
             'Id' => '0 25 10',
             'Label' => 'Olympus M.Zuiko Digital ED 8mm F1.8 Fisheye Pro',
         ),
+        '0 26 10' => array(
+            'Id' => '0 26 10',
+            'Label' => 'Olympus M.Zuiko Digital ED 12-100mm F4.0 IS Pro',
+        ),
+        '0 27 10' => array(
+            'Id' => '0 27 10',
+            'Label' => 'Olympus M.Zuiko Digital ED 30mm F3.5 Macro',
+        ),
+        '0 28 10' => array(
+            'Id' => '0 28 10',
+            'Label' => 'Olympus M.Zuiko Digital ED 25mm F1.2 Pro',
+        ),
+        '0 29 10' => array(
+            'Id' => '0 29 10',
+            'Label' => 'Olympus M.Zuiko Digital ED 17mm F1.2 Pro',
+        ),
         '0 30 00' => array(
             'Id' => '0 30 00',
             'Label' => 'Olympus Zuiko Digital ED 50-200mm F2.8-3.5 SWD',
+        ),
+        '0 30 10' => array(
+            'Id' => '0 30 10',
+            'Label' => 'Olympus M.Zuiko Digital ED 45mm F1.2 Pro',
         ),
         '0 31 00' => array(
             'Id' => '0 31 00',
@@ -232,6 +252,10 @@ class LensType extends AbstractTag
         '0 32 00' => array(
             'Id' => '0 32 00',
             'Label' => 'Olympus Zuiko Digital ED 14-35mm F2.0 SWD',
+        ),
+        '0 32 10' => array(
+            'Id' => '0 32 10',
+            'Label' => 'Olympus M.Zuiko Digital ED 12-200mm F3.5-6.3',
         ),
         '0 33 00' => array(
             'Id' => '0 33 00',
@@ -289,9 +313,17 @@ class LensType extends AbstractTag
             'Id' => '1 06 00',
             'Label' => 'Sigma APO 50-500mm F4.0-6.3 EX DG HSM',
         ),
+        '1 06 10' => array(
+            'Id' => '1 06 10',
+            'Label' => 'Sigma 30mm F1.4 DC DN | C',
+        ),
         '1 07 00' => array(
             'Id' => '1 07 00',
             'Label' => 'Sigma Macro 105mm F2.8 EX DG',
+        ),
+        '1 07 10' => array(
+            'Id' => '1 07 10',
+            'Label' => 'Sigma 16mm F1.4 DC DN | C (017)',
         ),
         '1 08 00' => array(
             'Id' => '1 08 00',
@@ -441,6 +473,10 @@ class LensType extends AbstractTag
             'Id' => '2 22 10',
             'Label' => 'Leica DG Summilux 15mm F1.7 Asph.',
         ),
+        '2 23 10' => array(
+            'Id' => '2 23 10',
+            'Label' => 'Lumix G Vario 35-100mm F4.0-5.6 Asph. Mega OIS',
+        ),
         '2 24 10' => array(
             'Id' => '2 24 10',
             'Label' => 'Lumix G Macro 30mm F2.8 Asph. Mega OIS',
@@ -448,6 +484,46 @@ class LensType extends AbstractTag
         '2 25 10' => array(
             'Id' => '2 25 10',
             'Label' => 'Lumix G 42.5mm F1.7 Asph. Power OIS',
+        ),
+        '2 26 10' => array(
+            'Id' => '2 26 10',
+            'Label' => 'Lumix G 25mm F1.7 Asph.',
+        ),
+        '2 27 10' => array(
+            'Id' => '2 27 10',
+            'Label' => 'Leica DG Vario-Elmar 100-400mm F4.0-6.3 Asph. Power OIS',
+        ),
+        '2 28 10' => array(
+            'Id' => '2 28 10',
+            'Label' => 'Lumix G Vario 12-60mm F3.5-5.6 Asph. Power OIS',
+        ),
+        '2 29 10' => array(
+            'Id' => '2 29 10',
+            'Label' => 'Leica DG Summilux 12mm F1.4 Asph.',
+        ),
+        '2 30 10' => array(
+            'Id' => '2 30 10',
+            'Label' => 'Leica DG Vario-Elmarit 12-60mm F2.8-4 Asph. Power OIS',
+        ),
+        '2 33 10' => array(
+            'Id' => '2 33 10',
+            'Label' => 'Lumix G X Vario 12-35mm F2.8 II Asph. Power OIS',
+        ),
+        '2 35 10' => array(
+            'Id' => '2 35 10',
+            'Label' => 'Leica DG Vario-Elmarit 8-18mm F2.8-4 Asph.',
+        ),
+        '2 36 10' => array(
+            'Id' => '2 36 10',
+            'Label' => 'Leica DG Elmarit 200mm F2.8 Power OIS',
+        ),
+        '2 37 10' => array(
+            'Id' => '2 37 10',
+            'Label' => 'Leica DG Vario-Elmarit 50-200mm F2.8-4 Asph. Power OIS',
+        ),
+        '2 38 10' => array(
+            'Id' => '2 38 10',
+            'Label' => 'Leica DG Vario-Summilux 10-25mm F1.7 Asph.',
         ),
         '3 01 00' => array(
             'Id' => '3 01 00',

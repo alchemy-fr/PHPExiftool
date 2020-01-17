@@ -34,7 +34,7 @@ class EighthLanguage extends AbstractTag
 
     protected $g2 = 'Audio';
 
-    protected $Type = '?';
+    protected $Type = 'string';
 
     protected $Writable = false;
 

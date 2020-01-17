@@ -24,7 +24,7 @@ class LicensorTelephoneType1 extends AbstractTag
 
     protected $Name = 'LicensorTelephoneType1';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

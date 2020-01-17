@@ -24,7 +24,7 @@ class LicensorNotes extends AbstractTag
 
     protected $Name = 'LicensorNotes';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

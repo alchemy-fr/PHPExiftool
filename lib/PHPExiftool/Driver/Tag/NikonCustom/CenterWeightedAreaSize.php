@@ -48,19 +48,19 @@ class CenterWeightedAreaSize extends AbstractTag
             'Label' => '8 mm',
         ),
         1 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '12 mm',
         ),
         2 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '15 mm',
         ),
         3 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '20 mm',
         ),
         4 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => 'Average',
         ),
         5 => array(
@@ -68,19 +68,19 @@ class CenterWeightedAreaSize extends AbstractTag
             'Label' => '6 mm',
         ),
         6 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '8 mm',
         ),
         7 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '10 mm',
         ),
         8 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '13 mm',
         ),
         9 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => 'Average',
         ),
         10 => array(
@@ -88,19 +88,19 @@ class CenterWeightedAreaSize extends AbstractTag
             'Label' => '8 mm',
         ),
         11 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '12 mm',
         ),
         12 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '15 mm',
         ),
         13 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '20 mm',
         ),
         14 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => 'Average',
         ),
         15 => array(
@@ -108,19 +108,19 @@ class CenterWeightedAreaSize extends AbstractTag
             'Label' => '8 mm',
         ),
         16 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => '12 mm',
         ),
         17 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => '15 mm',
         ),
         18 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => '20 mm',
         ),
         19 => array(
-            'Id' => 64,
+            'Id' => 4,
             'Label' => 'Average',
         ),
         20 => array(
@@ -128,63 +128,143 @@ class CenterWeightedAreaSize extends AbstractTag
             'Label' => '6 mm',
         ),
         21 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '8 mm',
         ),
         22 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '10 mm',
         ),
         23 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '13 mm',
         ),
         24 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => 'Average',
         ),
         25 => array(
             'Id' => 0,
-            'Label' => '6 mm',
+            'Label' => '8 mm',
         ),
         26 => array(
-            'Id' => 4,
-            'Label' => '8 mm',
+            'Id' => 1,
+            'Label' => '12 mm',
         ),
         27 => array(
-            'Id' => 8,
-            'Label' => '10 mm',
+            'Id' => 2,
+            'Label' => '15 mm',
         ),
         28 => array(
+            'Id' => 3,
+            'Label' => '20 mm',
+        ),
+        29 => array(
+            'Id' => 4,
+            'Label' => 'Average',
+        ),
+        30 => array(
             'Id' => 0,
             'Label' => '8 mm',
         ),
-        29 => array(
-            'Id' => 32,
+        31 => array(
+            'Id' => 1,
             'Label' => '12 mm',
         ),
-        30 => array(
-            'Id' => 64,
+        32 => array(
+            'Id' => 2,
             'Label' => '15 mm',
         ),
-        31 => array(
-            'Id' => 96,
+        33 => array(
+            'Id' => 3,
             'Label' => '20 mm',
         ),
-        32 => array(
-            'Id' => 128,
+        34 => array(
+            'Id' => 4,
             'Label' => 'Average',
         ),
-        33 => array(
+        35 => array(
             'Id' => 0,
             'Label' => '6 mm',
         ),
-        34 => array(
-            'Id' => 32,
+        36 => array(
+            'Id' => 1,
             'Label' => '8 mm',
         ),
-        35 => array(
-            'Id' => 64,
+        37 => array(
+            'Id' => 2,
+            'Label' => '10 mm',
+        ),
+        38 => array(
+            'Id' => 3,
+            'Label' => '13 mm',
+        ),
+        39 => array(
+            'Id' => 4,
+            'Label' => 'Average',
+        ),
+        40 => array(
+            'Id' => 0,
+            'Label' => '6 mm',
+        ),
+        41 => array(
+            'Id' => 1,
+            'Label' => '8 mm',
+        ),
+        42 => array(
+            'Id' => 2,
+            'Label' => '10 mm',
+        ),
+        43 => array(
+            'Id' => 0,
+            'Label' => '8 mm',
+        ),
+        44 => array(
+            'Id' => 1,
+            'Label' => '12 mm',
+        ),
+        45 => array(
+            'Id' => 2,
+            'Label' => '15 mm',
+        ),
+        46 => array(
+            'Id' => 3,
+            'Label' => '20 mm',
+        ),
+        47 => array(
+            'Id' => 4,
+            'Label' => 'Average',
+        ),
+        48 => array(
+            'Id' => 0,
+            'Label' => '8 mm',
+        ),
+        49 => array(
+            'Id' => 1,
+            'Label' => '12 mm',
+        ),
+        50 => array(
+            'Id' => 2,
+            'Label' => '15 mm',
+        ),
+        51 => array(
+            'Id' => 3,
+            'Label' => '20 mm',
+        ),
+        52 => array(
+            'Id' => 4,
+            'Label' => 'Average',
+        ),
+        53 => array(
+            'Id' => 0,
+            'Label' => '6 mm',
+        ),
+        54 => array(
+            'Id' => 1,
+            'Label' => '8 mm',
+        ),
+        55 => array(
+            'Id' => 2,
             'Label' => '10 mm',
         ),
     );

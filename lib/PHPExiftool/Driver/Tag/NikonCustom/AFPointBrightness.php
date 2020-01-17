@@ -48,43 +48,63 @@ class AFPointBrightness extends AbstractTag
             'Label' => 'Low',
         ),
         1 => array(
-            'Id' => 2,
+            'Id' => 1,
             'Label' => 'Normal',
         ),
         2 => array(
-            'Id' => 4,
+            'Id' => 2,
             'Label' => 'High',
         ),
         3 => array(
-            'Id' => 6,
+            'Id' => 3,
             'Label' => 'Extra High',
         ),
         4 => array(
             'Id' => 0,
-            'Label' => 'Low',
+            'Label' => 'Auto',
         ),
         5 => array(
             'Id' => 1,
-            'Label' => 'Normal',
+            'Label' => 'On',
         ),
         6 => array(
             'Id' => 2,
-            'Label' => 'High',
+            'Label' => 'Off',
         ),
         7 => array(
-            'Id' => 3,
-            'Label' => 'Extra High',
-        ),
-        8 => array(
             'Id' => 0,
             'Label' => 'Auto',
         ),
-        9 => array(
-            'Id' => 2,
+        8 => array(
+            'Id' => 1,
             'Label' => 'On',
         ),
+        9 => array(
+            'Id' => 2,
+            'Label' => 'Off',
+        ),
         10 => array(
-            'Id' => 4,
+            'Id' => 0,
+            'Label' => 'Auto',
+        ),
+        11 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        12 => array(
+            'Id' => 2,
+            'Label' => 'Off',
+        ),
+        13 => array(
+            'Id' => 0,
+            'Label' => 'Auto',
+        ),
+        14 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        15 => array(
+            'Id' => 2,
             'Label' => 'Off',
         ),
     );

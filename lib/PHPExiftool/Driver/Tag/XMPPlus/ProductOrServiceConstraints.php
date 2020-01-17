@@ -24,7 +24,7 @@ class ProductOrServiceConstraints extends AbstractTag
 
     protected $Name = 'ProductOrServiceConstraints';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

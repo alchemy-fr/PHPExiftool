@@ -55,6 +55,10 @@ class FlashType extends AbstractTag
             'Id' => 3,
             'Label' => 'E-System',
         ),
+        4 => array(
+            'Id' => 4,
+            'Label' => 'E-System (body powered)',
+        ),
     );
 
 }

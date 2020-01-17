@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class ColorTempUnknown22 extends AbstractTag
 {
 
-    protected $Id = 222;
+    protected $Id = 'mixed';
 
     protected $Name = 'ColorTempUnknown22';
 
-    protected $FullName = 'Canon::ColorData8';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Canon';
 

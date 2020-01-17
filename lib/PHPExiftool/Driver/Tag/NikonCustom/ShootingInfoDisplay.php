@@ -48,27 +48,27 @@ class ShootingInfoDisplay extends AbstractTag
             'Label' => 'Auto',
         ),
         1 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Auto',
         ),
         2 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Manual (dark on light)',
         ),
         3 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 'Manual (light on dark)',
         ),
         4 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Auto',
         ),
         5 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Manual (dark on light)',
         ),
         6 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Manual (light on dark)',
         ),
         7 => array(
@@ -76,15 +76,15 @@ class ShootingInfoDisplay extends AbstractTag
             'Label' => 'Auto',
         ),
         8 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Auto',
         ),
         9 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Manual (dark on light)',
         ),
         10 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 'Manual (light on dark)',
         ),
         11 => array(
@@ -92,11 +92,11 @@ class ShootingInfoDisplay extends AbstractTag
             'Label' => 'Auto',
         ),
         12 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Manual (dark on light)',
         ),
         13 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Manual (light on dark)',
         ),
         14 => array(
@@ -104,15 +104,15 @@ class ShootingInfoDisplay extends AbstractTag
             'Label' => 'Not Set',
         ),
         15 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Auto',
         ),
         16 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Manual (dark on light)',
         ),
         17 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Manual (light on dark)',
         ),
         18 => array(
@@ -120,11 +120,11 @@ class ShootingInfoDisplay extends AbstractTag
             'Label' => 'Auto',
         ),
         19 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Manual (dark on light)',
         ),
         20 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Manual (light on dark)',
         ),
     );

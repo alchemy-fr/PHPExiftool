@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class ImageCount extends AbstractTag
 {
 
-    protected $Id = 'mixed';
+    protected $Id = 283;
 
     protected $Name = 'ImageCount';
 
-    protected $FullName = 'mixed';
+    protected $FullName = 'Sony::MoreInfo0201';
 
     protected $GroupName = 'Sony';
 
@@ -32,7 +32,7 @@ class ImageCount extends AbstractTag
 
     protected $g1 = 'Sony';
 
-    protected $g2 = 'mixed';
+    protected $g2 = 'Camera';
 
     protected $Type = 'int32u';
 

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class RicohRoll extends AbstractTag
 {
 
-    protected $Id = 'RicohRoll';
+    protected $Id = 'Ricoh::RicohRoll';
 
     protected $Name = 'RicohRoll';
 

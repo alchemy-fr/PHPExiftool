@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class Brightness extends AbstractTag
 {
 
-    protected $Id = 37;
+    protected $Id = 'mixed';
 
     protected $Name = 'Brightness';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 

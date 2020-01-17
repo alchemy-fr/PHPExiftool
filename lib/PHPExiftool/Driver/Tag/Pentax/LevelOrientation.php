@@ -43,6 +43,10 @@ class LevelOrientation extends AbstractTag
     protected $flag_Permanent = true;
 
     protected $Values = array(
+        0 => array(
+            'Id' => 0,
+            'Label' => 'n/a',
+        ),
         1 => array(
             'Id' => 1,
             'Label' => 'Horizontal (normal)',

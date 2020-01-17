@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class Rotation extends AbstractTag
 {
 
-    protected $Id = 'Rotation';
+    protected $Id = 'QuickTime::Rotation';
 
     protected $Name = 'Rotation';
 
@@ -36,7 +36,7 @@ class Rotation extends AbstractTag
 
     protected $Type = '?';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
     protected $Description = 'Rotation';
 

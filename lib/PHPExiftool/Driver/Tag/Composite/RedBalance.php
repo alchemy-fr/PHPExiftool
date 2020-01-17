@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class RedBalance extends AbstractTag
 {
 
-    protected $Id = 'RedBalance';
+    protected $Id = 'Exif::RedBalance';
 
     protected $Name = 'RedBalance';
 

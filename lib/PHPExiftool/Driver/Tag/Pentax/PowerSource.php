@@ -43,6 +43,10 @@ class PowerSource extends AbstractTag
     protected $flag_Permanent = true;
 
     protected $Values = array(
+        1 => array(
+            'Id' => 1,
+            'Label' => 'Camera Battery',
+        ),
         2 => array(
             'Id' => 2,
             'Label' => 'Body Battery',

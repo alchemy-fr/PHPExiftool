@@ -63,6 +63,14 @@ class ReleaseMode3 extends AbstractTag
             'Id' => 5,
             'Label' => 'Continuous - Speed/Advance Priority',
         ),
+        6 => array(
+            'Id' => 6,
+            'Label' => 'Normal - Self-timer',
+        ),
+        9 => array(
+            'Id' => 9,
+            'Label' => 'Single Burst Shooting',
+        ),
     );
 
 }

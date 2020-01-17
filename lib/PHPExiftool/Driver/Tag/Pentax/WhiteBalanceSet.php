@@ -47,52 +47,52 @@ class WhiteBalanceSet extends AbstractTag
             'Id' => 0,
             'Label' => 'Auto',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Daylight',
         ),
-        32 => array(
-            'Id' => 32,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Shade',
         ),
-        48 => array(
-            'Id' => 48,
+        3 => array(
+            'Id' => 3,
             'Label' => 'Cloudy',
         ),
-        64 => array(
-            'Id' => 64,
+        4 => array(
+            'Id' => 4,
             'Label' => 'Daylight Fluorescent',
         ),
-        80 => array(
-            'Id' => 80,
+        5 => array(
+            'Id' => 5,
             'Label' => 'Day White Fluorescent',
         ),
-        96 => array(
-            'Id' => 96,
+        6 => array(
+            'Id' => 6,
             'Label' => 'White Fluorescent',
         ),
-        112 => array(
-            'Id' => 112,
+        7 => array(
+            'Id' => 7,
             'Label' => 'Tungsten',
         ),
-        128 => array(
-            'Id' => 128,
+        8 => array(
+            'Id' => 8,
             'Label' => 'Flash',
         ),
-        144 => array(
-            'Id' => 144,
+        9 => array(
+            'Id' => 9,
             'Label' => 'Manual',
         ),
-        192 => array(
-            'Id' => 192,
+        12 => array(
+            'Id' => 12,
             'Label' => 'Set Color Temperature 1',
         ),
-        208 => array(
-            'Id' => 208,
+        13 => array(
+            'Id' => 13,
             'Label' => 'Set Color Temperature 2',
         ),
-        224 => array(
-            'Id' => 224,
+        14 => array(
+            'Id' => 14,
             'Label' => 'Set Color Temperature 3',
         ),
     );

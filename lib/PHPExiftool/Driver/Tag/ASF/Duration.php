@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class Duration extends AbstractTag
 {
 
-    protected $Id = 'Duration';
+    protected $Id = 'mixed';
 
     protected $Name = 'Duration';
 
-    protected $FullName = 'ASF::ExtendedDescr';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'ASF';
 
@@ -34,7 +34,7 @@ class Duration extends AbstractTag
 
     protected $g2 = 'Video';
 
-    protected $Type = '?';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 

@@ -108,18 +108,26 @@ class ShakeReduction extends AbstractTag
             'Label' => 'On (AA simulation off)',
         ),
         16 => array(
+            'Id' => 8,
+            'Label' => 'Off (AA simulation type 1) (8)',
+        ),
+        17 => array(
             'Id' => 12,
             'Label' => 'Off (AA simulation type 1)',
         ),
-        17 => array(
+        18 => array(
             'Id' => 15,
             'Label' => 'On (AA simulation type 1)',
         ),
-        18 => array(
+        19 => array(
+            'Id' => 16,
+            'Label' => 'Off (AA simulation type 2) (16)',
+        ),
+        20 => array(
             'Id' => 20,
             'Label' => 'Off (AA simulation type 2)',
         ),
-        19 => array(
+        21 => array(
             'Id' => 23,
             'Label' => 'On (AA simulation type 2)',
         ),

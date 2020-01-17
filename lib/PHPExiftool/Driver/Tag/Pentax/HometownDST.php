@@ -53,14 +53,6 @@ class HometownDST extends AbstractTag
             'Id' => 1,
             'Label' => 'Yes',
         ),
-        2 => array(
-            'Id' => 0,
-            'Label' => 'No',
-        ),
-        3 => array(
-            'Id' => 2,
-            'Label' => 'Yes',
-        ),
     );
 
 }

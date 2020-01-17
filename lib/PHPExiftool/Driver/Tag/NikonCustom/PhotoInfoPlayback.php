@@ -48,7 +48,7 @@ class PhotoInfoPlayback extends AbstractTag
             'Label' => 'Info Up-down, Playback Left-right',
         ),
         1 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'Info Left-right, Playback Up-down',
         ),
         2 => array(
@@ -56,7 +56,7 @@ class PhotoInfoPlayback extends AbstractTag
             'Label' => 'Off',
         ),
         3 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

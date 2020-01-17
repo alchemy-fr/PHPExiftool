@@ -48,11 +48,11 @@ class AFCPrioritySelection extends AbstractTag
             'Label' => 'Release',
         ),
         1 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Release + Focus',
         ),
         2 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Focus',
         ),
         3 => array(
@@ -60,15 +60,15 @@ class AFCPrioritySelection extends AbstractTag
             'Label' => 'Release',
         ),
         4 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Release + Focus',
         ),
         5 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Focus',
         ),
         6 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Focus + Release',
         ),
         7 => array(
@@ -76,48 +76,104 @@ class AFCPrioritySelection extends AbstractTag
             'Label' => 'Release',
         ),
         8 => array(
-            'Id' => 128,
-            'Label' => 'Focus',
+            'Id' => 1,
+            'Label' => 'Release + Focus',
         ),
         9 => array(
-            'Id' => 0,
-            'Label' => 'Release',
+            'Id' => 2,
+            'Label' => 'Focus',
         ),
         10 => array(
-            'Id' => 128,
-            'Label' => 'Focus',
+            'Id' => 3,
+            'Label' => 'Focus + Release',
         ),
         11 => array(
             'Id' => 0,
             'Label' => 'Release',
         ),
         12 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Release + Focus',
         ),
         13 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Focus',
         ),
         14 => array(
-            'Id' => 0,
-            'Label' => 'Release',
+            'Id' => 3,
+            'Label' => 'Focus + Release',
         ),
         15 => array(
-            'Id' => 128,
-            'Label' => 'Focus',
-        ),
-        16 => array(
             'Id' => 0,
             'Label' => 'Release',
         ),
+        16 => array(
+            'Id' => 1,
+            'Label' => 'Focus',
+        ),
         17 => array(
-            'Id' => 64,
-            'Label' => 'Release + Focus',
+            'Id' => 0,
+            'Label' => 'Release',
         ),
         18 => array(
-            'Id' => 128,
+            'Id' => 1,
             'Label' => 'Focus',
+        ),
+        19 => array(
+            'Id' => 0,
+            'Label' => 'Release',
+        ),
+        20 => array(
+            'Id' => 1,
+            'Label' => 'Focus',
+        ),
+        21 => array(
+            'Id' => 0,
+            'Label' => 'Release',
+        ),
+        22 => array(
+            'Id' => 1,
+            'Label' => 'Release + Focus',
+        ),
+        23 => array(
+            'Id' => 2,
+            'Label' => 'Focus',
+        ),
+        24 => array(
+            'Id' => 0,
+            'Label' => 'Release',
+        ),
+        25 => array(
+            'Id' => 1,
+            'Label' => 'Focus',
+        ),
+        26 => array(
+            'Id' => 0,
+            'Label' => 'Release',
+        ),
+        27 => array(
+            'Id' => 1,
+            'Label' => 'Release + Focus',
+        ),
+        28 => array(
+            'Id' => 2,
+            'Label' => 'Focus',
+        ),
+        29 => array(
+            'Id' => 0,
+            'Label' => 'Release',
+        ),
+        30 => array(
+            'Id' => 1,
+            'Label' => 'Release + Focus',
+        ),
+        31 => array(
+            'Id' => 2,
+            'Label' => 'Focus',
+        ),
+        32 => array(
+            'Id' => 3,
+            'Label' => 'Focus + Release',
         ),
     );
 

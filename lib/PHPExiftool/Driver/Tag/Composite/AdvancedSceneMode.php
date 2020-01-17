@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AdvancedSceneMode extends AbstractTag
 {
 
-    protected $Id = 'AdvancedSceneMode';
+    protected $Id = 'Panasonic::AdvancedSceneMode';
 
     protected $Name = 'AdvancedSceneMode';
 

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ContrastDetectAFInFocus extends AbstractTag
 {
 
-    protected $Id = 28;
+    protected $Id = 'mixed';
 
     protected $Name = 'ContrastDetectAFInFocus';
 

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class FocusDistance2 extends AbstractTag
 {
 
-    protected $Id = 'FocusDistance2';
+    protected $Id = 'Sony::FocusDistance2';
 
     protected $Name = 'FocusDistance2';
 

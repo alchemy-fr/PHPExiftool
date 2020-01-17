@@ -224,6 +224,10 @@ class AFAreaMode extends AbstractTag
             'Label' => 'Face Tracking',
         ),
         45 => array(
+            'Id' => 20,
+            'Label' => 'Animal Eye Tracking',
+        ),
+        46 => array(
             'Id' => 255,
             'Label' => 'Manual',
         ),

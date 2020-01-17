@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AffineTransformMat extends AbstractTag
 {
 
-    protected $Id = 32955;
+    protected $Id = 32956;
 
     protected $Name = 'AffineTransformMat';
 

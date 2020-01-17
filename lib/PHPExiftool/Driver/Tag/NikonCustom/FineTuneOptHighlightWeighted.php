@@ -24,7 +24,7 @@ class FineTuneOptHighlightWeighted extends AbstractTag
 
     protected $Name = 'FineTuneOptHighlightWeighted';
 
-    protected $FullName = 'NikonCustom::SettingsD810';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'NikonCustom';
 

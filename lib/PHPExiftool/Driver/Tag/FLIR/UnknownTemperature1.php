@@ -20,15 +20,15 @@ use PHPExiftool\Driver\AbstractTag;
 class UnknownTemperature1 extends AbstractTag
 {
 
-    protected $Id = 'mixed';
+    protected $Id = 11;
 
     protected $Name = 'UnknownTemperature1';
 
-    protected $FullName = 'mixed';
+    protected $FullName = 'FLIR::MoreInfo';
 
     protected $GroupName = 'FLIR';
 
-    protected $g0 = 'mixed';
+    protected $g0 = 'MakerNotes';
 
     protected $g1 = 'FLIR';
 
@@ -40,6 +40,6 @@ class UnknownTemperature1 extends AbstractTag
 
     protected $Description = 'Unknown Temperature 1';
 
-    protected $flag_Permanent = 'mixed';
+    protected $flag_Permanent = true;
 
 }

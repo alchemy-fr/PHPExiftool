@@ -92,46 +92,18 @@ class AELockButtonPlusDials extends AbstractTag
             'Label' => 'None',
         ),
         12 => array(
-            'Id' => 16,
-            'Label' => 'Choose Image Area',
-        ),
-        13 => array(
-            'Id' => 32,
-            'Label' => 'One Step Speed/Aperture',
-        ),
-        14 => array(
-            'Id' => 48,
-            'Label' => 'Choose Non-CPU Lens Number',
-        ),
-        15 => array(
-            'Id' => 80,
-            'Label' => 'Auto bracketing',
-        ),
-        16 => array(
-            'Id' => 96,
-            'Label' => 'Dynamic AF Area',
-        ),
-        17 => array(
-            'Id' => 112,
-            'Label' => 'Shutter speed & Aperture lock',
-        ),
-        18 => array(
-            'Id' => 0,
-            'Label' => 'None',
-        ),
-        19 => array(
             'Id' => 1,
             'Label' => 'Choose Image Area (FX/DX/5:4)',
         ),
-        20 => array(
+        13 => array(
             'Id' => 2,
             'Label' => 'Shutter Speed & Aperture Lock',
         ),
-        21 => array(
+        14 => array(
             'Id' => 4,
             'Label' => 'Choose Non-CPU Lens Number',
         ),
-        22 => array(
+        15 => array(
             'Id' => 8,
             'Label' => 'Exposure Delay Mode',
         ),

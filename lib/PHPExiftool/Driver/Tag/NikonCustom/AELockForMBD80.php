@@ -47,28 +47,28 @@ class AELockForMBD80 extends AbstractTag
             'Id' => 0,
             'Label' => 'AE Lock Only',
         ),
-        4 => array(
-            'Id' => 4,
+        1 => array(
+            'Id' => 1,
             'Label' => 'AF Lock Only',
         ),
-        8 => array(
-            'Id' => 8,
+        2 => array(
+            'Id' => 2,
             'Label' => 'AE Lock (hold)',
         ),
-        12 => array(
-            'Id' => 12,
+        3 => array(
+            'Id' => 3,
             'Label' => 'AF-On',
         ),
-        16 => array(
-            'Id' => 16,
+        4 => array(
+            'Id' => 4,
             'Label' => 'FV Lock',
         ),
-        20 => array(
-            'Id' => 20,
+        5 => array(
+            'Id' => 5,
             'Label' => 'Focus Point Selection',
         ),
-        28 => array(
-            'Id' => 28,
+        7 => array(
+            'Id' => 7,
             'Label' => 'AE/AF Lock',
         ),
     );

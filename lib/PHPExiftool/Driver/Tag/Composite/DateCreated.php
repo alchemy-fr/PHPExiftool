@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class DateCreated extends AbstractTag
 {
 
-    protected $Id = 'DateCreated';
+    protected $Id = 'Kodak::DateCreated';
 
     protected $Name = 'DateCreated';
 

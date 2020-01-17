@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class FirmwareVersion extends AbstractTag
 {
 
-    protected $Id = 3301;
+    protected $Id = 'mixed';
 
     protected $Name = 'FirmwareVersion';
 
@@ -34,14 +34,14 @@ class FirmwareVersion extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = 'string';
+    protected $Type = 'mixed';
 
     protected $Writable = true;
 
     protected $Description = 'Firmware Version';
 
-    protected $local_g2 = 'Camera';
-
     protected $flag_Permanent = true;
+
+    protected $local_g2 = 'mixed';
 
 }

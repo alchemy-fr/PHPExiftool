@@ -63,6 +63,34 @@ class NoiseReduction extends AbstractTag
             'Id' => 4,
             'Label' => 'Highest (+2)',
         ),
+        5 => array(
+            'Id' => 5,
+            'Label' => '+5',
+        ),
+        6 => array(
+            'Id' => 6,
+            'Label' => '+6',
+        ),
+        65531 => array(
+            'Id' => 65531,
+            'Label' => '-5',
+        ),
+        65532 => array(
+            'Id' => 65532,
+            'Label' => '-4',
+        ),
+        65533 => array(
+            'Id' => 65533,
+            'Label' => '-3',
+        ),
+        65534 => array(
+            'Id' => 65534,
+            'Label' => '-2',
+        ),
+        65535 => array(
+            'Id' => 65535,
+            'Label' => '-1',
+        ),
     );
 
 }

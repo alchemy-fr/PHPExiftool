@@ -40,6 +40,4 @@ class NikonCaptureVersion extends AbstractTag
 
     protected $Description = 'Nikon Capture Version';
 
-    protected $flag_Permanent = true;
-
 }

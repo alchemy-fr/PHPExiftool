@@ -34,7 +34,7 @@ class TimeCode extends AbstractTag
 
     protected $g2 = 'mixed';
 
-    protected $Type = '?';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 

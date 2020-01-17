@@ -36,7 +36,7 @@ class SonyISO extends AbstractTag
 
     protected $Type = 'int16u';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
     protected $Description = 'Sony ISO';
 

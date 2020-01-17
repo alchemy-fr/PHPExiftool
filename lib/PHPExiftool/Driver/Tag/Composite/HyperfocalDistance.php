@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class HyperfocalDistance extends AbstractTag
 {
 
-    protected $Id = 'HyperfocalDistance';
+    protected $Id = 'Exif::HyperfocalDistance';
 
     protected $Name = 'HyperfocalDistance';
 

@@ -38,7 +38,7 @@ class DateTimeOriginal extends AbstractTag
 
     protected $Writable = false;
 
-    protected $Description = 'mixed';
+    protected $Description = 'Date/Time Original';
 
     protected $local_g2 = 'Time';
 

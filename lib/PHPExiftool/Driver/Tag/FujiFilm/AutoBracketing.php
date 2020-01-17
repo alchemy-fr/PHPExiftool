@@ -53,8 +53,22 @@ class AutoBracketing extends AbstractTag
         ),
         2 => array(
             'Id' => 2,
+            'Label' => 'Pre-shot',
+        ),
+        3 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        4 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        5 => array(
+            'Id' => 2,
             'Label' => 'No flash & flash',
         ),
     );
+
+    protected $Index = 'mixed';
 
 }

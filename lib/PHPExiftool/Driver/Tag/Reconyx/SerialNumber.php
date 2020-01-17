@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class SerialNumber extends AbstractTag
 {
 
-    protected $Id = 21;
+    protected $Id = 'mixed';
 
     protected $Name = 'SerialNumber';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 
@@ -34,7 +34,7 @@ class SerialNumber extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'undef';
+    protected $Type = 'mixed';
 
     protected $Writable = true;
 
@@ -42,6 +42,6 @@ class SerialNumber extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $MaxLength = 30;
+    protected $MaxLength = 'mixed';
 
 }

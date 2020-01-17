@@ -157,6 +157,14 @@ class Compression extends AbstractTag
             'Id' => 32947,
             'Label' => 'DCS',
         ),
+        33003 => array(
+            'Id' => 33003,
+            'Label' => 'Aperio JPEG 2000 YCbCr',
+        ),
+        33005 => array(
+            'Id' => 33005,
+            'Label' => 'Aperio JPEG 2000 RGB',
+        ),
         34661 => array(
             'Id' => 34661,
             'Label' => 'JBIG',
@@ -193,9 +201,33 @@ class Compression extends AbstractTag
             'Id' => 34720,
             'Label' => 'Microsoft Document Imaging (MDI) Vector',
         ),
+        34887 => array(
+            'Id' => 34887,
+            'Label' => 'ESRI Lerc',
+        ),
         34892 => array(
             'Id' => 34892,
             'Label' => 'Lossy JPEG',
+        ),
+        34925 => array(
+            'Id' => 34925,
+            'Label' => 'LZMA2',
+        ),
+        34926 => array(
+            'Id' => 34926,
+            'Label' => 'Zstd',
+        ),
+        34927 => array(
+            'Id' => 34927,
+            'Label' => 'WebP',
+        ),
+        34933 => array(
+            'Id' => 34933,
+            'Label' => 'PNG',
+        ),
+        34934 => array(
+            'Id' => 34934,
+            'Label' => 'JPEG XR',
         ),
         65000 => array(
             'Id' => 65000,

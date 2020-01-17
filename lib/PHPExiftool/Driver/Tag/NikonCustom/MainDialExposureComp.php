@@ -47,8 +47,8 @@ class MainDialExposureComp extends AbstractTag
             'Id' => 0,
             'Label' => 'Off',
         ),
-        4 => array(
-            'Id' => 4,
+        1 => array(
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

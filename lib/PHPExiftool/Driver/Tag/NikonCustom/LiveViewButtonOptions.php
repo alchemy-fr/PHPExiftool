@@ -48,11 +48,11 @@ class LiveViewButtonOptions extends AbstractTag
             'Label' => 'Enable',
         ),
         1 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Enable (standby time active)',
         ),
         2 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Disable',
         ),
         3 => array(
@@ -60,7 +60,43 @@ class LiveViewButtonOptions extends AbstractTag
             'Label' => 'Enable',
         ),
         4 => array(
-            'Id' => 32,
+            'Id' => 1,
+            'Label' => 'Enable (Standby Timer Active)',
+        ),
+        5 => array(
+            'Id' => 2,
+            'Label' => 'Disable',
+        ),
+        6 => array(
+            'Id' => 0,
+            'Label' => 'Enable',
+        ),
+        7 => array(
+            'Id' => 1,
+            'Label' => 'Enable (Standby Timer Active)',
+        ),
+        8 => array(
+            'Id' => 2,
+            'Label' => 'Disable',
+        ),
+        9 => array(
+            'Id' => 0,
+            'Label' => 'Enable',
+        ),
+        10 => array(
+            'Id' => 2,
+            'Label' => 'Disable',
+        ),
+        11 => array(
+            'Id' => 0,
+            'Label' => 'Enable',
+        ),
+        12 => array(
+            'Id' => 1,
+            'Label' => 'Enable (Standby Timer Active)',
+        ),
+        13 => array(
+            'Id' => 2,
             'Label' => 'Disable',
         ),
     );

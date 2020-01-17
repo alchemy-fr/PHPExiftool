@@ -24,7 +24,7 @@ class PictureControlData extends AbstractTag
 
     protected $Name = 'PictureControlData';
 
-    protected $FullName = 'Nikon::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 
@@ -43,5 +43,7 @@ class PictureControlData extends AbstractTag
     protected $flag_Binary = true;
 
     protected $flag_Unsafe = true;
+
+    protected $Index = 'mixed';
 
 }

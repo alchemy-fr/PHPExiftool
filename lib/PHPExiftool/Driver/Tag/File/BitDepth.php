@@ -40,4 +40,19 @@ class BitDepth extends AbstractTag
 
     protected $Description = 'Bit Depth';
 
+    protected $Values = array(
+        0 => array(
+            'Id' => 0,
+            'Label' => 'Custom',
+        ),
+        1 => array(
+            'Id' => 1,
+            'Label' => 8,
+        ),
+        2 => array(
+            'Id' => 2,
+            'Label' => 16,
+        ),
+    );
+
 }

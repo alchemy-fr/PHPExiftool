@@ -48,7 +48,7 @@ class BatteryOrder extends AbstractTag
             'Label' => 'MB-D10 First',
         ),
         1 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'Camera Battery First',
         ),
         2 => array(
@@ -56,7 +56,7 @@ class BatteryOrder extends AbstractTag
             'Label' => 'MB-D11 First',
         ),
         3 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Camera Battery First',
         ),
         4 => array(
@@ -64,7 +64,7 @@ class BatteryOrder extends AbstractTag
             'Label' => 'MB-D12 First',
         ),
         5 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Camera Battery First',
         ),
     );

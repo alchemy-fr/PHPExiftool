@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class PrintScale extends AbstractTag
 {
 
-    protected $Id = 1062;
+    protected $Id = 10;
 
     protected $Name = 'PrintScale';
 
-    protected $FullName = 'Photoshop::Main';
+    protected $FullName = 'Photoshop::PrintScaleInfo';
 
     protected $GroupName = 'Photoshop';
 
@@ -34,7 +34,7 @@ class PrintScale extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = '?';
+    protected $Type = 'float';
 
     protected $Writable = false;
 

@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class ImageLength extends AbstractTag
 {
 
-    protected $Id = 20;
+    protected $Id = 'mixed';
 
     protected $Name = 'ImageLength';
 
-    protected $FullName = 'BMP::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'File';
 
@@ -34,7 +34,7 @@ class ImageLength extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = 'int32u';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 

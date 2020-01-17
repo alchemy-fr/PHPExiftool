@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class MotionSensitivity extends AbstractTag
 {
 
-    protected $Id = 41;
+    protected $Id = 'mixed';
 
     protected $Name = 'MotionSensitivity';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 

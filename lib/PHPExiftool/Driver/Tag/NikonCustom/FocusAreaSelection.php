@@ -47,8 +47,8 @@ class FocusAreaSelection extends AbstractTag
             'Id' => 0,
             'Label' => 'No Wrap',
         ),
-        4 => array(
-            'Id' => 4,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Wrap',
         ),
     );

@@ -46,6 +46,6 @@ class MakerNoteSanyoC4 extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $Index = 69;
+    protected $Index = 76;
 
 }

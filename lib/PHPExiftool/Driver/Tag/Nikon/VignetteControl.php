@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class VignetteControl extends AbstractTag
 {
 
-    protected $Id = 42;
+    protected $Id = 'mixed';
 
     protected $Name = 'VignetteControl';
 
-    protected $FullName = 'Nikon::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

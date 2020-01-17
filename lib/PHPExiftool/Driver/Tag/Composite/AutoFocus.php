@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AutoFocus extends AbstractTag
 {
 
-    protected $Id = 'AutoFocus';
+    protected $Id = 'Nikon::AutoFocus';
 
     protected $Name = 'AutoFocus';
 

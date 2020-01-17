@@ -79,6 +79,42 @@ class EasyExposureCompensation extends AbstractTag
             'Id' => 2,
             'Label' => 'On (auto reset)',
         ),
+        9 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        10 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        11 => array(
+            'Id' => 2,
+            'Label' => 'On Auto Reset',
+        ),
+        12 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        13 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        14 => array(
+            'Id' => 2,
+            'Label' => 'On (auto reset)',
+        ),
+        15 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        16 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        17 => array(
+            'Id' => 2,
+            'Label' => 'On (Auto Reset)',
+        ),
     );
 
 }

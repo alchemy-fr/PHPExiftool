@@ -68,31 +68,31 @@ class TimerFunctionButton extends AbstractTag
             'Label' => 'Self-timer',
         ),
         6 => array(
-            'Id' => 8,
+            'Id' => 1,
             'Label' => 'Release Mode',
         ),
         7 => array(
-            'Id' => 16,
+            'Id' => 2,
             'Label' => 'Image Quality/Size',
         ),
         8 => array(
-            'Id' => 24,
+            'Id' => 3,
             'Label' => 'ISO',
         ),
         9 => array(
-            'Id' => 32,
+            'Id' => 4,
             'Label' => 'White Balance',
         ),
         10 => array(
-            'Id' => 40,
+            'Id' => 5,
             'Label' => 'Active D-Lighting',
         ),
         11 => array(
-            'Id' => 48,
+            'Id' => 6,
             'Label' => '+ NEF (RAW)',
         ),
         12 => array(
-            'Id' => 56,
+            'Id' => 7,
             'Label' => 'Auto Bracketing',
         ),
         13 => array(
@@ -100,31 +100,31 @@ class TimerFunctionButton extends AbstractTag
             'Label' => 'Self-timer',
         ),
         14 => array(
-            'Id' => 8,
+            'Id' => 1,
             'Label' => 'Release Mode',
         ),
         15 => array(
-            'Id' => 16,
+            'Id' => 2,
             'Label' => 'Image Quality/Size',
         ),
         16 => array(
-            'Id' => 24,
+            'Id' => 3,
             'Label' => 'ISO',
         ),
         17 => array(
-            'Id' => 32,
+            'Id' => 4,
             'Label' => 'White Balance',
         ),
         18 => array(
-            'Id' => 40,
+            'Id' => 5,
             'Label' => 'Active D-Lighting',
         ),
         19 => array(
-            'Id' => 48,
+            'Id' => 6,
             'Label' => '+ NEF (RAW)',
         ),
         20 => array(
-            'Id' => 56,
+            'Id' => 7,
             'Label' => 'Auto Bracketing',
         ),
     );

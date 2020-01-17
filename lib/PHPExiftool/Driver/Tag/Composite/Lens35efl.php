@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class Lens35efl extends AbstractTag
 {
 
-    protected $Id = 'Lens35efl';
+    protected $Id = 'Canon::Lens35efl';
 
     protected $Name = 'Lens35efl';
 

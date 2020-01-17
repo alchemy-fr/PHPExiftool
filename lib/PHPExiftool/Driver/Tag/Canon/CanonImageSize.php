@@ -115,6 +115,10 @@ class CanonImageSize extends AbstractTag
             'Id' => 142,
             'Label' => '1920x1080 Movie',
         ),
+        143 => array(
+            'Id' => 143,
+            'Label' => '4096x2160 Movie',
+        ),
     );
 
 }

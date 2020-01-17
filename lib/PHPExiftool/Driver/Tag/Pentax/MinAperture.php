@@ -47,16 +47,16 @@ class MinAperture extends AbstractTag
             'Id' => 0,
             'Label' => 22,
         ),
-        2 => array(
-            'Id' => 2,
+        1 => array(
+            'Id' => 1,
             'Label' => 32,
         ),
-        4 => array(
-            'Id' => 4,
+        2 => array(
+            'Id' => 2,
             'Label' => 45,
         ),
-        6 => array(
-            'Id' => 6,
+        3 => array(
+            'Id' => 3,
             'Label' => 16,
         ),
     );

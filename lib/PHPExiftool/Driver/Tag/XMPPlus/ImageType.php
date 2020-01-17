@@ -24,7 +24,7 @@ class ImageType extends AbstractTag
 
     protected $Name = 'ImageType';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

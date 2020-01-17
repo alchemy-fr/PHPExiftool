@@ -40,6 +40,8 @@ class LensInfo extends AbstractTag
 
     protected $Description = 'Lens Info';
 
+    protected $local_g2 = 'Camera';
+
     protected $flag_List = true;
 
     protected $flag_Seq = true;

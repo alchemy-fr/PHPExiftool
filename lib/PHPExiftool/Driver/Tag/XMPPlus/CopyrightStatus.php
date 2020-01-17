@@ -24,7 +24,7 @@ class CopyrightStatus extends AbstractTag
 
     protected $Name = 'CopyrightStatus';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

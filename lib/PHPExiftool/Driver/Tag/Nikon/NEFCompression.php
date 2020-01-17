@@ -59,13 +59,25 @@ class NEFCompression extends AbstractTag
             'Id' => 4,
             'Label' => 'Lossy (type 2)',
         ),
+        5 => array(
+            'Id' => 5,
+            'Label' => 'Striped packed 12 bits',
+        ),
         6 => array(
             'Id' => 6,
             'Label' => 'Uncompressed (reduced to 12 bit)',
         ),
+        7 => array(
+            'Id' => 7,
+            'Label' => 'Unpacked 12 bits',
+        ),
         8 => array(
             'Id' => 8,
             'Label' => 'Small',
+        ),
+        9 => array(
+            'Id' => 9,
+            'Label' => 'Packed 12 bits',
         ),
     );
 

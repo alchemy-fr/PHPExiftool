@@ -42,6 +42,8 @@ class FileAttributes extends AbstractTag
 
     protected $local_g1 = 'System';
 
+    protected $local_g2 = 'Other';
+
     protected $Values = array(
         0 => array(
             'Id' => 0,

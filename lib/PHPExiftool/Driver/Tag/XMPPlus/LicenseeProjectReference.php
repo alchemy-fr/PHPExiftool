@@ -24,7 +24,7 @@ class LicenseeProjectReference extends AbstractTag
 
     protected $Name = 'LicenseeProjectReference';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

@@ -129,6 +129,18 @@ class DigitalFilter06 extends AbstractTag
             'Id' => 23,
             'Label' => 'Tone Expansion',
         ),
+        27 => array(
+            'Id' => 27,
+            'Label' => 'Unicolor Bold',
+        ),
+        28 => array(
+            'Id' => 28,
+            'Label' => 'Bold Monochrome',
+        ),
+        29 => array(
+            'Id' => 29,
+            'Label' => 'Replace Color',
+        ),
         254 => array(
             'Id' => 254,
             'Label' => 'Custom Filter',

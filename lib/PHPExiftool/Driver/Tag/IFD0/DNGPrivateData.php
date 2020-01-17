@@ -34,7 +34,7 @@ class DNGPrivateData extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = 'undef';
+    protected $Type = 'int8u';
 
     protected $Writable = true;
 
@@ -44,6 +44,6 @@ class DNGPrivateData extends AbstractTag
 
     protected $flag_Unsafe = true;
 
-    protected $Index = 4;
+    protected $Index = 5;
 
 }

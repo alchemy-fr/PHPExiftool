@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class ThumbnailImage extends AbstractTag
 {
 
-    protected $Id = 'mixed';
+    protected $Id = 'thum';
 
     protected $Name = 'ThumbnailImage';
 
-    protected $FullName = 'mixed';
+    protected $FullName = 'QuickTime::Main';
 
     protected $GroupName = 'QuickTime';
 
@@ -43,7 +43,5 @@ class ThumbnailImage extends AbstractTag
     protected $local_g2 = 'Preview';
 
     protected $flag_Binary = true;
-
-    protected $Index = 'mixed';
 
 }

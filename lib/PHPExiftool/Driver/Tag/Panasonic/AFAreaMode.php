@@ -61,6 +61,14 @@ class AFAreaMode extends AbstractTag
             'Id' => '0 23',
             'Label' => '23-area',
         ),
+        '0 49' => array(
+            'Id' => '0 49',
+            'Label' => '49-area',
+        ),
+        '0 225' => array(
+            'Id' => '0 225',
+            'Label' => '225-area',
+        ),
         '1 0' => array(
             'Id' => '1 0',
             'Label' => 'Spot Focusing',
@@ -100,6 +108,10 @@ class AFAreaMode extends AbstractTag
         '128 0' => array(
             'Id' => '128 0',
             'Label' => 'Spot Focusing 2',
+        ),
+        '240 0' => array(
+            'Id' => '240 0',
+            'Label' => 'Tracking',
         ),
     );
 

@@ -34,12 +34,14 @@ class ShotNumberSincePowerUp extends AbstractTag
 
     protected $g2 = 'mixed';
 
-    protected $Type = 'int32u';
+    protected $Type = 'mixed';
 
     protected $Writable = true;
 
     protected $Description = 'Shot Number Since Power Up';
 
     protected $flag_Permanent = true;
+
+    protected $Index = 'mixed';
 
 }

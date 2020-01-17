@@ -42,4 +42,23 @@ class ToneLevel extends AbstractTag
 
     protected $flag_Permanent = true;
 
+    protected $Values = array(
+        '-31999' => array(
+            'Id' => '-31999',
+            'Label' => 'Highlights',
+        ),
+        '-31998' => array(
+            'Id' => '-31998',
+            'Label' => 'Shadows',
+        ),
+        '-31997' => array(
+            'Id' => '-31997',
+            'Label' => 'Midtones',
+        ),
+        0 => array(
+            'Id' => 0,
+            'Label' => 0,
+        ),
+    );
+
 }

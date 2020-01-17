@@ -95,6 +95,22 @@ class ExternalFlashFlags extends AbstractTag
             'Id' => 32,
             'Label' => 'Dome Diffuser',
         ),
+        13 => array(
+            'Id' => 1,
+            'Label' => 'Fired',
+        ),
+        14 => array(
+            'Id' => 4,
+            'Label' => 'Bounce Flash',
+        ),
+        15 => array(
+            'Id' => 16,
+            'Label' => 'Wide Flash Adapter',
+        ),
+        16 => array(
+            'Id' => 32,
+            'Label' => 'Dome Diffuser',
+        ),
     );
 
 }

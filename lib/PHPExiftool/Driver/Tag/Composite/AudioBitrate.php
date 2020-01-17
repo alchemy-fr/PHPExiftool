@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AudioBitrate extends AbstractTag
 {
 
-    protected $Id = 'AudioBitrate';
+    protected $Id = 'MPEG::AudioBitrate';
 
     protected $Name = 'AudioBitrate';
 

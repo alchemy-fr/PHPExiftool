@@ -41,6 +41,34 @@ class DR4CameraModel extends AbstractTag
     protected $Description = 'DR4 Camera Model';
 
     protected $Values = array(
+        1042 => array(
+            'Id' => 1042,
+            'Label' => 'EOS M50 / Kiss M',
+        ),
+        2049 => array(
+            'Id' => 2049,
+            'Label' => 'PowerShot SX740 HS',
+        ),
+        2052 => array(
+            'Id' => 2052,
+            'Label' => 'PowerShot G5 X Mark II',
+        ),
+        2053 => array(
+            'Id' => 2053,
+            'Label' => 'PowerShot SX70 HS',
+        ),
+        2056 => array(
+            'Id' => 2056,
+            'Label' => 'PowerShot G7 X Mark III',
+        ),
+        2065 => array(
+            'Id' => 2065,
+            'Label' => 'EOS M6 Mark II',
+        ),
+        2066 => array(
+            'Id' => 2066,
+            'Label' => 'EOS M200',
+        ),
         16842752 => array(
             'Id' => 16842752,
             'Label' => 'PowerShot A30',
@@ -527,7 +555,7 @@ class DR4CameraModel extends AbstractTag
         ),
         42074112 => array(
             'Id' => 42074112,
-            'Label' => 'PowerShot A3100 IS / A3150 IS',
+            'Label' => 'PowerShot A3100/A3150 IS',
         ),
         42139648 => array(
             'Id' => 42139648,
@@ -697,13 +725,17 @@ class DR4CameraModel extends AbstractTag
             'Id' => 52953088,
             'Label' => 'PowerShot A2300',
         ),
+        53608448 => array(
+            'Id' => 53608448,
+            'Label' => 'PowerShot S100V',
+        ),
         53673984 => array(
             'Id' => 53673984,
             'Label' => 'PowerShot G15',
         ),
         53739520 => array(
             'Id' => 53739520,
-            'Label' => 'PowerShot SX50',
+            'Label' => 'PowerShot SX50 HS',
         ),
         53805056 => array(
             'Id' => 53805056,
@@ -740,6 +772,10 @@ class DR4CameraModel extends AbstractTag
         54722560 => array(
             'Id' => 54722560,
             'Label' => 'PowerShot A2600',
+        ),
+        54788096 => array(
+            'Id' => 54788096,
+            'Label' => 'PowerShot SX275 HS',
         ),
         54853632 => array(
             'Id' => 54853632,
@@ -889,13 +925,77 @@ class DR4CameraModel extends AbstractTag
             'Id' => 59965440,
             'Label' => 'PowerShot G9 X',
         ),
+        60030976 => array(
+            'Id' => 60030976,
+            'Label' => 'EOS M5',
+        ),
         60096512 => array(
             'Id' => 60096512,
             'Label' => 'PowerShot G5 X',
         ),
+        60227584 => array(
+            'Id' => 60227584,
+            'Label' => 'PowerShot G7 X Mark II',
+        ),
+        60293120 => array(
+            'Id' => 60293120,
+            'Label' => 'EOS M100',
+        ),
+        60358656 => array(
+            'Id' => 60358656,
+            'Label' => 'PowerShot ELPH 360 HS / IXUS 285 HS / IXY 650',
+        ),
+        67174400 => array(
+            'Id' => 67174400,
+            'Label' => 'PowerShot SX540 HS',
+        ),
+        67239936 => array(
+            'Id' => 67239936,
+            'Label' => 'PowerShot SX420 IS',
+        ),
+        67305472 => array(
+            'Id' => 67305472,
+            'Label' => 'PowerShot ELPH 190 IS / IXUS 180 / IXY 190',
+        ),
         67371008 => array(
             'Id' => 67371008,
             'Label' => 'PowerShot G1',
+        ),
+        67371009 => array(
+            'Id' => 67371009,
+            'Label' => 'PowerShot ELPH 180 IS / IXUS 175 / IXY 180',
+        ),
+        67436544 => array(
+            'Id' => 67436544,
+            'Label' => 'PowerShot SX720 HS',
+        ),
+        67502080 => array(
+            'Id' => 67502080,
+            'Label' => 'PowerShot SX620 HS',
+        ),
+        67567616 => array(
+            'Id' => 67567616,
+            'Label' => 'EOS M6',
+        ),
+        68157440 => array(
+            'Id' => 68157440,
+            'Label' => 'PowerShot G9 X Mark II',
+        ),
+        68485120 => array(
+            'Id' => 68485120,
+            'Label' => 'PowerShot ELPH 185 / IXUS 185 / IXY 200',
+        ),
+        68550656 => array(
+            'Id' => 68550656,
+            'Label' => 'PowerShot SX430 IS',
+        ),
+        68616192 => array(
+            'Id' => 68616192,
+            'Label' => 'PowerShot SX730 HS',
+        ),
+        68681728 => array(
+            'Id' => 68681728,
+            'Label' => 'PowerShot G1 X Mark III',
         ),
         100925440 => array(
             'Id' => 100925440,
@@ -1013,6 +1113,10 @@ class DR4CameraModel extends AbstractTag
             'Id' => 1074256530,
             'Label' => 'FS31/FS36/FS37/FS300/FS305/FS306/FS307',
         ),
+        1074257056 => array(
+            'Id' => 1074257056,
+            'Label' => 'EOS C300',
+        ),
         1074257321 => array(
             'Id' => 1074257321,
             'Label' => 'HF G25',
@@ -1020,6 +1124,10 @@ class DR4CameraModel extends AbstractTag
         1074257844 => array(
             'Id' => 1074257844,
             'Label' => 'XC10',
+        ),
+        1074258371 => array(
+            'Id' => 1074258371,
+            'Label' => 'EOS C200',
         ),
         '2147483649' => array(
             'Id' => '2147483649',
@@ -1187,7 +1295,11 @@ class DR4CameraModel extends AbstractTag
         ),
         '2147484455' => array(
             'Id' => '2147484455',
-            'Label' => 'EOS Rebel T5 / 1200D / Kiss X70',
+            'Label' => 'EOS Rebel T5 / 1200D / Kiss X70 / Hi',
+        ),
+        '2147484456' => array(
+            'Id' => '2147484456',
+            'Label' => 'EOS-1D X Mark II',
         ),
         '2147484465' => array(
             'Id' => '2147484465',
@@ -1200,6 +1312,14 @@ class DR4CameraModel extends AbstractTag
         '2147484487' => array(
             'Id' => '2147484487',
             'Label' => 'EOS Rebel T6s / 760D / 8000D',
+        ),
+        '2147484489' => array(
+            'Id' => '2147484489',
+            'Label' => 'EOS 5D Mark IV',
+        ),
+        '2147484496' => array(
+            'Id' => '2147484496',
+            'Label' => 'EOS 80D',
         ),
         '2147484501' => array(
             'Id' => '2147484501',
@@ -1216,6 +1336,62 @@ class DR4CameraModel extends AbstractTag
         '2147484673' => array(
             'Id' => '2147484673',
             'Label' => 'EOS 5DS R',
+        ),
+        '2147484676' => array(
+            'Id' => '2147484676',
+            'Label' => 'EOS Rebel T6 / 1300D / Kiss X80',
+        ),
+        '2147484677' => array(
+            'Id' => '2147484677',
+            'Label' => 'EOS Rebel T7i / 800D / Kiss X9i',
+        ),
+        '2147484678' => array(
+            'Id' => '2147484678',
+            'Label' => 'EOS 6D Mark II',
+        ),
+        '2147484680' => array(
+            'Id' => '2147484680',
+            'Label' => 'EOS 77D / 9000D',
+        ),
+        '2147484695' => array(
+            'Id' => '2147484695',
+            'Label' => 'EOS Rebel SL2 / 200D / Kiss X9',
+        ),
+        '2147484706' => array(
+            'Id' => '2147484706',
+            'Label' => 'EOS Rebel T100 / 4000D / 3000D',
+        ),
+        '2147484708' => array(
+            'Id' => '2147484708',
+            'Label' => 'EOS R',
+        ),
+        '2147484712' => array(
+            'Id' => '2147484712',
+            'Label' => 'EOS-1D X Mark III',
+        ),
+        '2147484722' => array(
+            'Id' => '2147484722',
+            'Label' => 'EOS Rebel T7 / 2000D / 1500D / Kiss X90',
+        ),
+        '2147484723' => array(
+            'Id' => '2147484723',
+            'Label' => 'EOS RP',
+        ),
+        '2147484726' => array(
+            'Id' => '2147484726',
+            'Label' => 'EOS SL3 / 250D / Kiss X10',
+        ),
+        '2147484727' => array(
+            'Id' => '2147484727',
+            'Label' => 'EOS 90D',
+        ),
+        '2147484960' => array(
+            'Id' => '2147484960',
+            'Label' => 'EOS D2000C',
+        ),
+        '2147485024' => array(
+            'Id' => '2147485024',
+            'Label' => 'EOS D6000C',
         ),
     );
 

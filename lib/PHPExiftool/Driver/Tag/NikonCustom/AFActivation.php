@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AFActivation extends AbstractTag
 {
 
-    protected $Id = '2.1';
+    protected $Id = 'mixed';
 
     protected $Name = 'AFActivation';
 
@@ -47,8 +47,8 @@ class AFActivation extends AbstractTag
             'Id' => 0,
             'Label' => 'Shutter/AF-On',
         ),
-        128 => array(
-            'Id' => 128,
+        1 => array(
+            'Id' => 1,
             'Label' => 'AF-On Only',
         ),
     );

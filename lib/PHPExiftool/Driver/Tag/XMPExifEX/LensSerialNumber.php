@@ -40,4 +40,6 @@ class LensSerialNumber extends AbstractTag
 
     protected $Description = 'Lens Serial Number';
 
+    protected $local_g2 = 'Camera';
+
 }

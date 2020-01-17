@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ExtenderStatus extends AbstractTag
 {
 
-    protected $Id = 'ExtenderStatus';
+    protected $Id = 'Olympus::ExtenderStatus';
 
     protected $Name = 'ExtenderStatus';
 

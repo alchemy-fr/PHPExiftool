@@ -46,6 +46,6 @@ class MakerNoteSigma extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $Index = 71;
+    protected $Index = 78;
 
 }

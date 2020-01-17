@@ -47,17 +47,93 @@ class MoviePreviewButton extends AbstractTag
             'Id' => 0,
             'Label' => 'None',
         ),
-        2 => array(
+        1 => array(
             'Id' => 2,
             'Label' => 'Power Aperture (open)',
         ),
-        3 => array(
+        2 => array(
             'Id' => 3,
             'Label' => 'Index Marking',
         ),
-        4 => array(
+        3 => array(
             'Id' => 4,
             'Label' => 'View Photo Shooting Info',
+        ),
+        4 => array(
+            'Id' => 0,
+            'Label' => 'None',
+        ),
+        5 => array(
+            'Id' => 1,
+            'Label' => 'Power Aperture (open)',
+        ),
+        6 => array(
+            'Id' => 3,
+            'Label' => 'Index Marking',
+        ),
+        7 => array(
+            'Id' => 4,
+            'Label' => 'View Photo Shooting Info',
+        ),
+        8 => array(
+            'Id' => 10,
+            'Label' => 'Exposure Compensation +',
+        ),
+        9 => array(
+            'Id' => 0,
+            'Label' => 'None',
+        ),
+        10 => array(
+            'Id' => 1,
+            'Label' => 'Power Aperture (open)',
+        ),
+        11 => array(
+            'Id' => 3,
+            'Label' => 'Index Marking',
+        ),
+        12 => array(
+            'Id' => 4,
+            'Label' => 'View Photo Shooting Info',
+        ),
+        13 => array(
+            'Id' => 10,
+            'Label' => 'Exposure Compensation +',
+        ),
+        14 => array(
+            'Id' => 0,
+            'Label' => 'None',
+        ),
+        15 => array(
+            'Id' => 2,
+            'Label' => 'Power Aperture (open)',
+        ),
+        16 => array(
+            'Id' => 3,
+            'Label' => 'Index Marking',
+        ),
+        17 => array(
+            'Id' => 4,
+            'Label' => 'View Photo Shooting Info',
+        ),
+        18 => array(
+            'Id' => 0,
+            'Label' => 'None',
+        ),
+        19 => array(
+            'Id' => 1,
+            'Label' => 'Power Aperture (open)',
+        ),
+        20 => array(
+            'Id' => 3,
+            'Label' => 'Index Marking',
+        ),
+        21 => array(
+            'Id' => 4,
+            'Label' => 'View Photo Shooting Info',
+        ),
+        22 => array(
+            'Id' => 10,
+            'Label' => 'Exposure Compensation +',
         ),
     );
 

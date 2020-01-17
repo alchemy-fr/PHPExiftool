@@ -24,7 +24,7 @@ class LicensorCity extends AbstractTag
 
     protected $Name = 'LicensorCity';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

@@ -48,11 +48,11 @@ class CHModeShootingSpeed extends AbstractTag
             'Label' => '9 fps',
         ),
         1 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => '10 fps',
         ),
         2 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => '11 fps',
         ),
         3 => array(
@@ -60,7 +60,7 @@ class CHModeShootingSpeed extends AbstractTag
             'Label' => '10 fps',
         ),
         4 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => '11 fps',
         ),
     );

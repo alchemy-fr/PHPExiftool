@@ -32,11 +32,11 @@ class ISO extends AbstractTag
 
     protected $g1 = 'Canon';
 
-    protected $g2 = 'Camera';
+    protected $g2 = 'mixed';
 
     protected $Type = 'mixed';
 
-    protected $Writable = true;
+    protected $Writable = false;
 
     protected $Description = 'ISO';
 

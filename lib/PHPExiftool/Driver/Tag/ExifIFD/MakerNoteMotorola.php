@@ -46,6 +46,6 @@ class MakerNoteMotorola extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $Index = 37;
+    protected $Index = 39;
 
 }

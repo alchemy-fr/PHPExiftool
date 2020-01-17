@@ -48,39 +48,7 @@ class CommandDialsApertureSetting extends AbstractTag
             'Label' => 'Sub-command Dial',
         ),
         1 => array(
-            'Id' => 32,
-            'Label' => 'Aperture Ring',
-        ),
-        2 => array(
-            'Id' => 0,
-            'Label' => 'Sub-command Dial',
-        ),
-        3 => array(
-            'Id' => 4,
-            'Label' => 'Aperture Ring',
-        ),
-        4 => array(
-            'Id' => 0,
-            'Label' => 'Sub-command Dial',
-        ),
-        5 => array(
-            'Id' => 32,
-            'Label' => 'Aperture Ring',
-        ),
-        6 => array(
-            'Id' => 0,
-            'Label' => 'Sub-command Dial',
-        ),
-        7 => array(
-            'Id' => 4,
-            'Label' => 'Aperture Ring',
-        ),
-        8 => array(
-            'Id' => 0,
-            'Label' => 'Sub-command Dial',
-        ),
-        9 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'Aperture Ring',
         ),
     );

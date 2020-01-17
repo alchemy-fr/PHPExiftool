@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class Balance extends AbstractTag
 {
 
-    protected $Id = 'mixed';
+    protected $Id = 2;
 
     protected $Name = 'Balance';
 
-    protected $FullName = 'mixed';
+    protected $FullName = 'QuickTime::AudioHeader';
 
     protected $GroupName = 'QuickTime';
 
@@ -32,9 +32,9 @@ class Balance extends AbstractTag
 
     protected $g1 = 'QuickTime';
 
-    protected $g2 = 'mixed';
+    protected $g2 = 'Audio';
 
-    protected $Type = 'mixed';
+    protected $Type = 'fixed16s';
 
     protected $Writable = false;
 

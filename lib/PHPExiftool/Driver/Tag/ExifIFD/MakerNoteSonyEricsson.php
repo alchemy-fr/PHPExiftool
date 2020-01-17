@@ -46,6 +46,6 @@ class MakerNoteSonyEricsson extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $Index = 77;
+    protected $Index = 84;
 
 }

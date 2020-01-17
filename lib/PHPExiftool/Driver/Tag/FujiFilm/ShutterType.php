@@ -51,6 +51,14 @@ class ShutterType extends AbstractTag
             'Id' => 1,
             'Label' => 'Electronic',
         ),
+        2 => array(
+            'Id' => 2,
+            'Label' => 'Electronic (long shutter speed)',
+        ),
+        3 => array(
+            'Id' => 3,
+            'Label' => 'Electronic Front Curtain',
+        ),
     );
 
 }

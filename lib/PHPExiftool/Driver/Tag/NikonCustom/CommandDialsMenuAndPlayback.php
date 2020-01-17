@@ -48,7 +48,7 @@ class CommandDialsMenuAndPlayback extends AbstractTag
             'Label' => 'Off',
         ),
         1 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'On',
         ),
         2 => array(
@@ -56,43 +56,79 @@ class CommandDialsMenuAndPlayback extends AbstractTag
             'Label' => 'On',
         ),
         3 => array(
-            'Id' => 8,
+            'Id' => 1,
             'Label' => 'Off',
         ),
         4 => array(
-            'Id' => 16,
+            'Id' => 2,
             'Label' => 'On (Image Review Excluded)',
         ),
         5 => array(
             'Id' => 0,
-            'Label' => 'Off',
+            'Label' => 'On',
         ),
         6 => array(
-            'Id' => 16,
-            'Label' => 'On',
-        ),
-        7 => array(
-            'Id' => 0,
-            'Label' => 'On',
-        ),
-        8 => array(
-            'Id' => 8,
+            'Id' => 1,
             'Label' => 'Off',
         ),
-        9 => array(
-            'Id' => 16,
-            'Label' => 'On (Image Review Exclude)',
+        7 => array(
+            'Id' => 2,
+            'Label' => 'On (Image Review Excluded)',
         ),
-        10 => array(
+        8 => array(
             'Id' => 0,
             'Label' => 'On',
         ),
+        9 => array(
+            'Id' => 1,
+            'Label' => 'Off',
+        ),
+        10 => array(
+            'Id' => 2,
+            'Label' => 'On (Image Review Excluded)',
+        ),
         11 => array(
-            'Id' => 8,
+            'Id' => 0,
             'Label' => 'Off',
         ),
         12 => array(
-            'Id' => 16,
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        13 => array(
+            'Id' => 0,
+            'Label' => 'On',
+        ),
+        14 => array(
+            'Id' => 1,
+            'Label' => 'Off',
+        ),
+        15 => array(
+            'Id' => 2,
+            'Label' => 'On (Image Review Exclude)',
+        ),
+        16 => array(
+            'Id' => 0,
+            'Label' => 'On',
+        ),
+        17 => array(
+            'Id' => 1,
+            'Label' => 'Off',
+        ),
+        18 => array(
+            'Id' => 2,
+            'Label' => 'On (Image Review Excluded)',
+        ),
+        19 => array(
+            'Id' => 0,
+            'Label' => 'On',
+        ),
+        20 => array(
+            'Id' => 1,
+            'Label' => 'Off',
+        ),
+        21 => array(
+            'Id' => 2,
             'Label' => 'On (Image Review Excluded)',
         ),
     );

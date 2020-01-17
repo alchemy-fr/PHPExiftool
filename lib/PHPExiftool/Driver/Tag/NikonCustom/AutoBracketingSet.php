@@ -47,20 +47,20 @@ class AutoBracketingSet extends AbstractTag
             'Id' => 0,
             'Label' => 'AE & Flash',
         ),
-        32 => array(
-            'Id' => 32,
+        1 => array(
+            'Id' => 1,
             'Label' => 'AE Only',
         ),
-        64 => array(
-            'Id' => 64,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Flash Only',
         ),
-        96 => array(
-            'Id' => 96,
+        3 => array(
+            'Id' => 3,
             'Label' => 'WB Bracketing',
         ),
-        128 => array(
-            'Id' => 128,
+        4 => array(
+            'Id' => 4,
             'Label' => 'Active D-Lighting',
         ),
     );

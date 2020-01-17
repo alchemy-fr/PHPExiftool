@@ -48,79 +48,15 @@ class AutoBracketModeM extends AbstractTag
             'Label' => 'Flash/Speed',
         ),
         1 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Flash/Speed/Aperture',
         ),
         2 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Flash/Aperture',
         ),
         3 => array(
-            'Id' => 48,
-            'Label' => 'Flash Only',
-        ),
-        4 => array(
-            'Id' => 0,
-            'Label' => 'Flash/Speed',
-        ),
-        5 => array(
-            'Id' => 8,
-            'Label' => 'Flash/Speed/Aperture',
-        ),
-        6 => array(
-            'Id' => 16,
-            'Label' => 'Flash/Aperture',
-        ),
-        7 => array(
-            'Id' => 24,
-            'Label' => 'Flash Only',
-        ),
-        8 => array(
-            'Id' => 0,
-            'Label' => 'Flash/Speed',
-        ),
-        9 => array(
-            'Id' => 4,
-            'Label' => 'Flash/Speed/Aperture',
-        ),
-        10 => array(
-            'Id' => 8,
-            'Label' => 'Flash/Aperture',
-        ),
-        11 => array(
-            'Id' => 12,
-            'Label' => 'Flash Only',
-        ),
-        12 => array(
-            'Id' => 0,
-            'Label' => 'Flash/Speed',
-        ),
-        13 => array(
-            'Id' => 16,
-            'Label' => 'Flash/Speed/Aperture',
-        ),
-        14 => array(
-            'Id' => 32,
-            'Label' => 'Flash/Aperture',
-        ),
-        15 => array(
-            'Id' => 48,
-            'Label' => 'Flash Only',
-        ),
-        16 => array(
-            'Id' => 0,
-            'Label' => 'Flash/Speed',
-        ),
-        17 => array(
-            'Id' => 4,
-            'Label' => 'Flash/Speed/Aperture',
-        ),
-        18 => array(
-            'Id' => 8,
-            'Label' => 'Flash/Aperture',
-        ),
-        19 => array(
-            'Id' => 12,
+            'Id' => 3,
             'Label' => 'Flash Only',
         ),
     );

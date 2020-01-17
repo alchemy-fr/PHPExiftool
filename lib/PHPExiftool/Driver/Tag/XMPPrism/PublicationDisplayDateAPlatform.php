@@ -40,6 +40,8 @@ class PublicationDisplayDateAPlatform extends AbstractTag
 
     protected $Description = 'Publication Display Date A-platform';
 
+    protected $flag_Avoid = true;
+
     protected $flag_List = true;
 
 }

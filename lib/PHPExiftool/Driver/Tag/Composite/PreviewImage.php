@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class PreviewImage extends AbstractTag
 {
 
-    protected $Id = 'mixed';
+    protected $Id = 'FlashPix::PreviewImage';
 
     protected $Name = 'PreviewImage';
 
@@ -42,6 +42,6 @@ class PreviewImage extends AbstractTag
 
     protected $local_g2 = 'Preview';
 
-    protected $flag_Binary = false;
+    protected $flag_Binary = true;
 
 }

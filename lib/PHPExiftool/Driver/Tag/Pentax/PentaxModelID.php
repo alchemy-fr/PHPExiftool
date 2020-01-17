@@ -571,9 +571,33 @@ class PentaxModelID extends AbstractTag
             'Id' => 77960,
             'Label' => 'WG-5 GPS',
         ),
+        77970 => array(
+            'Id' => 77970,
+            'Label' => 'K-1',
+        ),
         77980 => array(
             'Id' => 77980,
             'Label' => 'K-3 II',
+        ),
+        78320 => array(
+            'Id' => 78320,
+            'Label' => 'WG-M2',
+        ),
+        78350 => array(
+            'Id' => 78350,
+            'Label' => 'GR III',
+        ),
+        78370 => array(
+            'Id' => 78370,
+            'Label' => 'K-70',
+        ),
+        78380 => array(
+            'Id' => 78380,
+            'Label' => 'KP',
+        ),
+        78400 => array(
+            'Id' => 78400,
+            'Label' => 'K-1 Mark II',
         ),
     );
 

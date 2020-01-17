@@ -40,6 +40,8 @@ class PreviewImageStart extends AbstractTag
 
     protected $Description = 'Preview Image Start';
 
+    protected $flag_Permanent = true;
+
     protected $flag_Protected = true;
 
     protected $Index = 'mixed';

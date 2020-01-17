@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class CFAPattern extends AbstractTag
 {
 
-    protected $Id = 'CFAPattern';
+    protected $Id = 'Exif::CFAPattern';
 
     protected $Name = 'CFAPattern';
 

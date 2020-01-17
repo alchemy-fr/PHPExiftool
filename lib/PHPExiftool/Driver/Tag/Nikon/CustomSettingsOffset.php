@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class CustomSettingsOffset extends AbstractTag
 {
 
-    protected $Id = 64;
+    protected $Id = 'mixed';
 
     protected $Name = 'CustomSettingsOffset';
 
-    protected $FullName = 'Nikon::ShotInfoD810';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

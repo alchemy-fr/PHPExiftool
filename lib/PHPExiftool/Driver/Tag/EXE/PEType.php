@@ -41,6 +41,10 @@ class PEType extends AbstractTag
     protected $Description = 'PE Type';
 
     protected $Values = array(
+        263 => array(
+            'Id' => 263,
+            'Label' => 'ROM Image',
+        ),
         267 => array(
             'Id' => 267,
             'Label' => 'PE32',

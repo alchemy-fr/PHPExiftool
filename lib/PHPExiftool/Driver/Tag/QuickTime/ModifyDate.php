@@ -36,12 +36,12 @@ class ModifyDate extends AbstractTag
 
     protected $Type = 'mixed';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
     protected $Description = 'Modify Date';
 
     protected $local_g2 = 'Time';
 
-    protected $flag_Permanent = 'mixed';
+    protected $flag_Permanent = true;
 
 }
