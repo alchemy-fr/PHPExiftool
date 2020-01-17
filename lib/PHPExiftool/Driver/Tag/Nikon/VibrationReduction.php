@@ -84,7 +84,7 @@ class VibrationReduction extends AbstractTag
             'Label' => 'Off',
         ),
         10 => array(
-            'Id' => 8,
+            'Id' => 1,
             'Label' => 'On',
         ),
         11 => array(
@@ -92,7 +92,7 @@ class VibrationReduction extends AbstractTag
             'Label' => 'Off',
         ),
         12 => array(
-            'Id' => 24,
+            'Id' => 3,
             'Label' => 'On',
         ),
         13 => array(

@@ -45,39 +45,39 @@ class PictureProfile extends AbstractTag
     protected $Values = array(
         0 => array(
             'Id' => 0,
-            'Label' => 'Standard/Neutral - Gamma Still (PP2)',
+            'Label' => 'Gamma Still - Standard/Neutral (PP2)',
         ),
         1 => array(
             'Id' => 1,
-            'Label' => 'Portrait',
+            'Label' => 'Gamma Still - Portrait',
         ),
         3 => array(
             'Id' => 3,
-            'Label' => 'Night View/Portrait',
+            'Label' => 'Gamma Still - Night View/Portrait',
         ),
         4 => array(
             'Id' => 4,
-            'Label' => 'B&W/Sepia',
+            'Label' => 'Gamma Still - B&W/Sepia',
         ),
         5 => array(
             'Id' => 5,
-            'Label' => 'Clear',
+            'Label' => 'Gamma Still - Clear',
         ),
         6 => array(
             'Id' => 6,
-            'Label' => 'Deep',
+            'Label' => 'Gamma Still - Deep',
         ),
         7 => array(
             'Id' => 7,
-            'Label' => 'Light',
+            'Label' => 'Gamma Still - Light',
         ),
         8 => array(
             'Id' => 8,
-            'Label' => 'Vivid',
+            'Label' => 'Gamma Still - Vivid',
         ),
         9 => array(
             'Id' => 9,
-            'Label' => 'Real',
+            'Label' => 'Gamma Still - Real',
         ),
         10 => array(
             'Id' => 10,
@@ -85,11 +85,7 @@ class PictureProfile extends AbstractTag
         ),
         22 => array(
             'Id' => 22,
-            'Label' => 'Gamma ITU709 (PP3)',
-        ),
-        23 => array(
-            'Id' => 23,
-            'Label' => 'ColorTone ITU709 (PP4)',
+            'Label' => 'Gamma ITU709 (PP3 or PP4)',
         ),
         24 => array(
             'Id' => 24,
@@ -113,7 +109,15 @@ class PictureProfile extends AbstractTag
         ),
         29 => array(
             'Id' => 29,
-            'Label' => 'Gamma ITU709(800%)',
+            'Label' => 'Gamma ITU709 (800%)',
+        ),
+        31 => array(
+            'Id' => 31,
+            'Label' => 'Gamma S-Log3 (PP8 or PP9)',
+        ),
+        33 => array(
+            'Id' => 33,
+            'Label' => 'Gamma HLG2 (PP10)',
         ),
     );
 

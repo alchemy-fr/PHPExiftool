@@ -40,6 +40,8 @@ class InternalLensSerialNumber extends AbstractTag
 
     protected $Description = 'Internal Lens Serial Number';
 
+    protected $local_g2 = 'Camera';
+
     protected $flag_Permanent = true;
 
 }

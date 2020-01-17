@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class Rotation extends AbstractTag
 {
 
-    protected $Id = '590.1';
+    protected $Id = 'mixed';
 
     protected $Name = 'Rotation';
 
-    protected $FullName = 'Nikon::ShotInfoD80';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 
@@ -49,15 +49,15 @@ class Rotation extends AbstractTag
         ),
         1 => array(
             'Id' => 1,
-            'Label' => 'Rotated 270 CW',
+            'Label' => 'Rotate 270 CW',
         ),
         2 => array(
             'Id' => 2,
-            'Label' => 'Rotated 90 CW',
+            'Label' => 'Rotate 90 CW',
         ),
         3 => array(
             'Id' => 3,
-            'Label' => 'Rotated 180',
+            'Label' => 'Rotate 180',
         ),
     );
 

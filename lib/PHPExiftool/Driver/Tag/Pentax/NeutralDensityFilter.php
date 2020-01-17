@@ -51,6 +51,14 @@ class NeutralDensityFilter extends AbstractTag
             'Id' => 1,
             'Label' => 'On',
         ),
+        '0 2' => array(
+            'Id' => '0 2',
+            'Label' => 'Off (0 2)',
+        ),
+        '1 2' => array(
+            'Id' => '1 2',
+            'Label' => 'On (1 2)',
+        ),
     );
 
 }

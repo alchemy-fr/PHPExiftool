@@ -57,7 +57,7 @@ class ReleaseMode2 extends AbstractTag
         ),
         3 => array(
             'Id' => 3,
-            'Label' => 'Continuous - White Balance Bracketing',
+            'Label' => 'DRO or White Balance Bracketing',
         ),
         5 => array(
             'Id' => 5,
@@ -98,6 +98,10 @@ class ReleaseMode2 extends AbstractTag
         17 => array(
             'Id' => 17,
             'Label' => 'Continuous - Burst 2',
+        ),
+        18 => array(
+            'Id' => 18,
+            'Label' => 'Normal - iAuto+',
         ),
         19 => array(
             'Id' => 19,

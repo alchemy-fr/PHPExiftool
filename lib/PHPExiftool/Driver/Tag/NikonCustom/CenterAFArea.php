@@ -47,8 +47,8 @@ class CenterAFArea extends AbstractTag
             'Id' => 0,
             'Label' => 'Normal Zone',
         ),
-        128 => array(
-            'Id' => 128,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Wide Zone',
         ),
     );

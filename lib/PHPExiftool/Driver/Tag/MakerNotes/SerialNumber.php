@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class SerialNumber extends AbstractTag
 {
 
-    protected $Id = 14;
+    protected $Id = 'mixed';
 
     protected $Name = 'SerialNumber';
 
-    protected $FullName = 'QuickTime::Flip';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'MakerNotes';
 
@@ -32,9 +32,9 @@ class SerialNumber extends AbstractTag
 
     protected $g1 = 'MakerNotes';
 
-    protected $g2 = 'Image';
+    protected $g2 = 'mixed';
 
-    protected $Type = 'string';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 

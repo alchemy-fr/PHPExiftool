@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class PitchAngle extends AbstractTag
 {
 
-    protected $Id = 13583;
+    protected $Id = 'mixed';
 
     protected $Name = 'PitchAngle';
 
-    protected $FullName = 'Nikon::ShotInfoD4S';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

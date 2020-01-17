@@ -24,7 +24,7 @@ class CopyrightOwnerImageID extends AbstractTag
 
     protected $Name = 'CopyrightOwnerImageID';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

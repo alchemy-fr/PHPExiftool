@@ -48,115 +48,211 @@ class LiveViewMonitorOffTime extends AbstractTag
             'Label' => '5 min',
         ),
         1 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => '10 min',
         ),
         2 => array(
-            'Id' => 8,
+            'Id' => 2,
             'Label' => '15 min',
         ),
         3 => array(
-            'Id' => 12,
+            'Id' => 3,
             'Label' => '20 min',
         ),
         4 => array(
-            'Id' => 16,
+            'Id' => 4,
             'Label' => '30 min',
         ),
         5 => array(
-            'Id' => 20,
+            'Id' => 5,
             'Label' => 'No Limit',
         ),
         6 => array(
-            'Id' => 0,
-            'Label' => '3 min',
-        ),
-        7 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => '5 min',
         ),
-        8 => array(
-            'Id' => 8,
+        7 => array(
+            'Id' => 2,
             'Label' => '10 min',
         ),
-        9 => array(
-            'Id' => 12,
+        8 => array(
+            'Id' => 3,
             'Label' => '15 min',
         ),
-        10 => array(
-            'Id' => 16,
+        9 => array(
+            'Id' => 4,
             'Label' => '20 min',
         ),
-        11 => array(
-            'Id' => 20,
+        10 => array(
+            'Id' => 5,
             'Label' => '30 min',
         ),
+        11 => array(
+            'Id' => 6,
+            'Label' => 'No Limit',
+        ),
         12 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => '5 min',
         ),
         13 => array(
-            'Id' => 8,
+            'Id' => 2,
             'Label' => '10 min',
         ),
         14 => array(
-            'Id' => 12,
+            'Id' => 3,
             'Label' => '15 min',
         ),
         15 => array(
-            'Id' => 16,
+            'Id' => 4,
             'Label' => '20 min',
         ),
         16 => array(
-            'Id' => 20,
+            'Id' => 5,
             'Label' => '30 min',
         ),
         17 => array(
+            'Id' => 6,
+            'Label' => 'No Limit',
+        ),
+        18 => array(
+            'Id' => 0,
+            'Label' => '3 min',
+        ),
+        19 => array(
+            'Id' => 1,
+            'Label' => '5 min',
+        ),
+        20 => array(
+            'Id' => 2,
+            'Label' => '10 min',
+        ),
+        21 => array(
+            'Id' => 3,
+            'Label' => '15 min',
+        ),
+        22 => array(
+            'Id' => 4,
+            'Label' => '20 min',
+        ),
+        23 => array(
+            'Id' => 5,
+            'Label' => '30 min',
+        ),
+        24 => array(
+            'Id' => 1,
+            'Label' => '5 min',
+        ),
+        25 => array(
+            'Id' => 2,
+            'Label' => '10 min',
+        ),
+        26 => array(
+            'Id' => 3,
+            'Label' => '15 min',
+        ),
+        27 => array(
+            'Id' => 4,
+            'Label' => '20 min',
+        ),
+        28 => array(
+            'Id' => 5,
+            'Label' => '30 min',
+        ),
+        29 => array(
+            'Id' => 0,
+            'Label' => '5 min',
+        ),
+        30 => array(
+            'Id' => 1,
+            'Label' => '10 min',
+        ),
+        31 => array(
+            'Id' => 2,
+            'Label' => '15 min',
+        ),
+        32 => array(
+            'Id' => 3,
+            'Label' => '20 min',
+        ),
+        33 => array(
+            'Id' => 4,
+            'Label' => '30 min',
+        ),
+        34 => array(
+            'Id' => 5,
+            'Label' => 'No Limit',
+        ),
+        35 => array(
             'Id' => 0,
             'Label' => '4 s',
         ),
-        18 => array(
-            'Id' => 4,
+        36 => array(
+            'Id' => 1,
             'Label' => '10 s',
         ),
-        19 => array(
-            'Id' => 8,
+        37 => array(
+            'Id' => 2,
             'Label' => '20 s',
         ),
-        20 => array(
-            'Id' => 12,
+        38 => array(
+            'Id' => 3,
             'Label' => '1 min',
         ),
-        21 => array(
-            'Id' => 16,
-            'Label' => '5 min',
-        ),
-        22 => array(
-            'Id' => 20,
-            'Label' => '10 min',
-        ),
-        23 => array(
+        39 => array(
             'Id' => 4,
             'Label' => '5 min',
         ),
-        24 => array(
-            'Id' => 8,
+        40 => array(
+            'Id' => 5,
             'Label' => '10 min',
         ),
-        25 => array(
-            'Id' => 12,
+        41 => array(
+            'Id' => 1,
+            'Label' => '5 min',
+        ),
+        42 => array(
+            'Id' => 2,
+            'Label' => '10 min',
+        ),
+        43 => array(
+            'Id' => 3,
             'Label' => '15 min',
         ),
-        26 => array(
-            'Id' => 16,
+        44 => array(
+            'Id' => 4,
             'Label' => '20 min',
         ),
-        27 => array(
-            'Id' => 20,
+        45 => array(
+            'Id' => 5,
             'Label' => '30 min',
         ),
-        28 => array(
-            'Id' => 24,
+        46 => array(
+            'Id' => 6,
+            'Label' => 'No Limit',
+        ),
+        47 => array(
+            'Id' => 1,
+            'Label' => '5 min',
+        ),
+        48 => array(
+            'Id' => 2,
+            'Label' => '10 min',
+        ),
+        49 => array(
+            'Id' => 3,
+            'Label' => '15 min',
+        ),
+        50 => array(
+            'Id' => 4,
+            'Label' => '20 min',
+        ),
+        51 => array(
+            'Id' => 5,
+            'Label' => '30 min',
+        ),
+        52 => array(
+            'Id' => 6,
             'Label' => 'No Limit',
         ),
     );

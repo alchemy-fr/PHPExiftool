@@ -34,29 +34,31 @@ class VariableLowPassFilter extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'int32u';
+    protected $Type = 'int16u';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
     protected $Description = 'Variable Low Pass Filter';
 
     protected $flag_Permanent = true;
 
+    protected $MaxLength = 2;
+
     protected $Values = array(
-        0 => array(
-            'Id' => 0,
+        '0 0' => array(
+            'Id' => '0 0',
             'Label' => 'n/a',
         ),
-        1 => array(
-            'Id' => 1,
+        '1 0' => array(
+            'Id' => '1 0',
             'Label' => 'Off',
         ),
-        65537 => array(
-            'Id' => 65537,
+        '1 1' => array(
+            'Id' => '1 1',
             'Label' => 'Standard',
         ),
-        131073 => array(
-            'Id' => 131073,
+        '1 2' => array(
+            'Id' => '1 2',
             'Label' => 'High',
         ),
     );

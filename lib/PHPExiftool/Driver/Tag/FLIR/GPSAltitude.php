@@ -20,15 +20,15 @@ use PHPExiftool\Driver\AbstractTag;
 class GPSAltitude extends AbstractTag
 {
 
-    protected $Id = 3;
+    protected $Id = 'mixed';
 
     protected $Name = 'GPSAltitude';
 
-    protected $FullName = 'FLIR::GPS_UUID';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'FLIR';
 
-    protected $g0 = 'MakerNotes';
+    protected $g0 = 'mixed';
 
     protected $g1 = 'FLIR';
 
@@ -40,6 +40,6 @@ class GPSAltitude extends AbstractTag
 
     protected $Description = 'GPS Altitude';
 
-    protected $flag_Permanent = true;
+    protected $flag_Permanent = 'mixed';
 
 }

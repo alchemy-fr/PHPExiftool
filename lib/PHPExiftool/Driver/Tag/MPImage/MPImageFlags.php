@@ -41,16 +41,16 @@ class MPImageFlags extends AbstractTag
     protected $Description = 'MP Image Flags';
 
     protected $Values = array(
-        536870912 => array(
-            'Id' => 536870912,
+        4 => array(
+            'Id' => 4,
             'Label' => 'Representative image',
         ),
-        1073741824 => array(
-            'Id' => 1073741824,
+        8 => array(
+            'Id' => 8,
             'Label' => 'Dependent child image',
         ),
-        '2147483648' => array(
-            'Id' => '2147483648',
+        16 => array(
+            'Id' => 16,
             'Label' => 'Dependent parent image',
         ),
     );

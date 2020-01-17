@@ -61,7 +61,7 @@ class AFAreaModeSetting extends AbstractTag
         ),
         4 => array(
             'Id' => 0,
-            'Label' => 'Multi',
+            'Label' => 'Wide',
         ),
         5 => array(
             'Id' => 1,
@@ -72,26 +72,38 @@ class AFAreaModeSetting extends AbstractTag
             'Label' => 'Flexible Spot',
         ),
         7 => array(
+            'Id' => 4,
+            'Label' => 'Flexible Spot (LA-EA4)',
+        ),
+        8 => array(
+            'Id' => 9,
+            'Label' => 'Center (LA-EA4)',
+        ),
+        9 => array(
             'Id' => 11,
             'Label' => 'Zone',
         ),
-        8 => array(
+        10 => array(
+            'Id' => 12,
+            'Label' => 'Expanded Flexible Spot',
+        ),
+        11 => array(
             'Id' => 0,
             'Label' => 'Wide',
         ),
-        9 => array(
+        12 => array(
             'Id' => 4,
             'Label' => 'Flexible Spot',
         ),
-        10 => array(
+        13 => array(
             'Id' => 8,
             'Label' => 'Zone',
         ),
-        11 => array(
+        14 => array(
             'Id' => 9,
             'Label' => 'Center',
         ),
-        12 => array(
+        15 => array(
             'Id' => 12,
             'Label' => 'Expanded Flexible Spot',
         ),

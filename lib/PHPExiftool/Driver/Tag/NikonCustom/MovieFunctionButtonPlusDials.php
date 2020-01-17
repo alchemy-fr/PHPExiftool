@@ -47,8 +47,8 @@ class MovieFunctionButtonPlusDials extends AbstractTag
             'Id' => 0,
             'Label' => 'None',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Choose Image Area',
         ),
     );

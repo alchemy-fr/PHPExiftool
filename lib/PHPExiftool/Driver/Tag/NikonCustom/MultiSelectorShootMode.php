@@ -48,11 +48,11 @@ class MultiSelectorShootMode extends AbstractTag
             'Label' => 'Select Center Focus Point',
         ),
         1 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Highlight Active Focus Point',
         ),
         2 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Not Used',
         ),
         3 => array(
@@ -60,39 +60,87 @@ class MultiSelectorShootMode extends AbstractTag
             'Label' => 'Select Center Focus Point (Reset)',
         ),
         4 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Preset Focus Point (Pre)',
         ),
         5 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Not Used (None)',
         ),
         6 => array(
             'Id' => 0,
-            'Label' => 'Select Center Focus Point',
+            'Label' => 'Select Center Focus Point (Reset)',
         ),
         7 => array(
-            'Id' => 64,
-            'Label' => 'Highlight Active Focus Point',
+            'Id' => 1,
+            'Label' => 'Zoom On/Off',
         ),
         8 => array(
-            'Id' => 128,
-            'Label' => 'Not Used',
+            'Id' => 2,
+            'Label' => 'Preset Focus Point (Pre)',
         ),
         9 => array(
+            'Id' => 4,
+            'Label' => 'Not Used (None)',
+        ),
+        10 => array(
             'Id' => 0,
             'Label' => 'Select Center Focus Point (Reset)',
         ),
-        10 => array(
-            'Id' => 64,
-            'Label' => 'Highlight Active Focus Point',
-        ),
         11 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Preset Focus Point (Pre)',
         ),
         12 => array(
-            'Id' => 192,
+            'Id' => 3,
+            'Label' => 'Highlight Active Focus Point',
+        ),
+        13 => array(
+            'Id' => 4,
+            'Label' => 'Not Used (None)',
+        ),
+        14 => array(
+            'Id' => 0,
+            'Label' => 'Select Center Focus Point',
+        ),
+        15 => array(
+            'Id' => 1,
+            'Label' => 'Highlight Active Focus Point',
+        ),
+        16 => array(
+            'Id' => 2,
+            'Label' => 'Not Used',
+        ),
+        17 => array(
+            'Id' => 0,
+            'Label' => 'Select Center Focus Point (Reset)',
+        ),
+        18 => array(
+            'Id' => 1,
+            'Label' => 'Highlight Active Focus Point',
+        ),
+        19 => array(
+            'Id' => 2,
+            'Label' => 'Preset Focus Point (Pre)',
+        ),
+        20 => array(
+            'Id' => 3,
+            'Label' => 'Not Used (None)',
+        ),
+        21 => array(
+            'Id' => 0,
+            'Label' => 'Select Center Focus Point (Reset)',
+        ),
+        22 => array(
+            'Id' => 2,
+            'Label' => 'Preset Focus Point (Pre)',
+        ),
+        23 => array(
+            'Id' => 3,
+            'Label' => 'Highlight Active Focus Point',
+        ),
+        24 => array(
+            'Id' => 4,
             'Label' => 'Not Used (None)',
         ),
     );

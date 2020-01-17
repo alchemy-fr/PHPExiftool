@@ -47,9 +47,17 @@ class VRMode extends AbstractTag
             'Id' => 0,
             'Label' => 'Normal',
         ),
+        1 => array(
+            'Id' => 1,
+            'Label' => 'On (1)',
+        ),
         2 => array(
             'Id' => 2,
             'Label' => 'Active',
+        ),
+        3 => array(
+            'Id' => 3,
+            'Label' => 'Sport',
         ),
     );
 

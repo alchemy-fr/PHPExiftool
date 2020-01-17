@@ -47,12 +47,12 @@ class ExposureCompStepSize extends AbstractTag
             'Id' => 0,
             'Label' => '1/3 EV',
         ),
-        4 => array(
-            'Id' => 4,
+        1 => array(
+            'Id' => 1,
             'Label' => '1/2 EV',
         ),
-        8 => array(
-            'Id' => 8,
+        2 => array(
+            'Id' => 2,
             'Label' => '1 EV',
         ),
     );

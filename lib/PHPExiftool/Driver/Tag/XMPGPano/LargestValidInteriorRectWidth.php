@@ -34,7 +34,7 @@ class LargestValidInteriorRectWidth extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = 'integer';
+    protected $Type = 'real';
 
     protected $Writable = true;
 

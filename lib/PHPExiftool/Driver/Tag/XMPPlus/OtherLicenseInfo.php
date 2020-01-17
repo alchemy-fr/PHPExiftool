@@ -24,7 +24,7 @@ class OtherLicenseInfo extends AbstractTag
 
     protected $Name = 'OtherLicenseInfo';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

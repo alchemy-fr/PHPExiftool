@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class TriggerMode extends AbstractTag
 {
 
-    protected $Id = 6;
+    protected $Id = 'mixed';
 
     protected $Name = 'TriggerMode';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 
@@ -34,7 +34,7 @@ class TriggerMode extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'string';
+    protected $Type = 'mixed';
 
     protected $Writable = true;
 
@@ -42,7 +42,7 @@ class TriggerMode extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $MaxLength = 2;
+    protected $MaxLength = 'mixed';
 
     protected $Values = array(
         'C' => array(
@@ -60,6 +60,10 @@ class TriggerMode extends AbstractTag
         'T' => array(
             'Id' => 'T',
             'Label' => 'Time Lapse',
+        ),
+        'P' => array(
+            'Id' => 'P',
+            'Label' => 'Point and Shoot',
         ),
     );
 

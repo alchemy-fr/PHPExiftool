@@ -109,51 +109,51 @@ class FocusTrackingLockOn extends AbstractTag
         ),
         16 => array(
             'Id' => 0,
-            'Label' => '3 Normal',
+            'Label' => 'Off',
         ),
         17 => array(
             'Id' => 1,
-            'Label' => 4,
+            'Label' => '1 Short',
         ),
         18 => array(
             'Id' => 2,
-            'Label' => '5 Long',
+            'Label' => 2,
         ),
         19 => array(
             'Id' => 3,
-            'Label' => 2,
+            'Label' => '3 Normal',
         ),
         20 => array(
             'Id' => 4,
-            'Label' => '1 Short',
+            'Label' => 4,
         ),
         21 => array(
             'Id' => 5,
-            'Label' => 'Off',
+            'Label' => '5 Long',
         ),
         22 => array(
             'Id' => 0,
-            'Label' => 'Off',
+            'Label' => '3 Normal',
         ),
         23 => array(
             'Id' => 1,
-            'Label' => '1 Short',
+            'Label' => 4,
         ),
         24 => array(
             'Id' => 2,
-            'Label' => 2,
+            'Label' => '5 Long',
         ),
         25 => array(
             'Id' => 3,
-            'Label' => '3 Normal',
+            'Label' => 2,
         ),
         26 => array(
             'Id' => 4,
-            'Label' => 4,
+            'Label' => '1 Short',
         ),
         27 => array(
             'Id' => 5,
-            'Label' => '5 Long',
+            'Label' => 'Off',
         ),
         28 => array(
             'Id' => 0,
@@ -161,7 +161,7 @@ class FocusTrackingLockOn extends AbstractTag
         ),
         29 => array(
             'Id' => 1,
-            'Label' => '1 (Short)',
+            'Label' => '1 Short',
         ),
         30 => array(
             'Id' => 2,
@@ -169,13 +169,37 @@ class FocusTrackingLockOn extends AbstractTag
         ),
         31 => array(
             'Id' => 3,
-            'Label' => '3 (Normal)',
+            'Label' => '3 Normal',
         ),
         32 => array(
             'Id' => 4,
             'Label' => 4,
         ),
         33 => array(
+            'Id' => 5,
+            'Label' => '5 Long',
+        ),
+        34 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        35 => array(
+            'Id' => 1,
+            'Label' => '1 (Short)',
+        ),
+        36 => array(
+            'Id' => 2,
+            'Label' => 2,
+        ),
+        37 => array(
+            'Id' => 3,
+            'Label' => '3 (Normal)',
+        ),
+        38 => array(
+            'Id' => 4,
+            'Label' => 4,
+        ),
+        39 => array(
             'Id' => 5,
             'Label' => '5 (Long)',
         ),

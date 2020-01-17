@@ -57,11 +57,11 @@ class Sharpness extends AbstractTag
         ),
         3 => array(
             'Id' => 3,
-            'Label' => '-1 (med soft)',
+            'Label' => '-1 (medium soft)',
         ),
         4 => array(
             'Id' => 4,
-            'Label' => '+1 (med hard)',
+            'Label' => '+1 (medium hard)',
         ),
         5 => array(
             'Id' => 5,

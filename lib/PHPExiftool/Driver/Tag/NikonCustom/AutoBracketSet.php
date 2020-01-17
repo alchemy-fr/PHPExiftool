@@ -48,15 +48,15 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'AE & Flash',
         ),
         1 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'AE Only',
         ),
         2 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Flash Only',
         ),
         3 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'WB Bracketing',
         ),
         4 => array(
@@ -64,19 +64,19 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'AE & Flash',
         ),
         5 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'AE Only',
         ),
         6 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'Flash Only',
         ),
         7 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => 'WB Bracketing',
         ),
         8 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => 'ADL Bracketing',
         ),
         9 => array(
@@ -84,19 +84,19 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'AE & Flash',
         ),
         10 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'AE Only',
         ),
         11 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'Flash Only',
         ),
         12 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => 'WB Bracketing',
         ),
         13 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => 'Active D-Lighting',
         ),
         14 => array(
@@ -104,11 +104,11 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'Exposure',
         ),
         15 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Active D-Lighting',
         ),
         16 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'WB Bracketing',
         ),
         17 => array(
@@ -116,11 +116,11 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'Exposure',
         ),
         18 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'WB Bracketing',
         ),
         19 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Active D-Lighting',
         ),
         20 => array(
@@ -128,11 +128,11 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'Exposure',
         ),
         21 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'WB Bracketing',
         ),
         22 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Active D-Lighting',
         ),
         23 => array(
@@ -140,15 +140,15 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'AE & Flash',
         ),
         24 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'AE Only',
         ),
         25 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Flash Only',
         ),
         26 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'WB Bracketing',
         ),
         27 => array(
@@ -156,19 +156,19 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'AE & Flash',
         ),
         28 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'AE Only',
         ),
         29 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'Flash Only',
         ),
         30 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => 'WB Bracketing',
         ),
         31 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => 'Active D-Lighting',
         ),
         32 => array(
@@ -176,15 +176,15 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'AE & Flash',
         ),
         33 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'AE Only',
         ),
         34 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Flash Only',
         ),
         35 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'WB Bracketing',
         ),
         36 => array(
@@ -192,19 +192,19 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'AE & Flash',
         ),
         37 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'AE Only',
         ),
         38 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'Flash Only',
         ),
         39 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => 'WB Bracketing',
         ),
         40 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => 'Active D-Lighting',
         ),
         41 => array(
@@ -212,19 +212,19 @@ class AutoBracketSet extends AbstractTag
             'Label' => 'AE & Flash',
         ),
         42 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'AE Only',
         ),
         43 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'Flash Only',
         ),
         44 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => 'WB Bracketing',
         ),
         45 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => 'Active D-Lighting',
         ),
     );

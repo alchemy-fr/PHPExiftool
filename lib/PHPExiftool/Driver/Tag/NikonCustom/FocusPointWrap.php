@@ -47,8 +47,8 @@ class FocusPointWrap extends AbstractTag
             'Id' => 0,
             'Label' => 'No Wrap',
         ),
-        8 => array(
-            'Id' => 8,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Wrap',
         ),
     );

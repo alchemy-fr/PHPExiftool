@@ -291,6 +291,90 @@ class SonyModelID extends AbstractTag
             'Id' => 350,
             'Label' => 'ILCE-7SM2',
         ),
+        353 => array(
+            'Id' => 353,
+            'Label' => 'ILCA-68',
+        ),
+        354 => array(
+            'Id' => 354,
+            'Label' => 'ILCA-99M2',
+        ),
+        355 => array(
+            'Id' => 355,
+            'Label' => 'DSC-RX10M3',
+        ),
+        356 => array(
+            'Id' => 356,
+            'Label' => 'DSC-RX100M5',
+        ),
+        357 => array(
+            'Id' => 357,
+            'Label' => 'ILCE-6300',
+        ),
+        358 => array(
+            'Id' => 358,
+            'Label' => 'ILCE-9',
+        ),
+        360 => array(
+            'Id' => 360,
+            'Label' => 'ILCE-6500',
+        ),
+        362 => array(
+            'Id' => 362,
+            'Label' => 'ILCE-7RM3',
+        ),
+        363 => array(
+            'Id' => 363,
+            'Label' => 'ILCE-7M3',
+        ),
+        364 => array(
+            'Id' => 364,
+            'Label' => 'DSC-RX0',
+        ),
+        365 => array(
+            'Id' => 365,
+            'Label' => 'DSC-RX10M4',
+        ),
+        366 => array(
+            'Id' => 366,
+            'Label' => 'DSC-RX100M6',
+        ),
+        367 => array(
+            'Id' => 367,
+            'Label' => 'DSC-HX99',
+        ),
+        369 => array(
+            'Id' => 369,
+            'Label' => 'DSC-RX100M5A',
+        ),
+        371 => array(
+            'Id' => 371,
+            'Label' => 'ILCE-6400',
+        ),
+        372 => array(
+            'Id' => 372,
+            'Label' => 'DSC-RX0M2',
+        ),
+        374 => array(
+            'Id' => 374,
+            'Label' => 'DSC-RX100M7',
+        ),
+        375 => array(
+            'Id' => 375,
+            'Label' => 'ILCE-7RM4',
+        ),
+        376 => array(
+            'Id' => 376,
+            'Label' => 'ILCE-9M2',
+        ),
+        378 => array(
+            'Id' => 378,
+            'Label' => 'ILCE-6600',
+        ),
+        379 => array(
+            'Id' => 379,
+            'Label' => 'ILCE-6100',
+        ),
     );
 
 }

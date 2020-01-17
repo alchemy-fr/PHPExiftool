@@ -88,19 +88,19 @@ class MeteringTime extends AbstractTag
             'Label' => '4 s',
         ),
         11 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => '8 s',
         ),
         12 => array(
-            'Id' => 8,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         13 => array(
-            'Id' => 12,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         14 => array(
-            'Id' => 16,
+            'Id' => 4,
             'Label' => '30 min',
         ),
         15 => array(
@@ -108,19 +108,19 @@ class MeteringTime extends AbstractTag
             'Label' => '4 s',
         ),
         16 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => '8 s',
         ),
         17 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         18 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         19 => array(
-            'Id' => 64,
+            'Id' => 4,
             'Label' => '30 min',
         ),
         20 => array(
@@ -128,19 +128,19 @@ class MeteringTime extends AbstractTag
             'Label' => '4 s',
         ),
         21 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => '8 s',
         ),
         22 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         23 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         24 => array(
-            'Id' => 64,
+            'Id' => 4,
             'Label' => '30 min',
         ),
         25 => array(
@@ -188,39 +188,39 @@ class MeteringTime extends AbstractTag
             'Label' => '4 s',
         ),
         36 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => '6 s',
         ),
         37 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => '8 s',
         ),
         38 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => '16 s',
         ),
         39 => array(
-            'Id' => 64,
+            'Id' => 4,
             'Label' => '30 s',
         ),
         40 => array(
-            'Id' => 80,
+            'Id' => 5,
             'Label' => '1 min',
         ),
         41 => array(
-            'Id' => 96,
+            'Id' => 6,
             'Label' => '5 min',
         ),
         42 => array(
-            'Id' => 112,
+            'Id' => 7,
             'Label' => '10 min',
         ),
         43 => array(
-            'Id' => 128,
+            'Id' => 8,
             'Label' => '30 min',
         ),
         44 => array(
-            'Id' => 144,
+            'Id' => 9,
             'Label' => 'No Limit',
         ),
         45 => array(
@@ -228,23 +228,23 @@ class MeteringTime extends AbstractTag
             'Label' => '4 s',
         ),
         46 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => '6 s',
         ),
         47 => array(
-            'Id' => 8,
+            'Id' => 2,
             'Label' => '8 s',
         ),
         48 => array(
-            'Id' => 12,
+            'Id' => 3,
             'Label' => '16 s',
         ),
         49 => array(
-            'Id' => 16,
+            'Id' => 4,
             'Label' => '30 s',
         ),
         50 => array(
-            'Id' => 20,
+            'Id' => 5,
             'Label' => '30 min',
         ),
         51 => array(
@@ -252,35 +252,35 @@ class MeteringTime extends AbstractTag
             'Label' => '4 s',
         ),
         52 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => '6 s',
         ),
         53 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => '8 s',
         ),
         54 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => '16 s',
         ),
         55 => array(
-            'Id' => 64,
+            'Id' => 4,
             'Label' => '30 s',
         ),
         56 => array(
-            'Id' => 80,
+            'Id' => 5,
             'Label' => '1 min',
         ),
         57 => array(
-            'Id' => 96,
+            'Id' => 6,
             'Label' => '5 min',
         ),
         58 => array(
-            'Id' => 112,
+            'Id' => 7,
             'Label' => '10 min',
         ),
         59 => array(
-            'Id' => 128,
+            'Id' => 8,
             'Label' => '30 min',
         ),
     );

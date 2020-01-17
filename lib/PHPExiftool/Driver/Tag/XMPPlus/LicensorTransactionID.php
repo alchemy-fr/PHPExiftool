@@ -24,7 +24,7 @@ class LicensorTransactionID extends AbstractTag
 
     protected $Name = 'LicensorTransactionID';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

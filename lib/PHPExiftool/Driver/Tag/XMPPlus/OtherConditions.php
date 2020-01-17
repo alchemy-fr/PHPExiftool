@@ -24,7 +24,7 @@ class OtherConditions extends AbstractTag
 
     protected $Name = 'OtherConditions';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

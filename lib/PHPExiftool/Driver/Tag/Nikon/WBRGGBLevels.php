@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class WBRGGBLevels extends AbstractTag
 {
 
-    protected $Id = 0;
+    protected $Id = 'mixed';
 
     protected $Name = 'WB_RGGBLevels';
 
-    protected $FullName = 'Nikon::ColorBalance2';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 
@@ -34,7 +34,7 @@ class WBRGGBLevels extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'int16u';
+    protected $Type = 'mixed';
 
     protected $Writable = true;
 

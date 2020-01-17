@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class MoonPhase extends AbstractTag
 {
 
-    protected $Id = 18;
+    protected $Id = 'mixed';
 
     protected $Name = 'MoonPhase';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 
@@ -34,7 +34,7 @@ class MoonPhase extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'int16u';
+    protected $Type = 'mixed';
 
     protected $Writable = true;
 

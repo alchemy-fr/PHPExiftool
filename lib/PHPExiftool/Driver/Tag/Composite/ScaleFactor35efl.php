@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ScaleFactor35efl extends AbstractTag
 {
 
-    protected $Id = 'ScaleFactor35efl';
+    protected $Id = 'Exif::ScaleFactor35efl';
 
     protected $Name = 'ScaleFactor35efl';
 

@@ -40,4 +40,6 @@ class TestName extends AbstractTag
 
     protected $Description = 'Test Name';
 
+    protected $flag_Unsafe = true;
+
 }

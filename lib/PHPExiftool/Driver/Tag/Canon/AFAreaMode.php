@@ -85,7 +85,11 @@ class AFAreaMode extends AbstractTag
         ),
         11 => array(
             'Id' => 11,
-            'Label' => 'Flexizone Multi',
+            'Label' => 'Flexizone Multi (49 point)',
+        ),
+        12 => array(
+            'Id' => 12,
+            'Label' => 'Flexizone Multi (9 point)',
         ),
         13 => array(
             'Id' => 13,

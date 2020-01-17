@@ -48,15 +48,7 @@ class AutoISO extends AbstractTag
             'Label' => 'Off',
         ),
         1 => array(
-            'Id' => 128,
-            'Label' => 'On',
-        ),
-        2 => array(
-            'Id' => 0,
-            'Label' => 'Off',
-        ),
-        3 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

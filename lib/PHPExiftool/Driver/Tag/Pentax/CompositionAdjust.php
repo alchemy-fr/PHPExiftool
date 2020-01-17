@@ -47,16 +47,16 @@ class CompositionAdjust extends AbstractTag
             'Id' => 0,
             'Label' => 'Off',
         ),
-        32 => array(
-            'Id' => 32,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Composition Adjust',
         ),
-        160 => array(
-            'Id' => 160,
+        10 => array(
+            'Id' => 10,
             'Label' => 'Composition Adjust + Horizon Correction',
         ),
-        192 => array(
-            'Id' => 192,
+        12 => array(
+            'Id' => 12,
             'Label' => 'Horizon Correction',
         ),
     );

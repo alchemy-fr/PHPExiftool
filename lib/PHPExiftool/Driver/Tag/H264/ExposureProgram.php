@@ -46,19 +46,19 @@ class ExposureProgram extends AbstractTag
             'Label' => 'Program AE',
         ),
         1 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Gain',
         ),
         2 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Shutter speed priority AE',
         ),
         3 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 'Aperture-priority AE',
         ),
         4 => array(
-            'Id' => 64,
+            'Id' => 4,
             'Label' => 'Manual',
         ),
         5 => array(

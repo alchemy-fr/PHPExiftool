@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ImageReviewMonitorOffTime extends AbstractTag
 {
 
-    protected $Id = '21.1';
+    protected $Id = 'mixed';
 
     protected $Name = 'ImageReviewMonitorOffTime';
 
@@ -48,27 +48,27 @@ class ImageReviewMonitorOffTime extends AbstractTag
             'Label' => '2 s',
         ),
         1 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '4 s',
         ),
         2 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '10 s',
         ),
         3 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '20 s',
         ),
         4 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '1 min',
         ),
         5 => array(
-            'Id' => 160,
+            'Id' => 5,
             'Label' => '5 min',
         ),
         6 => array(
-            'Id' => 192,
+            'Id' => 6,
             'Label' => '10 min',
         ),
         7 => array(
@@ -76,27 +76,139 @@ class ImageReviewMonitorOffTime extends AbstractTag
             'Label' => '2 s',
         ),
         8 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '4 s',
         ),
         9 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '10 s',
         ),
         10 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '20 s',
         ),
         11 => array(
-            'Id' => 160,
+            'Id' => 5,
             'Label' => '1 min',
         ),
         12 => array(
-            'Id' => 192,
+            'Id' => 6,
             'Label' => '5 min',
         ),
         13 => array(
-            'Id' => 224,
+            'Id' => 7,
+            'Label' => '10 min',
+        ),
+        14 => array(
+            'Id' => 0,
+            'Label' => '2 s',
+        ),
+        15 => array(
+            'Id' => 1,
+            'Label' => '4 s',
+        ),
+        16 => array(
+            'Id' => 3,
+            'Label' => '10 s',
+        ),
+        17 => array(
+            'Id' => 4,
+            'Label' => '20 s',
+        ),
+        18 => array(
+            'Id' => 5,
+            'Label' => '1 min',
+        ),
+        19 => array(
+            'Id' => 6,
+            'Label' => '5 min',
+        ),
+        20 => array(
+            'Id' => 7,
+            'Label' => '10 min',
+        ),
+        21 => array(
+            'Id' => 0,
+            'Label' => '2 s',
+        ),
+        22 => array(
+            'Id' => 1,
+            'Label' => '4 s',
+        ),
+        23 => array(
+            'Id' => 2,
+            'Label' => '10 s',
+        ),
+        24 => array(
+            'Id' => 3,
+            'Label' => '20 s',
+        ),
+        25 => array(
+            'Id' => 4,
+            'Label' => '1 min',
+        ),
+        26 => array(
+            'Id' => 5,
+            'Label' => '5 min',
+        ),
+        27 => array(
+            'Id' => 6,
+            'Label' => '10 min',
+        ),
+        28 => array(
+            'Id' => 0,
+            'Label' => '2 s',
+        ),
+        29 => array(
+            'Id' => 1,
+            'Label' => '4 s',
+        ),
+        30 => array(
+            'Id' => 3,
+            'Label' => '10 s',
+        ),
+        31 => array(
+            'Id' => 4,
+            'Label' => '20 s',
+        ),
+        32 => array(
+            'Id' => 5,
+            'Label' => '1 min',
+        ),
+        33 => array(
+            'Id' => 6,
+            'Label' => '5 min',
+        ),
+        34 => array(
+            'Id' => 7,
+            'Label' => '10 min',
+        ),
+        35 => array(
+            'Id' => 0,
+            'Label' => '2 s',
+        ),
+        36 => array(
+            'Id' => 1,
+            'Label' => '4 s',
+        ),
+        37 => array(
+            'Id' => 3,
+            'Label' => '10 s',
+        ),
+        38 => array(
+            'Id' => 4,
+            'Label' => '20 s',
+        ),
+        39 => array(
+            'Id' => 5,
+            'Label' => '1 min',
+        ),
+        40 => array(
+            'Id' => 6,
+            'Label' => '5 min',
+        ),
+        41 => array(
+            'Id' => 7,
             'Label' => '10 min',
         ),
     );

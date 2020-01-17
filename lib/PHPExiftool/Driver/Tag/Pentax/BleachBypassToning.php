@@ -43,6 +43,10 @@ class BleachBypassToning extends AbstractTag
     protected $flag_Permanent = true;
 
     protected $Values = array(
+        0 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
         1 => array(
             'Id' => 1,
             'Label' => 'Green',
@@ -77,7 +81,7 @@ class BleachBypassToning extends AbstractTag
         ),
         65535 => array(
             'Id' => 65535,
-            'Label' => 'Off',
+            'Label' => 'n/a',
         ),
     );
 

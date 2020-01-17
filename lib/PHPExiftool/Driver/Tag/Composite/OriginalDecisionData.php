@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class OriginalDecisionData extends AbstractTag
 {
 
-    protected $Id = 'OriginalDecisionData';
+    protected $Id = 'Canon::OriginalDecisionData';
 
     protected $Name = 'OriginalDecisionData';
 

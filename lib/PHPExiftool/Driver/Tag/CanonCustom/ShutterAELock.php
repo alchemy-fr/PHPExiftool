@@ -59,6 +59,22 @@ class ShutterAELock extends AbstractTag
             'Id' => 3,
             'Label' => 'AE/AF, No AE lock',
         ),
+        '0 0' => array(
+            'Id' => '0 0',
+            'Label' => 'AF/AE lock',
+        ),
+        '1 0' => array(
+            'Id' => '1 0',
+            'Label' => 'AE lock/AF',
+        ),
+        '2 0' => array(
+            'Id' => '2 0',
+            'Label' => 'AF/AF lock, No AE lock',
+        ),
+        '3 0' => array(
+            'Id' => '3 0',
+            'Label' => 'AE/AF, No AE lock',
+        ),
         4 => array(
             'Id' => 0,
             'Label' => 'AF/AE lock',
@@ -69,12 +85,94 @@ class ShutterAELock extends AbstractTag
         ),
         6 => array(
             'Id' => 2,
-            'Label' => 'AF/AF lock',
+            'Label' => 'AF/AF lock, No AE lock',
         ),
         7 => array(
+            'Id' => 3,
+            'Label' => 'AE/AF, No AE lock',
+        ),
+        8 => array(
+            'Id' => 0,
+            'Label' => 'AF/AE lock',
+        ),
+        9 => array(
+            'Id' => 1,
+            'Label' => 'AE lock/AF',
+        ),
+        10 => array(
+            'Id' => 2,
+            'Label' => 'AF/AF lock, No AE lock',
+        ),
+        11 => array(
+            'Id' => 3,
+            'Label' => 'AE/AF, No AE lock',
+        ),
+        12 => array(
+            'Id' => 0,
+            'Label' => 'AF/AE lock',
+        ),
+        13 => array(
+            'Id' => 1,
+            'Label' => 'AE lock/AF',
+        ),
+        14 => array(
+            'Id' => 2,
+            'Label' => 'AF/AF lock, No AE lock',
+        ),
+        15 => array(
+            'Id' => 3,
+            'Label' => 'AE/AF, No AE lock',
+        ),
+        16 => array(
+            'Id' => 0,
+            'Label' => 'AF/AE lock',
+        ),
+        17 => array(
+            'Id' => 1,
+            'Label' => 'AE lock/AF',
+        ),
+        18 => array(
+            'Id' => 2,
+            'Label' => 'AF/AF lock, No AE lock',
+        ),
+        19 => array(
+            'Id' => 3,
+            'Label' => 'AE/AF, No AE lock',
+        ),
+        20 => array(
+            'Id' => 0,
+            'Label' => 'AF/AE lock',
+        ),
+        21 => array(
+            'Id' => 1,
+            'Label' => 'AE lock/AF',
+        ),
+        22 => array(
+            'Id' => 2,
+            'Label' => 'AF/AF lock, No AE lock',
+        ),
+        23 => array(
+            'Id' => 3,
+            'Label' => 'AE/AF, No AE lock',
+        ),
+        24 => array(
+            'Id' => 0,
+            'Label' => 'AF/AE lock',
+        ),
+        25 => array(
+            'Id' => 1,
+            'Label' => 'AE lock/AF',
+        ),
+        26 => array(
+            'Id' => 2,
+            'Label' => 'AF/AF lock',
+        ),
+        27 => array(
             'Id' => 3,
             'Label' => 'AE+release/AE+AF',
         ),
     );
+
+    protected $Index = 'mixed';
 
 }

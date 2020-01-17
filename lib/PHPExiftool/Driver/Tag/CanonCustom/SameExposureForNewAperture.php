@@ -55,6 +55,24 @@ class SameExposureForNewAperture extends AbstractTag
             'Id' => 2,
             'Label' => 'Shutter Speed',
         ),
+        3 => array(
+            'Id' => 0,
+            'Label' => 'Disable',
+        ),
+        4 => array(
+            'Id' => 1,
+            'Label' => 'ISO Speed',
+        ),
+        5 => array(
+            'Id' => 2,
+            'Label' => 'ISO Speed/Shutter Speed',
+        ),
+        6 => array(
+            'Id' => 3,
+            'Label' => 'Shutter Speed',
+        ),
     );
+
+    protected $Index = 'mixed';
 
 }

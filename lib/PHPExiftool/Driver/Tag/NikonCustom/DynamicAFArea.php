@@ -47,16 +47,16 @@ class DynamicAFArea extends AbstractTag
             'Id' => 0,
             'Label' => '9 Points',
         ),
-        4 => array(
-            'Id' => 4,
+        1 => array(
+            'Id' => 1,
             'Label' => '21 Points',
         ),
-        8 => array(
-            'Id' => 8,
+        2 => array(
+            'Id' => 2,
             'Label' => '51 Points',
         ),
-        12 => array(
-            'Id' => 12,
+        3 => array(
+            'Id' => 3,
             'Label' => '51 Points (3D-tracking)',
         ),
     );

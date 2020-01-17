@@ -120,56 +120,128 @@ class AFAreaMode extends AbstractTag
             'Label' => 'Dynamic Area (wide, 3D-tracking)',
         ),
         19 => array(
+            'Id' => 13,
+            'Label' => 'Group Area',
+        ),
+        20 => array(
+            'Id' => 14,
+            'Label' => 'Dynamic Area (25 points)',
+        ),
+        21 => array(
+            'Id' => 15,
+            'Label' => 'Dynamic Area (72 points)',
+        ),
+        22 => array(
+            'Id' => 16,
+            'Label' => 'Group Area (HL)',
+        ),
+        23 => array(
+            'Id' => 17,
+            'Label' => 'Group Area (VL)',
+        ),
+        24 => array(
             'Id' => 128,
             'Label' => 'Single',
         ),
-        20 => array(
+        25 => array(
             'Id' => 129,
             'Label' => 'Auto (41 points)',
         ),
-        21 => array(
+        26 => array(
             'Id' => 130,
             'Label' => 'Subject Tracking (41 points)',
         ),
-        22 => array(
+        27 => array(
             'Id' => 131,
             'Label' => 'Face Priority (41 points)',
         ),
-        23 => array(
+        28 => array(
+            'Id' => 192,
+            'Label' => 'Pinpoint',
+        ),
+        29 => array(
+            'Id' => 193,
+            'Label' => 'Single',
+        ),
+        30 => array(
+            'Id' => 195,
+            'Label' => 'Wide (S)',
+        ),
+        31 => array(
+            'Id' => 196,
+            'Label' => 'Wide (L)',
+        ),
+        32 => array(
+            'Id' => 197,
+            'Label' => 'Auto',
+        ),
+        33 => array(
             'Id' => 0,
             'Label' => 'Contrast-detect',
         ),
-        24 => array(
+        34 => array(
             'Id' => 1,
             'Label' => 'Contrast-detect (normal area)',
         ),
-        25 => array(
+        35 => array(
             'Id' => 2,
             'Label' => 'Contrast-detect (wide area)',
         ),
-        26 => array(
+        36 => array(
             'Id' => 3,
             'Label' => 'Contrast-detect (face priority)',
         ),
-        27 => array(
+        37 => array(
             'Id' => 4,
             'Label' => 'Contrast-detect (subject tracking)',
         ),
-        28 => array(
+        38 => array(
             'Id' => 128,
             'Label' => 'Single',
         ),
-        29 => array(
+        39 => array(
             'Id' => 129,
             'Label' => 'Auto (41 points)',
         ),
-        30 => array(
+        40 => array(
             'Id' => 130,
             'Label' => 'Subject Tracking (41 points)',
         ),
-        31 => array(
+        41 => array(
             'Id' => 131,
             'Label' => 'Face Priority (41 points)',
+        ),
+        42 => array(
+            'Id' => 192,
+            'Label' => 'Pinpoint',
+        ),
+        43 => array(
+            'Id' => 193,
+            'Label' => 'Single',
+        ),
+        44 => array(
+            'Id' => 194,
+            'Label' => 'Dynamic',
+        ),
+        45 => array(
+            'Id' => 195,
+            'Label' => 'Wide (S)',
+        ),
+        46 => array(
+            'Id' => 196,
+            'Label' => 'Wide (L)',
+        ),
+        47 => array(
+            'Id' => 197,
+            'Label' => 'Auto',
+        ),
+        48 => array(
+            'Id' => 198,
+            'Label' => 'Auto (198)',
+        ),
+        49 => array(
+            'Id' => 199,
+            'Label' => 'Auto (focus lock)',
         ),
     );
 

@@ -42,7 +42,7 @@ class ApertureRange extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $MaxLength = 3;
+    protected $MaxLength = 'mixed';
 
     protected $Values = array(
         0 => array(
@@ -54,5 +54,7 @@ class ApertureRange extends AbstractTag
             'Label' => 'Enable',
         ),
     );
+
+    protected $Index = 'mixed';
 
 }

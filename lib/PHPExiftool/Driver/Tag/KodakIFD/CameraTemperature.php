@@ -34,14 +34,16 @@ class CameraTemperature extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = 'rational64s';
+    protected $Type = 'mixed';
 
-    protected $Writable = true;
+    protected $Writable = false;
 
     protected $Description = 'Camera Temperature';
 
     protected $local_g2 = 'Camera';
 
     protected $flag_Permanent = true;
+
+    protected $Index = 'mixed';
 
 }

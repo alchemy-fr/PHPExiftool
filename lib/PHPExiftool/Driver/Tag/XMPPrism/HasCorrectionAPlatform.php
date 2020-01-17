@@ -40,4 +40,6 @@ class HasCorrectionAPlatform extends AbstractTag
 
     protected $Description = 'Has Correction A-platform';
 
+    protected $flag_Avoid = true;
+
 }

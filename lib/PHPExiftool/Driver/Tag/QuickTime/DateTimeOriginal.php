@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class DateTimeOriginal extends AbstractTag
 {
 
-    protected $Id = 'date';
+    protected $Id = 'IDIT';
 
     protected $Name = 'DateTimeOriginal';
 
-    protected $FullName = 'QuickTime::UserData';
+    protected $FullName = 'QuickTime::Main';
 
     protected $GroupName = 'QuickTime';
 
@@ -34,12 +34,14 @@ class DateTimeOriginal extends AbstractTag
 
     protected $g2 = 'Video';
 
-    protected $Type = '?';
+    protected $Type = 'string';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
-    protected $Description = 'Date Time Original';
+    protected $Description = 'Date/Time Original';
 
     protected $local_g2 = 'Time';
+
+    protected $flag_Permanent = true;
 
 }

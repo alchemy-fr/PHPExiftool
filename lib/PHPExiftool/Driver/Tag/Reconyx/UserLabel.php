@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class UserLabel extends AbstractTag
 {
 
-    protected $Id = 43;
+    protected $Id = 'mixed';
 
     protected $Name = 'UserLabel';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 
@@ -42,6 +42,6 @@ class UserLabel extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $MaxLength = 22;
+    protected $MaxLength = 'mixed';
 
 }

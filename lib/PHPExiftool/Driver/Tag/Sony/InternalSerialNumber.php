@@ -24,7 +24,7 @@ class InternalSerialNumber extends AbstractTag
 
     protected $Name = 'InternalSerialNumber';
 
-    protected $FullName = 'Sony::Tag9050';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Sony';
 

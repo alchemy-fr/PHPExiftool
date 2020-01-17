@@ -24,7 +24,7 @@ class FirstPublicationDate extends AbstractTag
 
     protected $Name = 'FirstPublicationDate';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

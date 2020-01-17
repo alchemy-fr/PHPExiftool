@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class FocusPosition extends AbstractTag
 {
 
-    protected $Id = 8;
+    protected $Id = 'mixed';
 
     protected $Name = 'FocusPosition';
 

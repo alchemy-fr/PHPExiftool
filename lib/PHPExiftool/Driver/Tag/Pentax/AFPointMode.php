@@ -47,12 +47,12 @@ class AFPointMode extends AbstractTag
             'Id' => 0,
             'Label' => 'Auto',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Select',
         ),
-        32 => array(
-            'Id' => 32,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Fixed Center',
         ),
     );

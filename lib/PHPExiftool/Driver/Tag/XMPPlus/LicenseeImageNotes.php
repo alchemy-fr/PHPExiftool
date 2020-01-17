@@ -24,7 +24,7 @@ class LicenseeImageNotes extends AbstractTag
 
     protected $Name = 'LicenseeImageNotes';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

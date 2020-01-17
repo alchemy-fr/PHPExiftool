@@ -40,4 +40,6 @@ class KillDateAPlatform extends AbstractTag
 
     protected $Description = 'Kill Date A-platform';
 
+    protected $flag_Avoid = true;
+
 }

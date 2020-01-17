@@ -311,6 +311,38 @@ class HDRSetting extends AbstractTag
             'Id' => 13,
             'Label' => 'HDR 6 EV',
         ),
+        67 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        68 => array(
+            'Id' => 1,
+            'Label' => 'HDR Auto',
+        ),
+        69 => array(
+            'Id' => 3,
+            'Label' => 'HDR 1 EV',
+        ),
+        70 => array(
+            'Id' => 5,
+            'Label' => 'HDR 2 EV',
+        ),
+        71 => array(
+            'Id' => 7,
+            'Label' => 'HDR 3 EV',
+        ),
+        72 => array(
+            'Id' => 9,
+            'Label' => 'HDR 4 EV',
+        ),
+        73 => array(
+            'Id' => 11,
+            'Label' => 'HDR 5 EV',
+        ),
+        74 => array(
+            'Id' => 13,
+            'Label' => 'HDR 6 EV',
+        ),
     );
 
 }

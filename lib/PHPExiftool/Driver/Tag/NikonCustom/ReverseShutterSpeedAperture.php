@@ -47,8 +47,8 @@ class ReverseShutterSpeedAperture extends AbstractTag
             'Id' => 0,
             'Label' => 'No',
         ),
-        8 => array(
-            'Id' => 8,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Yes',
         ),
     );

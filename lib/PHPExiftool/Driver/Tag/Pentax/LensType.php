@@ -111,11 +111,11 @@ class LensType extends AbstractTag
         ),
         '3 25.1' => array(
             'Id' => '3 25.1',
-            'Label' => 'Sigma AF 28-300mm F3.5-5.6 DL IF',
+            'Label' => 'Sigma 55-200mm F4-5.6 DC',
         ),
         '3 25.2' => array(
             'Id' => '3 25.2',
-            'Label' => 'Sigma 55-200mm F4-5.6 DC',
+            'Label' => 'Sigma AF 28-300mm F3.5-5.6 DL IF',
         ),
         '3 25.3' => array(
             'Id' => '3 25.3',
@@ -247,7 +247,15 @@ class LensType extends AbstractTag
         ),
         '3 44.5' => array(
             'Id' => '3 44.5',
-            'Label' => 'Tamron 35-90mm F4 AF',
+            'Label' => 'Sigma 17-35mm F2.8-4 EX DG',
+        ),
+        '3 44.6' => array(
+            'Id' => '3 44.6',
+            'Label' => 'Tamron 35-90mm F4-5.6 AF',
+        ),
+        '3 44.7' => array(
+            'Id' => '3 44.7',
+            'Label' => 'Sigma AF 18-35mm F3.5-4.5 Aspherical',
         ),
         '3 46' => array(
             'Id' => '3 46',
@@ -368,6 +376,14 @@ class LensType extends AbstractTag
         '4 6' => array(
             'Id' => '4 6',
             'Label' => 'smc PENTAX-FA 35-80mm F4-5.6',
+        ),
+        '4 9' => array(
+            'Id' => '4 9',
+            'Label' => 'Irix 11mm F4 Firefly',
+        ),
+        '4 10' => array(
+            'Id' => '4 10',
+            'Label' => 'Irix 15mm F2.4',
         ),
         '4 12' => array(
             'Id' => '4 12',
@@ -859,11 +875,15 @@ class LensType extends AbstractTag
         ),
         '8 3' => array(
             'Id' => '8 3',
-            'Label' => 'Sigma AF 18-125mm F3.5-5.6 DC',
+            'Label' => 'Sigma 18-125mm F3.8-5.6 DC HSM',
         ),
         '8 4' => array(
             'Id' => '8 4',
             'Label' => 'Sigma 50mm F1.4 EX DG HSM',
+        ),
+        '8 6' => array(
+            'Id' => '8 6',
+            'Label' => 'Sigma 4.5mm F2.8 EX DC Fisheye',
         ),
         '8 7' => array(
             'Id' => '8 7',
@@ -905,6 +925,10 @@ class LensType extends AbstractTag
             'Id' => '8 18',
             'Label' => 'Sigma 8-16mm F4.5-5.6 DC HSM',
         ),
+        '8 20' => array(
+            'Id' => '8 20',
+            'Label' => 'Sigma 18-50mm F2.8-4.5 DC HSM',
+        ),
         '8 21' => array(
             'Id' => '8 21',
             'Label' => 'Sigma 17-50mm F2.8 EX DC OS HSM',
@@ -935,7 +959,7 @@ class LensType extends AbstractTag
         ),
         '8 30' => array(
             'Id' => '8 30',
-            'Label' => 'Sigma 17-70mm F2.8-4 DC Macro HSM Contemporary',
+            'Label' => 'Sigma 17-70mm F2.8-4 DC Macro HSM | C',
         ),
         '8 31' => array(
             'Id' => '8 31',
@@ -944,6 +968,10 @@ class LensType extends AbstractTag
         '8 32' => array(
             'Id' => '8 32',
             'Label' => 'Sigma 30mm F1.4 DC HSM | A',
+        ),
+        '8 33' => array(
+            'Id' => '8 33',
+            'Label' => 'Sigma 18-200mm F3.5-6.3 DC Macro HSM',
         ),
         '8 34' => array(
             'Id' => '8 34',
@@ -957,9 +985,29 @@ class LensType extends AbstractTag
             'Id' => '8 60',
             'Label' => 'HD PENTAX-D FA* 70-200mm F2.8 ED DC AW',
         ),
+        '8 61' => array(
+            'Id' => '8 61',
+            'Label' => 'HD PENTAX-D FA 28-105mm F3.5-5.6 ED DC WR',
+        ),
         '8 62' => array(
             'Id' => '8 62',
             'Label' => 'HD PENTAX-D FA 24-70mm F2.8 ED SDM WR',
+        ),
+        '8 63' => array(
+            'Id' => '8 63',
+            'Label' => 'HD PENTAX-D FA 15-30mm F2.8 ED SDM WR',
+        ),
+        '8 64' => array(
+            'Id' => '8 64',
+            'Label' => 'HD PENTAX-D FA* 50mm F1.4 SDM AW',
+        ),
+        '8 196' => array(
+            'Id' => '8 196',
+            'Label' => 'HD PENTAX-DA* 11-18mm F2.8 ED DC AW',
+        ),
+        '8 197' => array(
+            'Id' => '8 197',
+            'Label' => 'HD PENTAX-DA 55-300mm F4.5-6.3 ED PLM WR RE',
         ),
         '8 198' => array(
             'Id' => '8 198',
@@ -1129,6 +1177,10 @@ class LensType extends AbstractTag
             'Id' => '13 253',
             'Label' => 'HD PENTAX-DA 645 28-45mm F4.5 ED AW SR',
         ),
+        '13 254' => array(
+            'Id' => '13 254',
+            'Label' => 'smc PENTAX-DA 645 25mm F4 AL [IF] SDM AW',
+        ),
         '21 0' => array(
             'Id' => '21 0',
             'Label' => 'Pentax Q Manual Lens',
@@ -1153,6 +1205,10 @@ class LensType extends AbstractTag
             'Id' => '21 8',
             'Label' => '08 Wide Zoom 3.8-5.9mm F3.7-4',
         ),
+        '21 233' => array(
+            'Id' => '21 233',
+            'Label' => 'Adapter Q for K-mount Lens',
+        ),
         '22 3' => array(
             'Id' => '22 3',
             'Label' => '03 Fish-eye 3.2mm F5.6',
@@ -1164,6 +1220,10 @@ class LensType extends AbstractTag
         '22 5' => array(
             'Id' => '22 5',
             'Label' => '05 Toy Lens Telephoto 18mm F8',
+        ),
+        '31 1' => array(
+            'Id' => '31 1',
+            'Label' => 'GR Lens',
         ),
     );
 

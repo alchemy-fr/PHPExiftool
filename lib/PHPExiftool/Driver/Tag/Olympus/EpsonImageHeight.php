@@ -34,7 +34,7 @@ class EpsonImageHeight extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'int16u';
+    protected $Type = 'int32u';
 
     protected $Writable = true;
 

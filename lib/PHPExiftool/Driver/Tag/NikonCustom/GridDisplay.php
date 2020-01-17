@@ -48,7 +48,7 @@ class GridDisplay extends AbstractTag
             'Label' => 'Off',
         ),
         1 => array(
-            'Id' => 2,
+            'Id' => 1,
             'Label' => 'On',
         ),
         2 => array(
@@ -56,7 +56,7 @@ class GridDisplay extends AbstractTag
             'Label' => 'On',
         ),
         3 => array(
-            'Id' => 2,
+            'Id' => 1,
             'Label' => 'Off',
         ),
         4 => array(
@@ -64,23 +64,23 @@ class GridDisplay extends AbstractTag
             'Label' => 'On',
         ),
         5 => array(
-            'Id' => 2,
+            'Id' => 1,
             'Label' => 'Off',
         ),
         6 => array(
             'Id' => 0,
-            'Label' => 'Off',
+            'Label' => 'On',
         ),
         7 => array(
-            'Id' => 2,
-            'Label' => 'On',
+            'Id' => 1,
+            'Label' => 'Off',
         ),
         8 => array(
             'Id' => 0,
             'Label' => 'On',
         ),
         9 => array(
-            'Id' => 2,
+            'Id' => 1,
             'Label' => 'Off',
         ),
         10 => array(
@@ -88,7 +88,7 @@ class GridDisplay extends AbstractTag
             'Label' => 'Off',
         ),
         11 => array(
-            'Id' => 128,
+            'Id' => 1,
             'Label' => 'On',
         ),
         12 => array(
@@ -96,7 +96,7 @@ class GridDisplay extends AbstractTag
             'Label' => 'On',
         ),
         13 => array(
-            'Id' => 2,
+            'Id' => 1,
             'Label' => 'Off',
         ),
         14 => array(
@@ -104,7 +104,31 @@ class GridDisplay extends AbstractTag
             'Label' => 'Off',
         ),
         15 => array(
-            'Id' => 2,
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        16 => array(
+            'Id' => 0,
+            'Label' => 'On',
+        ),
+        17 => array(
+            'Id' => 1,
+            'Label' => 'Off',
+        ),
+        18 => array(
+            'Id' => 0,
+            'Label' => 'On',
+        ),
+        19 => array(
+            'Id' => 1,
+            'Label' => 'Off',
+        ),
+        20 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        21 => array(
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

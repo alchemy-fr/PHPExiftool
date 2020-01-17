@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ZoomedPreviewImage extends AbstractTag
 {
 
-    protected $Id = 'ZoomedPreviewImage';
+    protected $Id = 'Olympus::ZoomedPreviewImage';
 
     protected $Name = 'ZoomedPreviewImage';
 

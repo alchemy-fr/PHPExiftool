@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class Flash extends AbstractTag
 {
 
-    protected $Id = 'Flash';
+    protected $Id = 'XMP::Flash';
 
     protected $Name = 'Flash';
 
@@ -39,6 +39,8 @@ class Flash extends AbstractTag
     protected $Writable = true;
 
     protected $Description = 'Flash';
+
+    protected $local_g2 = 'Camera';
 
     protected $Values = array(
         0 => array(

@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class ActiveDLighting extends AbstractTag
 {
 
-    protected $Id = 34;
+    protected $Id = 'mixed';
 
     protected $Name = 'ActiveD-Lighting';
 
-    protected $FullName = 'Nikon::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

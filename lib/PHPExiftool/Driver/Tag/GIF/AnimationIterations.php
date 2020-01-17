@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class AnimationIterations extends AbstractTag
 {
 
-    protected $Id = 2;
+    protected $Id = 1;
 
     protected $Name = 'AnimationIterations';
 
-    protected $FullName = 'GIF::Animate';
+    protected $FullName = 'GIF::Animation';
 
     protected $GroupName = 'GIF';
 

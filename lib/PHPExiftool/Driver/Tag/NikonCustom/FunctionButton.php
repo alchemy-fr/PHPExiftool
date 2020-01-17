@@ -104,35 +104,35 @@ class FunctionButton extends AbstractTag
             'Label' => 'ISO Display',
         ),
         15 => array(
-            'Id' => 8,
+            'Id' => 1,
             'Label' => 'Framing Grid',
         ),
         16 => array(
-            'Id' => 16,
+            'Id' => 2,
             'Label' => 'AF-area Mode',
         ),
         17 => array(
-            'Id' => 24,
+            'Id' => 3,
             'Label' => 'Center AF Area',
         ),
         18 => array(
-            'Id' => 32,
+            'Id' => 4,
             'Label' => 'FV Lock',
         ),
         19 => array(
-            'Id' => 40,
+            'Id' => 5,
             'Label' => 'Flash Off',
         ),
         20 => array(
-            'Id' => 48,
+            'Id' => 6,
             'Label' => 'Matrix Metering',
         ),
         21 => array(
-            'Id' => 56,
+            'Id' => 7,
             'Label' => 'Center-weighted',
         ),
         22 => array(
-            'Id' => 64,
+            'Id' => 8,
             'Label' => 'Spot Metering',
         ),
     );

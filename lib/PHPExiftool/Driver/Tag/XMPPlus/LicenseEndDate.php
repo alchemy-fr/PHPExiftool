@@ -24,7 +24,7 @@ class LicenseEndDate extends AbstractTag
 
     protected $Name = 'LicenseEndDate';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

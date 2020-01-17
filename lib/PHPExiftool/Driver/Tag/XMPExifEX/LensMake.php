@@ -40,4 +40,6 @@ class LensMake extends AbstractTag
 
     protected $Description = 'Lens Make';
 
+    protected $local_g2 = 'Camera';
+
 }

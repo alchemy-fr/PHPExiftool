@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class DOF extends AbstractTag
 {
 
-    protected $Id = 'DOF';
+    protected $Id = 'Exif::DOF';
 
     protected $Name = 'DOF';
 

@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class PictureControlQuickAdjust extends AbstractTag
 {
 
-    protected $Id = 49;
+    protected $Id = 'mixed';
 
     protected $Name = 'PictureControlQuickAdjust';
 
-    protected $FullName = 'Nikon::PictureControl';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

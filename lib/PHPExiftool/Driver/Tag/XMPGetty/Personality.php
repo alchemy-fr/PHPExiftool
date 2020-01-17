@@ -40,4 +40,8 @@ class Personality extends AbstractTag
 
     protected $Description = 'Personality';
 
+    protected $flag_List = true;
+
+    protected $flag_Bag = true;
+
 }

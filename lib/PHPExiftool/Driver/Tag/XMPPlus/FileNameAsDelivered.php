@@ -24,7 +24,7 @@ class FileNameAsDelivered extends AbstractTag
 
     protected $Name = 'FileNameAsDelivered';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

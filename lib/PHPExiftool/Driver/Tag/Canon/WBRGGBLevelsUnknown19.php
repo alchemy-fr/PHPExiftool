@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class WBRGGBLevelsUnknown19 extends AbstractTag
 {
 
-    protected $Id = 203;
+    protected $Id = 'mixed';
 
     protected $Name = 'WB_RGGBLevelsUnknown19';
 

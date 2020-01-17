@@ -48,7 +48,7 @@ class AssignBktButton extends AbstractTag
             'Label' => 'Auto Bracketing',
         ),
         1 => array(
-            'Id' => 8,
+            'Id' => 1,
             'Label' => 'Multiple Exposure',
         ),
         2 => array(
@@ -80,6 +80,54 @@ class AssignBktButton extends AbstractTag
             'Label' => 'HDR (high dynamic range)',
         ),
         9 => array(
+            'Id' => 3,
+            'Label' => 'None',
+        ),
+        10 => array(
+            'Id' => 0,
+            'Label' => 'Auto Bracketing',
+        ),
+        11 => array(
+            'Id' => 1,
+            'Label' => 'Multiple Exposure',
+        ),
+        12 => array(
+            'Id' => 2,
+            'Label' => 'HDR (high dynamic range)',
+        ),
+        13 => array(
+            'Id' => 3,
+            'Label' => 'None',
+        ),
+        14 => array(
+            'Id' => 0,
+            'Label' => 'Auto Bracketing',
+        ),
+        15 => array(
+            'Id' => 1,
+            'Label' => 'Multiple Exposure',
+        ),
+        16 => array(
+            'Id' => 2,
+            'Label' => 'HDR (high dynamic range)',
+        ),
+        17 => array(
+            'Id' => 3,
+            'Label' => 'None',
+        ),
+        18 => array(
+            'Id' => 0,
+            'Label' => 'Auto Bracketing',
+        ),
+        19 => array(
+            'Id' => 1,
+            'Label' => 'Multiple Exposure',
+        ),
+        20 => array(
+            'Id' => 2,
+            'Label' => 'HDR (high dynamic range)',
+        ),
+        21 => array(
             'Id' => 3,
             'Label' => 'None',
         ),

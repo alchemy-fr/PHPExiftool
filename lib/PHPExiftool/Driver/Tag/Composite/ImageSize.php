@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ImageSize extends AbstractTag
 {
 
-    protected $Id = 'ImageSize';
+    protected $Id = 'Exif::ImageSize';
 
     protected $Name = 'ImageSize';
 

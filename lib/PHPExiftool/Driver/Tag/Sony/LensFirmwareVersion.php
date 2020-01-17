@@ -34,9 +34,9 @@ class LensFirmwareVersion extends AbstractTag
 
     protected $g2 = 'mixed';
 
-    protected $Type = 'int8u';
+    protected $Type = 'int16u';
 
-    protected $Writable = true;
+    protected $Writable = false;
 
     protected $Description = 'Lens Firmware Version';
 

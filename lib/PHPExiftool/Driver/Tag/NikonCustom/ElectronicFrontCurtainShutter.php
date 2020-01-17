@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class ElectronicFrontCurtainShutter extends AbstractTag
 {
 
-    protected $Id = '5.3';
+    protected $Id = 'mixed';
 
     protected $Name = 'ElectronicFront-CurtainShutter';
 
-    protected $FullName = 'NikonCustom::SettingsD810';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'NikonCustom';
 
@@ -47,8 +47,8 @@ class ElectronicFrontCurtainShutter extends AbstractTag
             'Id' => 0,
             'Label' => 'Off',
         ),
-        8 => array(
-            'Id' => 8,
+        1 => array(
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

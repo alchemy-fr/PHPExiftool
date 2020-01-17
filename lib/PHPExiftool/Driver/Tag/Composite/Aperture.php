@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class Aperture extends AbstractTag
 {
 
-    protected $Id = 'Aperture';
+    protected $Id = 'Exif::Aperture';
 
     protected $Name = 'Aperture';
 

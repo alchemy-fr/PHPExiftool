@@ -46,6 +46,6 @@ class MakerNoteGE extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $Index = 7;
+    protected $Index = 8;
 
 }

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class DigitalZoom extends AbstractTag
 {
 
-    protected $Id = 'DigitalZoom';
+    protected $Id = 'Canon::DigitalZoom';
 
     protected $Name = 'DigitalZoom';
 

@@ -47,8 +47,8 @@ class LiveViewAFMode extends AbstractTag
             'Id' => 0,
             'Label' => 'AF-C',
         ),
-        2 => array(
-            'Id' => 2,
+        1 => array(
+            'Id' => 1,
             'Label' => 'AF-F',
         ),
     );

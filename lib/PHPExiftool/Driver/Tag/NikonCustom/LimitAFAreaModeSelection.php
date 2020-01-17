@@ -47,29 +47,141 @@ class LimitAFAreaModeSelection extends AbstractTag
             'Id' => 0,
             'Label' => 'No Restrictions',
         ),
-        2 => array(
-            'Id' => 2,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Auto-area',
         ),
-        4 => array(
-            'Id' => 4,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Group-area',
         ),
-        8 => array(
-            'Id' => 8,
+        3 => array(
+            'Id' => 4,
             'Label' => '3D-tracking',
         ),
-        16 => array(
-            'Id' => 16,
+        4 => array(
+            'Id' => 8,
             'Label' => 'Dynamic area (51 points)',
         ),
-        32 => array(
-            'Id' => 32,
+        5 => array(
+            'Id' => 16,
             'Label' => 'Dynamic area (21 points)',
         ),
-        64 => array(
-            'Id' => 64,
+        6 => array(
+            'Id' => 32,
             'Label' => 'Dynamic area (9 points)',
+        ),
+        7 => array(
+            'Id' => 0,
+            'Label' => 'No Restrictions',
+        ),
+        8 => array(
+            'Id' => 1,
+            'Label' => 'Auto-area',
+        ),
+        9 => array(
+            'Id' => 2,
+            'Label' => 'Group-area',
+        ),
+        10 => array(
+            'Id' => 4,
+            'Label' => '3D-tracking',
+        ),
+        11 => array(
+            'Id' => 8,
+            'Label' => 'Dynamic area (153 points)',
+        ),
+        12 => array(
+            'Id' => 16,
+            'Label' => 'Dynamic area (72 points)',
+        ),
+        13 => array(
+            'Id' => 32,
+            'Label' => 'Dynamic area (25 points)',
+        ),
+        14 => array(
+            'Id' => 0,
+            'Label' => 'No Restrictions',
+        ),
+        15 => array(
+            'Id' => 1,
+            'Label' => 'Auto-area',
+        ),
+        16 => array(
+            'Id' => 2,
+            'Label' => 'Group-area',
+        ),
+        17 => array(
+            'Id' => 4,
+            'Label' => '3D-tracking',
+        ),
+        18 => array(
+            'Id' => 8,
+            'Label' => 'Dynamic area (153 points)',
+        ),
+        19 => array(
+            'Id' => 16,
+            'Label' => 'Dynamic area (72 points)',
+        ),
+        20 => array(
+            'Id' => 32,
+            'Label' => 'Dynamic area (25 points)',
+        ),
+        21 => array(
+            'Id' => 0,
+            'Label' => 'No Restrictions',
+        ),
+        22 => array(
+            'Id' => 1,
+            'Label' => 'Auto-area',
+        ),
+        23 => array(
+            'Id' => 2,
+            'Label' => 'Group-area',
+        ),
+        24 => array(
+            'Id' => 4,
+            'Label' => '3D-tracking',
+        ),
+        25 => array(
+            'Id' => 8,
+            'Label' => 'Dynamic area (51 points)',
+        ),
+        26 => array(
+            'Id' => 16,
+            'Label' => 'Dynamic area (21 points)',
+        ),
+        27 => array(
+            'Id' => 32,
+            'Label' => 'Dynamic area (9 points)',
+        ),
+        28 => array(
+            'Id' => 0,
+            'Label' => 'No Restrictions',
+        ),
+        29 => array(
+            'Id' => 1,
+            'Label' => 'Auto-area',
+        ),
+        30 => array(
+            'Id' => 2,
+            'Label' => 'Group-area',
+        ),
+        31 => array(
+            'Id' => 4,
+            'Label' => '3D-tracking',
+        ),
+        32 => array(
+            'Id' => 8,
+            'Label' => 'Dynamic area (153 points)',
+        ),
+        33 => array(
+            'Id' => 16,
+            'Label' => 'Dynamic area (72 points)',
+        ),
+        34 => array(
+            'Id' => 32,
+            'Label' => 'Dynamic area (25 points)',
         ),
     );
 

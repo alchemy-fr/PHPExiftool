@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class MeterInfo1Row7 extends AbstractTag
 {
 
-    protected $Id = 648;
+    protected $Id = 'mixed';
 
     protected $Name = 'MeterInfo1Row7';
 
-    protected $FullName = 'Sony::MeterInfo';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Sony';
 
@@ -34,14 +34,14 @@ class MeterInfo1Row7 extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = 'int32u';
+    protected $Type = 'mixed';
 
-    protected $Writable = true;
+    protected $Writable = false;
 
     protected $Description = 'Meter Info 1 Row 7';
 
     protected $flag_Permanent = true;
 
-    protected $MaxLength = 27;
+    protected $MaxLength = 'mixed';
 
 }

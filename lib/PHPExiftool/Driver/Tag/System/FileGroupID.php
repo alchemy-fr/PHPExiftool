@@ -36,10 +36,14 @@ class FileGroupID extends AbstractTag
 
     protected $Type = '?';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
     protected $Description = 'File Group ID';
 
     protected $local_g1 = 'System';
+
+    protected $local_g2 = 'Other';
+
+    protected $flag_Unsafe = true;
 
 }

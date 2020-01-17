@@ -24,7 +24,7 @@ class LicenseeName extends AbstractTag
 
     protected $Name = 'LicenseeName';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

@@ -24,7 +24,7 @@ class ApplicationNotes extends AbstractTag
 
     protected $Name = 'ApplicationNotes';
 
-    protected $FullName = 'PanasonicRaw::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'IFD0';
 

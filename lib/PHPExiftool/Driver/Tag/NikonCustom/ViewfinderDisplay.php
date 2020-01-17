@@ -48,15 +48,7 @@ class ViewfinderDisplay extends AbstractTag
             'Label' => 'Frame Count',
         ),
         1 => array(
-            'Id' => 64,
-            'Label' => 'Exposures Remaining',
-        ),
-        2 => array(
-            'Id' => 0,
-            'Label' => 'Frame Count',
-        ),
-        3 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'Exposures Remaining',
         ),
     );

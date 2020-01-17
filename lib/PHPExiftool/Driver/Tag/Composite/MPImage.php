@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class MPImage extends AbstractTag
 {
 
-    protected $Id = 'MPImage';
+    protected $Id = 'MPF::MPImage';
 
     protected $Name = 'MPImage';
 

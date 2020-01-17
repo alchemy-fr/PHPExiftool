@@ -24,7 +24,7 @@ class ColorRepresentation extends AbstractTag
 
     protected $Name = 'ColorRepresentation';
 
-    protected $FullName = 'QuickTime::ImageDesc';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'QuickTime';
 
@@ -34,10 +34,12 @@ class ColorRepresentation extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = 'int16u';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 
     protected $Description = 'Color Representation';
+
+    protected $Index = 'mixed';
 
 }

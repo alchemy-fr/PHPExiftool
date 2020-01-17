@@ -78,8 +78,8 @@ class Exiftool implements LoggerAwareInterface
             return $binary;
         }
 
-        $dev = __DIR__ . '/../../vendor/phpexiftool/exiftool/exiftool';
-        $packaged = __DIR__ . '/../../../../phpexiftool/exiftool/exiftool';
+        $dev = __DIR__ . '/../../vendor/exiftool/exiftool/exiftool';
+        $packaged = __DIR__ . '/../../../../exiftool/exiftool/exiftool';
 
         foreach (array($packaged, $dev) as $location) {
 

@@ -40,4 +40,6 @@ class MaxAvailWidth extends AbstractTag
 
     protected $Description = 'Max Avail Width';
 
+    protected $local_g2 = 'Image';
+
 }

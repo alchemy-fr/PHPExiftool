@@ -40,6 +40,8 @@ class DPP extends AbstractTag
 
     protected $Description = 'DPP';
 
+    protected $flag_Avoid = true;
+
     protected $flag_Binary = true;
 
 }

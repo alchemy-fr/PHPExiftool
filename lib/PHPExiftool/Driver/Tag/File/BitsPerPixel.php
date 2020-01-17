@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class BitsPerPixel extends AbstractTag
 {
 
-    protected $Id = 18;
+    protected $Id = 'mixed';
 
     protected $Name = 'BitsPerPixel';
 
-    protected $FullName = 'PGF::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'File';
 

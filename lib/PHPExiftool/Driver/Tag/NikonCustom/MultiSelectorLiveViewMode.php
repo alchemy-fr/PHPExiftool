@@ -49,12 +49,12 @@ class MultiSelectorLiveViewMode extends AbstractTag
             'Id' => 0,
             'Label' => 'Reset',
         ),
-        64 => array(
-            'Id' => 64,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Zoom',
         ),
-        192 => array(
-            'Id' => 192,
+        3 => array(
+            'Id' => 3,
             'Label' => 'None',
         ),
     );

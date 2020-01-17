@@ -63,6 +63,14 @@ class AspectRatio extends AbstractTag
             'Id' => 8,
             'Label' => '4:5',
         ),
+        12 => array(
+            'Id' => 12,
+            'Label' => '3:2 (APS-H crop)',
+        ),
+        13 => array(
+            'Id' => 13,
+            'Label' => '3:2 (APS-C crop)',
+        ),
     );
 
 }

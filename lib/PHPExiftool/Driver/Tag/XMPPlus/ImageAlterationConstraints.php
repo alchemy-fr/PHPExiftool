@@ -24,7 +24,7 @@ class ImageAlterationConstraints extends AbstractTag
 
     protected $Name = 'ImageAlterationConstraints';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

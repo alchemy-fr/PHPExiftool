@@ -51,22 +51,6 @@ class ViewfinderWarning extends AbstractTag
             'Id' => 1,
             'Label' => 'Off',
         ),
-        2 => array(
-            'Id' => 0,
-            'Label' => 'On',
-        ),
-        3 => array(
-            'Id' => 64,
-            'Label' => 'Off',
-        ),
-        4 => array(
-            'Id' => 0,
-            'Label' => 'On',
-        ),
-        5 => array(
-            'Id' => 1,
-            'Label' => 'Off',
-        ),
     );
 
 }

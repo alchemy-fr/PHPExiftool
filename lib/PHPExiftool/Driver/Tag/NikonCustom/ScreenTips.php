@@ -48,7 +48,7 @@ class ScreenTips extends AbstractTag
             'Label' => 'On',
         ),
         1 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Off',
         ),
         2 => array(
@@ -56,23 +56,23 @@ class ScreenTips extends AbstractTag
             'Label' => 'Off',
         ),
         3 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'On',
         ),
         4 => array(
             'Id' => 0,
-            'Label' => 'Off',
+            'Label' => 'On',
         ),
         5 => array(
-            'Id' => 8,
-            'Label' => 'On',
+            'Id' => 1,
+            'Label' => 'Off',
         ),
         6 => array(
             'Id' => 0,
             'Label' => 'Off',
         ),
         7 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'On',
         ),
         8 => array(
@@ -80,7 +80,7 @@ class ScreenTips extends AbstractTag
             'Label' => 'Off',
         ),
         9 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'On',
         ),
         10 => array(
@@ -88,7 +88,7 @@ class ScreenTips extends AbstractTag
             'Label' => 'Off',
         ),
         11 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

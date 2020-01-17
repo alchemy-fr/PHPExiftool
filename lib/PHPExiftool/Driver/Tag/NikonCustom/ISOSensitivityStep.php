@@ -24,7 +24,7 @@ class ISOSensitivityStep extends AbstractTag
 
     protected $Name = 'ISOSensitivityStep';
 
-    protected $FullName = 'NikonCustom::SettingsD7000';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'NikonCustom';
 
@@ -47,8 +47,8 @@ class ISOSensitivityStep extends AbstractTag
             'Id' => 0,
             'Label' => '1/3 EV',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => '1/2 EV',
         ),
     );

@@ -36,10 +36,12 @@ class TimeZone extends AbstractTag
 
     protected $Type = '?';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
     protected $Description = 'Time Zone';
 
     protected $local_g2 = 'Time';
+
+    protected $flag_Permanent = true;
 
 }

@@ -40,4 +40,6 @@ class SerialNumber extends AbstractTag
 
     protected $Description = 'Serial Number';
 
+    protected $local_g2 = 'Camera';
+
 }

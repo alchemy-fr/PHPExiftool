@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class ColorMode extends AbstractTag
 {
 
-    protected $Id = 20;
+    protected $Id = 'mixed';
 
     protected $Name = 'ColorMode';
 
-    protected $FullName = 'PGF::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'File';
 
@@ -43,33 +43,45 @@ class ColorMode extends AbstractTag
     protected $Values = array(
         0 => array(
             'Id' => 0,
-            'Label' => 'Bitmap',
+            'Label' => 'n/a',
         ),
         1 => array(
             'Id' => 1,
-            'Label' => 'Grayscale',
+            'Label' => 'Color Palette',
         ),
         2 => array(
             'Id' => 2,
-            'Label' => 'Indexed',
+            'Label' => 'Grayscale',
         ),
         3 => array(
+            'Id' => 0,
+            'Label' => 'Bitmap',
+        ),
+        4 => array(
+            'Id' => 1,
+            'Label' => 'Grayscale',
+        ),
+        5 => array(
+            'Id' => 2,
+            'Label' => 'Indexed',
+        ),
+        6 => array(
             'Id' => 3,
             'Label' => 'RGB',
         ),
-        4 => array(
+        7 => array(
             'Id' => 4,
             'Label' => 'CMYK',
         ),
-        7 => array(
+        8 => array(
             'Id' => 7,
             'Label' => 'Multichannel',
         ),
-        8 => array(
+        9 => array(
             'Id' => 8,
             'Label' => 'Duotone',
         ),
-        9 => array(
+        10 => array(
             'Id' => 9,
             'Label' => 'Lab',
         ),

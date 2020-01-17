@@ -47,8 +47,48 @@ class AFSPrioritySelection extends AbstractTag
             'Id' => 0,
             'Label' => 'Focus',
         ),
-        32 => array(
-            'Id' => 32,
+        1 => array(
+            'Id' => 1,
+            'Label' => 'Release',
+        ),
+        2 => array(
+            'Id' => 0,
+            'Label' => 'Release',
+        ),
+        3 => array(
+            'Id' => 1,
+            'Label' => 'Focus',
+        ),
+        4 => array(
+            'Id' => 0,
+            'Label' => 'Focus',
+        ),
+        5 => array(
+            'Id' => 1,
+            'Label' => 'Release',
+        ),
+        6 => array(
+            'Id' => 0,
+            'Label' => 'Focus',
+        ),
+        7 => array(
+            'Id' => 1,
+            'Label' => 'Release',
+        ),
+        8 => array(
+            'Id' => 0,
+            'Label' => 'Focus',
+        ),
+        9 => array(
+            'Id' => 1,
+            'Label' => 'Release',
+        ),
+        10 => array(
+            'Id' => 0,
+            'Label' => 'Focus',
+        ),
+        11 => array(
+            'Id' => 1,
             'Label' => 'Release',
         ),
     );

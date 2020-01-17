@@ -48,15 +48,15 @@ class InternalFlash extends AbstractTag
             'Label' => 'TTL',
         ),
         1 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Manual',
         ),
         2 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Repeating Flash',
         ),
         3 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Commander Mode',
         ),
         4 => array(
@@ -64,7 +64,7 @@ class InternalFlash extends AbstractTag
             'Label' => 'TTL',
         ),
         5 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Manual',
         ),
         6 => array(
@@ -72,7 +72,7 @@ class InternalFlash extends AbstractTag
             'Label' => 'TTL',
         ),
         7 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Manual',
         ),
         8 => array(
@@ -80,7 +80,7 @@ class InternalFlash extends AbstractTag
             'Label' => 'TTL',
         ),
         9 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Manual',
         ),
         10 => array(
@@ -88,15 +88,15 @@ class InternalFlash extends AbstractTag
             'Label' => 'TTL',
         ),
         11 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Manual',
         ),
         12 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Repeating Flash',
         ),
         13 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Commander Mode',
         ),
         14 => array(
@@ -104,15 +104,15 @@ class InternalFlash extends AbstractTag
             'Label' => 'TTL',
         ),
         15 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Manual',
         ),
         16 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Repeating Flash',
         ),
         17 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Commander Mode',
         ),
     );

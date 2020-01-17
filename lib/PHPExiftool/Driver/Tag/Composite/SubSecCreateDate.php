@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class SubSecCreateDate extends AbstractTag
 {
 
-    protected $Id = 'SubSecCreateDate';
+    protected $Id = 'Exif::SubSecCreateDate';
 
     protected $Name = 'SubSecCreateDate';
 
@@ -36,7 +36,7 @@ class SubSecCreateDate extends AbstractTag
 
     protected $Type = '?';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
     protected $Description = 'Create Date';
 

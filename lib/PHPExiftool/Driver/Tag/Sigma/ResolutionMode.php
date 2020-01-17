@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ResolutionMode extends AbstractTag
 {
 
-    protected $Id = 4;
+    protected $Id = 'mixed';
 
     protected $Name = 'ResolutionMode';
 

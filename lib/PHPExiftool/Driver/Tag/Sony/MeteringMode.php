@@ -49,7 +49,7 @@ class MeteringMode extends AbstractTag
         ),
         1 => array(
             'Id' => 2,
-            'Label' => 'Center-weighted Average',
+            'Label' => 'Center-weighted average',
         ),
         2 => array(
             'Id' => 4,
@@ -92,52 +92,52 @@ class MeteringMode extends AbstractTag
             'Label' => 'Spot',
         ),
         12 => array(
-            'Id' => 0,
-            'Label' => 'Multi-segment',
+            'Id' => 4,
+            'Label' => 'Average',
         ),
         13 => array(
-            'Id' => 2,
-            'Label' => 'Center-weighted average',
+            'Id' => 5,
+            'Label' => 'Highlight',
         ),
         14 => array(
-            'Id' => 3,
-            'Label' => 'Spot',
+            'Id' => 0,
+            'Label' => 'Multi-segment',
         ),
         15 => array(
-            'Id' => 0,
-            'Label' => 'Multi-segment',
+            'Id' => 2,
+            'Label' => 'Center-weighted average',
         ),
         16 => array(
-            'Id' => 2,
-            'Label' => 'Center-weighted average',
+            'Id' => 3,
+            'Label' => 'Spot',
         ),
         17 => array(
-            'Id' => 3,
-            'Label' => 'Spot',
+            'Id' => 4,
+            'Label' => 'Average',
         ),
         18 => array(
-            'Id' => 0,
-            'Label' => 'Multi-segment',
+            'Id' => 5,
+            'Label' => 'Highlight',
         ),
         19 => array(
-            'Id' => 2,
-            'Label' => 'Center-weighted average',
-        ),
-        20 => array(
-            'Id' => 3,
-            'Label' => 'Spot',
-        ),
-        21 => array(
             'Id' => 0,
             'Label' => 'Multi-segment',
         ),
-        22 => array(
+        20 => array(
             'Id' => 2,
             'Label' => 'Center-weighted average',
         ),
-        23 => array(
+        21 => array(
             'Id' => 3,
             'Label' => 'Spot',
+        ),
+        22 => array(
+            'Id' => 4,
+            'Label' => 'Average',
+        ),
+        23 => array(
+            'Id' => 5,
+            'Label' => 'Highlight',
         ),
         24 => array(
             'Id' => 0,
@@ -152,28 +152,112 @@ class MeteringMode extends AbstractTag
             'Label' => 'Spot',
         ),
         27 => array(
-            'Id' => 0,
-            'Label' => 'Multi-segment',
+            'Id' => 4,
+            'Label' => 'Average',
         ),
         28 => array(
-            'Id' => 2,
-            'Label' => 'Center-weighted average',
+            'Id' => 5,
+            'Label' => 'Highlight',
         ),
         29 => array(
-            'Id' => 3,
-            'Label' => 'Spot',
-        ),
-        30 => array(
             'Id' => 0,
             'Label' => 'Multi-segment',
         ),
-        31 => array(
+        30 => array(
             'Id' => 2,
             'Label' => 'Center-weighted average',
         ),
-        32 => array(
+        31 => array(
             'Id' => 3,
             'Label' => 'Spot',
+        ),
+        32 => array(
+            'Id' => 4,
+            'Label' => 'Average',
+        ),
+        33 => array(
+            'Id' => 5,
+            'Label' => 'Highlight',
+        ),
+        34 => array(
+            'Id' => 0,
+            'Label' => 'Multi-segment',
+        ),
+        35 => array(
+            'Id' => 2,
+            'Label' => 'Center-weighted average',
+        ),
+        36 => array(
+            'Id' => 3,
+            'Label' => 'Spot',
+        ),
+        37 => array(
+            'Id' => 4,
+            'Label' => 'Average',
+        ),
+        38 => array(
+            'Id' => 5,
+            'Label' => 'Highlight',
+        ),
+        39 => array(
+            'Id' => 0,
+            'Label' => 'Multi-segment',
+        ),
+        40 => array(
+            'Id' => 2,
+            'Label' => 'Center-weighted average',
+        ),
+        41 => array(
+            'Id' => 3,
+            'Label' => 'Spot',
+        ),
+        42 => array(
+            'Id' => 4,
+            'Label' => 'Average',
+        ),
+        43 => array(
+            'Id' => 5,
+            'Label' => 'Highlight',
+        ),
+        44 => array(
+            'Id' => 0,
+            'Label' => 'Multi-segment',
+        ),
+        45 => array(
+            'Id' => 2,
+            'Label' => 'Center-weighted average',
+        ),
+        46 => array(
+            'Id' => 3,
+            'Label' => 'Spot',
+        ),
+        47 => array(
+            'Id' => 4,
+            'Label' => 'Average',
+        ),
+        48 => array(
+            'Id' => 5,
+            'Label' => 'Highlight',
+        ),
+        49 => array(
+            'Id' => 0,
+            'Label' => 'Multi-segment',
+        ),
+        50 => array(
+            'Id' => 2,
+            'Label' => 'Center-weighted average',
+        ),
+        51 => array(
+            'Id' => 3,
+            'Label' => 'Spot',
+        ),
+        52 => array(
+            'Id' => 4,
+            'Label' => 'Average',
+        ),
+        53 => array(
+            'Id' => 5,
+            'Label' => 'Highlight',
         ),
     );
 

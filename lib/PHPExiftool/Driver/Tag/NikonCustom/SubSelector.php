@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class SubSelector extends AbstractTag
 {
 
-    protected $Id = '49.1';
+    protected $Id = 'mixed';
 
     protected $Name = 'SubSelector';
 
-    protected $FullName = 'NikonCustom::SettingsD4';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'NikonCustom';
 
@@ -47,97 +47,121 @@ class SubSelector extends AbstractTag
             'Id' => 0,
             'Label' => 'None',
         ),
-        8 => array(
-            'Id' => 8,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Preview',
         ),
-        16 => array(
-            'Id' => 16,
+        2 => array(
+            'Id' => 2,
             'Label' => 'FV Lock',
         ),
-        24 => array(
-            'Id' => 24,
+        3 => array(
+            'Id' => 3,
             'Label' => 'AE/AF Lock',
         ),
-        32 => array(
-            'Id' => 32,
+        4 => array(
+            'Id' => 4,
             'Label' => 'AE Lock Only',
         ),
-        40 => array(
-            'Id' => 40,
+        5 => array(
+            'Id' => 5,
             'Label' => 'AE Lock (reset on release)',
         ),
-        48 => array(
-            'Id' => 48,
+        6 => array(
+            'Id' => 6,
             'Label' => 'AE Lock (hold)',
         ),
-        56 => array(
-            'Id' => 56,
+        7 => array(
+            'Id' => 7,
             'Label' => 'AF Lock Only',
         ),
-        64 => array(
-            'Id' => 64,
+        8 => array(
+            'Id' => 8,
             'Label' => 'AF-On',
         ),
-        80 => array(
-            'Id' => 80,
+        9 => array(
+            'Id' => 10,
             'Label' => 'Bracketing Burst',
         ),
-        88 => array(
-            'Id' => 88,
+        10 => array(
+            'Id' => 11,
             'Label' => 'Matrix Metering',
         ),
-        96 => array(
-            'Id' => 96,
+        11 => array(
+            'Id' => 12,
             'Label' => 'Center-weighted Metering',
         ),
-        104 => array(
-            'Id' => 104,
+        12 => array(
+            'Id' => 13,
             'Label' => 'Spot Metering',
         ),
-        112 => array(
-            'Id' => 112,
+        13 => array(
+            'Id' => 14,
             'Label' => 'Playback',
         ),
-        120 => array(
-            'Id' => 120,
+        14 => array(
+            'Id' => 15,
             'Label' => 'My Menu Top Item',
         ),
-        128 => array(
-            'Id' => 128,
+        15 => array(
+            'Id' => 16,
             'Label' => '+NEF(RAW)',
         ),
-        136 => array(
-            'Id' => 136,
+        16 => array(
+            'Id' => 17,
             'Label' => 'Virtual Horizon',
         ),
-        144 => array(
-            'Id' => 144,
+        17 => array(
+            'Id' => 18,
             'Label' => 'My Menu',
         ),
-        152 => array(
-            'Id' => 152,
+        18 => array(
+            'Id' => 19,
             'Label' => 'Reset',
         ),
-        160 => array(
-            'Id' => 160,
+        19 => array(
+            'Id' => 20,
             'Label' => 'Grid Display',
         ),
-        168 => array(
-            'Id' => 168,
+        20 => array(
+            'Id' => 21,
             'Label' => 'Disable Synchronized Release',
         ),
-        176 => array(
-            'Id' => 176,
+        21 => array(
+            'Id' => 22,
             'Label' => 'Remote Release Only',
         ),
-        184 => array(
-            'Id' => 184,
+        22 => array(
+            'Id' => 23,
             'Label' => 'Preview',
         ),
-        208 => array(
-            'Id' => 208,
+        23 => array(
+            'Id' => 26,
             'Label' => 'Flash Disable/Enable',
+        ),
+        24 => array(
+            'Id' => 0,
+            'Label' => 'Focus Point Selection',
+        ),
+        25 => array(
+            'Id' => 1,
+            'Label' => 'Same as MultiSelector',
+        ),
+        26 => array(
+            'Id' => 0,
+            'Label' => 'Focus Point Selection',
+        ),
+        27 => array(
+            'Id' => 1,
+            'Label' => 'Same as MultiSelector',
+        ),
+        28 => array(
+            'Id' => 0,
+            'Label' => 'Focus Point Selection',
+        ),
+        29 => array(
+            'Id' => 1,
+            'Label' => 'Same as MultiSelector',
         ),
     );
 

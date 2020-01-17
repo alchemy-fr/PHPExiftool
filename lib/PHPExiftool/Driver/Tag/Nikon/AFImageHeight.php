@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AFImageHeight extends AbstractTag
 {
 
-    protected $Id = 18;
+    protected $Id = 'mixed';
 
     protected $Name = 'AFImageHeight';
 

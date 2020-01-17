@@ -129,49 +129,145 @@ class PreviewButtonPlusDials extends AbstractTag
         ),
         21 => array(
             'Id' => 2,
-            'Label' => 'One Step Speed/Aperture',
+            'Label' => 'Shutter Speed & Aperture Lock',
         ),
         22 => array(
             'Id' => 3,
-            'Label' => 'Choose Non-CPU Lens Number',
-        ),
-        23 => array(
-            'Id' => 5,
-            'Label' => 'Auto bracketing',
-        ),
-        24 => array(
-            'Id' => 6,
-            'Label' => 'Dynamic AF Area',
-        ),
-        25 => array(
-            'Id' => 7,
-            'Label' => 'Shutter speed & Aperture lock',
-        ),
-        26 => array(
-            'Id' => 0,
-            'Label' => 'None',
-        ),
-        27 => array(
-            'Id' => 1,
-            'Label' => 'Choose Image Area (FX/DX/5:4)',
-        ),
-        28 => array(
-            'Id' => 2,
-            'Label' => 'Shutter Speed & Aperture Lock',
-        ),
-        29 => array(
-            'Id' => 3,
             'Label' => 'One Step Speed / Aperture',
         ),
-        30 => array(
+        23 => array(
             'Id' => 4,
             'Label' => 'Choose Non-CPU Lens Number',
         ),
-        31 => array(
+        24 => array(
             'Id' => 5,
             'Label' => 'Active D-Lighting',
         ),
+        25 => array(
+            'Id' => 7,
+            'Label' => 'Photo Shooting Menu Bank',
+        ),
+        26 => array(
+            'Id' => 8,
+            'Label' => 'Exposure Delay Mode',
+        ),
+        27 => array(
+            'Id' => 0,
+            'Label' => 'None',
+        ),
+        28 => array(
+            'Id' => 1,
+            'Label' => 'Choose Image Area (DX/1.3x)',
+        ),
+        29 => array(
+            'Id' => 2,
+            'Label' => 'Shutter Speed & Aperture Lock',
+        ),
+        30 => array(
+            'Id' => 3,
+            'Label' => 'One Step Speed / Aperture',
+        ),
+        31 => array(
+            'Id' => 4,
+            'Label' => 'Choose Non-CPU Lens Number',
+        ),
         32 => array(
+            'Id' => 5,
+            'Label' => 'Active D-Lighting',
+        ),
+        33 => array(
+            'Id' => 7,
+            'Label' => 'Photo Shooting Menu Bank',
+        ),
+        34 => array(
+            'Id' => 8,
+            'Label' => 'Exposure Delay Mode',
+        ),
+        35 => array(
+            'Id' => 0,
+            'Label' => 'None',
+        ),
+        36 => array(
+            'Id' => 1,
+            'Label' => 'Choose Image Area',
+        ),
+        37 => array(
+            'Id' => 2,
+            'Label' => 'One Step Speed/Aperture',
+        ),
+        38 => array(
+            'Id' => 3,
+            'Label' => 'Choose Non-CPU Lens Number',
+        ),
+        39 => array(
+            'Id' => 5,
+            'Label' => 'Auto bracketing',
+        ),
+        40 => array(
+            'Id' => 6,
+            'Label' => 'Dynamic AF Area',
+        ),
+        41 => array(
+            'Id' => 7,
+            'Label' => 'Shutter speed & Aperture lock',
+        ),
+        42 => array(
+            'Id' => 0,
+            'Label' => 'None',
+        ),
+        43 => array(
+            'Id' => 1,
+            'Label' => 'Choose Image Area (FX/DX/5:4)',
+        ),
+        44 => array(
+            'Id' => 2,
+            'Label' => 'Shutter Speed & Aperture Lock',
+        ),
+        45 => array(
+            'Id' => 3,
+            'Label' => 'One Step Speed / Aperture',
+        ),
+        46 => array(
+            'Id' => 4,
+            'Label' => 'Choose Non-CPU Lens Number',
+        ),
+        47 => array(
+            'Id' => 5,
+            'Label' => 'Active D-Lighting',
+        ),
+        48 => array(
+            'Id' => 8,
+            'Label' => 'Exposure Delay Mode',
+        ),
+        49 => array(
+            'Id' => 0,
+            'Label' => 'None',
+        ),
+        50 => array(
+            'Id' => 1,
+            'Label' => 'Choose Image Area',
+        ),
+        51 => array(
+            'Id' => 2,
+            'Label' => 'Shutter Speed & Aperture Lock',
+        ),
+        52 => array(
+            'Id' => 3,
+            'Label' => 'One Step Speed / Aperture',
+        ),
+        53 => array(
+            'Id' => 4,
+            'Label' => 'Choose Non-CPU Lens Number',
+        ),
+        54 => array(
+            'Id' => 5,
+            'Label' => 'Active D-Lighting',
+        ),
+        55 => array(
+            'Id' => 7,
+            'Label' => 'Photo Shooting Menu Bank',
+        ),
+        56 => array(
             'Id' => 8,
             'Label' => 'Exposure Delay Mode',
         ),

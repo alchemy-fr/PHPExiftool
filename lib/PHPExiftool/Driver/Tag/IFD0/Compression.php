@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class Compression extends AbstractTag
 {
 
-    protected $Id = 259;
+    protected $Id = 'mixed';
 
     protected $Name = 'Compression';
 
-    protected $FullName = 'Exif::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'IFD0';
 
@@ -45,169 +45,217 @@ class Compression extends AbstractTag
     protected $flag_Mandatory = true;
 
     protected $Values = array(
-        1 => array(
+        0 => array(
             'Id' => 1,
             'Label' => 'Uncompressed',
         ),
-        2 => array(
+        1 => array(
             'Id' => 2,
             'Label' => 'CCITT 1D',
         ),
-        3 => array(
+        2 => array(
             'Id' => 3,
             'Label' => 'T4/Group 3 Fax',
         ),
-        4 => array(
+        3 => array(
             'Id' => 4,
             'Label' => 'T6/Group 4 Fax',
         ),
-        5 => array(
+        4 => array(
             'Id' => 5,
             'Label' => 'LZW',
         ),
-        6 => array(
+        5 => array(
             'Id' => 6,
             'Label' => 'JPEG (old-style)',
         ),
-        7 => array(
+        6 => array(
             'Id' => 7,
             'Label' => 'JPEG',
         ),
-        8 => array(
+        7 => array(
             'Id' => 8,
             'Label' => 'Adobe Deflate',
         ),
-        9 => array(
+        8 => array(
             'Id' => 9,
             'Label' => 'JBIG B&W',
         ),
-        10 => array(
+        9 => array(
             'Id' => 10,
             'Label' => 'JBIG Color',
         ),
-        99 => array(
+        10 => array(
             'Id' => 99,
             'Label' => 'JPEG',
         ),
-        262 => array(
+        11 => array(
             'Id' => 262,
             'Label' => 'Kodak 262',
         ),
-        32766 => array(
+        12 => array(
             'Id' => 32766,
             'Label' => 'Next',
         ),
-        32767 => array(
+        13 => array(
             'Id' => 32767,
             'Label' => 'Sony ARW Compressed',
         ),
-        32769 => array(
+        14 => array(
             'Id' => 32769,
             'Label' => 'Packed RAW',
         ),
-        32770 => array(
+        15 => array(
             'Id' => 32770,
             'Label' => 'Samsung SRW Compressed',
         ),
-        32771 => array(
+        16 => array(
             'Id' => 32771,
             'Label' => 'CCIRLEW',
         ),
-        32772 => array(
+        17 => array(
             'Id' => 32772,
             'Label' => 'Samsung SRW Compressed 2',
         ),
-        32773 => array(
+        18 => array(
             'Id' => 32773,
             'Label' => 'PackBits',
         ),
-        32809 => array(
+        19 => array(
             'Id' => 32809,
             'Label' => 'Thunderscan',
         ),
-        32867 => array(
+        20 => array(
             'Id' => 32867,
             'Label' => 'Kodak KDC Compressed',
         ),
-        32895 => array(
+        21 => array(
             'Id' => 32895,
             'Label' => 'IT8CTPAD',
         ),
-        32896 => array(
+        22 => array(
             'Id' => 32896,
             'Label' => 'IT8LW',
         ),
-        32897 => array(
+        23 => array(
             'Id' => 32897,
             'Label' => 'IT8MP',
         ),
-        32898 => array(
+        24 => array(
             'Id' => 32898,
             'Label' => 'IT8BL',
         ),
-        32908 => array(
+        25 => array(
             'Id' => 32908,
             'Label' => 'PixarFilm',
         ),
-        32909 => array(
+        26 => array(
             'Id' => 32909,
             'Label' => 'PixarLog',
         ),
-        32946 => array(
+        27 => array(
             'Id' => 32946,
             'Label' => 'Deflate',
         ),
-        32947 => array(
+        28 => array(
             'Id' => 32947,
             'Label' => 'DCS',
         ),
-        34661 => array(
+        29 => array(
+            'Id' => 33003,
+            'Label' => 'Aperio JPEG 2000 YCbCr',
+        ),
+        30 => array(
+            'Id' => 33005,
+            'Label' => 'Aperio JPEG 2000 RGB',
+        ),
+        31 => array(
             'Id' => 34661,
             'Label' => 'JBIG',
         ),
-        34676 => array(
+        32 => array(
             'Id' => 34676,
             'Label' => 'SGILog',
         ),
-        34677 => array(
+        33 => array(
             'Id' => 34677,
             'Label' => 'SGILog24',
         ),
-        34712 => array(
+        34 => array(
             'Id' => 34712,
             'Label' => 'JPEG 2000',
         ),
-        34713 => array(
+        35 => array(
             'Id' => 34713,
             'Label' => 'Nikon NEF Compressed',
         ),
-        34715 => array(
+        36 => array(
             'Id' => 34715,
             'Label' => 'JBIG2 TIFF FX',
         ),
-        34718 => array(
+        37 => array(
             'Id' => 34718,
             'Label' => 'Microsoft Document Imaging (MDI) Binary Level Codec',
         ),
-        34719 => array(
+        38 => array(
             'Id' => 34719,
             'Label' => 'Microsoft Document Imaging (MDI) Progressive Transform Codec',
         ),
-        34720 => array(
+        39 => array(
             'Id' => 34720,
             'Label' => 'Microsoft Document Imaging (MDI) Vector',
         ),
-        34892 => array(
+        40 => array(
+            'Id' => 34887,
+            'Label' => 'ESRI Lerc',
+        ),
+        41 => array(
             'Id' => 34892,
             'Label' => 'Lossy JPEG',
         ),
-        65000 => array(
+        42 => array(
+            'Id' => 34925,
+            'Label' => 'LZMA2',
+        ),
+        43 => array(
+            'Id' => 34926,
+            'Label' => 'Zstd',
+        ),
+        44 => array(
+            'Id' => 34927,
+            'Label' => 'WebP',
+        ),
+        45 => array(
+            'Id' => 34933,
+            'Label' => 'PNG',
+        ),
+        46 => array(
+            'Id' => 34934,
+            'Label' => 'JPEG XR',
+        ),
+        47 => array(
             'Id' => 65000,
             'Label' => 'Kodak DCR Compressed',
         ),
-        65535 => array(
+        48 => array(
             'Id' => 65535,
             'Label' => 'Pentax PEF Compressed',
+        ),
+        49 => array(
+            'Id' => 34316,
+            'Label' => 'Panasonic RAW 1',
+        ),
+        50 => array(
+            'Id' => 34826,
+            'Label' => 'Panasonic RAW 2',
+        ),
+        51 => array(
+            'Id' => 34828,
+            'Label' => 'Panasonic RAW 3',
+        ),
+        52 => array(
+            'Id' => 34830,
+            'Label' => 'Panasonic RAW 4',
         ),
     );
 

@@ -47,9 +47,41 @@ class FlashExposureCompArea extends AbstractTag
             'Id' => 0,
             'Label' => 'Entire frame',
         ),
-        4 => array(
-            'Id' => 4,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Background only',
+        ),
+        2 => array(
+            'Id' => 0,
+            'Label' => 'Entire Frame',
+        ),
+        3 => array(
+            'Id' => 1,
+            'Label' => 'Background Only',
+        ),
+        4 => array(
+            'Id' => 0,
+            'Label' => 'Entire Frame',
+        ),
+        5 => array(
+            'Id' => 1,
+            'Label' => 'Background Only',
+        ),
+        6 => array(
+            'Id' => 0,
+            'Label' => 'Entire frame',
+        ),
+        7 => array(
+            'Id' => 1,
+            'Label' => 'Background only',
+        ),
+        8 => array(
+            'Id' => 0,
+            'Label' => 'Entire Frame',
+        ),
+        9 => array(
+            'Id' => 1,
+            'Label' => 'Background Only',
         ),
     );
 

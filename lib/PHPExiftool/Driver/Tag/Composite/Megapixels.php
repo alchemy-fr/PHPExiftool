@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class Megapixels extends AbstractTag
 {
 
-    protected $Id = 'Megapixels';
+    protected $Id = 'Exif::Megapixels';
 
     protected $Name = 'Megapixels';
 

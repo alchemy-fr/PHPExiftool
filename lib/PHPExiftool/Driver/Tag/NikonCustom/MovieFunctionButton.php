@@ -47,16 +47,16 @@ class MovieFunctionButton extends AbstractTag
             'Id' => 0,
             'Label' => 'None',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Power Aperture (open)',
         ),
-        48 => array(
-            'Id' => 48,
+        3 => array(
+            'Id' => 3,
             'Label' => 'Index Marking',
         ),
-        64 => array(
-            'Id' => 64,
+        4 => array(
+            'Id' => 4,
             'Label' => 'View Photo Shooting Info',
         ),
     );

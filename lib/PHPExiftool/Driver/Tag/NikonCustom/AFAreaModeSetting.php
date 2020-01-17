@@ -48,11 +48,11 @@ class AFAreaModeSetting extends AbstractTag
             'Label' => 'Single Area',
         ),
         1 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Dynamic Area',
         ),
         2 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Closest Subject',
         ),
         3 => array(
@@ -60,15 +60,15 @@ class AFAreaModeSetting extends AbstractTag
             'Label' => 'Single Area',
         ),
         4 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'Dynamic Area',
         ),
         5 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'Auto-area',
         ),
         6 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '3D-tracking (11 points)',
         ),
         7 => array(
@@ -76,11 +76,11 @@ class AFAreaModeSetting extends AbstractTag
             'Label' => 'Single Area',
         ),
         8 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Dynamic Area',
         ),
         9 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Auto-area',
         ),
         10 => array(
@@ -88,15 +88,15 @@ class AFAreaModeSetting extends AbstractTag
             'Label' => 'Single Area',
         ),
         11 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'Dynamic Area',
         ),
         12 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'Auto-area',
         ),
         13 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '3D-tracking (11 points)',
         ),
     );

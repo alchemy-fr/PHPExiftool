@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class VerticalMultiSelector extends AbstractTag
 {
 
-    protected $Id = '42.1';
+    protected $Id = 'mixed';
 
     protected $Name = 'VerticalMultiSelector';
 
-    protected $FullName = 'NikonCustom::SettingsD4';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'NikonCustom';
 
@@ -47,12 +47,48 @@ class VerticalMultiSelector extends AbstractTag
             'Id' => 0,
             'Label' => 'Same as Multi-Selector with Info(U/D) & Playback(R/L)',
         ),
-        32 => array(
-            'Id' => 32,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Same as Multi-Selector with Info(R/L) & Playback(U/D)',
         ),
-        64 => array(
-            'Id' => 64,
+        2 => array(
+            'Id' => 2,
+            'Label' => 'Focus Point Selection',
+        ),
+        3 => array(
+            'Id' => 0,
+            'Label' => 'Same as Multi-Selector with Info(U/D) & Playback(R/L)',
+        ),
+        4 => array(
+            'Id' => 8,
+            'Label' => 'Same as Multi-Selector with Info(R/L) & Playback(U/D)',
+        ),
+        5 => array(
+            'Id' => 128,
+            'Label' => 'Focus Point Selection',
+        ),
+        6 => array(
+            'Id' => 0,
+            'Label' => 'Same as Multi-Selector with Info(U/D) & Playback(R/L)',
+        ),
+        7 => array(
+            'Id' => 8,
+            'Label' => 'Same as Multi-Selector with Info(R/L) & Playback(U/D)',
+        ),
+        8 => array(
+            'Id' => 128,
+            'Label' => 'Focus Point Selection',
+        ),
+        9 => array(
+            'Id' => 0,
+            'Label' => 'Same as Multi-Selector with Info(U/D) & Playback(R/L)',
+        ),
+        10 => array(
+            'Id' => 8,
+            'Label' => 'Same as Multi-Selector with Info(R/L) & Playback(U/D)',
+        ),
+        11 => array(
+            'Id' => 128,
             'Label' => 'Focus Point Selection',
         ),
     );

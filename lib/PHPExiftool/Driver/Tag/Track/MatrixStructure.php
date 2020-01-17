@@ -36,9 +36,11 @@ class MatrixStructure extends AbstractTag
 
     protected $Type = 'fixed32s';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
     protected $Description = 'Matrix Structure';
+
+    protected $flag_Permanent = true;
 
     protected $MaxLength = 9;
 

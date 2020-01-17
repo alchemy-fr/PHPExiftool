@@ -48,15 +48,15 @@ class LiveViewAF extends AbstractTag
             'Label' => 'Face Priority',
         ),
         1 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'Wide Area',
         ),
         2 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'Normal Area',
         ),
         3 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => 'Subject Tracking',
         ),
         4 => array(
@@ -64,11 +64,11 @@ class LiveViewAF extends AbstractTag
             'Label' => 'Face Priority',
         ),
         5 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Wide Area',
         ),
         6 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Normal Area',
         ),
     );

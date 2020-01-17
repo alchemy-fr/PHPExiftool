@@ -72,26 +72,30 @@ class FlashAction extends AbstractTag
             'Label' => 'External Flash Fired',
         ),
         7 => array(
-            'Id' => 0,
-            'Label' => 'Did not fire',
+            'Id' => 3,
+            'Label' => 'Wireless Controlled Flash Fired',
         ),
         8 => array(
-            'Id' => 1,
-            'Label' => 'Fired',
+            'Id' => 0,
+            'Label' => 'Did not fire',
         ),
         9 => array(
-            'Id' => 0,
-            'Label' => 'Did not fire',
-        ),
-        10 => array(
             'Id' => 1,
             'Label' => 'Fired',
         ),
-        11 => array(
+        10 => array(
             'Id' => 0,
             'Label' => 'Did not fire',
         ),
+        11 => array(
+            'Id' => 1,
+            'Label' => 'Fired',
+        ),
         12 => array(
+            'Id' => 0,
+            'Label' => 'Did not fire',
+        ),
+        13 => array(
             'Id' => 1,
             'Label' => 'Fired',
         ),

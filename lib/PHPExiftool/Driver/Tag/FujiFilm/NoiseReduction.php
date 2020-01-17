@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class NoiseReduction extends AbstractTag
 {
 
-    protected $Id = 4107;
+    protected $Id = 'mixed';
 
     protected $Name = 'NoiseReduction';
 
@@ -43,17 +43,53 @@ class NoiseReduction extends AbstractTag
     protected $flag_Permanent = true;
 
     protected $Values = array(
-        64 => array(
+        0 => array(
             'Id' => 64,
             'Label' => 'Low',
         ),
-        128 => array(
+        1 => array(
             'Id' => 128,
             'Label' => 'Normal',
         ),
-        256 => array(
+        2 => array(
             'Id' => 256,
             'Label' => 'n/a',
+        ),
+        3 => array(
+            'Id' => 0,
+            'Label' => '0 (normal)',
+        ),
+        4 => array(
+            'Id' => 256,
+            'Label' => '+2 (strong)',
+        ),
+        5 => array(
+            'Id' => 384,
+            'Label' => '+1 (medium strong)',
+        ),
+        6 => array(
+            'Id' => 448,
+            'Label' => '+3 (very strong)',
+        ),
+        7 => array(
+            'Id' => 480,
+            'Label' => '+4 (strongest)',
+        ),
+        8 => array(
+            'Id' => 512,
+            'Label' => '-2 (weak)',
+        ),
+        9 => array(
+            'Id' => 640,
+            'Label' => '-1 (medium weak)',
+        ),
+        10 => array(
+            'Id' => 704,
+            'Label' => '-3 (very weak)',
+        ),
+        11 => array(
+            'Id' => 736,
+            'Label' => '-4 (weakest)',
         ),
     );
 

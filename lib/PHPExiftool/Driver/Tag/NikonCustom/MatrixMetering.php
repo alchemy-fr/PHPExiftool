@@ -47,8 +47,8 @@ class MatrixMetering extends AbstractTag
             'Id' => 0,
             'Label' => 'Face Detection On',
         ),
-        128 => array(
-            'Id' => 128,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Face Detection Off',
         ),
     );

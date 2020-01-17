@@ -47,16 +47,16 @@ class SelfTimerShotInterval extends AbstractTag
             'Id' => 0,
             'Label' => '0.5 s',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => '1 s',
         ),
-        32 => array(
-            'Id' => 32,
+        2 => array(
+            'Id' => 2,
             'Label' => '2 s',
         ),
-        48 => array(
-            'Id' => 48,
+        3 => array(
+            'Id' => 3,
             'Label' => '3 s',
         ),
     );

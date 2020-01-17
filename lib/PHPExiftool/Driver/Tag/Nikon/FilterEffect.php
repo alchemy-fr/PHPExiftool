@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class FilterEffect extends AbstractTag
 {
 
-    protected $Id = 55;
+    protected $Id = 'mixed';
 
     protected $Name = 'FilterEffect';
 
-    protected $FullName = 'Nikon::PictureControl';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

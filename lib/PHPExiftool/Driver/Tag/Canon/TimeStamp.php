@@ -32,11 +32,11 @@ class TimeStamp extends AbstractTag
 
     protected $g1 = 'Canon';
 
-    protected $g2 = 'Camera';
+    protected $g2 = 'mixed';
 
-    protected $Type = 'int32u';
+    protected $Type = 'mixed';
 
-    protected $Writable = true;
+    protected $Writable = false;
 
     protected $Description = 'Time Stamp';
 

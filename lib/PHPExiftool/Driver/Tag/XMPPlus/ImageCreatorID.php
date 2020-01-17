@@ -24,7 +24,7 @@ class ImageCreatorID extends AbstractTag
 
     protected $Name = 'ImageCreatorID';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

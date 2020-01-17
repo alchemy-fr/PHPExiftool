@@ -47,12 +47,12 @@ class BeepPitch extends AbstractTag
             'Id' => 0,
             'Label' => 'Off',
         ),
-        64 => array(
-            'Id' => 64,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Low',
         ),
-        128 => array(
-            'Id' => 128,
+        2 => array(
+            'Id' => 2,
             'Label' => 'High',
         ),
     );

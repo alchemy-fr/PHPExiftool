@@ -47,8 +47,8 @@ class LightSwitch extends AbstractTag
             'Id' => 0,
             'Label' => 'LCD Backlight',
         ),
-        8 => array(
-            'Id' => 8,
+        1 => array(
+            'Id' => 1,
             'Label' => 'LCD Backlight and Shooting Information',
         ),
     );

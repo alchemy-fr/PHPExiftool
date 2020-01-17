@@ -40,6 +40,8 @@ class SamsungModelID extends AbstractTag
 
     protected $Description = 'Samsung Model ID';
 
+    protected $local_g2 = 'Camera';
+
     protected $flag_Permanent = true;
 
     protected $Values = array(
@@ -67,6 +69,10 @@ class SamsungModelID extends AbstractTag
             'Id' => 16782119,
             'Label' => 'NX11',
         ),
+        24121419 => array(
+            'Id' => 24121419,
+            'Label' => 'ES65, ES67 / VLUU ES65, ES67 / SL50',
+        ),
         24121422 => array(
             'Id' => 24121422,
             'Label' => 'ES70, ES71 / VLUU ES70, ES71 / SL600',
@@ -74,6 +80,10 @@ class SamsungModelID extends AbstractTag
         24121426 => array(
             'Id' => 24121426,
             'Label' => 'ES73 / VLUU ES73 / SL605',
+        ),
+        24121429 => array(
+            'Id' => 24121429,
+            'Label' => 'ES25, ES27 / VLUU ES25, ES27 / SL45',
         ),
         24122112 => array(
             'Id' => 24122112,
@@ -86,6 +96,10 @@ class SamsungModelID extends AbstractTag
         33558598 => array(
             'Id' => 33558598,
             'Label' => 'PL150 / VLUU PL150 / TL210 / PL151',
+        ),
+        33558600 => array(
+            'Id' => 33558600,
+            'Label' => 'PL100 / TL205 / VLUU PL100 / PL101',
         ),
         33559313 => array(
             'Id' => 33559313,
@@ -182,6 +196,10 @@ class SamsungModelID extends AbstractTag
         94371855 => array(
             'Id' => 94371855,
             'Label' => 'WB5000 / HZ25W',
+        ),
+        94371870 => array(
+            'Id' => 94371870,
+            'Label' => 'WB5500 / VLUU WB5500 / HZ50W',
         ),
         100667446 => array(
             'Id' => 100667446,

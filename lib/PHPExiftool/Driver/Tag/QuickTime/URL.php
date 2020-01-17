@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class URL extends AbstractTag
 {
 
-    protected $Id = 'url ';
+    protected $Id = 'mixed';
 
     protected $Name = 'URL';
 

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class GPSPosition extends AbstractTag
 {
 
-    protected $Id = 'GPSPosition';
+    protected $Id = 'Exif::GPSPosition';
 
     protected $Name = 'GPSPosition';
 

@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class RollAngle extends AbstractTag
 {
 
-    protected $Id = 13579;
+    protected $Id = 'mixed';
 
     protected $Name = 'RollAngle';
 
-    protected $FullName = 'Nikon::ShotInfoD4S';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

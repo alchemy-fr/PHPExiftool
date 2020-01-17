@@ -24,7 +24,7 @@ class ImageFileSizeAsDelivered extends AbstractTag
 
     protected $Name = 'ImageFileSizeAsDelivered';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

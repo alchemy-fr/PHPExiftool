@@ -34,7 +34,7 @@ class GeoTiffDirectory extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = 'undef';
+    protected $Type = 'int16u';
 
     protected $Writable = true;
 

@@ -40,6 +40,8 @@ class ThumbnailOffset extends AbstractTag
 
     protected $Description = 'Thumbnail Offset';
 
+    protected $flag_Permanent = true;
+
     protected $flag_Protected = true;
 
     protected $Index = 1;

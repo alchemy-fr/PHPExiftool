@@ -73,7 +73,7 @@ class WhiteBalance extends AbstractTag
         ),
         11 => array(
             'Id' => 11,
-            'Label' => 'Manual',
+            'Label' => 'Manual 2',
         ),
         12 => array(
             'Id' => 12,
@@ -82,6 +82,18 @@ class WhiteBalance extends AbstractTag
         13 => array(
             'Id' => 13,
             'Label' => 'Kelvin',
+        ),
+        14 => array(
+            'Id' => 14,
+            'Label' => 'Manual 3',
+        ),
+        15 => array(
+            'Id' => 15,
+            'Label' => 'Manual 4',
+        ),
+        19 => array(
+            'Id' => 19,
+            'Label' => 'Auto (cool)',
         ),
     );
 

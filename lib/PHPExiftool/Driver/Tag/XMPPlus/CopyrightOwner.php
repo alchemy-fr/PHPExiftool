@@ -24,7 +24,7 @@ class CopyrightOwner extends AbstractTag
 
     protected $Name = 'CopyrightOwner';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

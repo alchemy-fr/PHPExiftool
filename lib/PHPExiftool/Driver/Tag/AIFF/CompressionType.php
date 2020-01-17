@@ -51,6 +51,26 @@ class CompressionType extends AbstractTag
             'Id' => 'ACE8',
             'Label' => 'ACE 8-to-3',
         ),
+        'ALAW' => array(
+            'Id' => 'ALAW',
+            'Label' => 'A-law',
+        ),
+        'G722' => array(
+            'Id' => 'G722',
+            'Label' => 'G722',
+        ),
+        'G726' => array(
+            'Id' => 'G726',
+            'Label' => 'G726',
+        ),
+        'G728' => array(
+            'Id' => 'G728',
+            'Label' => 'G728',
+        ),
+        'GSM ' => array(
+            'Id' => 'GSM ',
+            'Label' => 'GSM',
+        ),
         'MAC3' => array(
             'Id' => 'MAC3',
             'Label' => 'MAC 3-to-1',
@@ -63,9 +83,21 @@ class CompressionType extends AbstractTag
             'Id' => 'NONE',
             'Label' => 'None',
         ),
+        'ULAW' => array(
+            'Id' => 'ULAW',
+            'Label' => 'Mu-law',
+        ),
+        'alaw' => array(
+            'Id' => 'alaw',
+            'Label' => 'a-law',
+        ),
         'sowt' => array(
             'Id' => 'sowt',
             'Label' => 'Little-endian, no compression',
+        ),
+        'ulaw' => array(
+            'Id' => 'ulaw',
+            'Label' => 'mu-law',
         ),
     );
 

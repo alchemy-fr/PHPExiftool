@@ -24,7 +24,7 @@ class ModelReleaseID extends AbstractTag
 
     protected $Name = 'ModelReleaseID';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 
