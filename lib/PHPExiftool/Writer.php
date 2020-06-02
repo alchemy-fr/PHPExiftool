@@ -357,7 +357,7 @@ class Writer
         foreach ($metadatas as $metadata) {
             foreach ($metadata->getValue()->asArray() as $value) {
                 $command .= ($command ? ' -' : '-') . $metadata->getTag()->getTagname() . '='
-                    . escapeshellarg($value);
+                    . '"' .str_replace('"', '"\\""', $value). '"';
             }
         }
 
