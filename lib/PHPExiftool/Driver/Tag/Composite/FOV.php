@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class FOV extends AbstractTag
 {
 
-    protected $Id = 'FOV';
+    protected $Id = 'Exif::FOV';
 
     protected $Name = 'FOV';
 

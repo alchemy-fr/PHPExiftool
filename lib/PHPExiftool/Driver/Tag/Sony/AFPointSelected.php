@@ -635,6 +635,406 @@ class AFPointSelected extends AbstractTag
             'Id' => 78,
             'Label' => 'I7',
         ),
+        148 => array(
+            'Id' => 0,
+            'Label' => 'Auto',
+        ),
+        149 => array(
+            'Id' => 93,
+            'Label' => 'A5 (93)',
+        ),
+        150 => array(
+            'Id' => 94,
+            'Label' => 'A6 (94)',
+        ),
+        151 => array(
+            'Id' => 95,
+            'Label' => 'A7 (95)',
+        ),
+        152 => array(
+            'Id' => 106,
+            'Label' => 'B2 (106)',
+        ),
+        153 => array(
+            'Id' => 107,
+            'Label' => 'B3 (107)',
+        ),
+        154 => array(
+            'Id' => 108,
+            'Label' => 'B4 (108)',
+        ),
+        155 => array(
+            'Id' => 110,
+            'Label' => 'B5 (110)',
+        ),
+        156 => array(
+            'Id' => 111,
+            'Label' => 'B6 (111)',
+        ),
+        157 => array(
+            'Id' => 112,
+            'Label' => 'B7 (112)',
+        ),
+        158 => array(
+            'Id' => 114,
+            'Label' => 'B8 (114)',
+        ),
+        159 => array(
+            'Id' => 115,
+            'Label' => 'B9 (115)',
+        ),
+        160 => array(
+            'Id' => 116,
+            'Label' => 'B10 (116)',
+        ),
+        161 => array(
+            'Id' => 122,
+            'Label' => 'C1 (122)',
+        ),
+        162 => array(
+            'Id' => 123,
+            'Label' => 'C2 (123)',
+        ),
+        163 => array(
+            'Id' => 124,
+            'Label' => 'C3 (124)',
+        ),
+        164 => array(
+            'Id' => 125,
+            'Label' => 'C4 (125)',
+        ),
+        165 => array(
+            'Id' => 127,
+            'Label' => 'C5 (127)',
+        ),
+        166 => array(
+            'Id' => 128,
+            'Label' => 'C6 (128)',
+        ),
+        167 => array(
+            'Id' => 129,
+            'Label' => 'C7 (129)',
+        ),
+        168 => array(
+            'Id' => 131,
+            'Label' => 'C8 (131)',
+        ),
+        169 => array(
+            'Id' => 132,
+            'Label' => 'C9 (132)',
+        ),
+        170 => array(
+            'Id' => 133,
+            'Label' => 'C10 (133)',
+        ),
+        171 => array(
+            'Id' => 134,
+            'Label' => 'C11 (134)',
+        ),
+        172 => array(
+            'Id' => 139,
+            'Label' => 'D1 (139)',
+        ),
+        173 => array(
+            'Id' => 140,
+            'Label' => 'D2 (140)',
+        ),
+        174 => array(
+            'Id' => 141,
+            'Label' => 'D3 (141)',
+        ),
+        175 => array(
+            'Id' => 142,
+            'Label' => 'D4 (142)',
+        ),
+        176 => array(
+            'Id' => 144,
+            'Label' => 'D5 (144)',
+        ),
+        177 => array(
+            'Id' => 145,
+            'Label' => 'D6 (145)',
+        ),
+        178 => array(
+            'Id' => 146,
+            'Label' => 'D7 (146)',
+        ),
+        179 => array(
+            'Id' => 148,
+            'Label' => 'D8 (148)',
+        ),
+        180 => array(
+            'Id' => 149,
+            'Label' => 'D9 (149)',
+        ),
+        181 => array(
+            'Id' => 150,
+            'Label' => 'D10 (150)',
+        ),
+        182 => array(
+            'Id' => 151,
+            'Label' => 'D11 (151)',
+        ),
+        183 => array(
+            'Id' => 156,
+            'Label' => 'E1 (156)',
+        ),
+        184 => array(
+            'Id' => 157,
+            'Label' => 'E2 (157)',
+        ),
+        185 => array(
+            'Id' => 158,
+            'Label' => 'E3 (158)',
+        ),
+        186 => array(
+            'Id' => 159,
+            'Label' => 'E4 (159)',
+        ),
+        187 => array(
+            'Id' => 161,
+            'Label' => 'E5 (161)',
+        ),
+        188 => array(
+            'Id' => 162,
+            'Label' => 'E6 (162, Center)',
+        ),
+        189 => array(
+            'Id' => 163,
+            'Label' => 'E7 (163)',
+        ),
+        190 => array(
+            'Id' => 165,
+            'Label' => 'E8 (165)',
+        ),
+        191 => array(
+            'Id' => 166,
+            'Label' => 'E9 (166)',
+        ),
+        192 => array(
+            'Id' => 167,
+            'Label' => 'E10 (167)',
+        ),
+        193 => array(
+            'Id' => 168,
+            'Label' => 'E11 (168)',
+        ),
+        194 => array(
+            'Id' => 173,
+            'Label' => 'F1 (173)',
+        ),
+        195 => array(
+            'Id' => 174,
+            'Label' => 'F2 (174)',
+        ),
+        196 => array(
+            'Id' => 175,
+            'Label' => 'F3 (175)',
+        ),
+        197 => array(
+            'Id' => 176,
+            'Label' => 'F4 (176)',
+        ),
+        198 => array(
+            'Id' => 178,
+            'Label' => 'F5 (178)',
+        ),
+        199 => array(
+            'Id' => 179,
+            'Label' => 'F6 (179)',
+        ),
+        200 => array(
+            'Id' => 180,
+            'Label' => 'F7 (180)',
+        ),
+        201 => array(
+            'Id' => 182,
+            'Label' => 'F8 (182)',
+        ),
+        202 => array(
+            'Id' => 183,
+            'Label' => 'F9 (183)',
+        ),
+        203 => array(
+            'Id' => 184,
+            'Label' => 'F10 (184)',
+        ),
+        204 => array(
+            'Id' => 185,
+            'Label' => 'F11 (185)',
+        ),
+        205 => array(
+            'Id' => 190,
+            'Label' => 'G1 (190)',
+        ),
+        206 => array(
+            'Id' => 191,
+            'Label' => 'G2 (191)',
+        ),
+        207 => array(
+            'Id' => 192,
+            'Label' => 'G3 (192)',
+        ),
+        208 => array(
+            'Id' => 193,
+            'Label' => 'G4 (193)',
+        ),
+        209 => array(
+            'Id' => 195,
+            'Label' => 'G5 (195)',
+        ),
+        210 => array(
+            'Id' => 196,
+            'Label' => 'G6 (196)',
+        ),
+        211 => array(
+            'Id' => 197,
+            'Label' => 'G7 (197)',
+        ),
+        212 => array(
+            'Id' => 199,
+            'Label' => 'G8 (199)',
+        ),
+        213 => array(
+            'Id' => 200,
+            'Label' => 'G9 (200)',
+        ),
+        214 => array(
+            'Id' => 201,
+            'Label' => 'G10 (201)',
+        ),
+        215 => array(
+            'Id' => 202,
+            'Label' => 'G11 (202)',
+        ),
+        216 => array(
+            'Id' => 208,
+            'Label' => 'H2 (208)',
+        ),
+        217 => array(
+            'Id' => 209,
+            'Label' => 'H3 (209)',
+        ),
+        218 => array(
+            'Id' => 210,
+            'Label' => 'H4 (210)',
+        ),
+        219 => array(
+            'Id' => 212,
+            'Label' => 'H5 (212)',
+        ),
+        220 => array(
+            'Id' => 213,
+            'Label' => 'H6 (213)',
+        ),
+        221 => array(
+            'Id' => 214,
+            'Label' => 'H7 (214)',
+        ),
+        222 => array(
+            'Id' => 216,
+            'Label' => 'H8 (216)',
+        ),
+        223 => array(
+            'Id' => 217,
+            'Label' => 'H9 (217)',
+        ),
+        224 => array(
+            'Id' => 218,
+            'Label' => 'H10 (218)',
+        ),
+        225 => array(
+            'Id' => 229,
+            'Label' => 'I5 (229)',
+        ),
+        226 => array(
+            'Id' => 230,
+            'Label' => 'I6 (230)',
+        ),
+        227 => array(
+            'Id' => 231,
+            'Label' => 'I7 (231)',
+        ),
+        228 => array(
+            'Id' => 0,
+            'Label' => 'n/a',
+        ),
+        229 => array(
+            'Id' => 1,
+            'Label' => 'Top Left Zone',
+        ),
+        230 => array(
+            'Id' => 2,
+            'Label' => 'Top Zone',
+        ),
+        231 => array(
+            'Id' => 3,
+            'Label' => 'Top Right Zone',
+        ),
+        232 => array(
+            'Id' => 4,
+            'Label' => 'Left Zone',
+        ),
+        233 => array(
+            'Id' => 5,
+            'Label' => 'Center Zone',
+        ),
+        234 => array(
+            'Id' => 6,
+            'Label' => 'Right Zone',
+        ),
+        235 => array(
+            'Id' => 7,
+            'Label' => 'Bottom Left Zone',
+        ),
+        236 => array(
+            'Id' => 8,
+            'Label' => 'Bottom Zone',
+        ),
+        237 => array(
+            'Id' => 9,
+            'Label' => 'Bottom Right Zone',
+        ),
+        238 => array(
+            'Id' => 0,
+            'Label' => 'n/a',
+        ),
+        239 => array(
+            'Id' => 1,
+            'Label' => 'Center Zone',
+        ),
+        240 => array(
+            'Id' => 2,
+            'Label' => 'Top Zone',
+        ),
+        241 => array(
+            'Id' => 3,
+            'Label' => 'Right Zone',
+        ),
+        242 => array(
+            'Id' => 4,
+            'Label' => 'Left Zone',
+        ),
+        243 => array(
+            'Id' => 5,
+            'Label' => 'Bottom Zone',
+        ),
+        244 => array(
+            'Id' => 6,
+            'Label' => 'Bottom Right Zone',
+        ),
+        245 => array(
+            'Id' => 7,
+            'Label' => 'Bottom Left Zone',
+        ),
+        246 => array(
+            'Id' => 8,
+            'Label' => 'Top Left Zone',
+        ),
+        247 => array(
+            'Id' => 9,
+            'Label' => 'Top Right Zone',
+        ),
     );
 
     protected $Index = 'mixed';

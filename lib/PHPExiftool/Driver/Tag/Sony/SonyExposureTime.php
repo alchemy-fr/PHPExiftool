@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class SonyExposureTime extends AbstractTag
 {
 
-    protected $Id = 70;
+    protected $Id = 'mixed';
 
     protected $Name = 'SonyExposureTime';
 
-    protected $FullName = 'Sony::Tag9050';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Sony';
 

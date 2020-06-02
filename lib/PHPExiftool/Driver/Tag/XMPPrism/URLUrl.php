@@ -40,6 +40,8 @@ class URLUrl extends AbstractTag
 
     protected $Description = 'URL Url';
 
+    protected $flag_Avoid = true;
+
     protected $flag_List = true;
 
 }

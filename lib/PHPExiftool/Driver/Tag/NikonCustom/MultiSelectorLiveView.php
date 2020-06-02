@@ -48,15 +48,15 @@ class MultiSelectorLiveView extends AbstractTag
             'Label' => 'Reset',
         ),
         1 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Zoom On/Off',
         ),
         2 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => 'Start Movie Recording',
         ),
         3 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Not Used',
         ),
         4 => array(
@@ -64,11 +64,47 @@ class MultiSelectorLiveView extends AbstractTag
             'Label' => 'Reset',
         ),
         5 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'Zoom',
         ),
         6 => array(
-            'Id' => 192,
+            'Id' => 3,
+            'Label' => 'Not Used',
+        ),
+        7 => array(
+            'Id' => 0,
+            'Label' => 'Reset',
+        ),
+        8 => array(
+            'Id' => 1,
+            'Label' => 'Zoom',
+        ),
+        9 => array(
+            'Id' => 3,
+            'Label' => 'Not Used',
+        ),
+        10 => array(
+            'Id' => 0,
+            'Label' => 'Reset',
+        ),
+        11 => array(
+            'Id' => 1,
+            'Label' => 'Zoom',
+        ),
+        12 => array(
+            'Id' => 3,
+            'Label' => 'Not Used',
+        ),
+        13 => array(
+            'Id' => 0,
+            'Label' => 'Reset',
+        ),
+        14 => array(
+            'Id' => 1,
+            'Label' => 'Zoom',
+        ),
+        15 => array(
+            'Id' => 3,
             'Label' => 'Not Used',
         ),
     );

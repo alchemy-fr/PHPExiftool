@@ -47,13 +47,61 @@ class StoreByOrientation extends AbstractTag
             'Id' => 0,
             'Label' => 'Off',
         ),
-        8 => array(
-            'Id' => 8,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Focus Point',
         ),
-        16 => array(
-            'Id' => 16,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Focus Point and AF-area mode',
+        ),
+        3 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        4 => array(
+            'Id' => 1,
+            'Label' => 'Focus Point',
+        ),
+        5 => array(
+            'Id' => 2,
+            'Label' => 'Focus Point and AF-area Mode',
+        ),
+        6 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        7 => array(
+            'Id' => 1,
+            'Label' => 'Focus Point',
+        ),
+        8 => array(
+            'Id' => 2,
+            'Label' => 'Focus Point and AF-area Mode',
+        ),
+        9 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        10 => array(
+            'Id' => 1,
+            'Label' => 'Focus Point',
+        ),
+        11 => array(
+            'Id' => 2,
+            'Label' => 'Focus Point and AF-area mode',
+        ),
+        12 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        13 => array(
+            'Id' => 1,
+            'Label' => 'Focus Point',
+        ),
+        14 => array(
+            'Id' => 2,
+            'Label' => 'Focus Point and AF-area Mode',
         ),
     );
 

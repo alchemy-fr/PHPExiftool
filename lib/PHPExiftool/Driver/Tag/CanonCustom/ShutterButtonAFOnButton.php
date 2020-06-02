@@ -42,7 +42,7 @@ class ShutterButtonAFOnButton extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $Index = 2;
+    protected $Index = 3;
 
     protected $Values = array(
         0 => array(

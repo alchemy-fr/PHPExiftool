@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class RegionXformTackPoint extends AbstractTag
 {
 
-    protected $Id = 32953;
+    protected $Id = 32954;
 
     protected $Name = 'RegionXformTackPoint';
 

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ShutterSpeed extends AbstractTag
 {
 
-    protected $Id = 'ShutterSpeed';
+    protected $Id = 'Exif::ShutterSpeed';
 
     protected $Name = 'ShutterSpeed';
 

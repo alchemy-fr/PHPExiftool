@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class DateTimeOriginal extends AbstractTag
 {
 
-    protected $Id = 11;
+    protected $Id = 'mixed';
 
     protected $Name = 'DateTimeOriginal';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 
@@ -34,7 +34,7 @@ class DateTimeOriginal extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'int16u';
+    protected $Type = 'mixed';
 
     protected $Writable = true;
 
@@ -44,6 +44,6 @@ class DateTimeOriginal extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $MaxLength = 6;
+    protected $MaxLength = 'mixed';
 
 }

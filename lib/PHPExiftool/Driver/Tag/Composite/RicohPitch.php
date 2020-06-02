@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class RicohPitch extends AbstractTag
 {
 
-    protected $Id = 'RicohPitch';
+    protected $Id = 'Ricoh::RicohPitch';
 
     protected $Name = 'RicohPitch';
 

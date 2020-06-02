@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class ColorBalanceVersion extends AbstractTag
 {
 
-    protected $Id = 0;
+    protected $Id = 'mixed';
 
     protected $Name = 'ColorBalanceVersion';
 
-    protected $FullName = 'Nikon::ColorBalanceUnknown';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

@@ -48,11 +48,11 @@ class NikonImageSize extends AbstractTag
             'Label' => 'Large',
         ),
         1 => array(
-            'Id' => 8,
+            'Id' => 1,
             'Label' => 'Medium',
         ),
         2 => array(
-            'Id' => 16,
+            'Id' => 2,
             'Label' => 'Small',
         ),
         3 => array(
@@ -60,11 +60,11 @@ class NikonImageSize extends AbstractTag
             'Label' => 'Large (10.0 M)',
         ),
         4 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Medium (5.6 M)',
         ),
         5 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Small (2.5 M)',
         ),
     );

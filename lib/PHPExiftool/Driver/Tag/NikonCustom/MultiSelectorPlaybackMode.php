@@ -48,15 +48,15 @@ class MultiSelectorPlaybackMode extends AbstractTag
             'Label' => 'Thumbnail On/Off',
         ),
         1 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'View Histograms',
         ),
         2 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Zoom On/Off',
         ),
         3 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 'Choose Folder',
         ),
         4 => array(
@@ -76,15 +76,15 @@ class MultiSelectorPlaybackMode extends AbstractTag
             'Label' => 'Thumbnail On/Off',
         ),
         8 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'View Histograms',
         ),
         9 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Zoom On/Off',
         ),
         10 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 'Choose Folder',
         ),
         11 => array(
@@ -92,15 +92,15 @@ class MultiSelectorPlaybackMode extends AbstractTag
             'Label' => 'Thumbnail On/Off',
         ),
         12 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'View Histograms',
         ),
         13 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Zoom On/Off',
         ),
         14 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 'Choose Folder',
         ),
         15 => array(
@@ -108,15 +108,47 @@ class MultiSelectorPlaybackMode extends AbstractTag
             'Label' => 'Thumbnail On/Off',
         ),
         16 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'View Histograms',
         ),
         17 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Zoom On/Off',
         ),
         18 => array(
-            'Id' => 48,
+            'Id' => 3,
+            'Label' => 'Choose Folder',
+        ),
+        19 => array(
+            'Id' => 0,
+            'Label' => 'Thumbnail On/Off',
+        ),
+        20 => array(
+            'Id' => 1,
+            'Label' => 'View Histograms',
+        ),
+        21 => array(
+            'Id' => 2,
+            'Label' => 'Zoom On/Off',
+        ),
+        22 => array(
+            'Id' => 3,
+            'Label' => 'Choose Folder',
+        ),
+        23 => array(
+            'Id' => 0,
+            'Label' => 'Thumbnail On/Off',
+        ),
+        24 => array(
+            'Id' => 1,
+            'Label' => 'View Histograms',
+        ),
+        25 => array(
+            'Id' => 2,
+            'Label' => 'Zoom On/Off',
+        ),
+        26 => array(
+            'Id' => 3,
             'Label' => 'Choose Folder',
         ),
     );

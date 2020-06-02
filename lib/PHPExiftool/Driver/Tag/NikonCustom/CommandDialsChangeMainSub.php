@@ -48,7 +48,7 @@ class CommandDialsChangeMainSub extends AbstractTag
             'Label' => 'Off',
         ),
         1 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'On',
         ),
         2 => array(
@@ -56,67 +56,139 @@ class CommandDialsChangeMainSub extends AbstractTag
             'Label' => 'Autofocus Off, Exposure Off',
         ),
         3 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'Autofocus Off, Exposure On',
         ),
         4 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'Autofocus Off, Exposure On (Mode A)',
         ),
         5 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => 'Autofocus On, Exposure Off',
         ),
         6 => array(
-            'Id' => 160,
+            'Id' => 5,
             'Label' => 'Autofocus On, Exposure On',
         ),
         7 => array(
-            'Id' => 192,
+            'Id' => 6,
             'Label' => 'Autofocus On, Exposure On (Mode A)',
         ),
         8 => array(
             'Id' => 0,
-            'Label' => 'Off',
+            'Label' => 'Autofocus Off, Exposure Off',
         ),
         9 => array(
-            'Id' => 64,
-            'Label' => 'On',
+            'Id' => 1,
+            'Label' => 'Autofocus Off, Exposure On',
         ),
         10 => array(
-            'Id' => 0,
-            'Label' => 'Off',
+            'Id' => 2,
+            'Label' => 'Autofocus Off, Exposure On (Mode A)',
         ),
         11 => array(
-            'Id' => 32,
-            'Label' => 'On',
+            'Id' => 4,
+            'Label' => 'Autofocus On, Exposure Off',
         ),
         12 => array(
-            'Id' => 64,
-            'Label' => 'On (A mode only)',
+            'Id' => 5,
+            'Label' => 'Autofocus On, Exposure On',
         ),
         13 => array(
+            'Id' => 6,
+            'Label' => 'Autofocus On, Exposure On (Mode A)',
+        ),
+        14 => array(
             'Id' => 0,
             'Label' => 'Autofocus Off, Exposure Off',
         ),
-        14 => array(
-            'Id' => 32,
+        15 => array(
+            'Id' => 1,
             'Label' => 'Autofocus Off, Exposure On',
         ),
-        15 => array(
-            'Id' => 64,
+        16 => array(
+            'Id' => 2,
             'Label' => 'Autofocus Off, Exposure On (Mode A)',
         ),
-        16 => array(
-            'Id' => 128,
+        17 => array(
+            'Id' => 4,
             'Label' => 'Autofocus On, Exposure Off',
         ),
-        17 => array(
-            'Id' => 160,
+        18 => array(
+            'Id' => 5,
             'Label' => 'Autofocus On, Exposure On',
         ),
-        18 => array(
-            'Id' => 192,
+        19 => array(
+            'Id' => 6,
+            'Label' => 'Autofocus On, Exposure On (Mode A)',
+        ),
+        20 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        21 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        22 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        23 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        24 => array(
+            'Id' => 2,
+            'Label' => 'On (A mode only)',
+        ),
+        25 => array(
+            'Id' => 0,
+            'Label' => 'Autofocus Off, Exposure Off',
+        ),
+        26 => array(
+            'Id' => 1,
+            'Label' => 'Autofocus Off, Exposure On',
+        ),
+        27 => array(
+            'Id' => 2,
+            'Label' => 'Autofocus Off, Exposure On (Mode A)',
+        ),
+        28 => array(
+            'Id' => 4,
+            'Label' => 'Autofocus On, Exposure Off',
+        ),
+        29 => array(
+            'Id' => 5,
+            'Label' => 'Autofocus On, Exposure On',
+        ),
+        30 => array(
+            'Id' => 6,
+            'Label' => 'Autofocus On, Exposure On (Mode A)',
+        ),
+        31 => array(
+            'Id' => 0,
+            'Label' => 'Autofocus Off, Exposure Off',
+        ),
+        32 => array(
+            'Id' => 1,
+            'Label' => 'Autofocus Off, Exposure On',
+        ),
+        33 => array(
+            'Id' => 2,
+            'Label' => 'Autofocus Off, Exposure On (Mode A)',
+        ),
+        34 => array(
+            'Id' => 4,
+            'Label' => 'Autofocus On, Exposure Off',
+        ),
+        35 => array(
+            'Id' => 5,
+            'Label' => 'Autofocus On, Exposure On',
+        ),
+        36 => array(
+            'Id' => 6,
             'Label' => 'Autofocus On, Exposure On (Mode A)',
         ),
     );

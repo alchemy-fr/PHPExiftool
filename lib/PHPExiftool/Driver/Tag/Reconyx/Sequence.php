@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class Sequence extends AbstractTag
 {
 
-    protected $Id = 7;
+    protected $Id = 'mixed';
 
     protected $Name = 'Sequence';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 
@@ -34,7 +34,7 @@ class Sequence extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'int16u';
+    protected $Type = 'mixed';
 
     protected $Writable = true;
 

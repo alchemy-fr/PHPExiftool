@@ -47,8 +47,8 @@ class DateImprint extends AbstractTag
             'Id' => 0,
             'Label' => 'Off',
         ),
-        8 => array(
-            'Id' => 8,
+        1 => array(
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

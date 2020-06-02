@@ -48,14 +48,6 @@ class EVStepSize extends AbstractTag
             'Label' => '1/3 EV',
         ),
         1 => array(
-            'Id' => 64,
-            'Label' => '1/2 EV',
-        ),
-        2 => array(
-            'Id' => 0,
-            'Label' => '1/3 EV',
-        ),
-        3 => array(
             'Id' => 1,
             'Label' => '1/2 EV',
         ),

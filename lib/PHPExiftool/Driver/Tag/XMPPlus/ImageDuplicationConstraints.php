@@ -24,7 +24,7 @@ class ImageDuplicationConstraints extends AbstractTag
 
     protected $Name = 'ImageDuplicationConstraints';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

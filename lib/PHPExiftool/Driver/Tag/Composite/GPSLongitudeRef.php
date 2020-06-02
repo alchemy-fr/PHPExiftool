@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class GPSLongitudeRef extends AbstractTag
 {
 
-    protected $Id = 'GPSLongitudeRef';
+    protected $Id = 'XMP::GPSLongitudeRef';
 
     protected $Name = 'GPSLongitudeRef';
 
@@ -39,6 +39,8 @@ class GPSLongitudeRef extends AbstractTag
     protected $Writable = false;
 
     protected $Description = 'GPS Longitude Ref';
+
+    protected $local_g2 = 'Location';
 
     protected $Values = array(
         'E' => array(

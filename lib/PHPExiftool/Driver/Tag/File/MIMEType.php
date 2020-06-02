@@ -40,4 +40,6 @@ class MIMEType extends AbstractTag
 
     protected $Description = 'MIME Type';
 
+    protected $local_g2 = 'Other';
+
 }

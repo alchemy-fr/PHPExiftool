@@ -36,7 +36,7 @@ class WBShiftABGMPrecise extends AbstractTag
 
     protected $Type = 'int32s';
 
-    protected $Writable = true;
+    protected $Writable = false;
 
     protected $Description = 'WB Shift AB GM Precise';
 

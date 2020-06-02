@@ -34,7 +34,7 @@ class Comment extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = '?';
+    protected $Type = 2;
 
     protected $Writable = true;
 

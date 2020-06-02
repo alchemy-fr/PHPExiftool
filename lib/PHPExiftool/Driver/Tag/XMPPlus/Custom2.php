@@ -24,7 +24,7 @@ class Custom2 extends AbstractTag
 
     protected $Name = 'Custom2';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

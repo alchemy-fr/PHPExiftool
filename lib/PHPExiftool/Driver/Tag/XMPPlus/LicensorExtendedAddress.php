@@ -24,7 +24,7 @@ class LicensorExtendedAddress extends AbstractTag
 
     protected $Name = 'LicensorExtendedAddress';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

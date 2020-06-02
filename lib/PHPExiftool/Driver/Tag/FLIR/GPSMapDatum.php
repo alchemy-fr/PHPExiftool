@@ -32,7 +32,7 @@ class GPSMapDatum extends AbstractTag
 
     protected $g1 = 'FLIR';
 
-    protected $g2 = 'Image';
+    protected $g2 = 'Location';
 
     protected $Type = 'string';
 

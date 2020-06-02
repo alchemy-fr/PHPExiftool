@@ -45,8 +45,8 @@ class HasColorMap extends AbstractTag
             'Id' => 0,
             'Label' => 'No',
         ),
-        128 => array(
-            'Id' => 128,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Yes',
         ),
     );

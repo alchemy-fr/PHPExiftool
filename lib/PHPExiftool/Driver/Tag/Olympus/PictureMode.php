@@ -63,6 +63,38 @@ class PictureMode extends AbstractTag
             'Id' => 5,
             'Label' => 'i-Enhance',
         ),
+        6 => array(
+            'Id' => 6,
+            'Label' => 'e-Portrait',
+        ),
+        7 => array(
+            'Id' => 7,
+            'Label' => 'Color Creator',
+        ),
+        9 => array(
+            'Id' => 9,
+            'Label' => 'Color Profile 1',
+        ),
+        10 => array(
+            'Id' => 10,
+            'Label' => 'Color Profile 2',
+        ),
+        11 => array(
+            'Id' => 11,
+            'Label' => 'Color Profile 3',
+        ),
+        12 => array(
+            'Id' => 12,
+            'Label' => 'Monochrome Profile 1',
+        ),
+        13 => array(
+            'Id' => 13,
+            'Label' => 'Monochrome Profile 2',
+        ),
+        14 => array(
+            'Id' => 14,
+            'Label' => 'Monochrome Profile 3',
+        ),
         256 => array(
             'Id' => 256,
             'Label' => 'Monotone',

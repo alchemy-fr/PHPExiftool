@@ -153,7 +153,7 @@ class LensType extends AbstractTag
         ),
         '24.2' => array(
             'Id' => '24.2',
-            'Label' => 'Sigma 17-70mm F2.8-4.5 (D)',
+            'Label' => 'Sigma 17-70mm F2.8-4.5 DC Macro',
         ),
         '24.3' => array(
             'Id' => '24.3',
@@ -170,6 +170,10 @@ class LensType extends AbstractTag
         '24.6' => array(
             'Id' => '24.6',
             'Label' => 'Tamron SP AF 28-75mm F2.8 XR Di LD Aspherical [IF] Macro',
+        ),
+        '24.7' => array(
+            'Id' => '24.7',
+            'Label' => 'Sigma 15-30mm F3.5-4.5 EX DG Aspherical',
         ),
         25 => array(
             'Id' => 25,
@@ -305,11 +309,15 @@ class LensType extends AbstractTag
         ),
         48 => array(
             'Id' => 48,
-            'Label' => 'Carl Zeiss Vario-Sonnar T* 24-70mm F2.8 ZA SSM (SAL2470Z) or ZA SSM II',
+            'Label' => 'Carl Zeiss Vario-Sonnar T* 24-70mm F2.8 ZA SSM (SAL2470Z) or Other Lens',
         ),
         '48.1' => array(
             'Id' => '48.1',
             'Label' => 'Carl Zeiss Vario-Sonnar T* 24-70mm F2.8 ZA SSM II (SAL2470Z2)',
+        ),
+        '48.2' => array(
+            'Id' => '48.2',
+            'Label' => 'Tamron SP 24-70mm F2.8 Di USD',
         ),
         49 => array(
             'Id' => 49,
@@ -437,75 +445,103 @@ class LensType extends AbstractTag
         ),
         '128.3' => array(
             'Id' => '128.3',
-            'Label' => 'Tamron 80-300mm F3.5-6.3',
+            'Label' => 'Tamron AF 28-200mm F3.8-5.6 XR Di Aspherical [IF] Macro',
         ),
         '128.4' => array(
             'Id' => '128.4',
-            'Label' => 'Tamron AF 28-200mm F3.8-5.6 XR Di Aspherical [IF] Macro',
+            'Label' => 'Tamron SP AF 17-35mm F2.8-4 Di LD Aspherical IF',
         ),
         '128.5' => array(
             'Id' => '128.5',
-            'Label' => 'Tamron SP AF 17-35mm F2.8-4 Di LD Aspherical IF',
+            'Label' => 'Sigma AF 50-150mm F2.8 EX DC APO HSM II',
         ),
         '128.6' => array(
             'Id' => '128.6',
-            'Label' => 'Sigma AF 50-150mm F2.8 EX DC APO HSM II',
+            'Label' => 'Sigma 10-20mm F3.5 EX DC HSM',
         ),
         '128.7' => array(
             'Id' => '128.7',
-            'Label' => 'Sigma 10-20mm F3.5 EX DC HSM',
+            'Label' => 'Sigma 70-200mm F2.8 II EX DG APO MACRO HSM',
         ),
         '128.8' => array(
             'Id' => '128.8',
-            'Label' => 'Sigma 70-200mm F2.8 II EX DG APO MACRO HSM',
+            'Label' => 'Sigma 10mm F2.8 EX DC HSM Fisheye',
         ),
         '128.9' => array(
             'Id' => '128.9',
-            'Label' => 'Sigma 10mm F2.8 EX DC HSM Fisheye',
+            'Label' => 'Sigma 50mm F1.4 EX DG HSM',
         ),
         '128.10' => array(
             'Id' => '128.10',
-            'Label' => 'Sigma 50mm F1.4 EX DG HSM',
+            'Label' => 'Sigma 85mm F1.4 EX DG HSM',
         ),
         '128.11' => array(
             'Id' => '128.11',
-            'Label' => 'Sigma 85mm F1.4 EX DG HSM',
+            'Label' => 'Sigma 24-70mm F2.8 IF EX DG HSM',
         ),
         '128.12' => array(
             'Id' => '128.12',
-            'Label' => 'Sigma 24-70mm F2.8 IF EX DG HSM',
+            'Label' => 'Sigma 18-250mm F3.5-6.3 DC OS HSM',
         ),
         '128.13' => array(
             'Id' => '128.13',
-            'Label' => 'Sigma 18-250mm F3.5-6.3 DC OS HSM',
+            'Label' => 'Sigma 17-50mm F2.8 EX DC HSM',
         ),
         '128.14' => array(
             'Id' => '128.14',
-            'Label' => 'Sigma 17-50mm F2.8 EX DC HSM',
+            'Label' => 'Sigma 17-70mm F2.8-4 DC Macro HSM',
         ),
         '128.15' => array(
             'Id' => '128.15',
-            'Label' => 'Sigma 17-70mm F2.8-4 DC Macro HSM',
+            'Label' => 'Sigma 150mm F2.8 EX DG OS HSM APO Macro',
         ),
         '128.16' => array(
             'Id' => '128.16',
-            'Label' => 'Sigma 150mm F2.8 EX DG OS HSM APO Macro',
+            'Label' => 'Sigma 150-500mm F5-6.3 APO DG OS HSM',
         ),
         '128.17' => array(
             'Id' => '128.17',
-            'Label' => 'Sigma 150-500mm F5-6.3 APO DG OS HSM',
+            'Label' => 'Tamron AF 28-105mm F4-5.6 [IF]',
         ),
         '128.18' => array(
             'Id' => '128.18',
-            'Label' => 'Tamron AF 28-105mm F4-5.6 [IF]',
+            'Label' => 'Sigma 35mm F1.4 DG HSM',
         ),
         '128.19' => array(
             'Id' => '128.19',
-            'Label' => 'Sigma 35mm F1.4 DG HSM',
+            'Label' => 'Sigma 18-35mm F1.8 DC HSM',
         ),
         '128.20' => array(
             'Id' => '128.20',
-            'Label' => 'Sigma 18-35mm F1.8 DC HSM',
+            'Label' => 'Sigma 50-500mm F4.5-6.3 APO DG OS HSM',
+        ),
+        '128.21' => array(
+            'Id' => '128.21',
+            'Label' => 'Sigma 24-105mm F4 DG HSM | A',
+        ),
+        '128.22' => array(
+            'Id' => '128.22',
+            'Label' => 'Sigma 30mm F1.4',
+        ),
+        '128.23' => array(
+            'Id' => '128.23',
+            'Label' => 'Sigma 35mm F1.4 DG HSM | A',
+        ),
+        '128.24' => array(
+            'Id' => '128.24',
+            'Label' => 'Sigma 105mm F2.8 EX DG OS HSM Macro',
+        ),
+        '128.25' => array(
+            'Id' => '128.25',
+            'Label' => 'Sigma 180mm F2.8 EX DG OS HSM APO Macro',
+        ),
+        '128.26' => array(
+            'Id' => '128.26',
+            'Label' => 'Sigma 18-300mm F3.5-6.3 DC Macro HSM | C',
+        ),
+        '128.27' => array(
+            'Id' => '128.27',
+            'Label' => 'Sigma 18-50mm F2.8-4.5 DC HSM',
         ),
         129 => array(
             'Id' => 129,
@@ -545,7 +581,7 @@ class LensType extends AbstractTag
         ),
         142 => array(
             'Id' => 142,
-            'Label' => 'Voigtlander 70-300mm F4.5-5.6',
+            'Label' => 'Cosina AF 70-300mm F4.5-5.6 MC',
         ),
         146 => array(
             'Id' => 146,
@@ -555,6 +591,10 @@ class LensType extends AbstractTag
             'Id' => 194,
             'Label' => 'Tamron SP AF 17-50mm F2.8 XR Di II LD Aspherical [IF]',
         ),
+        202 => array(
+            'Id' => 202,
+            'Label' => 'Tamron SP AF 70-200mm F2.8 Di LD [IF] Macro',
+        ),
         203 => array(
             'Id' => 203,
             'Label' => 'Tamron SP 70-200mm F2.8 Di USD',
@@ -563,17 +603,41 @@ class LensType extends AbstractTag
             'Id' => 204,
             'Label' => 'Tamron SP 24-70mm F2.8 Di USD',
         ),
+        212 => array(
+            'Id' => 212,
+            'Label' => 'Tamron 28-300mm F3.5-6.3 Di PZD',
+        ),
         213 => array(
             'Id' => 213,
-            'Label' => 'Tamron 16-300mm F3.5-6.3 Di II PZD',
+            'Label' => 'Tamron 16-300mm F3.5-6.3 Di II PZD Macro',
         ),
         214 => array(
             'Id' => 214,
             'Label' => 'Tamron SP 150-600mm F5-6.3 Di USD',
         ),
+        215 => array(
+            'Id' => 215,
+            'Label' => 'Tamron SP 15-30mm F2.8 Di USD',
+        ),
+        216 => array(
+            'Id' => 216,
+            'Label' => 'Tamron SP 45mm F1.8 Di USD',
+        ),
+        217 => array(
+            'Id' => 217,
+            'Label' => 'Tamron SP 35mm F1.8 Di USD',
+        ),
+        218 => array(
+            'Id' => 218,
+            'Label' => 'Tamron SP 90mm F2.8 Di Macro 1:1 USD (F017)',
+        ),
+        220 => array(
+            'Id' => 220,
+            'Label' => 'Tamron SP 150-600mm F5-6.3 Di USD G2',
+        ),
         224 => array(
             'Id' => 224,
-            'Label' => 'Tamron SP 90mm F2.8 Di Macro 1:1 USD',
+            'Label' => 'Tamron SP 90mm F2.8 Di Macro 1:1 USD (F004)',
         ),
         255 => array(
             'Id' => 255,
@@ -614,6 +678,10 @@ class LensType extends AbstractTag
         '255.9' => array(
             'Id' => '255.9',
             'Label' => 'Tamron AF 90-300mm F4.5-5.6 Telemacro',
+        ),
+        18688 => array(
+            'Id' => 18688,
+            'Label' => 'Sigma MC-11 SA-E Mount Converter with not-supported Sigma lens',
         ),
         25501 => array(
             'Id' => 25501,
@@ -685,7 +753,7 @@ class LensType extends AbstractTag
         ),
         25531 => array(
             'Id' => 25531,
-            'Label' => 'Minolta AF 28-135mm F4-4.5 or Sigma Lens',
+            'Label' => 'Minolta AF 28-135mm F4-4.5 or Other Lens',
         ),
         '25531.1' => array(
             'Id' => '25531.1',
@@ -698,6 +766,10 @@ class LensType extends AbstractTag
         '25531.3' => array(
             'Id' => '25531.3',
             'Label' => 'Sigma 28-105mm F4-5.6 UC',
+        ),
+        '25531.4' => array(
+            'Id' => '25531.4',
+            'Label' => 'Tokina AT-X 242 AF 24-200mm F3.5-5.6',
         ),
         25541 => array(
             'Id' => 25541,
@@ -775,6 +847,10 @@ class LensType extends AbstractTag
             'Id' => '25611.9',
             'Label' => 'Sigma AF 400mm F5.6 APO Macro',
         ),
+        '25611.10' => array(
+            'Id' => '25611.10',
+            'Label' => 'Sigma 1000mm F8 APO',
+        ),
         25621 => array(
             'Id' => 25621,
             'Label' => 'Minolta AF 50mm F1.4 [New]',
@@ -809,7 +885,7 @@ class LensType extends AbstractTag
         ),
         25651 => array(
             'Id' => 25651,
-            'Label' => 'Minolta AF 600mm F4',
+            'Label' => 'Minolta AF 600mm F4 APO',
         ),
         25661 => array(
             'Id' => 25661,
@@ -913,7 +989,7 @@ class LensType extends AbstractTag
         ),
         25931 => array(
             'Id' => 25931,
-            'Label' => 'Minolta AF 200mm F2.8 G APO',
+            'Label' => 'Minolta AF 200mm F2.8 APO',
         ),
         25941 => array(
             'Id' => 25941,
@@ -1001,7 +1077,7 @@ class LensType extends AbstractTag
         ),
         26281 => array(
             'Id' => 26281,
-            'Label' => 'Minolta AF 80-200mm F2.8 G',
+            'Label' => 'Minolta AF 80-200mm F2.8 HS-APO G',
         ),
         26291 => array(
             'Id' => 26291,
@@ -1009,7 +1085,7 @@ class LensType extends AbstractTag
         ),
         26311 => array(
             'Id' => 26311,
-            'Label' => 'Minolta/Sony AF 100-300mm F4.5-5.6 APO',
+            'Label' => 'Minolta AF 100-300mm F4.5-5.6 APO',
         ),
         26321 => array(
             'Id' => 26321,
@@ -1059,6 +1135,14 @@ class LensType extends AbstractTag
             'Id' => 45671,
             'Label' => 'Tokina 70-210mm F4-5.6',
         ),
+        45681 => array(
+            'Id' => 45681,
+            'Label' => 'Tokina AF 35-200mm F4-5.6 Zoom SD',
+        ),
+        45701 => array(
+            'Id' => 45701,
+            'Label' => 'Tamron AF 35-135mm F3.5-4.5',
+        ),
         45711 => array(
             'Id' => 45711,
             'Label' => 'Vivitar 70-210mm F4.5-5.6',
@@ -1101,7 +1185,11 @@ class LensType extends AbstractTag
         ),
         61184 => array(
             'Id' => 61184,
-            'Label' => 'Metabones Canon EF Adapter or Other Adapter',
+            'Label' => 'Canon EF Adapter',
+        ),
+        65280 => array(
+            'Id' => 65280,
+            'Label' => 'Sigma 16mm F2.8 Filtermatic Fisheye',
         ),
         65535 => array(
             'Id' => 65535,
@@ -1109,194 +1197,30 @@ class LensType extends AbstractTag
         ),
         '65535.1' => array(
             'Id' => '65535.1',
-            'Label' => 'Sony E 16mm F2.8',
+            'Label' => 'Arax MC 35mm F2.8 Tilt+Shift',
         ),
         '65535.2' => array(
             'Id' => '65535.2',
-            'Label' => 'Sony E 18-55mm F3.5-5.6 OSS',
+            'Label' => 'Arax MC 80mm F2.8 Tilt+Shift',
         ),
         '65535.3' => array(
             'Id' => '65535.3',
-            'Label' => 'Sony E 55-210mm F4.5-6.3 OSS',
+            'Label' => 'Zenitar MF 16mm F2.8 Fisheye M42',
         ),
         '65535.4' => array(
             'Id' => '65535.4',
-            'Label' => 'Sony E 18-200mm F3.5-6.3 OSS',
+            'Label' => 'Samyang 500mm Mirror F8.0',
         ),
         '65535.5' => array(
             'Id' => '65535.5',
-            'Label' => 'Sony E 30mm F3.5 Macro',
+            'Label' => 'Pentacon Auto 135mm F2.8',
         ),
         '65535.6' => array(
             'Id' => '65535.6',
-            'Label' => 'Sony E 24mm F1.8 ZA',
+            'Label' => 'Pentacon Auto 29mm F2.8',
         ),
         '65535.7' => array(
             'Id' => '65535.7',
-            'Label' => 'Sony E 50mm F1.8 OSS',
-        ),
-        '65535.8' => array(
-            'Id' => '65535.8',
-            'Label' => 'Sony E 16-70mm F4 ZA OSS',
-        ),
-        '65535.9' => array(
-            'Id' => '65535.9',
-            'Label' => 'Sony E 10-18mm F4 OSS',
-        ),
-        '65535.10' => array(
-            'Id' => '65535.10',
-            'Label' => 'Sony E PZ 16-50mm F3.5-5.6 OSS',
-        ),
-        '65535.11' => array(
-            'Id' => '65535.11',
-            'Label' => 'Sony FE 35mm F2.8 ZA',
-        ),
-        '65535.12' => array(
-            'Id' => '65535.12',
-            'Label' => 'Sony FE 24-70mm F4 ZA OSS',
-        ),
-        '65535.13' => array(
-            'Id' => '65535.13',
-            'Label' => 'Sony E 18-200mm F3.5-6.3 OSS LE',
-        ),
-        '65535.14' => array(
-            'Id' => '65535.14',
-            'Label' => 'Sony E 20mm F2.8',
-        ),
-        '65535.15' => array(
-            'Id' => '65535.15',
-            'Label' => 'Sony E 35mm F1.8 OSS',
-        ),
-        '65535.16' => array(
-            'Id' => '65535.16',
-            'Label' => 'Sony E PZ 18-105mm F4 G OSS',
-        ),
-        '65535.17' => array(
-            'Id' => '65535.17',
-            'Label' => 'Sony FE 90mm F2.8 Macro G OSS',
-        ),
-        '65535.18' => array(
-            'Id' => '65535.18',
-            'Label' => 'Sony E 18-50mm F4-5.6',
-        ),
-        '65535.19' => array(
-            'Id' => '65535.19',
-            'Label' => 'Sony E PZ 18-200mm F3.5-6.3 OSS',
-        ),
-        '65535.20' => array(
-            'Id' => '65535.20',
-            'Label' => 'Sony FE 55mm F1.8 ZA',
-        ),
-        '65535.21' => array(
-            'Id' => '65535.21',
-            'Label' => 'Sony FE 70-200mm F4 G OSS',
-        ),
-        '65535.22' => array(
-            'Id' => '65535.22',
-            'Label' => 'Sony FE 16-35mm F4 ZA OSS',
-        ),
-        '65535.23' => array(
-            'Id' => '65535.23',
-            'Label' => 'Sony FE 28-70mm F3.5-5.6 OSS',
-        ),
-        '65535.24' => array(
-            'Id' => '65535.24',
-            'Label' => 'Sony FE 35mm F1.4 ZA',
-        ),
-        '65535.25' => array(
-            'Id' => '65535.25',
-            'Label' => 'Sony FE 24-240mm F3.5-6.3 OSS',
-        ),
-        '65535.26' => array(
-            'Id' => '65535.26',
-            'Label' => 'Sony FE 28mm F2',
-        ),
-        '65535.27' => array(
-            'Id' => '65535.27',
-            'Label' => 'Sony FE PZ 28-135mm F4 G OSS',
-        ),
-        '65535.28' => array(
-            'Id' => '65535.28',
-            'Label' => 'Sony FE 21mm F2.8 (SEL28F20 + SEL075UWC)',
-        ),
-        '65535.29' => array(
-            'Id' => '65535.29',
-            'Label' => 'Sony FE 16mm F3.5 Fisheye (SEL28F20 + SEL057FEC)',
-        ),
-        '65535.30' => array(
-            'Id' => '65535.30',
-            'Label' => 'Sigma 19mm F2.8 [EX] DN',
-        ),
-        '65535.31' => array(
-            'Id' => '65535.31',
-            'Label' => 'Sigma 30mm F2.8 [EX] DN',
-        ),
-        '65535.32' => array(
-            'Id' => '65535.32',
-            'Label' => 'Sigma 60mm F2.8 DN',
-        ),
-        '65535.33' => array(
-            'Id' => '65535.33',
-            'Label' => 'Tamron 18-200mm F3.5-6.3 Di III VC',
-        ),
-        '65535.34' => array(
-            'Id' => '65535.34',
-            'Label' => 'Zeiss Batis 25mm F2',
-        ),
-        '65535.35' => array(
-            'Id' => '65535.35',
-            'Label' => 'Zeiss Batis 85mm F1.8',
-        ),
-        '65535.36' => array(
-            'Id' => '65535.36',
-            'Label' => 'Zeiss Loxia 21mm F2.8',
-        ),
-        '65535.37' => array(
-            'Id' => '65535.37',
-            'Label' => 'Zeiss Loxia 35mm F2',
-        ),
-        '65535.38' => array(
-            'Id' => '65535.38',
-            'Label' => 'Zeiss Loxia 50mm F2',
-        ),
-        '65535.39' => array(
-            'Id' => '65535.39',
-            'Label' => 'Zeiss Touit 12mm F2.8',
-        ),
-        '65535.40' => array(
-            'Id' => '65535.40',
-            'Label' => 'Zeiss Touit 32mm F1.8',
-        ),
-        '65535.41' => array(
-            'Id' => '65535.41',
-            'Label' => 'Zeiss Touit 50mm F2.8 Macro',
-        ),
-        '65535.42' => array(
-            'Id' => '65535.42',
-            'Label' => 'Arax MC 35mm F2.8 Tilt+Shift',
-        ),
-        '65535.43' => array(
-            'Id' => '65535.43',
-            'Label' => 'Arax MC 80mm F2.8 Tilt+Shift',
-        ),
-        '65535.44' => array(
-            'Id' => '65535.44',
-            'Label' => 'Zenitar MF 16mm F2.8 Fisheye M42',
-        ),
-        '65535.45' => array(
-            'Id' => '65535.45',
-            'Label' => 'Samyang 500mm Mirror F8.0',
-        ),
-        '65535.46' => array(
-            'Id' => '65535.46',
-            'Label' => 'Pentacon Auto 135mm F2.8',
-        ),
-        '65535.47' => array(
-            'Id' => '65535.47',
-            'Label' => 'Pentacon Auto 29mm F2.8',
-        ),
-        '65535.48' => array(
-            'Id' => '65535.48',
             'Label' => 'Helios 44-2 58mm F2.0',
         ),
     );

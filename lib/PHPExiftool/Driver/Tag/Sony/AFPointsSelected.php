@@ -127,6 +127,10 @@ class AFPointsSelected extends AbstractTag
             'Id' => 131072,
             'Label' => 'Lower Far Left',
         ),
+        262143 => array(
+            'Id' => 262143,
+            'Label' => '(all LA-EA4)',
+        ),
         262144 => array(
             'Id' => 262144,
             'Label' => 'Upper Far Left',
@@ -138,6 +142,10 @@ class AFPointsSelected extends AbstractTag
         '2147483647' => array(
             'Id' => '2147483647',
             'Label' => '(all)',
+        ),
+        '4294967295' => array(
+            'Id' => '4294967295',
+            'Label' => 'n/a',
         ),
     );
 

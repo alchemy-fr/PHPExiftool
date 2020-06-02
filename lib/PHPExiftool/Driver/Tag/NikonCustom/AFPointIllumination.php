@@ -48,15 +48,15 @@ class AFPointIllumination extends AbstractTag
             'Label' => 'On in Continuous Shooting and Manual Focusing',
         ),
         1 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'On During Manual Focusing',
         ),
         2 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'On in Continuous Shooting Modes',
         ),
         3 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => 'Off',
         ),
         4 => array(
@@ -64,11 +64,11 @@ class AFPointIllumination extends AbstractTag
             'Label' => 'Auto',
         ),
         5 => array(
-            'Id' => 2,
+            'Id' => 1,
             'Label' => 'Off',
         ),
         6 => array(
-            'Id' => 4,
+            'Id' => 2,
             'Label' => 'On',
         ),
         7 => array(
@@ -76,59 +76,95 @@ class AFPointIllumination extends AbstractTag
             'Label' => 'Off',
         ),
         8 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'On in Continuous Shooting Modes',
         ),
         9 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => 'On During Manual Focusing',
         ),
         10 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => 'On in Continuous Shooting and Manual Focusing',
         ),
         11 => array(
             'Id' => 0,
-            'Label' => 'Auto',
+            'Label' => 'Off',
         ),
         12 => array(
-            'Id' => 2,
-            'Label' => 'Off',
+            'Id' => 1,
+            'Label' => 'On During Manual Focusing',
         ),
         13 => array(
-            'Id' => 4,
-            'Label' => 'On',
+            'Id' => 0,
+            'Label' => 'Off',
         ),
         14 => array(
+            'Id' => 1,
+            'Label' => 'On During Manual Focusing',
+        ),
+        15 => array(
             'Id' => 0,
             'Label' => 'Auto',
         ),
-        15 => array(
-            'Id' => 2,
+        16 => array(
+            'Id' => 1,
             'Label' => 'On',
         ),
-        16 => array(
-            'Id' => 4,
-            'Label' => 'Off',
-        ),
         17 => array(
-            'Id' => 0,
+            'Id' => 2,
             'Label' => 'Off',
         ),
         18 => array(
-            'Id' => 64,
-            'Label' => 'On During Manual Focusing',
-        ),
-        19 => array(
             'Id' => 0,
             'Label' => 'Auto',
+        ),
+        19 => array(
+            'Id' => 1,
+            'Label' => 'Off',
         ),
         20 => array(
             'Id' => 2,
             'Label' => 'On',
         ),
         21 => array(
-            'Id' => 4,
+            'Id' => 0,
+            'Label' => 'Auto',
+        ),
+        22 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        23 => array(
+            'Id' => 2,
+            'Label' => 'Off',
+        ),
+        24 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        25 => array(
+            'Id' => 1,
+            'Label' => 'On During Manual Focusing',
+        ),
+        26 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        27 => array(
+            'Id' => 1,
+            'Label' => 'On During Manual Focusing',
+        ),
+        28 => array(
+            'Id' => 0,
+            'Label' => 'Auto',
+        ),
+        29 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        30 => array(
+            'Id' => 2,
             'Label' => 'Off',
         ),
     );

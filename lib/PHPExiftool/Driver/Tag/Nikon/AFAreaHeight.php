@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AFAreaHeight extends AbstractTag
 {
 
-    protected $Id = 26;
+    protected $Id = 'mixed';
 
     protected $Name = 'AFAreaHeight';
 

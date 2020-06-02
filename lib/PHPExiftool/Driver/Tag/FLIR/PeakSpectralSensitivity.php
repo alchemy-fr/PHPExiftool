@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class PeakSpectralSensitivity extends AbstractTag
 {
 
-    protected $Id = 'PeakSpectralSensitivity';
+    protected $Id = 'FLIR::PeakSpectralSensitivity';
 
     protected $Name = 'PeakSpectralSensitivity';
 

@@ -63,6 +63,14 @@ class ImageStabilization extends AbstractTag
             'Id' => 6,
             'Label' => 'On, Mode 3',
         ),
+        9 => array(
+            'Id' => 9,
+            'Label' => 'Dual IS',
+        ),
+        11 => array(
+            'Id' => 11,
+            'Label' => 'Dual2 IS',
+        ),
     );
 
 }

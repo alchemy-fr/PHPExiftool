@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class CDDBDiscTracks extends AbstractTag
 {
 
-    protected $Id = 'CDDBDiscTracks';
+    protected $Id = 'QuickTime::CDDBDiscTracks';
 
     protected $Name = 'CDDBDiscTracks';
 

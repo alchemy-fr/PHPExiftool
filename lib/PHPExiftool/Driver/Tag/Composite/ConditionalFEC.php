@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ConditionalFEC extends AbstractTag
 {
 
-    protected $Id = 'ConditionalFEC';
+    protected $Id = 'Canon::ConditionalFEC';
 
     protected $Name = 'ConditionalFEC';
 

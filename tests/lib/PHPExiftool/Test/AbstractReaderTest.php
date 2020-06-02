@@ -231,7 +231,7 @@ abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(1, count($reader->all()));
 
         $reader = $this->getReader();
-        $reader->in(__DIR__ . '/../../../../vendor/phpexiftool/exiftool/');
+        $reader->in(__DIR__ . '/../../../../vendor/exiftool/exiftool/');
 
         foreach ($reader as $file) {
             $this->assertEquals(basename($file->getFile()), $file->getMetadatas()->get('System:FileName')->getValue()->asString());

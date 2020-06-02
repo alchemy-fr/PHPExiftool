@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class SubSecDateTimeOriginal extends AbstractTag
 {
 
-    protected $Id = 'SubSecDateTimeOriginal';
+    protected $Id = 'Exif::SubSecDateTimeOriginal';
 
     protected $Name = 'SubSecDateTimeOriginal';
 
@@ -36,7 +36,7 @@ class SubSecDateTimeOriginal extends AbstractTag
 
     protected $Type = '?';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
     protected $Description = 'Date/Time Original';
 

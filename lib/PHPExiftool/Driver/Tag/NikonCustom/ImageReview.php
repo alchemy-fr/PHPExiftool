@@ -47,8 +47,8 @@ class ImageReview extends AbstractTag
             'Id' => 0,
             'Label' => 'On',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Off',
         ),
     );

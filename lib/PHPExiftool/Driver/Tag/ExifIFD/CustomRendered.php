@@ -51,6 +51,30 @@ class CustomRendered extends AbstractTag
             'Id' => 1,
             'Label' => 'Custom',
         ),
+        2 => array(
+            'Id' => 2,
+            'Label' => 'HDR (no original saved)',
+        ),
+        3 => array(
+            'Id' => 3,
+            'Label' => 'HDR (original saved)',
+        ),
+        4 => array(
+            'Id' => 4,
+            'Label' => 'Original (for HDR)',
+        ),
+        6 => array(
+            'Id' => 6,
+            'Label' => 'Panorama',
+        ),
+        7 => array(
+            'Id' => 7,
+            'Label' => 'Portrait HDR',
+        ),
+        8 => array(
+            'Id' => 8,
+            'Label' => 'Portrait',
+        ),
     );
 
 }

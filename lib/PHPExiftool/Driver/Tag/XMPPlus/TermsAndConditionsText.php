@@ -24,7 +24,7 @@ class TermsAndConditionsText extends AbstractTag
 
     protected $Name = 'TermsAndConditionsText';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

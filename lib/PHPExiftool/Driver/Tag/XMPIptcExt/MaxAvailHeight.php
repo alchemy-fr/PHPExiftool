@@ -40,4 +40,6 @@ class MaxAvailHeight extends AbstractTag
 
     protected $Description = 'Max Avail Height';
 
+    protected $local_g2 = 'Image';
+
 }

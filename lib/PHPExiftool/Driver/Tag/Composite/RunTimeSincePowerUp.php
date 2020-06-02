@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class RunTimeSincePowerUp extends AbstractTag
 {
 
-    protected $Id = 'RunTimeSincePowerUp';
+    protected $Id = 'Apple::RunTimeSincePowerUp';
 
     protected $Name = 'RunTimeSincePowerUp';
 

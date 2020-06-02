@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class CameraColorCalibration01 extends AbstractTag
 {
 
-    protected $Id = 'mixed';
+    protected $Id = 0;
 
     protected $Name = 'CameraColorCalibration01';
 

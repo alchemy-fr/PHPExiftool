@@ -83,6 +83,14 @@ class ImageTone extends AbstractTag
             'Id' => 9,
             'Label' => 'Radiant',
         ),
+        10 => array(
+            'Id' => 10,
+            'Label' => 'Cross Processing',
+        ),
+        11 => array(
+            'Id' => 11,
+            'Label' => 'Flat',
+        ),
     );
 
 }

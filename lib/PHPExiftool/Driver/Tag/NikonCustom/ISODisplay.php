@@ -45,46 +45,78 @@ class ISODisplay extends AbstractTag
     protected $Values = array(
         0 => array(
             'Id' => 0,
-            'Label' => 'On',
+            'Label' => 'Show ISO Sensitivity',
         ),
         1 => array(
-            'Id' => 8,
-            'Label' => 'Off',
+            'Id' => 1,
+            'Label' => 'Show Frame Count',
         ),
         2 => array(
             'Id' => 0,
-            'Label' => 'Show ISO/Easy ISO',
+            'Label' => 'On',
         ),
         3 => array(
-            'Id' => 4,
-            'Label' => 'Show ISO Sensitivity',
+            'Id' => 1,
+            'Label' => 'Off',
         ),
         4 => array(
-            'Id' => 12,
-            'Label' => 'Show Frame Count',
+            'Id' => 0,
+            'Label' => 'On',
         ),
         5 => array(
-            'Id' => 0,
-            'Label' => 'Show ISO/Easy ISO',
+            'Id' => 1,
+            'Label' => 'Off',
         ),
         6 => array(
-            'Id' => 4,
-            'Label' => 'Show ISO Sensitivity',
+            'Id' => 0,
+            'Label' => 'On',
         ),
         7 => array(
-            'Id' => 12,
-            'Label' => 'Show Frame Count',
+            'Id' => 1,
+            'Label' => 'Off',
         ),
         8 => array(
             'Id' => 0,
             'Label' => 'Show ISO/Easy ISO',
         ),
         9 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'Show ISO Sensitivity',
         ),
         10 => array(
-            'Id' => 12,
+            'Id' => 3,
+            'Label' => 'Show Frame Count',
+        ),
+        11 => array(
+            'Id' => 0,
+            'Label' => 'Show ISO/Easy ISO',
+        ),
+        12 => array(
+            'Id' => 1,
+            'Label' => 'Show ISO Sensitivity',
+        ),
+        13 => array(
+            'Id' => 3,
+            'Label' => 'Show Frame Count',
+        ),
+        14 => array(
+            'Id' => 0,
+            'Label' => 'Show ISO Sensitivity',
+        ),
+        15 => array(
+            'Id' => 1,
+            'Label' => 'Show Frame Count',
+        ),
+        16 => array(
+            'Id' => 0,
+            'Label' => 'Show ISO/Easy ISO',
+        ),
+        17 => array(
+            'Id' => 1,
+            'Label' => 'Show ISO Sensitivity',
+        ),
+        18 => array(
+            'Id' => 3,
             'Label' => 'Show Frame Count',
         ),
     );

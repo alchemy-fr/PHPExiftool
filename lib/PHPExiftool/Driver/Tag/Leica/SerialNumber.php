@@ -36,10 +36,12 @@ class SerialNumber extends AbstractTag
 
     protected $Type = 'mixed';
 
-    protected $Writable = true;
+    protected $Writable = false;
 
     protected $Description = 'Serial Number';
 
     protected $flag_Permanent = true;
+
+    protected $MaxLength = 'mixed';
 
 }

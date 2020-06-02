@@ -102,30 +102,38 @@ class ObjectFileType extends AbstractTag
             'Label' => 'Shared library stub for static linking',
         ),
         15 => array(
+            'Id' => 10,
+            'Label' => 'Debug information',
+        ),
+        16 => array(
+            'Id' => 11,
+            'Label' => 'x86_64 kexts',
+        ),
+        17 => array(
             'Id' => 0,
             'Label' => 'Unknown',
         ),
-        16 => array(
+        18 => array(
             'Id' => 1,
             'Label' => 'Executable application',
         ),
-        17 => array(
+        19 => array(
             'Id' => 2,
             'Label' => 'Dynamic link library',
         ),
-        18 => array(
+        20 => array(
             'Id' => 3,
             'Label' => 'Driver',
         ),
-        19 => array(
+        21 => array(
             'Id' => 4,
             'Label' => 'Font',
         ),
-        20 => array(
+        22 => array(
             'Id' => 5,
             'Label' => 'VxD',
         ),
-        21 => array(
+        23 => array(
             'Id' => 7,
             'Label' => 'Static library',
         ),

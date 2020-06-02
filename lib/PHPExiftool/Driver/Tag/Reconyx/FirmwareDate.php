@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class FirmwareDate extends AbstractTag
 {
 
-    protected $Id = 4;
+    protected $Id = 'mixed';
 
     protected $Name = 'FirmwareDate';
 
-    protected $FullName = 'Reconyx::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Reconyx';
 

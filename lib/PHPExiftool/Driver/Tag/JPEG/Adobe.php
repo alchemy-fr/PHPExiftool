@@ -34,7 +34,7 @@ class Adobe extends AbstractTag
 
     protected $g2 = 'Other';
 
-    protected $Type = '?';
+    protected $Type = 2;
 
     protected $Writable = true;
 

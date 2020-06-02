@@ -47,44 +47,44 @@ class VerticalFuncButtonPlusDials extends AbstractTag
             'Id' => 0,
             'Label' => 'None',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Choose Image Area (FX/DX/5:4)',
         ),
-        32 => array(
-            'Id' => 32,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Shutter Speed & Aperture Lock',
         ),
-        48 => array(
-            'Id' => 48,
+        3 => array(
+            'Id' => 3,
             'Label' => 'One Step Speed / Aperture',
         ),
-        64 => array(
-            'Id' => 64,
+        4 => array(
+            'Id' => 4,
             'Label' => 'Choose Non-CPU Lens Number',
         ),
-        80 => array(
-            'Id' => 80,
+        5 => array(
+            'Id' => 5,
             'Label' => 'Active D-Lighting',
         ),
-        96 => array(
-            'Id' => 96,
+        6 => array(
+            'Id' => 6,
             'Label' => 'Shooting Bank Menu',
         ),
-        112 => array(
-            'Id' => 112,
+        7 => array(
+            'Id' => 7,
             'Label' => 'ISO Sensitivity',
         ),
-        128 => array(
-            'Id' => 128,
+        8 => array(
+            'Id' => 8,
             'Label' => 'Exposure Mode',
         ),
-        144 => array(
-            'Id' => 144,
+        9 => array(
+            'Id' => 9,
             'Label' => 'Exposure Compensation',
         ),
-        160 => array(
-            'Id' => 160,
+        10 => array(
+            'Id' => 10,
             'Label' => 'Metering',
         ),
     );

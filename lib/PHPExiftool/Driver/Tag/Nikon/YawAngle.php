@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class YawAngle extends AbstractTag
 {
 
-    protected $Id = 13587;
+    protected $Id = 'mixed';
 
     protected $Name = 'YawAngle';
 
-    protected $FullName = 'Nikon::ShotInfoD4S';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

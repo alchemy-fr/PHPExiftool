@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class FirmwareVersion extends AbstractTag
 {
 
-    protected $Id = 12553;
+    protected $Id = 'mixed';
 
     protected $Name = 'FirmwareVersion';
 
-    protected $FullName = 'Panasonic::Subdir';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Leica';
 
@@ -34,12 +34,14 @@ class FirmwareVersion extends AbstractTag
 
     protected $g2 = 'Camera';
 
-    protected $Type = 'string';
+    protected $Type = 'mixed';
 
     protected $Writable = true;
 
     protected $Description = 'Firmware Version';
 
     protected $flag_Permanent = true;
+
+    protected $MaxLength = 4;
 
 }

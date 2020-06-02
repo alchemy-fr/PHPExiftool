@@ -247,6 +247,10 @@ class SceneMode extends AbstractTag
             'Id' => 59,
             'Label' => 'Creative Control',
         ),
+        60 => array(
+            'Id' => 60,
+            'Label' => 'Intelligent Auto Plus',
+        ),
         62 => array(
             'Id' => 62,
             'Label' => 'Panorama',
@@ -341,7 +345,7 @@ class SceneMode extends AbstractTag
         ),
         86 => array(
             'Id' => 86,
-            'Label' => 'Cute Desert',
+            'Label' => 'Cute Dessert',
         ),
         87 => array(
             'Id' => 87,

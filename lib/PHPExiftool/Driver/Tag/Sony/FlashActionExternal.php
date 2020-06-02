@@ -44,22 +44,26 @@ class FlashActionExternal extends AbstractTag
 
     protected $Values = array(
         0 => array(
-            'Id' => 122,
+            'Id' => 121,
             'Label' => 'Fired',
         ),
         1 => array(
-            'Id' => 136,
-            'Label' => 'Did not fire',
+            'Id' => 122,
+            'Label' => 'Fired',
         ),
         2 => array(
             'Id' => 136,
             'Label' => 'Did not fire',
         ),
         3 => array(
+            'Id' => 136,
+            'Label' => 'Did not fire',
+        ),
+        4 => array(
             'Id' => 167,
             'Label' => 'Fired',
         ),
-        4 => array(
+        5 => array(
             'Id' => 182,
             'Label' => 'Fired, HSS',
         ),

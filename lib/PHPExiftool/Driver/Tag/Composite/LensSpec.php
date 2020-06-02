@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class LensSpec extends AbstractTag
 {
 
-    protected $Id = 'LensSpec';
+    protected $Id = 'Nikon::LensSpec';
 
     protected $Name = 'LensSpec';
 
@@ -38,7 +38,7 @@ class LensSpec extends AbstractTag
 
     protected $Writable = false;
 
-    protected $Description = 'Lens';
+    protected $Description = 'Lens Spec';
 
     protected $local_g2 = 'Camera';
 

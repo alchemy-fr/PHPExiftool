@@ -40,4 +40,6 @@ class DigitalSourceFileType extends AbstractTag
 
     protected $Description = 'Digital Source File Type';
 
+    protected $local_g2 = 'Image';
+
 }

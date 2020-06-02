@@ -79,6 +79,18 @@ class RecordMode extends AbstractTag
             'Id' => 10,
             'Label' => 'MP4',
         ),
+        11 => array(
+            'Id' => 11,
+            'Label' => 'CRM',
+        ),
+        12 => array(
+            'Id' => 12,
+            'Label' => 'CR3',
+        ),
+        13 => array(
+            'Id' => 13,
+            'Label' => 'CR3+JPEG',
+        ),
     );
 
 }

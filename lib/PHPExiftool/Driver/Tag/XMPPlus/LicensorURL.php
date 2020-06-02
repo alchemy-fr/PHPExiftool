@@ -24,7 +24,7 @@ class LicensorURL extends AbstractTag
 
     protected $Name = 'LicensorURL';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class DateTimeCreated extends AbstractTag
 {
 
-    protected $Id = 'DateTimeCreated';
+    protected $Id = 'IPTC::DateTimeCreated';
 
     protected $Name = 'DateTimeCreated';
 

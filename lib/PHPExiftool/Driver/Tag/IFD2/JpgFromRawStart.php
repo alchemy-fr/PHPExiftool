@@ -42,6 +42,8 @@ class JpgFromRawStart extends AbstractTag
 
     protected $local_g1 = 'IFD2';
 
+    protected $flag_Permanent = true;
+
     protected $flag_Protected = true;
 
     protected $Index = 6;

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class FocalLength35efl extends AbstractTag
 {
 
-    protected $Id = 'FocalLength35efl';
+    protected $Id = 'Exif::FocalLength35efl';
 
     protected $Name = 'FocalLength35efl';
 

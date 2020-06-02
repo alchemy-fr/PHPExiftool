@@ -67,6 +67,42 @@ class AFModeRestrictions extends AbstractTag
             'Id' => 2,
             'Label' => 'AF-S',
         ),
+        6 => array(
+            'Id' => 0,
+            'Label' => 'No Restrictions',
+        ),
+        7 => array(
+            'Id' => 1,
+            'Label' => 'AF-C',
+        ),
+        8 => array(
+            'Id' => 2,
+            'Label' => 'AF-S',
+        ),
+        9 => array(
+            'Id' => 0,
+            'Label' => 'No Restrictions',
+        ),
+        10 => array(
+            'Id' => 1,
+            'Label' => 'AF-C',
+        ),
+        11 => array(
+            'Id' => 2,
+            'Label' => 'AF-S',
+        ),
+        12 => array(
+            'Id' => 0,
+            'Label' => 'No Restrictions',
+        ),
+        13 => array(
+            'Id' => 1,
+            'Label' => 'AF-C',
+        ),
+        14 => array(
+            'Id' => 2,
+            'Label' => 'AF-S',
+        ),
     );
 
 }

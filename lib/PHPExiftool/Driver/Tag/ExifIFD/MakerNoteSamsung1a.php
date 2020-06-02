@@ -46,6 +46,6 @@ class MakerNoteSamsung1a extends AbstractTag
 
     protected $flag_Permanent = true;
 
-    protected $Index = 65;
+    protected $Index = 72;
 
 }

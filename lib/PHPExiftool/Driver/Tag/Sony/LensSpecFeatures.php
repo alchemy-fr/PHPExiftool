@@ -24,7 +24,7 @@ class LensSpecFeatures extends AbstractTag
 
     protected $Name = 'LensSpecFeatures';
 
-    protected $FullName = 'Sony::Tag9050';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Sony';
 

@@ -751,7 +751,7 @@ class Model extends AbstractTag
         ),
         'D4585' => array(
             'Id' => 'D4585',
-            'Label' => 'SH-2',
+            'Label' => 'SH-2 / SH-3',
         ),
         'D4586' => array(
             'Id' => 'D4586',
@@ -760,6 +760,18 @@ class Model extends AbstractTag
         'D4587' => array(
             'Id' => 'D4587',
             'Label' => 'TG-860',
+        ),
+        'D4591' => array(
+            'Id' => 'D4591',
+            'Label' => 'TG-870',
+        ),
+        'D4593' => array(
+            'Id' => 'D4593',
+            'Label' => 'TG-5',
+        ),
+        'D4603' => array(
+            'Id' => 'D4603',
+            'Label' => 'TG-6',
         ),
         'D4809' => array(
             'Id' => 'D4809',
@@ -912,6 +924,34 @@ class Model extends AbstractTag
         'S0059' => array(
             'Id' => 'S0059',
             'Label' => 'E-M10MarkII',
+        ),
+        'S0061' => array(
+            'Id' => 'S0061',
+            'Label' => 'PEN-F',
+        ),
+        'S0065' => array(
+            'Id' => 'S0065',
+            'Label' => 'E-PL8',
+        ),
+        'S0067' => array(
+            'Id' => 'S0067',
+            'Label' => 'E-M1MarkII',
+        ),
+        'S0068' => array(
+            'Id' => 'S0068',
+            'Label' => 'E-M10MarkIII',
+        ),
+        'S0076' => array(
+            'Id' => 'S0076',
+            'Label' => 'E-PL9',
+        ),
+        'S0080' => array(
+            'Id' => 'S0080',
+            'Label' => 'E-M1X',
+        ),
+        'S0089' => array(
+            'Id' => 'S0089',
+            'Label' => 'E-M5MarkIII',
         ),
         'SR45' => array(
             'Id' => 'SR45',

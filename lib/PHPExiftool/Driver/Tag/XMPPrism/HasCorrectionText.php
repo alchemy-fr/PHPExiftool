@@ -40,4 +40,6 @@ class HasCorrectionText extends AbstractTag
 
     protected $Description = 'Has Correction Text';
 
+    protected $flag_Avoid = true;
+
 }

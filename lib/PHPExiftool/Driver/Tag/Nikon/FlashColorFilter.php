@@ -24,7 +24,7 @@ class FlashColorFilter extends AbstractTag
 
     protected $Name = 'FlashColorFilter';
 
-    protected $FullName = 'Nikon::FlashInfo0103';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 
@@ -49,7 +49,7 @@ class FlashColorFilter extends AbstractTag
         ),
         1 => array(
             'Id' => 1,
-            'Label' => 'FL-GL1',
+            'Label' => 'FL-GL1 or SZ-2FL Fluorescent',
         ),
         2 => array(
             'Id' => 2,
@@ -57,7 +57,7 @@ class FlashColorFilter extends AbstractTag
         ),
         9 => array(
             'Id' => 9,
-            'Label' => 'TN-A1',
+            'Label' => 'TN-A1 or SZ-2TN Incandescent',
         ),
         10 => array(
             'Id' => 10,

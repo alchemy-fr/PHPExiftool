@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class PreviewImageSize extends AbstractTag
 {
 
-    protected $Id = 'PreviewImageSize';
+    protected $Id = 'Exif::PreviewImageSize';
 
     protected $Name = 'PreviewImageSize';
 

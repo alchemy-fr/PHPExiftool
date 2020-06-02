@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class ToningSaturation extends AbstractTag
 {
 
-    protected $Id = 57;
+    protected $Id = 'mixed';
 
     protected $Name = 'ToningSaturation';
 
-    protected $FullName = 'Nikon::PictureControl';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

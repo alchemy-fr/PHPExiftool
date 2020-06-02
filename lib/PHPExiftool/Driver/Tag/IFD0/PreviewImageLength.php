@@ -40,6 +40,8 @@ class PreviewImageLength extends AbstractTag
 
     protected $Description = 'Preview Image Length';
 
+    protected $flag_Permanent = true;
+
     protected $flag_Protected = true;
 
     protected $Index = 'mixed';

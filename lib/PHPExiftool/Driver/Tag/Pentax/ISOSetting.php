@@ -47,8 +47,8 @@ class ISOSetting extends AbstractTag
             'Id' => 0,
             'Label' => 'Manual',
         ),
-        4 => array(
-            'Id' => 4,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Auto',
         ),
     );

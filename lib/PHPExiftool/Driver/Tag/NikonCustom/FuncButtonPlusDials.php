@@ -130,27 +130,27 @@ class FuncButtonPlusDials extends AbstractTag
             'Label' => 'None',
         ),
         21 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Choose Image Area',
         ),
         22 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'One Step Speed/Aperture',
         ),
         23 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 'Choose Non-CPU Lens Number',
         ),
         24 => array(
-            'Id' => 80,
+            'Id' => 5,
             'Label' => 'Auto bracketing',
         ),
         25 => array(
-            'Id' => 96,
+            'Id' => 6,
             'Label' => 'Dynamic AF Area',
         ),
         26 => array(
-            'Id' => 112,
+            'Id' => 7,
             'Label' => 'Shutter speed & Aperture lock',
         ),
         27 => array(

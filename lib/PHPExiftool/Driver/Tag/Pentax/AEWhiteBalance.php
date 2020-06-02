@@ -47,33 +47,37 @@ class AEWhiteBalance extends AbstractTag
             'Id' => 0,
             'Label' => 'Standard',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Daylight',
         ),
-        32 => array(
-            'Id' => 32,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Shade',
         ),
-        48 => array(
-            'Id' => 48,
+        3 => array(
+            'Id' => 3,
             'Label' => 'Cloudy',
         ),
-        64 => array(
-            'Id' => 64,
+        4 => array(
+            'Id' => 4,
             'Label' => 'Daylight Fluorescent',
         ),
-        80 => array(
-            'Id' => 80,
+        5 => array(
+            'Id' => 5,
             'Label' => 'Day White Fluorescent',
         ),
-        96 => array(
-            'Id' => 96,
+        6 => array(
+            'Id' => 6,
             'Label' => 'White Fluorescent',
         ),
-        112 => array(
-            'Id' => 112,
+        7 => array(
+            'Id' => 7,
             'Label' => 'Tungsten',
+        ),
+        8 => array(
+            'Id' => 8,
+            'Label' => 'Unknown',
         ),
     );
 

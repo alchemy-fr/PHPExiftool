@@ -47,9 +47,17 @@ class AFPointSelection extends AbstractTag
             'Id' => 0,
             'Label' => '51 Points',
         ),
-        16 => array(
-            'Id' => 16,
+        1 => array(
+            'Id' => 1,
             'Label' => '11 Points',
+        ),
+        2 => array(
+            'Id' => 0,
+            'Label' => '55 Points',
+        ),
+        3 => array(
+            'Id' => 1,
+            'Label' => '15 Points',
         ),
     );
 

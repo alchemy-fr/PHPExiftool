@@ -24,7 +24,7 @@ class EndUserName extends AbstractTag
 
     protected $Name = 'EndUserName';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

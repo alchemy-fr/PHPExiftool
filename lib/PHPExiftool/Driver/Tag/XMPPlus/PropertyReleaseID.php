@@ -24,7 +24,7 @@ class PropertyReleaseID extends AbstractTag
 
     protected $Name = 'PropertyReleaseID';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class GPSDateTime extends AbstractTag
 {
 
-    protected $Id = 'GPSDateTime';
+    protected $Id = 'mixed';
 
     protected $Name = 'GPSDateTime';
 

@@ -48,7 +48,7 @@ class ExposureDelayMode extends AbstractTag
             'Label' => 'Off',
         ),
         1 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'On',
         ),
         2 => array(
@@ -56,15 +56,15 @@ class ExposureDelayMode extends AbstractTag
             'Label' => 'Off',
         ),
         3 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => '1 s',
         ),
         4 => array(
-            'Id' => 128,
+            'Id' => 2,
             'Label' => '2 s',
         ),
         5 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => '3 s',
         ),
         6 => array(
@@ -72,39 +72,39 @@ class ExposureDelayMode extends AbstractTag
             'Label' => 'Off',
         ),
         7 => array(
-            'Id' => 64,
-            'Label' => 'On',
+            'Id' => 1,
+            'Label' => '1 s',
         ),
         8 => array(
-            'Id' => 0,
-            'Label' => 'Off',
+            'Id' => 2,
+            'Label' => '2 s',
         ),
         9 => array(
-            'Id' => 64,
-            'Label' => 'On',
+            'Id' => 3,
+            'Label' => '3 s',
         ),
         10 => array(
             'Id' => 0,
             'Label' => 'Off',
         ),
         11 => array(
-            'Id' => 64,
-            'Label' => 'On',
+            'Id' => 1,
+            'Label' => '1 s',
         ),
         12 => array(
-            'Id' => 0,
-            'Label' => 'Off',
+            'Id' => 2,
+            'Label' => '2 s',
         ),
         13 => array(
-            'Id' => 4,
-            'Label' => 'On',
+            'Id' => 3,
+            'Label' => '3 s',
         ),
         14 => array(
             'Id' => 0,
             'Label' => 'Off',
         ),
         15 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => 'On',
         ),
         16 => array(
@@ -112,7 +112,7 @@ class ExposureDelayMode extends AbstractTag
             'Label' => 'Off',
         ),
         17 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'On',
         ),
         18 => array(
@@ -120,23 +120,79 @@ class ExposureDelayMode extends AbstractTag
             'Label' => 'Off',
         ),
         19 => array(
-            'Id' => 64,
-            'Label' => '1 s',
+            'Id' => 1,
+            'Label' => 'On',
         ),
         20 => array(
-            'Id' => 128,
-            'Label' => '2 s',
+            'Id' => 0,
+            'Label' => 'Off',
         ),
         21 => array(
-            'Id' => 192,
-            'Label' => '3 s',
+            'Id' => 1,
+            'Label' => 'On',
         ),
         22 => array(
             'Id' => 0,
             'Label' => 'Off',
         ),
         23 => array(
-            'Id' => 64,
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        24 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        25 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        26 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        27 => array(
+            'Id' => 1,
+            'Label' => '1 s',
+        ),
+        28 => array(
+            'Id' => 2,
+            'Label' => '2 s',
+        ),
+        29 => array(
+            'Id' => 3,
+            'Label' => '3 s',
+        ),
+        30 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        31 => array(
+            'Id' => 1,
+            'Label' => '0.2 s',
+        ),
+        32 => array(
+            'Id' => 2,
+            'Label' => '0.5 s',
+        ),
+        33 => array(
+            'Id' => 3,
+            'Label' => '1 s',
+        ),
+        34 => array(
+            'Id' => 4,
+            'Label' => '2 s',
+        ),
+        35 => array(
+            'Id' => 5,
+            'Label' => '3 s',
+        ),
+        36 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        37 => array(
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

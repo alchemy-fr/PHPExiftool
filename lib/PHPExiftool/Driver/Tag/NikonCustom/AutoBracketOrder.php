@@ -48,71 +48,7 @@ class AutoBracketOrder extends AbstractTag
             'Label' => '0,-,+',
         ),
         1 => array(
-            'Id' => 8,
-            'Label' => '-,0,+',
-        ),
-        2 => array(
-            'Id' => 0,
-            'Label' => '0,-,+',
-        ),
-        3 => array(
-            'Id' => 4,
-            'Label' => '-,0,+',
-        ),
-        4 => array(
-            'Id' => 0,
-            'Label' => '0,-,+',
-        ),
-        5 => array(
-            'Id' => 16,
-            'Label' => '-,0,+',
-        ),
-        6 => array(
-            'Id' => 0,
-            'Label' => '0,-,+',
-        ),
-        7 => array(
-            'Id' => 8,
-            'Label' => '-,0,+',
-        ),
-        8 => array(
-            'Id' => 0,
-            'Label' => '0,-,+',
-        ),
-        9 => array(
-            'Id' => 16,
-            'Label' => '-,0,+',
-        ),
-        10 => array(
-            'Id' => 0,
-            'Label' => '0,-,+',
-        ),
-        11 => array(
-            'Id' => 32,
-            'Label' => '-,0,+',
-        ),
-        12 => array(
-            'Id' => 0,
-            'Label' => '0,-,+',
-        ),
-        13 => array(
-            'Id' => 16,
-            'Label' => '-,0,+',
-        ),
-        14 => array(
-            'Id' => 0,
-            'Label' => '0,-,+',
-        ),
-        15 => array(
-            'Id' => 16,
-            'Label' => '-,0,+',
-        ),
-        16 => array(
-            'Id' => 0,
-            'Label' => '0,-,+',
-        ),
-        17 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => '-,0,+',
         ),
     );

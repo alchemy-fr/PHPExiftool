@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class TimeZone extends AbstractTag
 {
 
-    protected $Id = 0;
+    protected $Id = 'mixed';
 
     protected $Name = 'TimeZone';
 
-    protected $FullName = 'Nikon::WorldTime';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 
@@ -32,13 +32,15 @@ class TimeZone extends AbstractTag
 
     protected $g1 = 'Nikon';
 
-    protected $g2 = 'Time';
+    protected $g2 = 'mixed';
 
-    protected $Type = 'int16s';
+    protected $Type = 'mixed';
 
-    protected $Writable = true;
+    protected $Writable = false;
 
     protected $Description = 'Time Zone';
+
+    protected $local_g2 = 'Time';
 
     protected $flag_Permanent = true;
 

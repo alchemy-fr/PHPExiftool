@@ -43,25 +43,33 @@ class ShadowTone extends AbstractTag
     protected $flag_Permanent = true;
 
     protected $Values = array(
+        '-64' => array(
+            'Id' => '-64',
+            'Label' => '+4 (hardest)',
+        ),
+        '-48' => array(
+            'Id' => '-48',
+            'Label' => '+3 (very hard)',
+        ),
         '-32' => array(
             'Id' => '-32',
-            'Label' => 'Hard',
+            'Label' => '+2 (hard)',
         ),
         '-16' => array(
             'Id' => '-16',
-            'Label' => 'Medium-hard',
+            'Label' => '+1 (medium hard)',
         ),
         0 => array(
             'Id' => 0,
-            'Label' => 'Normal',
+            'Label' => '0 (normal)',
         ),
         16 => array(
             'Id' => 16,
-            'Label' => 'Medium-soft',
+            'Label' => '-1 (medium soft)',
         ),
         32 => array(
             'Id' => 32,
-            'Label' => 'Soft',
+            'Label' => '-2 (soft)',
         ),
     );
 

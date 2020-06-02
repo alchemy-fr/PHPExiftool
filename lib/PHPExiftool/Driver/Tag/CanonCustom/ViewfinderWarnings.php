@@ -63,6 +63,14 @@ class ViewfinderWarnings extends AbstractTag
             'Id' => 16,
             'Label' => 'Spot metering',
         ),
+        64 => array(
+            'Id' => 64,
+            'Label' => 'Noise reduction',
+        ),
+        128 => array(
+            'Id' => 128,
+            'Label' => 'HDR',
+        ),
     );
 
 }

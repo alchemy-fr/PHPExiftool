@@ -34,7 +34,7 @@ class GeoTiffDoubleParams extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = 'undef';
+    protected $Type = 'double';
 
     protected $Writable = true;
 

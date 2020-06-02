@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class ThumbnailImage extends AbstractTag
 {
 
-    protected $Id = 'CNDA';
+    protected $Id = 'mixed';
 
     protected $Name = 'ThumbnailImage';
 
-    protected $FullName = 'Canon::CNTH';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Canon';
 
@@ -34,7 +34,7 @@ class ThumbnailImage extends AbstractTag
 
     protected $g2 = 'Video';
 
-    protected $Type = 'undef';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 
@@ -43,5 +43,7 @@ class ThumbnailImage extends AbstractTag
     protected $local_g2 = 'Preview';
 
     protected $flag_Permanent = true;
+
+    protected $flag_Binary = false;
 
 }

@@ -61,6 +61,10 @@ class SceneCaptureType extends AbstractTag
             'Id' => 3,
             'Label' => 'Night',
         ),
+        4 => array(
+            'Id' => 4,
+            'Label' => 'Other',
+        ),
     );
 
 }

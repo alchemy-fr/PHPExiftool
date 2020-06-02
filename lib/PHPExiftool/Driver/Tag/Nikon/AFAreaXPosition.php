@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AFAreaXPosition extends AbstractTag
 {
 
-    protected $Id = 20;
+    protected $Id = 'mixed';
 
     protected $Name = 'AFAreaXPosition';
 

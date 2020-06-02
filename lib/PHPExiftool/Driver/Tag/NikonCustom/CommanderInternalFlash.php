@@ -47,12 +47,12 @@ class CommanderInternalFlash extends AbstractTag
             'Id' => 0,
             'Label' => 'TTL',
         ),
-        64 => array(
-            'Id' => 64,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Manual',
         ),
-        128 => array(
-            'Id' => 128,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Off',
         ),
     );

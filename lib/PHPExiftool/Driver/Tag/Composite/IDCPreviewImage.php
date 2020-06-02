@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class IDCPreviewImage extends AbstractTag
 {
 
-    protected $Id = 'IDCPreviewImage';
+    protected $Id = 'SonyIDC::IDCPreviewImage';
 
     protected $Name = 'IDCPreviewImage';
 

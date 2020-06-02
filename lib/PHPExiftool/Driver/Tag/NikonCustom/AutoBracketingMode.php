@@ -47,16 +47,16 @@ class AutoBracketingMode extends AbstractTag
             'Id' => 0,
             'Label' => 'Flash/Speed',
         ),
-        4 => array(
-            'Id' => 4,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Flash/Speed/Aperture',
         ),
-        8 => array(
-            'Id' => 8,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Flash/Aperture',
         ),
-        12 => array(
-            'Id' => 12,
+        3 => array(
+            'Id' => 3,
             'Label' => 'Flash Only',
         ),
     );

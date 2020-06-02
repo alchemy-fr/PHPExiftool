@@ -43,8 +43,8 @@ class CodePage extends AbstractTag
     protected $local_g2 = 'Other';
 
     protected $Values = array(
-        31 => array(
-            'Id' => 31,
+        37 => array(
+            'Id' => 37,
             'Label' => 'IBM EBCDIC US-Canada',
         ),
         437 => array(

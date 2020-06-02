@@ -24,7 +24,7 @@ class PictureControlVersion extends AbstractTag
 
     protected $Name = 'PictureControlVersion';
 
-    protected $FullName = 'Nikon::PictureControl';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

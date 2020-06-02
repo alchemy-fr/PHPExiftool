@@ -48,23 +48,23 @@ class ImageReviewTime extends AbstractTag
             'Label' => '4 s',
         ),
         1 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '10 s',
         ),
         2 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         3 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         4 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '5 min',
         ),
         5 => array(
-            'Id' => 160,
+            'Id' => 5,
             'Label' => '10 min',
         ),
         6 => array(
@@ -92,19 +92,19 @@ class ImageReviewTime extends AbstractTag
             'Label' => '4 s',
         ),
         12 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '8 s',
         ),
         13 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         14 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         15 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '10 min',
         ),
         16 => array(
@@ -112,39 +112,39 @@ class ImageReviewTime extends AbstractTag
             'Label' => '4 s',
         ),
         17 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '8 s',
         ),
         18 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         19 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         20 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '10 min',
         ),
         21 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '4 s',
         ),
         22 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '8 s',
         ),
         23 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '20 s',
         ),
         24 => array(
-            'Id' => 160,
+            'Id' => 5,
             'Label' => '1 min',
         ),
         25 => array(
-            'Id' => 224,
+            'Id' => 7,
             'Label' => '10 min',
         ),
         26 => array(
@@ -176,23 +176,23 @@ class ImageReviewTime extends AbstractTag
             'Label' => '4 s',
         ),
         33 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '10 s',
         ),
         34 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         35 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         36 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '5 min',
         ),
         37 => array(
-            'Id' => 160,
+            'Id' => 5,
             'Label' => '10 min',
         ),
         38 => array(
@@ -200,23 +200,23 @@ class ImageReviewTime extends AbstractTag
             'Label' => '4 s',
         ),
         39 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '10 s',
         ),
         40 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         41 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         42 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '5 min',
         ),
         43 => array(
-            'Id' => 160,
+            'Id' => 5,
             'Label' => '10 min',
         ),
     );

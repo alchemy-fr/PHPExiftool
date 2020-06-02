@@ -38,7 +38,7 @@ class Model extends AbstractTag
 
     protected $Writable = false;
 
-    protected $Description = 'mixed';
+    protected $Description = 'Camera Model Name';
 
     protected $flag_Permanent = true;
 

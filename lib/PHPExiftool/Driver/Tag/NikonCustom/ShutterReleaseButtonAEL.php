@@ -48,7 +48,7 @@ class ShutterReleaseButtonAEL extends AbstractTag
             'Label' => 'Off',
         ),
         1 => array(
-            'Id' => 2,
+            'Id' => 1,
             'Label' => 'On',
         ),
         2 => array(
@@ -56,31 +56,99 @@ class ShutterReleaseButtonAEL extends AbstractTag
             'Label' => 'Off',
         ),
         3 => array(
-            'Id' => 128,
-            'Label' => 'On',
+            'Id' => 1,
+            'Label' => 'On (Half Press)',
         ),
         4 => array(
-            'Id' => 0,
-            'Label' => 'Off',
+            'Id' => 2,
+            'Label' => 'On (Burst Mode)',
         ),
         5 => array(
-            'Id' => 2,
-            'Label' => 'On',
-        ),
-        6 => array(
             'Id' => 0,
             'Label' => 'Off',
+        ),
+        6 => array(
+            'Id' => 1,
+            'Label' => 'On (Half Press)',
         ),
         7 => array(
             'Id' => 2,
-            'Label' => 'On',
+            'Label' => 'On (Burst Mode)',
         ),
         8 => array(
             'Id' => 0,
             'Label' => 'Off',
         ),
         9 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        10 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        11 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        12 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        13 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        14 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        15 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        16 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        17 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        18 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        19 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        20 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        21 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        22 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        23 => array(
+            'Id' => 1,
+            'Label' => 'On (Half Press)',
+        ),
+        24 => array(
             'Id' => 2,
+            'Label' => 'On (Burst Mode)',
+        ),
+        25 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        26 => array(
+            'Id' => 1,
             'Label' => 'On',
         ),
     );

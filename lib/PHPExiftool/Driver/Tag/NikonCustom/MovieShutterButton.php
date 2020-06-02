@@ -48,11 +48,11 @@ class MovieShutterButton extends AbstractTag
             'Label' => 'Take Photo',
         ),
         1 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Record Movies',
         ),
         2 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Live Frame Grab',
         ),
         3 => array(
@@ -60,7 +60,31 @@ class MovieShutterButton extends AbstractTag
             'Label' => 'Take Photo',
         ),
         4 => array(
-            'Id' => 32,
+            'Id' => 1,
+            'Label' => 'Record Movies',
+        ),
+        5 => array(
+            'Id' => 0,
+            'Label' => 'Take Photo',
+        ),
+        6 => array(
+            'Id' => 1,
+            'Label' => 'Record Movies',
+        ),
+        7 => array(
+            'Id' => 0,
+            'Label' => 'Take Photo',
+        ),
+        8 => array(
+            'Id' => 1,
+            'Label' => 'Record Movies',
+        ),
+        9 => array(
+            'Id' => 0,
+            'Label' => 'Take Photo',
+        ),
+        10 => array(
+            'Id' => 1,
             'Label' => 'Record Movies',
         ),
     );

@@ -61,7 +61,7 @@ class ImageQuality extends AbstractTag
         ),
         7 => array(
             'Id' => 7,
-            'Label' => 'Raw',
+            'Label' => 'RAW',
         ),
         9 => array(
             'Id' => 9,

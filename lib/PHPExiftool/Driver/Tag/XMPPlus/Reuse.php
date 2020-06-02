@@ -24,7 +24,7 @@ class Reuse extends AbstractTag
 
     protected $Name = 'Reuse';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

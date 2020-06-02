@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class IntelligentAuto extends AbstractTag
 {
 
-    protected $Id = 45138;
+    protected $Id = 'mixed';
 
     protected $Name = 'IntelligentAuto';
 
-    protected $FullName = 'Sony::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Sony';
 
@@ -32,9 +32,9 @@ class IntelligentAuto extends AbstractTag
 
     protected $g1 = 'Sony';
 
-    protected $g2 = 'Camera';
+    protected $g2 = 'mixed';
 
-    protected $Type = 'int16u';
+    protected $Type = 'mixed';
 
     protected $Writable = true;
 
@@ -54,6 +54,30 @@ class IntelligentAuto extends AbstractTag
         2 => array(
             'Id' => 2,
             'Label' => 'Advanced',
+        ),
+        3 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        4 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        5 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        6 => array(
+            'Id' => 1,
+            'Label' => 'On',
+        ),
+        7 => array(
+            'Id' => 0,
+            'Label' => 'Off',
+        ),
+        8 => array(
+            'Id' => 1,
+            'Label' => 'On',
         ),
     );
 

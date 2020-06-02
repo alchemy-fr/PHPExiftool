@@ -24,7 +24,7 @@ class ExposureControlStep extends AbstractTag
 
     protected $Name = 'ExposureControlStep';
 
-    protected $FullName = 'NikonCustom::SettingsD7000';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'NikonCustom';
 
@@ -47,8 +47,8 @@ class ExposureControlStep extends AbstractTag
             'Id' => 0,
             'Label' => '1/3 EV',
         ),
-        64 => array(
-            'Id' => 64,
+        1 => array(
+            'Id' => 1,
             'Label' => '1/2 EV',
         ),
     );

@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class PictureControlName extends AbstractTag
 {
 
-    protected $Id = 4;
+    protected $Id = 'mixed';
 
     protected $Name = 'PictureControlName';
 
-    protected $FullName = 'Nikon::PictureControl';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'Nikon';
 

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class AquaHSL extends AbstractTag
 {
 
-    protected $Id = 133395;
+    protected $Id = 133396;
 
     protected $Name = 'AquaHSL';
 

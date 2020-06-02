@@ -24,7 +24,7 @@ class CreditLineRequired extends AbstractTag
 
     protected $Name = 'CreditLineRequired';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

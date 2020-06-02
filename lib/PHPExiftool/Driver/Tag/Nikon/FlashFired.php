@@ -43,12 +43,12 @@ class FlashFired extends AbstractTag
     protected $flag_Permanent = true;
 
     protected $Values = array(
-        64 => array(
-            'Id' => 64,
+        2 => array(
+            'Id' => 2,
             'Label' => 'Internal',
         ),
-        128 => array(
-            'Id' => 128,
+        4 => array(
+            'Id' => 4,
             'Label' => 'External',
         ),
     );

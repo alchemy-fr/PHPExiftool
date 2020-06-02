@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class BitsPerSample extends AbstractTag
 {
 
-    protected $Id = 258;
+    protected $Id = 'mixed';
 
     protected $Name = 'BitsPerSample';
 
-    protected $FullName = 'Exif::Main';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'IFD0';
 

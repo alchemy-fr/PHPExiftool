@@ -43,6 +43,10 @@ class ProgramISO extends AbstractTag
     protected $flag_Permanent = true;
 
     protected $Values = array(
+        '-1' => array(
+            'Id' => '-1',
+            'Label' => 'n/a',
+        ),
         65534 => array(
             'Id' => 65534,
             'Label' => 'Intelligent ISO',

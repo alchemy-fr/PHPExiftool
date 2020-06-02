@@ -24,7 +24,7 @@ class PropertyReleaseStatus extends AbstractTag
 
     protected $Name = 'PropertyReleaseStatus';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

@@ -67,6 +67,10 @@ class RawJpgQuality extends AbstractTag
             'Id' => 5,
             'Label' => 'Superfine',
         ),
+        7 => array(
+            'Id' => 7,
+            'Label' => 'CRAW',
+        ),
         130 => array(
             'Id' => 130,
             'Label' => 'Normal Movie',

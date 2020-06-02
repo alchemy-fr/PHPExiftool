@@ -44,39 +44,39 @@ class BodyBatteryState extends AbstractTag
 
     protected $Values = array(
         0 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Empty or Missing',
         ),
         1 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Almost Empty',
         ),
         2 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 'Running Low',
         ),
         3 => array(
-            'Id' => 64,
+            'Id' => 4,
             'Label' => 'Full',
         ),
         4 => array(
-            'Id' => 16,
+            'Id' => 1,
             'Label' => 'Empty or Missing',
         ),
         5 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => 'Almost Empty',
         ),
         6 => array(
-            'Id' => 48,
+            'Id' => 3,
             'Label' => 'Running Low',
         ),
         7 => array(
-            'Id' => 64,
+            'Id' => 4,
             'Label' => 'Close to Full',
         ),
         8 => array(
-            'Id' => 80,
+            'Id' => 5,
             'Label' => 'Full',
         ),
     );

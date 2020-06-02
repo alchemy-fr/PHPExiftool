@@ -131,6 +131,14 @@ class ModifiedPictureStyle extends AbstractTag
             'Id' => 136,
             'Label' => 'Fine Detail',
         ),
+        255 => array(
+            'Id' => 255,
+            'Label' => 'n/a',
+        ),
+        65535 => array(
+            'Id' => 65535,
+            'Label' => 'n/a',
+        ),
     );
 
 }

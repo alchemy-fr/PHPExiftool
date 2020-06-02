@@ -68,19 +68,19 @@ class MonitorOffTime extends AbstractTag
             'Label' => '4 s',
         ),
         6 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '8 s',
         ),
         7 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         8 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         9 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '10 min',
         ),
         10 => array(
@@ -88,23 +88,23 @@ class MonitorOffTime extends AbstractTag
             'Label' => '5 s',
         ),
         11 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => '10 s',
         ),
         12 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '20 s',
         ),
         13 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => '1 min',
         ),
         14 => array(
-            'Id' => 128,
+            'Id' => 4,
             'Label' => '5 min',
         ),
         15 => array(
-            'Id' => 160,
+            'Id' => 5,
             'Label' => '10 min',
         ),
     );

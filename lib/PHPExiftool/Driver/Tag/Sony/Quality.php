@@ -127,6 +127,40 @@ class Quality extends AbstractTag
             'Id' => '4294967295',
             'Label' => 'n/a',
         ),
+        '0 0' => array(
+            'Id' => '0 0',
+            'Label' => 'n/a',
+        ),
+        '0 1' => array(
+            'Id' => '0 1',
+            'Label' => 'Standard JPEG',
+        ),
+        '0 2' => array(
+            'Id' => '0 2',
+            'Label' => 'Fine JPEG',
+        ),
+        '0 3' => array(
+            'Id' => '0 3',
+            'Label' => 'Extra Fine JPEG',
+        ),
+        '1 0' => array(
+            'Id' => '1 0',
+            'Label' => 'RAW',
+        ),
+        '1 1' => array(
+            'Id' => '1 1',
+            'Label' => 'RAW + Standard JPEG',
+        ),
+        '1 2' => array(
+            'Id' => '1 2',
+            'Label' => 'RAW + Fine JPEG',
+        ),
+        '1 3' => array(
+            'Id' => '1 3',
+            'Label' => 'RAW + Extra Fine JPEG',
+        ),
     );
+
+    protected $MaxLength = 'mixed';
 
 }

@@ -40,4 +40,6 @@ class DigitalImageGUID extends AbstractTag
 
     protected $Description = 'Digital Image GUID';
 
+    protected $local_g2 = 'Image';
+
 }

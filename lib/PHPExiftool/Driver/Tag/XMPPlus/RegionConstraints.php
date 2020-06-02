@@ -24,7 +24,7 @@ class RegionConstraints extends AbstractTag
 
     protected $Name = 'RegionConstraints';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

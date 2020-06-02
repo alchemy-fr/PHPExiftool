@@ -48,11 +48,11 @@ class InitialZoomSetting extends AbstractTag
             'Label' => 'High Magnification',
         ),
         1 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'Medium Magnification',
         ),
         2 => array(
-            'Id' => 8,
+            'Id' => 2,
             'Label' => 'Low Magnification',
         ),
         3 => array(
@@ -60,11 +60,11 @@ class InitialZoomSetting extends AbstractTag
             'Label' => 'Low Magnification',
         ),
         4 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'Medium Magnification',
         ),
         5 => array(
-            'Id' => 8,
+            'Id' => 2,
             'Label' => 'High Magnification',
         ),
         6 => array(
@@ -72,11 +72,11 @@ class InitialZoomSetting extends AbstractTag
             'Label' => 'Low Magnification',
         ),
         7 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'Medium Magnification',
         ),
         8 => array(
-            'Id' => 8,
+            'Id' => 2,
             'Label' => 'High Magnification',
         ),
     );

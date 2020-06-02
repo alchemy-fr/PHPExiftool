@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class CircleOfConfusion extends AbstractTag
 {
 
-    protected $Id = 'CircleOfConfusion';
+    protected $Id = 'Exif::CircleOfConfusion';
 
     protected $Name = 'CircleOfConfusion';
 

@@ -76,20 +76,56 @@ class ColorDataVersion extends AbstractTag
             'Label' => '9 (60D/1100D)',
         ),
         8 => array(
+            'Id' => '-4',
+            'Label' => '-4 (M100/M5/M6)',
+        ),
+        9 => array(
+            'Id' => '-3',
+            'Label' => '-3 (M10/M3)',
+        ),
+        10 => array(
             'Id' => 10,
             'Label' => '10 (600D/1200D)',
         ),
-        9 => array(
+        11 => array(
             'Id' => 10,
             'Label' => '10 (1DX/5DmkIII/6D/70D/100D/650D/700D/M)',
         ),
-        10 => array(
+        12 => array(
             'Id' => 11,
             'Label' => '11 (7DmkII/750D/760D)',
         ),
-        11 => array(
+        13 => array(
             'Id' => 12,
             'Label' => '12 (5DS/5DSR)',
+        ),
+        14 => array(
+            'Id' => 13,
+            'Label' => '13 (80D)',
+        ),
+        15 => array(
+            'Id' => 14,
+            'Label' => '14 (1300D/2000D/4000D)',
+        ),
+        16 => array(
+            'Id' => 15,
+            'Label' => '15 (6DmkII/77D/200D/800D)',
+        ),
+        17 => array(
+            'Id' => 16,
+            'Label' => '16 (M50)',
+        ),
+        18 => array(
+            'Id' => 17,
+            'Label' => '17 (EOS R)',
+        ),
+        19 => array(
+            'Id' => 18,
+            'Label' => '18 (EOS RP)',
+        ),
+        20 => array(
+            'Id' => 19,
+            'Label' => '19 (90D/M6mkII/M200)',
         ),
     );
 

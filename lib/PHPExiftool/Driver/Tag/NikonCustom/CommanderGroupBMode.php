@@ -48,31 +48,15 @@ class CommanderGroupBMode extends AbstractTag
             'Label' => 'TTL',
         ),
         1 => array(
-            'Id' => 4,
+            'Id' => 1,
             'Label' => 'Auto Aperture',
         ),
         2 => array(
-            'Id' => 8,
+            'Id' => 2,
             'Label' => 'Manual',
         ),
         3 => array(
-            'Id' => 12,
-            'Label' => 'Off',
-        ),
-        4 => array(
-            'Id' => 0,
-            'Label' => 'TTL',
-        ),
-        5 => array(
-            'Id' => 64,
-            'Label' => 'Auto Aperture',
-        ),
-        6 => array(
-            'Id' => 128,
-            'Label' => 'Manual',
-        ),
-        7 => array(
-            'Id' => 192,
+            'Id' => 3,
             'Label' => 'Off',
         ),
     );

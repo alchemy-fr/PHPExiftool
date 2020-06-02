@@ -20,26 +20,26 @@ use PHPExiftool\Driver\AbstractTag;
 class GPSLongitude extends AbstractTag
 {
 
-    protected $Id = 2;
+    protected $Id = 'mixed';
 
     protected $Name = 'GPSLongitude';
 
-    protected $FullName = 'FLIR::GPS_UUID';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'FLIR';
 
-    protected $g0 = 'MakerNotes';
+    protected $g0 = 'mixed';
 
     protected $g1 = 'FLIR';
 
     protected $g2 = 'Location';
 
-    protected $Type = 'float';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 
     protected $Description = 'GPS Longitude';
 
-    protected $flag_Permanent = true;
+    protected $flag_Permanent = 'mixed';
 
 }

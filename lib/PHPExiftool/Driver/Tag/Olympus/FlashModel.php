@@ -83,6 +83,14 @@ class FlashModel extends AbstractTag
             'Id' => 11,
             'Label' => 'FL-600R',
         ),
+        13 => array(
+            'Id' => 13,
+            'Label' => 'FL-LM3',
+        ),
+        15 => array(
+            'Id' => 15,
+            'Label' => 'FL-900R',
+        ),
     );
 
 }

@@ -47,8 +47,8 @@ class Pitch extends AbstractTag
             'Id' => 0,
             'Label' => 'High',
         ),
-        64 => array(
-            'Id' => 64,
+        1 => array(
+            'Id' => 1,
             'Label' => 'Low',
         ),
     );

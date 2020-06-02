@@ -507,17 +507,41 @@ class PictureMode extends AbstractTag
             'Id' => '18 22',
             'Label' => 'Auto Program (Shallow DOF)',
         ),
+        '19 0' => array(
+            'Id' => '19 0',
+            'Label' => 'Astrotracer',
+        ),
         '20 22' => array(
             'Id' => '20 22',
             'Label' => 'Blur Control',
         ),
+        '249 0' => array(
+            'Id' => '249 0',
+            'Label' => 'Movie (TAv)',
+        ),
+        '250 0' => array(
+            'Id' => '250 0',
+            'Label' => 'Movie (TAv, Auto Aperture)',
+        ),
+        '251 0' => array(
+            'Id' => '251 0',
+            'Label' => 'Movie (Manual)',
+        ),
+        '252 0' => array(
+            'Id' => '252 0',
+            'Label' => 'Movie (Manual, Auto Aperture)',
+        ),
+        '253 0' => array(
+            'Id' => '253 0',
+            'Label' => 'Movie (Av)',
+        ),
         '254 0' => array(
             'Id' => '254 0',
-            'Label' => 'Video',
+            'Label' => 'Movie (Av, Auto Aperture)',
         ),
         '255 0' => array(
             'Id' => '255 0',
-            'Label' => 'Video (Auto Aperture)',
+            'Label' => 'Movie (P, Auto Aperture)',
         ),
         '255 4' => array(
             'Id' => '255 4',

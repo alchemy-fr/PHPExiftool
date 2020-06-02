@@ -24,7 +24,7 @@ class Name extends AbstractTag
 
     protected $Name = 'Name';
 
-    protected $FullName = 'mixed';
+    protected $FullName = 'QuickTime::iTunesInfo';
 
     protected $GroupName = 'QuickTime';
 
@@ -32,7 +32,7 @@ class Name extends AbstractTag
 
     protected $g1 = 'QuickTime';
 
-    protected $g2 = 'mixed';
+    protected $g2 = 'Audio';
 
     protected $Type = '?';
 

@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class FlashType extends AbstractTag
 {
 
-    protected $Id = 'FlashType';
+    protected $Id = 'Canon::FlashType';
 
     protected $Name = 'FlashType';
 

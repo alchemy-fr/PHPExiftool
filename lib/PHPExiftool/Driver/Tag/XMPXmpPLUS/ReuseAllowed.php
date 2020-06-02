@@ -40,4 +40,6 @@ class ReuseAllowed extends AbstractTag
 
     protected $Description = 'Reuse Allowed';
 
+    protected $flag_Avoid = true;
+
 }

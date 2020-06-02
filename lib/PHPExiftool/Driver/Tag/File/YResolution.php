@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class YResolution extends AbstractTag
 {
 
-    protected $Id = 'YResolution';
+    protected $Id = 'mixed';
 
     protected $Name = 'YResolution';
 
-    protected $FullName = 'Extra';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'File';
 
@@ -34,7 +34,7 @@ class YResolution extends AbstractTag
 
     protected $g2 = 'Image';
 
-    protected $Type = '?';
+    protected $Type = 'mixed';
 
     protected $Writable = false;
 

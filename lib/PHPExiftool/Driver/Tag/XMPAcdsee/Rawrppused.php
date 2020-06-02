@@ -40,4 +40,6 @@ class Rawrppused extends AbstractTag
 
     protected $Description = 'Rawrppused';
 
+    protected $flag_Avoid = true;
+
 }

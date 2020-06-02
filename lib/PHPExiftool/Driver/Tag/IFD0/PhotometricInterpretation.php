@@ -95,6 +95,10 @@ class PhotometricInterpretation extends AbstractTag
             'Id' => 32845,
             'Label' => 'Pixar LogLuv',
         ),
+        32892 => array(
+            'Id' => 32892,
+            'Label' => 'Sequential Color Filter',
+        ),
         34892 => array(
             'Id' => 34892,
             'Label' => 'Linear Raw',

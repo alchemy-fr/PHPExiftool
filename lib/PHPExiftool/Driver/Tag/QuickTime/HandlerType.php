@@ -47,9 +47,17 @@ class HandlerType extends AbstractTag
             'Id' => 'alis',
             'Label' => 'Alias Data',
         ),
+        'camm' => array(
+            'Id' => 'camm',
+            'Label' => 'Camera Metadata',
+        ),
         'crsm' => array(
             'Id' => 'crsm',
             'Label' => 'Clock Reference',
+        ),
+        'data' => array(
+            'Id' => 'data',
+            'Label' => 'Data',
         ),
         'hint' => array(
             'Id' => 'hint',
@@ -91,9 +99,21 @@ class HandlerType extends AbstractTag
             'Id' => 'odsm',
             'Label' => 'Object Descriptor',
         ),
+        'pict' => array(
+            'Id' => 'pict',
+            'Label' => 'Picture',
+        ),
         'priv' => array(
             'Id' => 'priv',
             'Label' => 'Private',
+        ),
+        'psmd' => array(
+            'Id' => 'psmd',
+            'Label' => 'Panasonic Static Metadata',
+        ),
+        'sbtl' => array(
+            'Id' => 'sbtl',
+            'Label' => 'Subtitle',
         ),
         'sdsm' => array(
             'Id' => 'sdsm',

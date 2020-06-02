@@ -24,7 +24,7 @@ class AdultContentWarning extends AbstractTag
 
     protected $Name = 'AdultContentWarning';
 
-    protected $FullName = 'XMP::plus';
+    protected $FullName = 'PLUS::XMP';
 
     protected $GroupName = 'XMP-plus';
 

@@ -40,6 +40,8 @@ class AlternateTitleALang extends AbstractTag
 
     protected $Description = 'Alternate Title A-lang';
 
+    protected $flag_Avoid = true;
+
     protected $flag_List = true;
 
 }

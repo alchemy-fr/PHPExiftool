@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class RedEyeReduction extends AbstractTag
 {
 
-    protected $Id = 'RedEyeReduction';
+    protected $Id = 'Canon::RedEyeReduction';
 
     protected $Name = 'RedEyeReduction';
 

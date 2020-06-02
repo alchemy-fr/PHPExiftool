@@ -20,11 +20,11 @@ use PHPExiftool\Driver\AbstractTag;
 class Text extends AbstractTag
 {
 
-    protected $Id = 'text';
+    protected $Id = 'mixed';
 
     protected $Name = 'Text';
 
-    protected $FullName = 'QuickTime::GenMediaHeader';
+    protected $FullName = 'mixed';
 
     protected $GroupName = 'QuickTime';
 
@@ -32,7 +32,7 @@ class Text extends AbstractTag
 
     protected $g1 = 'QuickTime';
 
-    protected $g2 = 'Other';
+    protected $g2 = 'mixed';
 
     protected $Type = '?';
 
@@ -41,5 +41,7 @@ class Text extends AbstractTag
     protected $Description = 'Text';
 
     protected $flag_Binary = true;
+
+    protected $local_g2 = 'mixed';
 
 }

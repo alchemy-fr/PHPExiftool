@@ -223,9 +223,17 @@ class MajorBrand extends AbstractTag
             'Id' => 'avc1',
             'Label' => 'MP4 Base w/ AVC ext [ISO 14496-12:2005]',
         ),
+        'avif' => array(
+            'Id' => 'avif',
+            'Label' => 'AV1 Image File Format (.AVIF)',
+        ),
         'caqv' => array(
             'Id' => 'caqv',
             'Label' => 'Casio Digital Camera',
+        ),
+        'crx ' => array(
+            'Id' => 'crx ',
+            'Label' => 'Canon Raw (.CRX)',
         ),
         'da0a' => array(
             'Id' => 'da0a',
@@ -303,6 +311,14 @@ class MajorBrand extends AbstractTag
             'Id' => 'dvt1',
             'Label' => 'DVB (.DVB) over MPEG-2 Transport Stream',
         ),
+        'heic' => array(
+            'Id' => 'heic',
+            'Label' => 'High Efficiency Image Format HEVC still image (.HEIC)',
+        ),
+        'hevc' => array(
+            'Id' => 'hevc',
+            'Label' => 'High Efficiency Image Format HEVC sequence (.HEICS)',
+        ),
         'isc2' => array(
             'Id' => 'isc2',
             'Label' => 'ISMACryp 2.0 Encrypted File',
@@ -322,6 +338,10 @@ class MajorBrand extends AbstractTag
         'jpx ' => array(
             'Id' => 'jpx ',
             'Label' => 'JPEG 2000 with extensions (.JPX) [ISO 15444-2]',
+        ),
+        'mif1' => array(
+            'Id' => 'mif1',
+            'Label' => 'High Efficiency Image Format still image (.HEIF)',
         ),
         'mj2s' => array(
             'Id' => 'mj2s',
@@ -354,6 +374,10 @@ class MajorBrand extends AbstractTag
         'mqt ' => array(
             'Id' => 'mqt ',
             'Label' => 'Sony / Mobile QuickTime (.MQV) US Patent 7,477,830 (Sony Corp)',
+        ),
+        'msf1' => array(
+            'Id' => 'msf1',
+            'Label' => 'High Efficiency Image Format sequence (.HEIFS)',
         ),
         'odcf' => array(
             'Id' => 'odcf',

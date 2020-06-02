@@ -42,6 +42,8 @@ class JpgFromRawLength extends AbstractTag
 
     protected $local_g1 = 'SubIFD';
 
+    protected $flag_Permanent = true;
+
     protected $flag_Protected = true;
 
     protected $Index = 5;

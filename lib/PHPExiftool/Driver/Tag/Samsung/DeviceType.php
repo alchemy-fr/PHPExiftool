@@ -40,6 +40,8 @@ class DeviceType extends AbstractTag
 
     protected $Description = 'Device Type';
 
+    protected $local_g2 = 'Camera';
+
     protected $flag_Permanent = true;
 
     protected $Values = array(

@@ -46,15 +46,15 @@ class WhiteBalance extends AbstractTag
             'Label' => 'Auto',
         ),
         1 => array(
-            'Id' => 32,
+            'Id' => 1,
             'Label' => 'Hold',
         ),
         2 => array(
-            'Id' => 64,
+            'Id' => 2,
             'Label' => '1-Push',
         ),
         3 => array(
-            'Id' => 96,
+            'Id' => 3,
             'Label' => 'Daylight',
         ),
         4 => array(

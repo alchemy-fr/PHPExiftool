@@ -47,16 +47,16 @@ class LiveViewAFAreaMode extends AbstractTag
             'Id' => 0,
             'Label' => 'Face-Priority',
         ),
-        32 => array(
-            'Id' => 32,
+        1 => array(
+            'Id' => 1,
             'Label' => 'NormalArea',
         ),
-        64 => array(
-            'Id' => 64,
+        2 => array(
+            'Id' => 2,
             'Label' => 'WideArea',
         ),
-        96 => array(
-            'Id' => 96,
+        3 => array(
+            'Id' => 3,
             'Label' => 'SubjectTracking',
         ),
     );

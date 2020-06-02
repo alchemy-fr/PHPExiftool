@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class GreenHSL extends AbstractTag
 {
 
-    protected $Id = 133394;
+    protected $Id = 133395;
 
     protected $Name = 'GreenHSL';
 

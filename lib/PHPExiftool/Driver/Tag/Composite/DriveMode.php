@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class DriveMode extends AbstractTag
 {
 
-    protected $Id = 'DriveMode';
+    protected $Id = 'Canon::DriveMode';
 
     protected $Name = 'DriveMode';
 

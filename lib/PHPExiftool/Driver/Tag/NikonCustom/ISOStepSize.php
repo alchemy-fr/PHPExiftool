@@ -48,47 +48,11 @@ class ISOStepSize extends AbstractTag
             'Label' => '1/3 EV',
         ),
         1 => array(
-            'Id' => 64,
+            'Id' => 1,
             'Label' => '1/2 EV',
         ),
         2 => array(
-            'Id' => 128,
-            'Label' => '1 EV',
-        ),
-        3 => array(
-            'Id' => 0,
-            'Label' => '1/3 EV',
-        ),
-        4 => array(
-            'Id' => 16,
-            'Label' => '1/2 EV',
-        ),
-        5 => array(
-            'Id' => 32,
-            'Label' => '1 EV',
-        ),
-        6 => array(
-            'Id' => 0,
-            'Label' => '1/3 EV',
-        ),
-        7 => array(
-            'Id' => 64,
-            'Label' => '1/2 EV',
-        ),
-        8 => array(
-            'Id' => 128,
-            'Label' => '1 EV',
-        ),
-        9 => array(
-            'Id' => 0,
-            'Label' => '1/3 EV',
-        ),
-        10 => array(
-            'Id' => 16,
-            'Label' => '1/2 EV',
-        ),
-        11 => array(
-            'Id' => 32,
+            'Id' => 2,
             'Label' => '1 EV',
         ),
     );

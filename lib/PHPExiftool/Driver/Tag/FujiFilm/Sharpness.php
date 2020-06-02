@@ -43,33 +43,41 @@ class Sharpness extends AbstractTag
     protected $flag_Permanent = true;
 
     protected $Values = array(
+        0 => array(
+            'Id' => 0,
+            'Label' => '-4 (softest)',
+        ),
         1 => array(
             'Id' => 1,
-            'Label' => 'Soft',
+            'Label' => '-3 (very soft)',
         ),
         2 => array(
             'Id' => 2,
-            'Label' => 'Soft2',
+            'Label' => '-2 (soft)',
         ),
         3 => array(
             'Id' => 3,
-            'Label' => 'Normal',
+            'Label' => '0 (normal)',
         ),
         4 => array(
             'Id' => 4,
-            'Label' => 'Hard',
+            'Label' => '+2 (hard)',
         ),
         5 => array(
             'Id' => 5,
-            'Label' => 'Hard2',
+            'Label' => '+3 (very hard)',
+        ),
+        6 => array(
+            'Id' => 6,
+            'Label' => '+4 (hardest)',
         ),
         130 => array(
             'Id' => 130,
-            'Label' => 'Medium Soft',
+            'Label' => '-1 (medium soft)',
         ),
         132 => array(
             'Id' => 132,
-            'Label' => 'Medium Hard',
+            'Label' => '+1 (medium hard)',
         ),
         32768 => array(
             'Id' => 32768,

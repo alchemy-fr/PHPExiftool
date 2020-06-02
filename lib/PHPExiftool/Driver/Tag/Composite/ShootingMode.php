@@ -20,7 +20,7 @@ use PHPExiftool\Driver\AbstractTag;
 class ShootingMode extends AbstractTag
 {
 
-    protected $Id = 'ShootingMode';
+    protected $Id = 'Canon::ShootingMode';
 
     protected $Name = 'ShootingMode';
 

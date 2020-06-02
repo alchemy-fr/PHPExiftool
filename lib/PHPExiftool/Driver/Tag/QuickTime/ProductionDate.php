@@ -36,10 +36,12 @@ class ProductionDate extends AbstractTag
 
     protected $Type = '?';
 
-    protected $Writable = false;
+    protected $Writable = true;
 
     protected $Description = 'Production Date';
 
     protected $local_g2 = 'Time';
+
+    protected $flag_Permanent = true;
 
 }

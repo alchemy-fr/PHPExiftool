@@ -77,7 +77,7 @@ class RawDevelopmentProcess extends AbstractTag
         ),
         10 => array(
             'Id' => 10,
-            'Label' => '10 (K-01,K-30)',
+            'Label' => '10 (K-01,K-30,K-50,K-500)',
         ),
         11 => array(
             'Id' => 11,
@@ -85,7 +85,7 @@ class RawDevelopmentProcess extends AbstractTag
         ),
         12 => array(
             'Id' => 12,
-            'Label' => '12 (MX-1)',
+            'Label' => '12 (MX-1,Q-S1,Q7)',
         ),
         13 => array(
             'Id' => 13,
@@ -98,6 +98,22 @@ class RawDevelopmentProcess extends AbstractTag
         15 => array(
             'Id' => 15,
             'Label' => '15 (K-S1,K-S2)',
+        ),
+        16 => array(
+            'Id' => 16,
+            'Label' => '16 (K-1)',
+        ),
+        17 => array(
+            'Id' => 17,
+            'Label' => '17 (K-70)',
+        ),
+        18 => array(
+            'Id' => 18,
+            'Label' => '18 (KP)',
+        ),
+        19 => array(
+            'Id' => 19,
+            'Label' => '19 (GR III)',
         ),
     );
 

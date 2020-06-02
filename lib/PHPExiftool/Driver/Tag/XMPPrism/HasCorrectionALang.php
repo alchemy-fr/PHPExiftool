@@ -40,4 +40,6 @@ class HasCorrectionALang extends AbstractTag
 
     protected $Description = 'Has Correction A-lang';
 
+    protected $flag_Avoid = true;
+
 }
