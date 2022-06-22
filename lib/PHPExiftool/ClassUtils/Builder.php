@@ -32,6 +32,8 @@ class Builder
  * file that was distributed with this source code.
  */';
     protected int $xmlLine = 0;
+    protected array $duplicateXmlLines = [];
+    protected array $conflictingXmlLines = [];
     protected string $namespace = "";
     protected string $classname = "";
     protected array $properties = [];
@@ -68,6 +70,26 @@ class Builder
         $this->classAnnotations = $classAnnotations;
 
         return $this;
+    }
+
+    public function addDuplicate(int $xmlLine, bool $conflicting)
+    {
+        if($conflicting) {
+            $this->conflictingXmlLines[] = $xmlLine;
+        }
+        else {
+            $this->duplicateXmlLines[] = $xmlLine;
+        }
+    }
+
+    public function getDuplicatesXmlLines(): array
+    {
+        return $this->duplicateXmlLines;
+    }
+
+    public function getConflictingXmlLines(): array
+    {
+        return $this->conflictingXmlLines;
     }
 
     public function getXmlLine(): int
@@ -122,6 +144,10 @@ class Builder
 
     public function generateContent()
     {
+        if($this->xmlLine == 147145) {
+            echo "whazaa";
+        }
+
         $content = "<?php\n\n<license>\n\nnamespace <namespace>;\n\n";
 
         foreach ($this->uses as $use) {
@@ -130,6 +156,17 @@ class Builder
         if ($this->uses) {
             $content .= "\n";
         }
+
+        // add debug infos related to xml dump
+        $content .= "/**\n * xml line: " . $this->xmlLine . "\n";
+        if(!empty($this->duplicateXmlLines)) {
+            $content .= " * Duplicates: [" . join(', ', $this->duplicateXmlLines) . "]\n";
+            if(!empty($this->conflictingXmlLines)) {
+                $content .= " * Conflictings: [" . join(', ', $this->conflictingXmlLines) . "]\n";
+            }
+        }
+        $content .= " */\n";
+
 
         if ($this->classAnnotations) {
             $content .= "/**\n";

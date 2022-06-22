@@ -338,6 +338,7 @@ class ClassesBuilder extends Command
 
             /** @var Builder $existingTag */
             $existingTag = $this->classes[$classpath];
+            $existingTag->addDuplicate($xmlLine, false);    // duplicate
 
             // update infos of previous tag if the new one is better
             if($existingTag->getProperty('PHPType') === null && $properties['PHPType'] !== null) {
@@ -348,6 +349,7 @@ class ClassesBuilder extends Command
 
             if($properties['PHPType'] !== null && $properties['PHPType'] !== $existingTag->getProperty('PHPType')) {
                 // type conflict
+                $existingTag->addDuplicate($xmlLine, true); // conflicting
                 $err = sprintf("class \"%s\" already exists", $classpath);
                 $this->output->writeln("");
                 $this->output->writeln($err);
@@ -365,7 +367,7 @@ class ClassesBuilder extends Command
             }
 
             //$this->output->writeln($err);
-
+            return;
 
             foreach ($properties as $property => $value) {
                 if ($this->classes[$classpath]->getProperty($property) != $value) {
@@ -585,6 +587,9 @@ class ClassesBuilder extends Command
                 }
 
                 try {
+                    if($tag->getLineNo() == 147145) {
+                        echo "whazaa";
+                    }
                     $this->createTagClass($tag->getLineNo(), $subspace, $classname, $properties);
                 }
                 catch (\Exception $e) {
