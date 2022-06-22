@@ -145,10 +145,6 @@ class Builder
 
     public function generateContent()
     {
-        if($this->xmlLine == 147145) {
-            echo "whazaa";
-        }
-
         $content = "<?php\n\n<license>\n\nnamespace <namespace>;\n\n";
 
         foreach ($this->uses as $use) {

@@ -488,10 +488,6 @@ class ClassesBuilder extends Command
                     $g_name = $tag_group_name;
                 }
 
-                if($g_name==="JPEG" && $tag_crawler->attr('name')==="PreviewImage") {
-                    echo "whazaa";
-                }
-
                 if ($tag_crawler->attr('g2')) {
                     $extra['local_g2'] = $tag_crawler->attr('g2');
                 }
@@ -500,7 +496,6 @@ class ClassesBuilder extends Command
 
                 if (in_array('Avoid', $flags)) {
                     $extra['flag_Avoid'] = 'true';
-//                    continue; // !!!
                 }
                 if (in_array('Binary', $flags)) {
                     $extra['flag_Binary'] = 'true';
@@ -587,14 +582,10 @@ class ClassesBuilder extends Command
                 }
 
                 try {
-                    if($tag->getLineNo() == 147145) {
-                        echo "whazaa";
-                    }
                     $this->createTagClass($tag->getLineNo(), $subspace, $classname, $properties);
                 }
                 catch (\Exception $e) {
-//                    $this->output->writeln("");
-//                    $this->output->writeln(sprintf("%s [xml:%s]", $e->getMessage(), $tag->getLineNo()));
+                    // no-op
                 }
                 $progress->advance();
             }
