@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Double extends AbstractType
 {
 
-    protected $ExiftoolName = 'double';
+    protected  $ExiftoolName = 'double';
 
-    protected $PHPMap = 'float';
+    protected  $PHPMap = 'float';
 
 }

@@ -10,34 +10,39 @@
 
 namespace PHPExiftool\Test;
 
+use Exception;
 use Monolog\Logger;
 use Monolog\Handler\NullHandler;
+use PHPExiftool\Exception\RuntimeException;
 use PHPExiftool\Exiftool;
+use PHPExiftool;
 
 class ExiftoolTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
      * @covers PHPExiftool\Exiftool::executeCommand
+     * @throws Exception
      */
     public function testExecuteCommand()
     {
         $exiftool = new Exiftool($this->getlogger());
-        $this->assertRegExp('/\d+\.\d+/', $exiftool->executeCommand('-ver'));
+        $this->assertRegExp('/\d+\.\d+/', $exiftool->executeCommand(['-ver']));
     }
 
     /**
      * @covers PHPExiftool\Exiftool::executeCommand
-     * @covers \PHPExiftool\Exception\RuntimeException
-     * @expectedException \PHPExiftool\Exception\RuntimeException
+     * @covers PHPExiftool\Exception\RuntimeException
+     * @throws Exception
      */
     public function testExecuteCommandFailed()
     {
+        $this->expectException(RuntimeException::class);
         $exiftool = new Exiftool($this->getlogger());
-        $exiftool->executeCommand('-prout');
+        $exiftool->executeCommand(['-prout']);
     }
 
-    private function getlogger()
+    private function getlogger(): Logger
     {
         $logger = new Logger('Tests');
         $logger->pushHandler(new NullHandler());

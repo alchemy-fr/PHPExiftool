@@ -13,33 +13,33 @@ namespace PHPExiftool\Driver\Value;
 
 class Mono implements ValueInterface
 {
-    protected $value;
+    protected string $value;
 
     public function __construct($value)
     {
         $this->set($value);
     }
 
-    public function getType()
+    public function getType(): string
     {
         return self::TYPE_MONO;
     }
 
-    public function set($value)
+    public function set($value): Mono
     {
         $this->value = (string) $value;
 
         return $this;
     }
 
-    public function asString()
+    public function asString(): string
     {
         return $this->value;
     }
 
-    public function asArray()
+    public function asArray(): array
     {
-        return (array) $this->value;
+        return [$this->value];
     }
 
     public function __toString()

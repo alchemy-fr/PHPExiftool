@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Digits extends AbstractType
 {
 
-    protected $ExiftoolName = 'digits';
+    protected  $ExiftoolName = 'digits';
 
-    protected $PHPMap = 'int';
+    protected  $PHPMap = 'int';
 
 }

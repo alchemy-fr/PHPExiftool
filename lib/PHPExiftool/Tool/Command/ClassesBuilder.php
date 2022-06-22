@@ -11,6 +11,9 @@
 
 namespace PHPExiftool\Tool\Command;
 
+use DOMDocument;
+use DOMElement;
+use Exception;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -18,12 +21,13 @@ use PHPExiftool\ClassUtils\Builder;
 use PHPExiftool\ClassUtils\TagProviderBuilder;
 use PHPExiftool\Exiftool;
 use PHPExiftool\InformationDumper;
+use ReflectionClass;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DomCrawler\Crawler;
+use PHPExiftool\Driver\AbstractTag;
 
 /**
  *
@@ -35,41 +39,39 @@ class ClassesBuilder extends Command
     /**
      * Output interface for Command
      *
-     * @var ConsoleOutput
+     * @var OutputInterface
      */
-    protected $output;
+    protected OutputInterface $output;
 
     /**
      *
      * @var array
      */
-    protected $classes = array();
+    protected array $classes = [];
 
     /**
      *
      * @var array
      */
-    protected $types = array();
+    protected array $types = [];
+    private int $currentXmlLine;
 
-    /**
-     * @see Console\Command\Command
-     */
     protected function configure()
     {
         $this
             ->setName('classes-builder')
             ->setDescription('Build Tags classes from exiftool documentation.')
             ->addOption('with-mwg', '', null, 'Include MWG tags')
-            ->addOption('write', 'w',   null, 'Write classes on disk')
-            ->addOption('force', 'f',   null, 'Force classes write whenever files already exists');
+            ->addOption('write', 'w', null, 'Write classes on disk')
+            ->addOption('force', 'f', null, 'Force classes write whenever files already exists');
 
         return $this;
     }
 
     /**
-     * @see Console\Command\Command
+     * @throws Exception
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $start = microtime(true);
 
@@ -86,8 +88,8 @@ class ClassesBuilder extends Command
 
         $dumper = new InformationDumper(new Exiftool($logger));
 
-        $options = array();
-        if($input->getOption('with-mwg')) {
+        $options = [];
+        if ($input->getOption('with-mwg')) {
             $options[] = InformationDumper::LISTOPTION_MWG;
         }
 
@@ -99,11 +101,12 @@ class ClassesBuilder extends Command
 
         $this->extractDump($dump, $output);
 
-        if ( ! $input->getOption('write')) {
+        if (!$input->getOption('write')) {
             $this->output->writeln(
                 'These classes were not written. Use --write to write on disk'
             );
-        } else {
+        }
+        else {
             $this->output->writeln('Erasing previous files... ');
 
             system('rm -R ' . __DIR__ . '/../../Driver/Tag/*');
@@ -119,18 +122,22 @@ class ClassesBuilder extends Command
                 , count($this->classes), (microtime(true) - $start), memory_get_peak_usage() >> 20
             )
         );
+
+        return 0;
     }
 
     /**
      *
+     * @param bool $force
      * @return ClassesBuilder
+     * @throws Exception
      */
-    protected function writeClasses($force = false)
+    protected function writeClasses(bool $force = false): ClassesBuilder
     {
         $n = 0;
 
-        $classesBuffer = new TagProviderBuilder('', 'TagProvider', array(), '\\Pimple');
-        $buffer = array();
+        $classesBuffer = new TagProviderBuilder(0, '', 'TagProvider', [], '\\Pimple');
+        $buffer = [];
 
         foreach ($this->classes as $class) {
             try {
@@ -139,15 +146,16 @@ class ClassesBuilder extends Command
 
                 if (strpos($class->getNamespace(), 'PHPExiftool\\Driver\\Tag') === 0) {
 
-                    if ( ! isset($buffer[$class->getProperty('GroupName')])) {
-                        $buffer[$class->getProperty('GroupName')] = array();
+                    if (!isset($buffer[$class->getProperty('GroupName')])) {
+                        $buffer[$class->getProperty('GroupName')] = [];
                     }
 
                     $buffer[$class->getProperty('GroupName')][$class->getProperty('Name')] = $class->getNamespace() . '\\' . $class->getClassname();
                 }
 
-                $this->output->write(sprintf("\rwriting class #%5d", $n ++ ));
-            } catch (\Exception $e) {
+                $this->output->write(sprintf("\rwriting class #%5d", $n++));
+            }
+            catch (Exception $e) {
                 $this->output->writeln(
                     sprintf("\n<error>Error while writing class %s</error>", $class->getPathfile())
                 );
@@ -156,18 +164,22 @@ class ClassesBuilder extends Command
 
         $classesBuffer->setClasses($buffer);
 
-        $classesBuffer->write(true);
+        // $classesBuffer->write(true);
 
         $this->output->writeln('');
 
         return $this;
     }
 
+    /**
+     * @throws Exception
+     */
     protected function generateTypes()
     {
         foreach ($this->types as $type => $data) {
-            if ($type == '?')
+            if ($type == '?') {
                 $type = 'unknown';
+            }
 
             $classname = self::generateClassname($type);
 
@@ -175,20 +187,19 @@ class ClassesBuilder extends Command
                 continue;
             }
 
-            $properties = array(
+            $properties = [
                 'ExiftoolName' => $data,
                 'PHPMap'       => $this->getTypeMap($type),
-            );
+            ];
 
             $classpath = sprintf('%s', $classname);
 
-            $this->classes[$classpath] = new Builder('Type', $classname, $properties, 'AbstractType', array('\\PHPExiftool\\Driver\\AbstractType'));
+            $this->classes[$classpath] = new Builder(0, 'Type', $classname, $properties, 'AbstractType', ['\\PHPExiftool\\Driver\\AbstractType']);
         }
 
-        return;
     }
 
-    protected function getTypeMap($type)
+    protected function getTypeMap(string $type): ?string
     {
         /**
          * Some of these types are described here:
@@ -216,13 +227,13 @@ class ClassesBuilder extends Command
             case 'fixed32u':
             case 'var_int16u':
 
-            # Apple data structures in PICT images
+                # Apple data structures in PICT images
             case 'Int8uText':
             case 'Int8u2Text':
             case 'Int16Data':
             case 'Int32uData':
 
-            # Source unknown ...
+                # Source unknown ...
             case 'var_int8u':
             case 'rational':
             case 'integer':
@@ -231,20 +242,20 @@ class ClassesBuilder extends Command
             case 'signed':
             case 'unsigned':
                 return 'int';
-                break;
+
 
             # Formats defined in the wiki
             case 'float':
             case 'double':
             case 'extended':
                 return 'float';
-                break;
+
 
             # Formats defined in the wiki
             case 'undef':
             case 'binary':
 
-            # Source unknown ...
+                # Source unknown ...
             case 'var_ue7':
             case 'struct':
             case 'var_undef':
@@ -252,8 +263,8 @@ class ClassesBuilder extends Command
             case 'null':
             case 'unknown':
             case 'Unknown':
-                return 'binary';
-                break;
+                return null;
+
 
             # Formats defined in the wiki
             case 'string':
@@ -263,7 +274,7 @@ class ClassesBuilder extends Command
             case 'var_ustr32':
             case 'unicode':
 
-            # Apple data structures in PICT images
+                # Apple data structures in PICT images
             case 'Arc':
             case 'BitsRect#': # version-depended
             case 'BitsRgn#': # version-depended
@@ -280,31 +291,36 @@ class ClassesBuilder extends Command
             case 'Rgn':
             case 'ShortLine':
 
-            # Source unknown ...
+                # Source unknown ...
             case 'lang-alt':
             case 'resize':
             case 'utf8':
+            case '2':   // ???
                 return 'string';
-                break;
+
 
             # Source unknown ...
             case 'date':
                 return 'date';
-                break;
+
 
             # Source unknown ...
             case 'boolean':
                 return 'boolean';
-                break;
+
+
             default:
-                $this->output->writeln(sprintf("No type found for %s", $type));
+                $this->output->writeln(sprintf("No type found for %s @%s", $type, $this->currentXmlLine));
                 break;
         }
 
-        return;
+        return '?';
     }
 
-    protected function createTagClass($namespace, $classname, array $properties)
+    /**
+     * @throws Exception
+     */
+    protected function createTagClass(int $xmlLine, string $namespace, string $classname, array $properties)
     {
         if ($classname == 'Reserved') {
             return;
@@ -319,45 +335,106 @@ class ClassesBuilder extends Command
         $classpath = sprintf('%s\\%s', $namespace, $classname);
 
         if (isset($this->classes[$classpath])) {
+
+            /** @var Builder $existingTag */
+            $existingTag = $this->classes[$classpath];
+
+            // update infos of previous tag if the new one is better
+            if($existingTag->getProperty('PHPType') === null && $properties['PHPType'] !== null) {
+                // the new tag has better type info, use it
+                $existingTag->setProperty('Type', $properties['Type']);
+                $existingTag->setProperty('PHPType', $properties['PHPType']);
+            }
+
+            if($properties['PHPType'] !== null && $properties['PHPType'] !== $existingTag->getProperty('PHPType')) {
+                // type conflict
+                $err = sprintf("class \"%s\" already exists", $classpath);
+                $this->output->writeln("");
+                $this->output->writeln($err);
+
+                $err = sprintf("- incompatible types previous @%s: '%s' (php %s) / new @%s: '%s' (php %s)",
+                    $existingTag->getXmlLine(),
+                    $existingTag->getProperty('Type'),
+                    $existingTag->getProperty('PHPType'),
+                    $xmlLine,
+                    $properties['Type'],
+                    $properties['PHPType']
+                );
+                $this->output->writeln($err);
+                throw new \LogicException($err);
+            }
+
+            //$this->output->writeln($err);
+
+
             foreach ($properties as $property => $value) {
                 if ($this->classes[$classpath]->getProperty($property) != $value) {
-                    if (in_array($property, array('Writable', 'flag_Binary', 'flag_List'))) {
+
+                    $propertyType = AbstractTag::getAttributeType($property);
+                    $propertyTypeAsStr = (string)$propertyType;
+                    if($propertyTypeAsStr === 'bool') {
+                    // if (in_array($property, ['Writable', 'flag_Binary', 'flag_List'])) {
 
                         $this->classes[$classpath]->setProperty($property, 'false');
-                    } elseif ($property === 'Values') {
+                    }
+                    elseif ($property === 'Values') {
 
-                        $new_value = array();
+                        $new_value = [];
 
-                        if ( ! is_array($this->classes[$classpath]->getProperty($property))) {
+                        if (!is_array($this->classes[$classpath]->getProperty($property))) {
                             if (is_array($value)) {
                                 $new_value = $value;
                             }
-                        } else {
+                        }
+                        else {
                             if (is_array($value) && $this->classes[$classpath]->getProperty($property) != $value) {
                                 $new_value = array_merge($this->classes[$classpath]->getProperty($property), $value);
-                            } else {
+                            }
+                            else {
                                 $new_value = $this->classes[$classpath]->getProperty($property);
                             }
                         }
 
                         $this->classes[$classpath]->setProperty($property, $new_value);
-                    } else {
-                        $this->classes[$classpath]->setProperty($property, 'mixed');
+                    }
+                    else {
+                        if(!is_null($propertyType)) {
+                            $this->classes[$classpath]->setProperty($property, $propertyTypeAsStr);
+                        }
+                        else{
+                            $this->classes[$classpath]->setProperty($property, 'mixed');
+                        }
                     }
                 }
             }
-        } else {
-            $this->classes[$classpath] = new Builder($namespace, $classname, $properties, 'AbstractTag', array('JMS\\Serializer\\Annotation\\ExclusionPolicy', '\\PHPExiftool\\Driver\\AbstractTag'), array('@ExclusionPolicy("all")'));
+        }
+        else {
+            $this->classes[$classpath] = new Builder(
+                $xmlLine,
+                $namespace,
+                $classname,
+                $properties,
+                'AbstractTag',
+                [
+                    'JMS\\Serializer\\Annotation\\ExclusionPolicy',
+                    '\\PHPExiftool\\Driver\\AbstractTag'
+                ],
+                [
+                    '@ExclusionPolicy("all")'
+                ]
+            );
         }
 
-        return;
     }
 
-    protected function extractDump($dump, OutputInterface $output)
+    /**
+     * @throws Exception
+     */
+    protected function extractDump(DOMDocument $dump, OutputInterface $output)
     {
 
         $crawler = new Crawler();
-        $crawler->addContent($dump);
+        $crawler->addDocument($dump);
 
         $tag_count = null;
         if ($output->getVerbosity() >= OutputInterface::VERBOSITY_QUIET) {
@@ -369,7 +446,8 @@ class ClassesBuilder extends Command
         if (!$this->getHelperSet()->has('progress')) {
             $progress = new ProgressBar($output);
             $progress->start($tag_count);
-        } else {
+        }
+        else {
             $progress = $this->getHelper('progress');
             $progress->start($output, $tag_count);
         }
@@ -386,22 +464,30 @@ class ClassesBuilder extends Command
 
             $tags = $table_crawler->filter('tag');
 
+            /** @var DOMElement $tag */
             foreach ($tags as $tag) {
+
+                $this->currentXmlLine = $tag->getLineNo();
 
                 $tag_crawler = new Crawler();
                 $tag_crawler->addNode($tag);
 
-                $extra = array();
+                $extra = [];
 
                 if ($tag_crawler->attr('g0')) {
                     $extra['local_g0'] = $tag_crawler->attr('g0');
                 }
 
-                if ($tag_crawler->attr('g1') && ! in_array($tag_crawler->attr('g1'), array('MakerNotes', 'Chapter#'))) {
+                if ($tag_crawler->attr('g1') && !in_array($tag_crawler->attr('g1'), ['MakerNotes', 'Chapter#'])) {
                     $g_name = $tag_crawler->attr('g1');
                     $extra['local_g1'] = $tag_crawler->attr('g1');
-                } else {
+                }
+                else {
                     $g_name = $tag_group_name;
+                }
+
+                if($g_name==="JPEG" && $tag_crawler->attr('name')==="PreviewImage") {
+                    echo "whazaa";
                 }
 
                 if ($tag_crawler->attr('g2')) {
@@ -412,6 +498,7 @@ class ClassesBuilder extends Command
 
                 if (in_array('Avoid', $flags)) {
                     $extra['flag_Avoid'] = 'true';
+//                    continue; // !!!
                 }
                 if (in_array('Binary', $flags)) {
                     $extra['flag_Binary'] = 'true';
@@ -424,6 +511,9 @@ class ClassesBuilder extends Command
                 }
                 if (in_array('Unsafe', $flags)) {
                     $extra['flag_Unsafe'] = 'true';
+                }
+                if (in_array('Unknown', $flags)) {
+                    $extra['flag_Unkown'] = 'true';
                 }
                 if (in_array('List', $flags)) {
                     $extra['flag_List'] = 'true';
@@ -442,13 +532,14 @@ class ClassesBuilder extends Command
                 }
 
                 $subspace = str_replace('::', '\\', $g_name);
+                // $subspace = str_replace('::', '\\', $tag_full_name);
 
                 $tag_name = $tag_crawler->attr('name');
 
                 $classname = self::generateClassname($tag_name);
                 $tag_id = $tag_crawler->attr('id');
 
-                $properties = array_merge(array(
+                $properties = array_merge([
                     'Id'          => $tag_id,
                     'Name'        => $tag_name,
                     'FullName'    => $tag_full_name,
@@ -457,9 +548,10 @@ class ClassesBuilder extends Command
                     'g1'          => $tag_group_name,
                     'g2'          => $tag_g2,
                     'Type'        => $tag_crawler->attr('type'),
+                    'PHPType'     => $this->getTypeMap($tag_crawler->attr('type')),
                     'Writable'    => $tag_crawler->attr('writable'),
                     'Description' => $tag_crawler->filter('desc[lang="en"]')->first()->text(),
-                    ), $extra);
+                ], $extra);
 
                 if ($tag_crawler->attr('count')) {
                     $properties['MaxLength'] = $tag_crawler->attr('count');
@@ -471,8 +563,9 @@ class ClassesBuilder extends Command
                     $properties['Index'] = $tag_crawler->attr('index');
                 }
 
+
                 if (count($tag_crawler->filter('values')) > 0) {
-                    $values = array();
+                    $values = [];
 
                     $values_tag = $tag_crawler->filter('values')->first();
 
@@ -485,13 +578,19 @@ class ClassesBuilder extends Command
                         $Id = $KeyCrawler->attr('id');
                         $Label = $KeyCrawler->filter('val[lang="en"]')->first()->text();
 
-                        $values[$Id] = array('Id'    => $Id, 'Label' => $Label);
+                        $values[$Id] = ['Id' => $Id, 'Label' => $Label];
                     }
 
                     $properties['Values'] = $values;
                 }
 
-                $this->createTagClass($subspace, $classname, $properties);
+                try {
+                    $this->createTagClass($tag->getLineNo(), $subspace, $classname, $properties);
+                }
+                catch (\Exception $e) {
+//                    $this->output->writeln("");
+//                    $this->output->writeln(sprintf("%s [xml:%s]", $e->getMessage(), $tag->getLineNo()));
+                }
                 $progress->advance();
             }
         }
@@ -500,7 +599,7 @@ class ClassesBuilder extends Command
         $this->generateTypes();
     }
 
-    protected static $reservedNames = array(
+    protected static array $reservedNames = [
         'abstract',
         'and',
         'array',
@@ -564,19 +663,18 @@ class ClassesBuilder extends Command
         'while',
         'xor',
         'yield',
-    );
+    ];
 
     /**
      *
-     * @param  type $name
-     * @return type
+     * @param string $name
+     * @return string
      */
-    public static function generateClassname($name)
+    public static function generateClassname(string $name): string
     {
         $values = preg_split('/\\ |-|_|\\#/', ltrim($name, '0123456789'));
 
         foreach ($values as $key => $value) {
-
             $values[$key] = ucfirst($value);
         }
 
@@ -589,7 +687,7 @@ class ClassesBuilder extends Command
         return $retval;
     }
 
-    public static function generateNamespace($namespace)
+    public static function generateNamespace(string $namespace): string
     {
         $values = explode('\\', $namespace);
 

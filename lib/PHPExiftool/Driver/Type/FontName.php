@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class FontName extends AbstractType
 {
 
-    protected $ExiftoolName = 'FontName';
+    protected  $ExiftoolName = 'FontName';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

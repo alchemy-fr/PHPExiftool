@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Unknown extends AbstractType
 {
 
-    protected $ExiftoolName = 'Unknown';
+    protected  $ExiftoolName = 'Unknown';
 
-    protected $PHPMap = 'binary';
+    protected  $PHPMap = '';
 
 }

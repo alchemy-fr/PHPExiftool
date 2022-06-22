@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class VarUe7 extends AbstractType
 {
 
-    protected $ExiftoolName = 'var_ue7';
+    protected  $ExiftoolName = 'var_ue7';
 
-    protected $PHPMap = 'binary';
+    protected  $PHPMap = '';
 
 }

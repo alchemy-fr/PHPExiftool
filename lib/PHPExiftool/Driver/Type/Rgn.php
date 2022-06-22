@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Rgn extends AbstractType
 {
 
-    protected $ExiftoolName = 'Rgn';
+    protected  $ExiftoolName = 'Rgn';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

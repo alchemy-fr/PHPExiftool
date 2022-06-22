@@ -170,15 +170,20 @@ class Writer
         if ( ! file_exists($file_dest)) {
             throw new InvalidArgumentException(sprintf('dest %s does not exists', $file_dest));
         }
-        $command = "-overwrite_original_in_place -tagsFromFile " . escapeshellarg($file_src) . " " . escapeshellarg($file_dest);
+        $command = [
+            '-overwrite_original_in_place',
+            '-tagsFromFile',
+            $file_src,
+            $file_dest
+        ];
         $ret = $this->exiftool->executeCommand($command, $this->timeout);
 
         // exiftool may print (return) a bunch of lines, even for a single command
-        // eg. deleting tags of a file with NO tags may return 2 lines...
+        // e.g. deleting tags of a file with NO tags may return 2 lines...
         // | exiftool -all:all= notags.jpg
         // |     0 image files updated
         // |     1 image files unchanged
-        // ... which is NOT an error
+        // ... which is NOT an error,
         // so it's not easy to decide from the output when something went REALLY wrong
         $n_unchanged = $n_changed = 0;
         foreach(explode("\n", $ret) as $line) {
@@ -208,17 +213,17 @@ class Writer
      * Writes metadatas to the file. If a destination is provided, original file
      * is not modified.
      *
-     * @param string      $file        The input file
-     * @param MetadataBag $metadatas   A bag of metadatas
-     * @param string      $destination The output file
-     * @param array       $resolutionXY  The dpi resolution array(xresolution, yresolution)
+     * @param string $file              The input file
+     * @param MetadataBag $metadatas    A bag of metadatas
+     * @param string|null $destination  The output file
+     * @param array       $resolutionXY The dpi resolution array(xresolution, yresolution)
      *
      * @return int the number "write" operations, or null if exiftool returned nothing we understand
-     *         event for no-op (file unchanged), 1 is returned so the caller does not think the command failed.
+     *         even for no-op (file unchanged), 1 is returned so the caller does not think the command failed.
      *
      * @throws InvalidArgumentException
      */
-    public function write($file, MetadataBag $metadatas, $destination = null, array $resolutionXY = array())
+    public function write(string $file, MetadataBag $metadatas, string $destination = null, array $resolutionXY = array()): ?int
     {
         if ( ! file_exists($file)) {
             throw new InvalidArgumentException(sprintf('%s does not exists', $file));
@@ -232,78 +237,102 @@ class Writer
             }
         }
 
-        $common_args = '-ignoreMinorErrors -preserve -charset UTF8';
+        $common_args = [
+            '-ignoreMinorErrors',
+            '-preserve',
+            '-charset UTF8'
+        ];
 
-        $commands = array();
+        $commands_groups = [];
 
         if ($this->erase) {
             /**
              * if erase is specfied, we MUST start by erasing datas before doing
              * anything else.
              */
-            $commands[] = '-all:all= ' . ($this->eraseProfile ? '' : '--icc_profile:all') ;
+            $commands = ['-all:all='];
+            if(!$this->eraseProfile) {
+                $commands[] = '--icc_profile:all';
+            }
+            $commands_groups[] = $commands;
         }
 
         if(count($resolutionXY) == 2 && is_int(current($resolutionXY)) && is_int(end($resolutionXY)) ){
             reset($resolutionXY);
-            $commands[] = '-xresolution=' . current($resolutionXY) .  ' -yresolution=' . end($resolutionXY);
+            $commands_groups[] = [
+                '-xresolution=' . current($resolutionXY),
+                '-yresolution=' . end($resolutionXY)
+            ];
         }
 
         if(count($metadatas) > 0) {
-            $commands[] = $this->addMetadatasArg($metadatas);
-            $common_args .= ' -codedcharacterset=utf8';
+            $commands_groups[] = $this->addMetadatasArg($metadatas);
+            $common_args[] = '-codedcharacterset=utf8';
         }
 
-        if ('' !== ($syncCommand = $this->getSyncCommand())) {
-            $commands[] = $syncCommand;
-        }
+        $commands_groups[] = $this->getSyncCommand();
 
-        if(count($commands) == 0) {
+        if(count($commands_groups) == 0) {
             // nothing to do...
             if($destination) {
                 // ... but a destination
-                $commands[] = '';   // empty command so exiftool will copy the file for us
+                $commands_groups[] = [];   // empty command so exiftool will copy the file for us
             }
             else {
                 // really nothing to do = 0 ops
-                return 1;       // considered a "unchnanged"
+                return 1;       // considered as "unchanged"
             }
         }
 
         if($destination) {
-            foreach($commands as $i=>$command) {
+            foreach($commands_groups as $i=>$commands) {
                 if($i==0) {
                     // the FIRST command will -o the destination
-                    $commands[0] .= ' ' . $file . ' -o ' . $destination;
+                    $commands_groups[0][] = $file;
+                    $commands_groups[0][] = '-o';
+                    $commands_groups[0][] = $destination;
                 }
                 else {
                     // then the next commands will work on the destination
-                    $commands[$i] .= ' -overwrite_original_in_place ' . $destination;
+                    $commands_groups[$i][] = '-overwrite_original_in_place';
+                    $commands_groups[$i][] = $destination;
                 }
             }
         }
         else {
-            // every command (even a single one) work on the original file
-            $common_args .= ' -overwrite_original_in_place ' . $file;
+            // every command (even a single one) works on the original file
+            $common_args[] = '-overwrite_original_in_place ';
+            $common_args[] = $file;
         }
 
 
-        if(count($commands) > 1) {
+        if(count($commands_groups) > 1) {
             // really need "-common_args" only if many commands are chained
             // nb: the file argument CAN be into -common_args
-            $common_args = '-common_args ' . $common_args;
+            array_unshift($common_args, '-common_args');
         }
 
-        $command = join(" -execute ", $commands) . ' ' . $common_args;
+        $commands = [];
+        foreach ($commands_groups as $i => $cg) {
+            if($i > 0) {
+                $commands[] = '-execute';
+            }
+            foreach($cg as $c) {
+                $commands[] = $c;
+            }
+        }
+        foreach ($common_args as $a) {
+            $commands[] = $a;
+        }
 
-        $ret = $this->exiftool->executeCommand($command, $this->timeout);
+        $ret = $this->exiftool->executeCommand($commands, $this->timeout);
 
         // exiftool may print (return) a bunch of lines, even for a single command
-        // eg. deleting tags of a file with NO tags may return 2 lines...
+        // e.g. deleting tags of a file with NO tags may return 2 lines...
         // | exiftool -all:all= notags.jpg
         // |     0 image files updated
         // |     1 image files unchanged
-        // ... which is NOT an error
+        // ... which is NOT an error,
         // so it's not easy to decide from the output when something went REALLY wrong
         $n_unchanged = $n_changed = 0;
         foreach(explode("\n", $ret) as $line) {
@@ -344,29 +373,29 @@ class Writer
      *
      * @param MetadataBag $metadatas A Bag of metadatas
      *
-     * @return string A part of the command
+     * @return array parts of the command
      */
-    protected function addMetadatasArg(MetadataBag $metadatas)
+    protected function addMetadatasArg(MetadataBag $metadatas): array
     {
-        $command = '';
+        $commands = [];
 
         if ($this->modules & self::MODULE_MWG) {
-            $command .= '-use MWG';
+            $commands[] = '-use';
+            $commands[] = 'MWG';
         }
 
         foreach ($metadatas as $metadata) {
             foreach ($metadata->getValue()->asArray() as $value) {
-                $command .= ($command ? ' -' : '-') . $metadata->getTag()->getTagname() . '='
-                    . escapeshellarg($value);
+                $commands[] = '-' . $metadata->getTag()->getTagname() . '=' . $value;
             }
         }
 
-        return $command;
+        return $commands;
     }
 
-    protected function getSyncCommand()
+    protected function getSyncCommand(): array
     {
-        $syncCommand = '';
+        $syncCommands = [];
 
         $availableArgs = array(
             self::MODE_IPTC2XMP  => 'iptc2xmp.args',
@@ -383,11 +412,12 @@ class Writer
 
         foreach ($availableArgs as $arg => $cmd) {
             if ($this->mode & $arg) {
-                $syncCommand .= ($syncCommand ? ' -@ ' : '-@ ') . $cmd;
+                $syncCommands[] = '-@';
+                $syncCommands[] = $cmd;
             }
         }
 
-        return $syncCommand;
+        return $syncCommands;
     }
 }
 

@@ -11,6 +11,10 @@
 
 namespace PHPExiftool\ClassUtils;
 
+use Exception;
+use PHPExiftool\Driver\AbstractTag;
+use ReflectionClass;
+
 /**
  * Build and write Tag classes
  *
@@ -19,7 +23,7 @@ namespace PHPExiftool\ClassUtils;
  */
 class Builder
 {
-    protected $license = '/*
+    protected string $license = '/*
  * This file is part of the PHPExifTool package.
  *
  * (c) Alchemy <support@alchemy.fr>
@@ -27,14 +31,18 @@ class Builder
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */';
-    protected $namespace;
-    protected $classname;
-    protected $properties;
+    protected int $xmlLine = 0;
+    protected string $namespace = "";
+    protected string $classname = "";
+    protected array $properties = [];
     protected $extends;
-    protected $uses;
-    protected $classAnnotations;
+    protected array $uses = [];
+    protected array $classAnnotations = [];
 
-    public function __construct($namespace, $classname, array $properties, $extends = null, Array $uses = array(), Array $classAnnotations = array())
+    /**
+     * @throws Exception
+     */
+    public function __construct(int $xmlLine, string $namespace, string $classname, array $properties, $extends = null, array $uses = [], array $classAnnotations = [])
     {
         $namespace = trim($namespace, '\\');
 
@@ -43,14 +51,15 @@ class Builder
                 continue;
             }
 
-            if ( ! $this->checkPHPVarName($piece)) {
-                throw new \Exception(sprintf('Invalid namespace %s', $namespace));
+            if (!$this->checkPHPVarName($piece)) {
+                throw new Exception(sprintf('Invalid namespace %s', $namespace));
             }
         }
-        if ( ! $this->checkPHPVarName($classname)) {
-            throw new \Exception(sprintf('Invalid namespace %s', $namespace));
+        if (!$this->checkPHPVarName($classname)) {
+            throw new Exception(sprintf('Invalid namespace %s', $namespace));
         }
 
+        $this->xmlLine = $xmlLine;
         $this->namespace = trim('PHPExiftool\\Driver\\' . $namespace, '\\');
         $this->classname = $classname;
         $this->properties = $properties;
@@ -61,19 +70,24 @@ class Builder
         return $this;
     }
 
-    public function getNamespace()
+    public function getXmlLine(): int
+    {
+        return $this->xmlLine;
+    }
+
+    public function getNamespace(): string
     {
         return $this->namespace;
     }
 
-    public function getClassname()
+    public function getClassname(): string
     {
         return $this->classname;
     }
 
     public function getProperty($property)
     {
-        return isset($this->properties[$property]) ? $this->properties[$property] : null;
+        return $this->properties[$property] ?? null;
     }
 
     public function setProperty($property, $value)
@@ -81,17 +95,21 @@ class Builder
         $this->properties[$property] = $value;
     }
 
-    public function getPathfile()
+    public function getPathfile(): string
     {
         return __DIR__ . '/../../'
             . str_replace('\\', '/', $this->namespace) . "/"
             . $this->classname . '.php';
     }
 
-    public function write($force = false)
+    /**
+     * @throws Exception
+     */
+    public function write($force = false): Builder
     {
-        if ( ! $force && file_exists($this->getPathfile()))
-            throw new \Exception(sprintf('%s already exists', $this->getPathfile()));
+        if (!$force && file_exists($this->getPathfile())) {
+            throw new Exception(sprintf('%s already exists', $this->getPathfile()));
+        }
 
         if (file_exists($this->getPathfile())) {
             unlink($this->getPathfile());
@@ -133,39 +151,43 @@ class Builder
 
         $content .= "\n}\n";
 
-        if ( ! is_dir(dirname($this->getPathfile()))) {
+        if (!is_dir(dirname($this->getPathfile()))) {
             mkdir(dirname($this->getPathfile()), 0754, true);
         }
 
-        $content = str_replace(
-            array('<license>', '<namespace>', '<classname>', '<spaces>', '<extends>')
-            , array($this->license, $this->namespace, $this->classname, '    ', $this->extends)
-            , $content
+        return str_replace(
+            ['<license>', '<namespace>', '<classname>', '<spaces>', '<extends>'],
+            [$this->license, $this->namespace, $this->classname, '    ', $this->extends],
+            $content
         );
-
-        return $content;
     }
 
-    protected function generateClassProperties(array $properties, $depth = 0)
+    protected function generateClassProperties(array $properties, $depth = 0): string
     {
         $buffer = "";
 
         foreach ($properties as $key => $value) {
-            if (is_array($value)) {
-                $val = "array(\n" . $this->generateClassProperties($value, $depth + 1);
 
-                for ($i = 0; $i != $depth; $i ++) {
+            $attributeType = AbstractTag::getAttributeType($key);
+
+            if (is_array($value)) {
+                $attributeType = "array";
+                $val = "[\n" . $this->generateClassProperties($value, $depth + 1);
+
+                for ($i = 0; $i != $depth; $i++) {
                     $val .= "<spaces>";
                 }
 
-                $val .= "<spaces>)";
-            } else {
-                $val = $this->quote($value);
+                $val .= "<spaces>]";
+            }
+            else {
+                $val = $this->quote($value, $attributeType);
             }
             if ($depth == 0) {
-                $buffer .= "\n<spaces>protected \$$key = $val;\n";
-            } else {
-                for ($i = 0; $i != $depth; $i ++) {
+                $buffer .= sprintf("\n<spaces>protected %s \$%s = %s;\n", $attributeType ?: '', $key, $val);
+            }
+            else {
+                for ($i = 0; $i != $depth; $i++) {
                     $buffer .= "<spaces>";
                 }
                 $buffer .= "<spaces>" . $this->quote($key) . " => " . $val . ",\n";
@@ -180,22 +202,38 @@ class Builder
         return preg_match('/^[a-zA-Z]+[a-zA-Z0-9]*$/', $var);
     }
 
-    protected function quote($value)
+    protected function quote($value, $type = null): string
     {
-        if (ctype_digit(trim($value))) {
-            $data = strval(intval($value));
+        switch($type) {
+            case 'string':
+                return "'" . str_replace(['\\', '\''], ['\\\\', '\\\''], $value) . "'";
+            case 'bool':
+                if (in_array(strtolower($value), ['true', 'false'])) {
+                    return strtolower($value);
+                }
+                throw new \InvalidArgumentException(sprintf("\"%s\" can't be converted to bool", $value));
+            case 'int':
+                $data = strval(intval($value));
 
-            // Do not use PHP_INT_MAX as 32/64 bit dependant
-            if ($data <= -2147483648 || $data >= 2147483647) {
-                return "'" . $value . "'";
-            }
-
-            return $data;
+                // Do not use PHP_INT_MAX as 32/64 bit dependant
+//                if ($data >= -2147483648 && $data <= 2147483647) {
+                    return $data;
+//                }
+                // return "'" . $value . "'";
+//                throw new \InvalidArgumentException(sprintf("\"%s\" can't be converted to int", $value));
+            default:
+                if (ctype_digit(trim($value))) {
+                    try {
+                        return $this->quote($value, 'int');
+                    }
+                    catch(\InvalidArgumentException $e) {
+                        return $this->quote($value, 'string');
+                    }
+                }
+                if (in_array(strtolower($value), ['true', 'false'])) {
+                    return $this->quote($value, 'bool');
+                }
+                return $this->quote($value, 'string');
         }
-        if (in_array(strtolower($value), array('true', 'false'))) {
-            return strtolower($value);
-        }
-
-        return "'" . str_replace(array('\\', '\''), array('\\\\', '\\\''), $value) . "'";
     }
 }

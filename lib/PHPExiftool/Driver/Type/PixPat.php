@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class PixPat extends AbstractType
 {
 
-    protected $ExiftoolName = 'PixPat';
+    protected  $ExiftoolName = 'PixPat';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

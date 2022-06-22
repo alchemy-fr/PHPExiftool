@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class ShortLine extends AbstractType
 {
 
-    protected $ExiftoolName = 'ShortLine';
+    protected  $ExiftoolName = 'ShortLine';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

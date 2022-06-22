@@ -15,41 +15,41 @@ use PHPExiftool\Exception\InvalidArgumentException;
 
 class Binary implements ValueInterface
 {
-    protected $value;
+    protected string $value;
 
     public function __construct($value)
     {
         $this->set($value);
     }
 
-    public function getType()
+    public function getType(): string
     {
         return self::TYPE_BINARY;
     }
 
-    public function asString()
+    public function asString(): string
     {
         return $this->value;
     }
 
-    public function asArray()
+    public function asArray(): array
     {
-        return (array) $this->value;
+        return [$this->value];
     }
 
-    public function asBase64()
+    public function asBase64(): string
     {
         return base64_encode($this->value);
     }
 
-    public function set($value)
+    public function set($value): Binary
     {
         $this->value = $value;
 
         return $this;
     }
 
-    public function setBase64Value($base64Value)
+    public function setBase64Value(string $base64Value): Binary
     {
         if (false === $value = base64_decode($base64Value, true)) {
             throw new InvalidArgumentException('The value should be base64 encoded');
@@ -60,7 +60,7 @@ class Binary implements ValueInterface
         return $this;
     }
 
-    public static function loadFromBase64($base64Value)
+    public static function loadFromBase64($base64Value): Binary
     {
         if (false === $value = base64_decode($base64Value, true)) {
             throw new InvalidArgumentException('The value should be base64 encoded');

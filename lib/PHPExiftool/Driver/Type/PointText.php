@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class PointText extends AbstractType
 {
 
-    protected $ExiftoolName = 'PointText';
+    protected  $ExiftoolName = 'PointText';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

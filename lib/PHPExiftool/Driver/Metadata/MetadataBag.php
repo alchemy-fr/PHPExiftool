@@ -25,10 +25,10 @@ class MetadataBag extends ArrayCollection
     /**
      * Returns all the elements which key matches the regexp
      *
-     * @param  string      $regexp
+     * @param string $regexp
      * @return MetadataBag
      */
-    public function filterKeysByRegExp($regexp)
+    public function filterKeysByRegExp(string $regexp): MetadataBag
     {
         $partitions = $this->partition(function($key, $element) use ($regexp) {
             return preg_match($regexp, $key);

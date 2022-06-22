@@ -13,7 +13,7 @@ namespace PHPExiftool\Driver\Value;
 
 class Multi implements ValueInterface
 {
-    protected $value = array();
+    protected array $value = [];
 
     public function __construct($value = null)
     {
@@ -22,43 +22,43 @@ class Multi implements ValueInterface
         }
     }
 
-    public function getType()
+    public function getType(): string
     {
         return self::TYPE_MULTI;
     }
 
-    public function addValue($value)
+    public function addValue($value): Multi
     {
         $this->value = array_merge($this->value, (array) $value);
 
         return $this;
     }
 
-    public function set($value)
+    public function set($value): Multi
     {
         $this->value = (array) $value;
 
         return $this;
     }
 
-    public function reset()
+    public function reset(): Multi
     {
-        $this->value = array();
+        $this->value = [];
 
         return $this;
     }
 
-    public function serialize($separator = ' ; ')
+    public function serialize($separator = ' ; '): string
     {
         return implode($separator, $this->value);
     }
 
-    public function asString()
+    public function asString(): string
     {
         return $this->serialize();
     }
 
-    public function asArray()
+    public function asArray(): array
     {
         return $this->value;
     }

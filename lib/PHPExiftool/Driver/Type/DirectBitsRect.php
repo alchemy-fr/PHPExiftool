@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class DirectBitsRect extends AbstractType
 {
 
-    protected $ExiftoolName = 'DirectBitsRect';
+    protected  $ExiftoolName = 'DirectBitsRect';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

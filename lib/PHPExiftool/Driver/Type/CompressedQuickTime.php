@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class CompressedQuickTime extends AbstractType
 {
 
-    protected $ExiftoolName = 'CompressedQuickTime';
+    protected  $ExiftoolName = 'CompressedQuickTime';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

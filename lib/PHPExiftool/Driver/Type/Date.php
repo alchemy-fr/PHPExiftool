@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Date extends AbstractType
 {
 
-    protected $ExiftoolName = 'date';
+    protected  $ExiftoolName = 'date';
 
-    protected $PHPMap = 'date';
+    protected  $PHPMap = 'date';
 
 }

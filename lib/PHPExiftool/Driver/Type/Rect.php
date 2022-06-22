@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Rect extends AbstractType
 {
 
-    protected $ExiftoolName = 'Rect';
+    protected  $ExiftoolName = 'Rect';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Struct extends AbstractType
 {
 
-    protected $ExiftoolName = 'struct';
+    protected  $ExiftoolName = 'struct';
 
-    protected $PHPMap = 'binary';
+    protected  $PHPMap = '';
 
 }

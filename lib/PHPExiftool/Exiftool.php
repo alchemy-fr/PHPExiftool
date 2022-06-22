@@ -11,6 +11,7 @@
 
 namespace PHPExiftool;
 
+use Exception;
 use PHPExiftool\Exception\RuntimeException;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
@@ -18,7 +19,7 @@ use Symfony\Component\Process\Process;
 
 class Exiftool implements LoggerAwareInterface
 {
-    private $logger;
+    private LoggerInterface $logger;
     private $binaryPath;
 
     public function __construct(LoggerInterface $logger, $binaryPath = null)
@@ -40,23 +41,23 @@ class Exiftool implements LoggerAwareInterface
     /**
      * Execute a command and return the output
      *
-     * @param  string     $command
-     * @param  int        $timeout
+     * @param  array     $command   arguments without executable
+     * @param int $timeout
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
-    public function executeCommand($command, $timeout = 60)
+    public function executeCommand(array $command, int $timeout = 60): string
     {
-        $command = ($this->binaryPath == null? self::getBinary(): $this->binaryPath) . ' ' . $command;
+        array_unshift($command, $this->binaryPath ?: self::getBinary());
         $process = new Process($command);
         $process->setTimeout($timeout);
 
-        $this->logger->addInfo(sprintf('Exiftool executes command %s', $process->getCommandLine()));
+        $this->logger->info(sprintf('Exiftool executes command %s', $process->getCommandLine()));
 
         $process->run();
 
         if ( ! $process->isSuccessful()) {
-            throw new RuntimeException(sprintf('Command %s failed : %s, exitcode %s', $command, $process->getErrorOutput(), $process->getExitCode()));
+            throw new RuntimeException(sprintf("Command \"%s\"\n%s\nfailed : \"%s\", exitcode %s", join(' ', $command), var_export($command, true), $process->getErrorOutput(), $process->getExitCode()));
         }
 
         $output = $process->getOutput();
@@ -70,7 +71,7 @@ class Exiftool implements LoggerAwareInterface
      *
      * @return string
      */
-    protected static function getBinary()
+    protected static function getBinary(): string
     {
         static $binary = null;
 

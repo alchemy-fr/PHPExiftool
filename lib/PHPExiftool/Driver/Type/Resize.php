@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Resize extends AbstractType
 {
 
-    protected $ExiftoolName = 'resize';
+    protected  $ExiftoolName = 'resize';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

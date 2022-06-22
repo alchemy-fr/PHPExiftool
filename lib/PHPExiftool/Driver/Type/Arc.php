@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Arc extends AbstractType
 {
 
-    protected $ExiftoolName = 'Arc';
+    protected  $ExiftoolName = 'Arc';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

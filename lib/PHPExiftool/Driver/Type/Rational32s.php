@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Rational32s extends AbstractType
 {
 
-    protected $ExiftoolName = 'rational32s';
+    protected  $ExiftoolName = 'rational32s';
 
-    protected $PHPMap = 'int';
+    protected  $PHPMap = 'int';
 
 }

@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Signed extends AbstractType
 {
 
-    protected $ExiftoolName = 'signed';
+    protected  $ExiftoolName = 'signed';
 
-    protected $PHPMap = 'int';
+    protected  $PHPMap = 'int';
 
 }

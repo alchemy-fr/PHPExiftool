@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Int64s extends AbstractType
 {
 
-    protected $ExiftoolName = 'int64s';
+    protected  $ExiftoolName = 'int64s';
 
-    protected $PHPMap = 'int';
+    protected  $PHPMap = 'int';
 
 }

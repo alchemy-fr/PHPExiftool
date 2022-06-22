@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class VarInt16u extends AbstractType
 {
 
-    protected $ExiftoolName = 'var_int16u';
+    protected  $ExiftoolName = 'var_int16u';
 
-    protected $PHPMap = 'int';
+    protected  $PHPMap = 'int';
 
 }

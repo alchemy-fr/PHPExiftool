@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Null0 extends AbstractType
 {
 
-    protected $ExiftoolName = 'null';
+    protected  $ExiftoolName = 'null';
 
-    protected $PHPMap = 'binary';
+    protected  $PHPMap = '';
 
 }

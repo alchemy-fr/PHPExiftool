@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class RGBColor extends AbstractType
 {
 
-    protected $ExiftoolName = 'RGBColor';
+    protected  $ExiftoolName = 'RGBColor';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

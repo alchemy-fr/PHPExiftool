@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Rational64u extends AbstractType
 {
 
-    protected $ExiftoolName = 'rational64u';
+    protected  $ExiftoolName = 'rational64u';
 
-    protected $PHPMap = 'int';
+    protected  $PHPMap = 'int';
 
 }

@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Int8u2Text extends AbstractType
 {
 
-    protected $ExiftoolName = 'Int8u2Text';
+    protected  $ExiftoolName = 'Int8u2Text';
 
-    protected $PHPMap = 'int';
+    protected  $PHPMap = 'int';
 
 }

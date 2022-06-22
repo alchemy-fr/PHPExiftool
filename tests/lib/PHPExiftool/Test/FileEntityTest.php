@@ -12,6 +12,7 @@ namespace PHPExiftool\Test;
 
 use PHPExiftool\FileEntity;
 use PHPExiftool\RDFParser;
+use PHPExiftool;
 
 class FileEntityTest extends \PHPUnit_Framework_TestCase
 {
@@ -21,7 +22,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
     protected $object;
 
     /**
-     * @covers PHPExiftool\FileEntity::__construct
+     * @covers FileEntity::__construct
      */
     protected function setUp()
     {
@@ -32,7 +33,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\FileEntity::getIterator
+     * @covers FileEntity::getIterator
      */
     public function testGetIterator()
     {
@@ -40,7 +41,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\FileEntity::getFile
+     * @covers FileEntity::getFile
      */
     public function testGetFile()
     {
@@ -48,7 +49,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\FileEntity::getMetadatas
+     * @covers FileEntity::getMetadatas
      */
     public function testGetMetadatas()
     {
@@ -57,7 +58,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\FileEntity::executeQuery
+     * @covers FileEntity::executeQuery
      */
     public function testExecuteQuery()
     {
@@ -68,5 +69,12 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf('\\PHPExiftool\\Driver\\Value\\Multi', $this->object->executeQuery('XMP-dc:Subject'));
         $this->assertEquals(array('ExifTool', 'Test', 'XMP'), $this->object->executeQuery('XMP-dc:Subject')->asArray());
+    }
+
+    public function testCacheKey()
+    {
+        $o = new FileEntity('bad_{}()/\\@:_chars', new \DOMDocument(), new RDFParser());
+        $k = $o->getCacheKey();
+        $this->assertEquals('bad_%7B%7D%28%29%2F%5C%40%3A_chars', $k);
     }
 }

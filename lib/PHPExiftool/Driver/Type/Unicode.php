@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Unicode extends AbstractType
 {
 
-    protected $ExiftoolName = 'unicode';
+    protected  $ExiftoolName = 'unicode';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

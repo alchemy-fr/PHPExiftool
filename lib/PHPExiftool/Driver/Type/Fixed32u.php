@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Fixed32u extends AbstractType
 {
 
-    protected $ExiftoolName = 'fixed32u';
+    protected  $ExiftoolName = 'fixed32u';
 
-    protected $PHPMap = 'int';
+    protected  $PHPMap = 'int';
 
 }

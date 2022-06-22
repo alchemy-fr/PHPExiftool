@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class LangAlt extends AbstractType
 {
 
-    protected $ExiftoolName = 'lang-alt';
+    protected  $ExiftoolName = 'lang-alt';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

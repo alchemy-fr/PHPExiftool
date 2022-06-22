@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class BitsRect extends AbstractType
 {
 
-    protected $ExiftoolName = 'BitsRect#';
+    protected  $ExiftoolName = 'BitsRect#';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

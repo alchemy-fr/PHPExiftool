@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Fixed32s extends AbstractType
 {
 
-    protected $ExiftoolName = 'fixed32s';
+    protected  $ExiftoolName = 'fixed32s';
 
-    protected $PHPMap = 'int';
+    protected  $PHPMap = 'int';
 
 }

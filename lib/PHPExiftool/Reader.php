@@ -409,12 +409,12 @@ class Reader implements \IteratorAggregate
     /**
      * Compute raw exclude rules to simple ones, based on exclude dirs and search dirs
      *
-     * @param  string           $rawExcludeDirs
-     * @param  string           $rawDirs
+     * @param string[] $rawExcludeDirs
+     * @param string[] $rawSearchDirs
      * @return array
      * @throws RuntimeException
      */
-    protected function computeExcludeDirs($rawExcludeDirs, $rawSearchDirs)
+    protected function computeExcludeDirs(array $rawExcludeDirs, array $rawSearchDirs): array
     {
         $excludeDirs = array();
 
@@ -484,56 +484,61 @@ class Reader implements \IteratorAggregate
     /**
      * Build query from criterias
      *
-     * @return string
+     * @return string[]
      *
      * @throws LogicException
      */
-    protected function buildQuery()
+    protected function buildQuery(): array
     {
         if (! $this->dirs && ! $this->files) {
             throw new LogicException('You have not set any files or directory');
         }
 
-        $command = '-n -q -b -X -charset UTF8';
+        $command = ['-n', '-q', '-b', '-X', '-charset', 'UTF8'];
 
         if ($this->recursive) {
-            $command .= ' -r';
+            $command[] = '-r';
         }
 
         if (!empty($this->extensions)) {
             if (! $this->extensionsToggle) {
-                $extensionPrefix = ' --ext';
+                $extensionPrefix = '--ext';
             } else {
-                $extensionPrefix = ' -ext';
+                $extensionPrefix = '-ext';
             }
 
             foreach ($this->extensions as $extension) {
-                $command .= $extensionPrefix . ' ' . escapeshellarg($extension);
+                $command[] = $extensionPrefix;
+                $command[] = $extension;
             }
         }
 
         if (! $this->followSymLinks) {
-            $command .= ' -i SYMLINKS';
+            $command[] = '-i';
+            $command[] = 'SYMLINKS';
         }
 
         if ($this->ignoreDotFile) {
-            $command .= " -if '\$filename !~ /^\./'";
+            $command[] = '-if';
+            $command[] = "'\$filename !~ /^\./'";
         }
 
         foreach ($this->sort as $sort) {
-            $command .= ' -fileOrder ' . $sort;
+            $command[] = '-fileOrder';
+            $command[] = $sort;
         }
 
         foreach ($this->computeExcludeDirs($this->excludeDirs, $this->dirs) as $excludedDir) {
-            $command .= ' -i ' . escapeshellarg($excludedDir);
+            $command[] = '-i';
+            $command[] = $excludedDir;
         }
 
         foreach ($this->dirs as $dir) {
-            $command .= ' ' . escapeshellarg(realpath($dir));
+            $command[] = realpath($dir);
         }
 
         foreach ($this->files as $file) {
-            $command .= ' ' . escapeshellarg(realpath($file));
+            $command[] = realpath($file);
         }
 
         return $command;

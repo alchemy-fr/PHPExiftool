@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Float0 extends AbstractType
 {
 
-    protected $ExiftoolName = 'float';
+    protected  $ExiftoolName = 'float';
 
-    protected $PHPMap = 'float';
+    protected  $PHPMap = 'float';
 
 }

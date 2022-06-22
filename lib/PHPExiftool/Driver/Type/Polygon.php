@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Polygon extends AbstractType
 {
 
-    protected $ExiftoolName = 'Polygon';
+    protected  $ExiftoolName = 'Polygon';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

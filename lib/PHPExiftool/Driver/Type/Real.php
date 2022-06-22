@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Real extends AbstractType
 {
 
-    protected $ExiftoolName = 'real';
+    protected  $ExiftoolName = 'real';
 
-    protected $PHPMap = 'int';
+    protected  $PHPMap = 'int';
 
 }

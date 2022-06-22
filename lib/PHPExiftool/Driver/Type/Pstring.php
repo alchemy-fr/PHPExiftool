@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Pstring extends AbstractType
 {
 
-    protected $ExiftoolName = 'pstring';
+    protected  $ExiftoolName = 'pstring';
 
-    protected $PHPMap = 'string';
+    protected  $PHPMap = 'string';
 
 }

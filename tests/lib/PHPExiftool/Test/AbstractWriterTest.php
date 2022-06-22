@@ -14,17 +14,16 @@ use PHPExiftool\Driver;
 use PHPExiftool\Writer;
 use PHPExiftool\Reader;
 use PHPExiftool\RDFParser;
+use PHPExiftool;
+use PHPUnit_Framework_TestCase;
 
-abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * @var Writer
-     */
-    protected $object;
-    protected $in;
-    protected $inWithICC;
-    protected $inPlace;
-    protected $out;
+    protected ?Writer $object = null;
+    protected string $in = "";
+    protected string $inWithICC = "";
+    protected string $inPlace = "";
+    protected string $out = "";
 
     protected function setUp()
     {
@@ -47,8 +46,8 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Writer::setMode
-     * @covers PHPExiftool\Writer::isMode
+     * @covers Writer::setMode
+     * @covers Writer::isMode
      */
     public function testSetMode()
     {
@@ -63,7 +62,8 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Writer::copy
+     * @covers Writer::copy
+     * @throws PHPExiftool\Exception\EmptyCollectionException
      */
     public function testCopy()
     {
@@ -84,8 +84,8 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Writer::setModule
-     * @covers PHPExiftool\Writer::hasModule
+     * @covers Writer::setModule
+     * @covers Writer::hasModule
      */
     public function testSetModule()
     {
@@ -97,8 +97,9 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Writer::write
-     * @covers PHPExiftool\Writer::erase
+     * @covers Writer::write
+     * @covers Writer::erase
+     * @throws PHPExiftool\Exception\EmptyCollectionException
      */
     public function testEraseWithoutICC()
     {
@@ -119,7 +120,7 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThan(4, count($reader->files($this->out)->first()->getMetadatas()));
         $this->assertLessThan(30, count($reader->files($this->out)->first()->getMetadatas()));
 
-        $acceptedMetas = array(
+        $acceptedMetas = [
             'Exiftool:\w+',
             'System:\w+',
             'File:\w+',
@@ -135,7 +136,7 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
             'Adobe:APP14Flags0',
             'Adobe:APP14Flags1',
             'Adobe:ColorTransform',
-        );
+        ];
 
         foreach ($reader->files($this->out)->first()->getMetadatas() as $meta) {
 
@@ -148,12 +149,15 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
                 }
             }
 
-            if ( ! $found) {
+            if (!$found) {
                 $this->fail(sprintf('Unexpected meta %s found', $meta->getTag()->getTagname()));
             }
         }
     }
 
+    /**
+     * @throws PHPExiftool\Exception\EmptyCollectionException
+     */
     public function testEraseWithICC()
     {
         $uniqueId = 'UNI-QUE-ID';
@@ -172,7 +176,7 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
         $reader = new Reader($this->getExiftool(), new RDFParser());
         $this->assertGreaterThan(4, count($reader->files($this->out)->first()->getMetadatas()));
 
-        $acceptedMetas = array(
+        $acceptedMetas = [
             'Exiftool:\w+',
             'System:\w+',
             'File:\w+',
@@ -189,7 +193,7 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
             'Adobe:APP14Flags0',
             'Adobe:APP14Flags1',
             'Adobe:ColorTransform',
-        );
+        ];
 
         foreach ($reader->files($this->out)->first()->getMetadatas() as $meta) {
 
@@ -202,21 +206,22 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
                 }
             }
 
-            if ( ! $found) {
+            if (!$found) {
                 $this->fail(sprintf('Unexpected meta %s found', $meta->getTag()->getTagname()));
             }
         }
     }
 
     /**
-     * @covers PHPExiftool\Writer::write
+     * @covers Writer::write
+     * @throws PHPExiftool\Exception\EmptyCollectionException
      */
     public function testWrite()
     {
         $metadatas = new Driver\Metadata\MetadataBag();
         $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
         $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(array('Romain', 'Nicolas'))));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
 
         $changedFiles = $this->object->write($this->in, $metadatas, $this->out);
 
@@ -228,18 +233,19 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThan(200, count($metadatasRead));
 
         $this->assertEquals('Beautiful Object', $metadatasRead->get('IPTC:ObjectName')->getValue()->asString());
-        $this->assertEquals(array('Romain', 'Nicolas'), $metadatasRead->get('XMP-iptcExt:PersonInImage')->getValue()->asArray());
+        $this->assertEquals(['Romain', 'Nicolas'], $metadatasRead->get('XMP-iptcExt:PersonInImage')->getValue()->asArray());
     }
 
     /**
-     * @covers PHPExiftool\Writer::write
+     * @covers Writer::write
+     * @throws PHPExiftool\Exception\EmptyCollectionException
      */
     public function testWriteInPlace()
     {
         $metadatas = new Driver\Metadata\MetadataBag();
         $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
         $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(array('Romain', 'Nicolas'))));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
 
         $changedFiles = $this->object->write($this->inPlace, $metadatas);
 
@@ -251,18 +257,19 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThan(200, count($metadatasRead));
 
         $this->assertEquals('Beautiful Object', $metadatasRead->get('IPTC:ObjectName')->getValue()->asString());
-        $this->assertEquals(array('Romain', 'Nicolas'), $metadatasRead->get('XMP-iptcExt:PersonInImage')->getValue()->asArray());
+        $this->assertEquals(['Romain', 'Nicolas'], $metadatasRead->get('XMP-iptcExt:PersonInImage')->getValue()->asArray());
     }
 
     /**
-     * @covers PHPExiftool\Writer::write
+     * @covers Writer::write
+     * @throws PHPExiftool\Exception\EmptyCollectionException
      */
     public function testWriteInPlaceErased()
     {
         $metadatas = new Driver\Metadata\MetadataBag();
         $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
         $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(array('Romain', 'Nicolas'))));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
 
         $this->object->erase(true);
         $changedFiles = $this->object->write($this->inPlace, $metadatas);
@@ -275,84 +282,88 @@ abstract class AbstractWriterTest extends \PHPUnit_Framework_TestCase
         $this->assertLessThan(50, count($metadatasRead));
 
         $this->assertEquals('Beautiful Object', $metadatasRead->get('IPTC:ObjectName')->getValue()->asString());
-        $this->assertEquals(array('Romain', 'Nicolas'), $metadatasRead->get('XMP-iptcExt:PersonInImage')->getValue()->asArray());
+        $this->assertEquals(['Romain', 'Nicolas'], $metadatasRead->get('XMP-iptcExt:PersonInImage')->getValue()->asArray());
     }
 
     /**
-     * @covers PHPExiftool\Writer::write
+     * @covers Writer::write
      * @covers PHPExiftool\Exception\InvalidArgumentException
-     * @expectedException PHPExiftool\Exception\InvalidArgumentException
      */
     public function testWriteFail()
     {
+        $this->expectException(PHPExiftool\Exception\InvalidArgumentException::class);
         $this->object->write('ici', new Driver\Metadata\MetadataBag());
     }
 
     /**
-     * @covers PHPExiftool\Writer::addMetadatasArg
+     * @covers Writer::addMetadatasArg
      */
     public function testAddMetadatasArg()
     {
+        $modes = [
+            Writer::MODE_EXIF2IPTC => ['-@', 'exif2iptc.args'],
+            Writer::MODE_EXIF2XMP  => ['-@', 'exif2xmp.args'],
+            Writer::MODE_IPTC2EXIF => ['-@', 'iptc2exif.args'],
+            Writer::MODE_IPTC2XMP  => ['-@', 'iptc2xmp.args'],
+            Writer::MODE_GPS2XMP   => ['-@', 'gps2xmp.args'],
+            Writer::MODE_PDF2XMP   => ['-@', 'pdf2xmp.args'],
+            Writer::MODE_XMP2PDF   => ['-@', 'xmp2pdf.args'],
+            Writer::MODE_XMP2GPS   => ['-@', 'xmp2gps.args'],
+            Writer::MODE_XMP2EXIF  => ['-@', 'xmp2exif.args'],
+            Writer::MODE_XMP2IPTC  => ['-@', 'xmp2iptc.args'],
+        ];
+
         $metadatas = new Driver\Metadata\MetadataBag();
         $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(array('Romain', 'Nicolas'))));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
 
         $writer = new WriterTester($this->getExiftool());
-        $this->assertNotContains('@', trim($writer->getSyncCommandTester()));
+        $this->assertEmpty($writer->getSyncCommandTester());
 
-        $writer->setMode(WriterTester::MODE_EXIF2IPTC, true);
-        $this->assertContains('@ exif2iptc.args', $writer->getSyncCommandTester());
+        // modes accumulate
+        $a = [];
+        foreach ($modes as $k => $v) {
+            $writer->setMode($k, true);
+            $a[] = $v;
+            $this->_testContains($writer->getSyncCommandTester(), $a);
+        }
 
-        $writer->setMode(WriterTester::MODE_EXIF2XMP, true);
-        $this->assertContains('@ exif2xmp.args', $writer->getSyncCommandTester());
+        // unset a mode
+        $writer->setMode(Writer::MODE_XMP2IPTC, false);
+        $this->assertNotContains('xmp2iptc', $writer->getSyncCommandTester());
 
-        $writer->setMode(WriterTester::MODE_IPTC2EXIF, true);
-        $this->assertContains('@ iptc2exif', $writer->getSyncCommandTester());
 
-        $writer->setMode(WriterTester::MODE_IPTC2XMP, true);
-        $this->assertContains('@ iptc2xmp', $writer->getSyncCommandTester());
+        $writer->setModule(Writer::MODULE_MWG, true);
+        $a = $writer->addMetadatasArgTester($metadatas);
+        $this->_testContains($a, [['-use', 'MWG']]);
 
-        $writer->setMode(WriterTester::MODE_GPS2XMP, true);
-        $this->assertContains('@ gps2xmp', $writer->getSyncCommandTester());
+        $writer->setModule(Writer::MODULE_MWG, false);
+        $this->assertNotContains('MWG', $writer->addMetadatasArgTester($metadatas));
 
-        $writer->setMode(WriterTester::MODE_PDF2XMP, true);
-        $this->assertContains('@ pdf2xmp', $writer->getSyncCommandTester());
-
-        $writer->setMode(WriterTester::MODE_XMP2PDF, true);
-        $this->assertContains('@ xmp2pdf', $writer->getSyncCommandTester());
-
-        $writer->setMode(WriterTester::MODE_XMP2GPS, true);
-        $this->assertContains('@ xmp2gps', $writer->getSyncCommandTester());
-
-        $writer->setMode(WriterTester::MODE_XMP2EXIF, true);
-        $this->assertContains('@ xmp2exif', $writer->getSyncCommandTester());
-
-        $writer->setMode(WriterTester::MODE_XMP2IPTC, true);
-        $this->assertContains('@ xmp2iptc', $writer->getSyncCommandTester());
-
-        $writer->setMode(WriterTester::MODE_XMP2IPTC, false);
-        $this->assertNotContains('@ xmp2iptc', $writer->getSyncCommandTester());
-
-        $writer->setModule(WriterTester::MODULE_MWG, true);
-        $this->assertContains('-use MWG', $writer->addMetadatasArgTester($metadatas));
-
-        $writer->setModule(WriterTester::MODULE_MWG, false);
-        $this->assertNotContains('-use MWG', $writer->addMetadatasArgTester($metadatas));
-
-        $this->assertRegExp("/\ -XMP-iptcExt:PersonInImage=['\"]Nicolas['\"]/", $writer->addMetadatasArgTester($metadatas));
+        $this->assertContains("-XMP-iptcExt:PersonInImage=Nicolas", $writer->addMetadatasArgTester($metadatas));
     }
 
     abstract protected function getExiftool();
+
+    private function _testContains($a, $modes)
+    {
+        foreach ($modes as $mode) {
+            $this->assertContains($mode[1], $a);
+            $p = array_search($mode[1], $a, true);
+            $this->assertTrue(is_int($p) && $p > 0 && $a[$p - 1] === $mode[0], sprintf("missing \"%s\" before \"%s\"", $mode[0], $mode[1]));
+        }
+    }
 }
+
 
 class WriterTester extends Writer
 {
-    public function addMetadatasArgTester($metadatas)
+    public function addMetadatasArgTester($metadatas): array
     {
         return parent::addMetadatasArg($metadatas);
     }
 
-    public function getSyncCommandTester()
+    public function getSyncCommandTester(): array
     {
         return parent::getSyncCommand();
     }

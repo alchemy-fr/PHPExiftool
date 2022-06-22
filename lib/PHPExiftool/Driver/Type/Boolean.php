@@ -16,8 +16,8 @@ use PHPExiftool\Driver\AbstractType;
 class Boolean extends AbstractType
 {
 
-    protected $ExiftoolName = 'boolean';
+    protected  $ExiftoolName = 'boolean';
 
-    protected $PHPMap = 'boolean';
+    protected  $PHPMap = 'boolean';
 
 }
