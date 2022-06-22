@@ -303,10 +303,13 @@ class ClassesBuilder extends Command
             case 'date':
                 return 'date';
 
-
             # Source unknown ...
             case 'boolean':
                 return 'boolean';
+
+            # changed to "mixed" when types conflicts ...
+            case 'mixed':
+                return 'mixed';
 
 
             default:
@@ -354,7 +357,7 @@ class ClassesBuilder extends Command
                 $this->output->writeln("");
                 $this->output->writeln($err);
 
-                $err = sprintf("- incompatible types previous @%s: '%s' (php %s) / new @%s: '%s' (php %s)",
+                $err = sprintf("- incompatible types previous @%s: '%s' (php %s) / new @%s: '%s' (php %s) -> changing to \"mixed\"",
                     $existingTag->getXmlLine(),
                     $existingTag->getProperty('Type'),
                     $existingTag->getProperty('PHPType'),
@@ -363,6 +366,10 @@ class ClassesBuilder extends Command
                     $properties['PHPType']
                 );
                 $this->output->writeln($err);
+
+                $existingTag->setProperty('Type', "mixed");
+                $existingTag->setProperty('PHPType', "mixed");
+
                 throw new \LogicException($err);
             }
 
