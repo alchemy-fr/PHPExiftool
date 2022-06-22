@@ -26,6 +26,8 @@ use ReflectionType;
  */
 abstract class AbstractTag implements TagInterface
 {
+    use AttributeReflectionTrait;
+
     protected string $Id;
     protected string $Name;
     protected string $Type;
@@ -56,26 +58,6 @@ abstract class AbstractTag implements TagInterface
     protected string $local_g1;
     protected string $local_g2;
 
-    static function getAttributeType(string $key): ?ReflectionType
-    {
-        static $rc = null;
-        static $attrTypes = null;
-
-        if(is_null($rc)) {
-            $rc = new ReflectionClass(self::class);
-            $attrTypes = [];
-        }
-        if(!array_key_exists($key, $attrTypes)) {
-            $attrTypes[$key] = null;
-            try {
-                $attrTypes[$key] = $rc->getProperty($key)->getType();
-            }
-            catch (\Exception $e) {
-                // no-op
-            }
-        }
-        return $attrTypes[$key];
-    }
 
     /**
      * Return Tag Id - Tag dependant

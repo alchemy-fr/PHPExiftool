@@ -13,6 +13,7 @@ namespace PHPExiftool\ClassUtils;
 
 use Exception;
 use PHPExiftool\Driver\AbstractTag;
+use PHPExiftool\Driver\AbstractType;
 use ReflectionClass;
 
 /**
@@ -158,14 +159,16 @@ class Builder
         }
 
         // add debug infos related to xml dump
-        $content .= "/**\n * xml line: " . $this->xmlLine . "\n";
-        if(!empty($this->duplicateXmlLines)) {
-            $content .= " * Duplicates: [" . join(', ', $this->duplicateXmlLines) . "]\n";
-            if(!empty($this->conflictingXmlLines)) {
-                $content .= " * Conflictings: [" . join(', ', $this->conflictingXmlLines) . "]\n";
+        if($this->xmlLine > 0) {    // no line number for "type" classes
+            $content .= "/**\n * XML line : " . $this->xmlLine . "\n";
+            if (!empty($this->duplicateXmlLines)) {
+                $content .= " * Duplicates: [" . join(', ', $this->duplicateXmlLines) . "]\n";
+                if (!empty($this->conflictingXmlLines)) {
+                    $content .= " * Conflictings: [" . join(', ', $this->conflictingXmlLines) . "]\n";
+                }
             }
+            $content .= " */\n";
         }
-        $content .= " */\n";
 
 
         if ($this->classAnnotations) {
@@ -205,7 +208,17 @@ class Builder
 
         foreach ($properties as $key => $value) {
 
-            $attributeType = AbstractTag::getAttributeType($key);
+            switch($this->extends) {
+                case "AbstractTag":
+                    $attributeType = AbstractTag::getAttributeType($key);
+                    break;
+                case "AbstractType":
+                    $attributeType = AbstractType::getAttributeType($key);
+                    break;
+                default:
+                    $attributeType = "string";
+            }
+
 
             if (is_array($value)) {
                 $attributeType = "array";
