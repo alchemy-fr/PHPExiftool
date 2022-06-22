@@ -16,12 +16,13 @@ use Exception;
 use PHPExiftool\Exception\LogicException;
 use PHPExiftool\Exception\RuntimeException;
 
-class PreviewExtractor extends Exiftool
+class PreviewExtractor // extends Exiftool
 {
     private $exiftool;
 
     public function __construct(Exiftool $exiftool)
     {
+        // parent::__construct($exiftool->logger, $exiftool->binaryPath);
         $this->exiftool = $exiftool;
     }
 

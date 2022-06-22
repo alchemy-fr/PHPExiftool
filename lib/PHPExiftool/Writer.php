@@ -11,6 +11,7 @@
 
 namespace PHPExiftool;
 
+use Exception;
 use PHPExiftool\Driver\Metadata\MetadataBag;
 use PHPExiftool\Exception\InvalidArgumentException;
 use Psr\Log\LoggerInterface;
@@ -49,12 +50,12 @@ class Writer
     const MODE_XMP2GPS = 512;
     const MODULE_MWG = 1;
 
-    protected $mode;
-    protected $modules;
-    protected $erase;
-    private $exiftool;
-    private $eraseProfile;
-    protected $timeout = 60;
+    protected int $mode;
+    protected int $modules;
+    protected bool $erase = false;
+    private Exiftool $exiftool;
+    private bool $eraseProfile = false;
+    protected int $timeout = 60;
 
     public function __construct(Exiftool $exiftool)
     {
@@ -62,14 +63,14 @@ class Writer
         $this->reset();
     }
 
-    public function setTimeout($timeout)
+    public function setTimeout($timeout): self
     {
         $this->timeout = $timeout;
 
         return $this;
     }
 
-    public function reset()
+    public function reset(): self
     {
         $this->mode = 0;
         $this->modules = 0;
@@ -82,11 +83,11 @@ class Writer
     /**
      * Enable / Disable modes
      *
-     * @param  integer $mode   One of the self::MODE_*
-     * @param  Boolean $active Enable or disable the mode
+     * @param integer $mode   One of the self::MODE_*
+     * @param Boolean $active Enable or disable the mode
      * @return Writer
      */
-    public function setMode($mode, $active)
+    public function setMode(int $mode, bool $active): self
     {
         if ($active) {
             $this->mode |= $mode;
@@ -100,10 +101,10 @@ class Writer
     /**
      * Return true if the mode is enabled
      *
-     * @param  integer $mode One of the self::MODE_*
+     * @param integer $mode One of the self::MODE_*
      * @return Boolean True if the mode is enabled
      */
-    public function isMode($mode)
+    public function isMode(int $mode): bool
     {
         return (boolean) ($this->mode & $mode);
     }
@@ -112,11 +113,11 @@ class Writer
      * Enable / disable module.
      * There's currently only one module self::MODULE_MWG
      *
-     * @param  integer $module One of the self::MODULE_*
-     * @param  Boolean $active Enable or disable the module
+     * @param integer $module One of the self::MODULE_*
+     * @param Boolean $active Enable or disable the module
      * @return Writer
      */
-    public function setModule($module, $active)
+    public function setModule(int $module, bool $active): self
     {
         if ($active) {
             $this->modules |= $module;
@@ -130,10 +131,10 @@ class Writer
     /**
      * Return true if the module is enabled
      *
-     * @param  integer $module
+     * @param integer $module
      * @return boolean
      */
-    public function hasModule($module)
+    public function hasModule(int $module): bool
     {
         return (boolean) ($this->modules & $module);
     }
@@ -144,25 +145,26 @@ class Writer
      * @param Boolean $boolean            Whether to erase metadata or not before writing.
      * @param Boolean $maintainICCProfile Whether to maintain or not ICC Profile in case of erasing metadata.
      */
-    public function erase($boolean, $maintainICCProfile = false)
+    public function erase(bool $boolean, bool $maintainICCProfile = false)
     {
-        $this->erase = (boolean) $boolean;
+        $this->erase = $boolean;
         $this->eraseProfile = !$maintainICCProfile;
     }
 
     /**
-     * copy metadatas from one file to another
-     * both files must exists.
+     * Copy metadatas from one file to another.
+     * Both files must exist.
      *
-     * @param string      $file_src        The input file
-     * @param string      $file_dest       The input file
+     * @param string $file_src  The input file
+     * @param string $file_dest The input file
      *
      * @return int the number "write" operations, or null if exiftool returned nothing we understand
      *         event for no-op (file unchanged), 1 is returned so the caller does not think the command failed.
      *
      * @throws InvalidArgumentException
+     * @throws Exception
      */
-    public function copy($file_src, $file_dest)
+    public function copy(string $file_src, string $file_dest): ?int
     {
         if ( ! file_exists($file_src)) {
             throw new InvalidArgumentException(sprintf('src %s does not exists', $file_src));
@@ -221,7 +223,7 @@ class Writer
      * @return int the number "write" operations, or null if exiftool returned nothing we understand
      *         even for no-op (file unchanged), 1 is returned so the caller does not think the command failed.
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public function write(string $file, MetadataBag $metadatas, string $destination = null, array $resolutionXY = array()): ?int
     {
@@ -361,9 +363,10 @@ class Writer
     /**
      * Factory for standard Writer
      *
+     * @param LoggerInterface $logger
      * @return Writer
      */
-    public static function create(LoggerInterface $logger)
+    public static function create(LoggerInterface $logger): self
     {
         return new Writer(new Exiftool($logger));
     }

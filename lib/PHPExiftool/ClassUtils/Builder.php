@@ -12,9 +12,9 @@
 namespace PHPExiftool\ClassUtils;
 
 use Exception;
+use InvalidArgumentException;
 use PHPExiftool\Driver\AbstractTag;
 use PHPExiftool\Driver\AbstractType;
-use ReflectionClass;
 
 /**
  * Build and write Tag classes
@@ -81,16 +81,6 @@ class Builder
         else {
             $this->duplicateXmlLines[] = $xmlLine;
         }
-    }
-
-    public function getDuplicatesXmlLines(): array
-    {
-        return $this->duplicateXmlLines;
-    }
-
-    public function getConflictingXmlLines(): array
-    {
-        return $this->conflictingXmlLines;
     }
 
     public function getXmlLine(): int
@@ -257,7 +247,7 @@ class Builder
                 if (in_array(strtolower($value), ['true', 'false'])) {
                     return strtolower($value);
                 }
-                throw new \InvalidArgumentException(sprintf("\"%s\" can't be converted to bool", $value));
+                throw new InvalidArgumentException(sprintf("\"%s\" can't be converted to bool", $value));
             case 'int':
                 $data = strval(intval($value));
 
@@ -272,7 +262,7 @@ class Builder
                     try {
                         return $this->quote($value, 'int');
                     }
-                    catch(\InvalidArgumentException $e) {
+                    catch(InvalidArgumentException $e) {
                         return $this->quote($value, 'string');
                     }
                 }

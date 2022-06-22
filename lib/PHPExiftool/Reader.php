@@ -12,6 +12,9 @@
 namespace PHPExiftool;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Exception;
+use Iterator;
+use IteratorAggregate;
 use PHPExiftool\Exception\EmptyCollectionException;
 use PHPExiftool\Exception\LogicException;
 use PHPExiftool\Exception\RuntimeException;
@@ -44,34 +47,30 @@ use Psr\Log\LoggerInterface;
  *      }
  *
  *
- * @todo implement match conditions (-if EXPR) (name or metadata tag)
- * @todo implement match filter
- * @todo implement sort
- * @todo implement -l
+ * @todo   implement match conditions (-if EXPR) (name or metadata tag)
+ * @todo   implement match filter
+ * @todo   implement sort
+ * @todo   implement -l
  *
  * @author Romain Neutron <imprec@gmail.com>
  */
-class Reader implements \IteratorAggregate
+class Reader implements IteratorAggregate
 {
-    protected $files = array();
-    protected $dirs = array();
-    protected $excludeDirs = array();
-    protected $extensions = array();
-    protected $extensionsToggle = null;
-    protected $followSymLinks = false;
-    protected $recursive = true;
-    protected $ignoreDotFile = false;
-    protected $sort = array();
-    protected $parser;
-    protected $exiftool;
-    protected $timeout = 60;
+    protected array $files = [];
+    protected array $dirs = [];
+    protected array $excludeDirs = [];
+    protected array $extensions = [];
+    protected ?bool $extensionsToggle = null;
+    protected bool $followSymLinks = false;
+    protected bool $recursive = true;
+    protected bool $ignoreDotFile = false;
+    protected array $sort = [];
+    protected ?RDFParser $parser;
+    protected Exiftool $exiftool;
+    protected int $timeout = 60;
 
-    /**
-     *
-     * @var ArrayCollection
-     */
-    protected $collection;
-    protected $readers = array();
+    protected ?ArrayCollection $collection = null;
+    protected array $readers = [];
 
     /**
      *  Constructor
@@ -88,21 +87,21 @@ class Reader implements \IteratorAggregate
         $this->collection = null;
     }
 
-    public function setTimeout($timeout)
+    public function setTimeout($timeout):self
     {
         $this->timeout = $timeout;
 
         return $this;
     }
 
-    public function reset()
+    public function reset(): self
     {
         $this->files
             = $this->dirs
             = $this->excludeDirs
             = $this->extensions
             = $this->sort
-            = $this->readers = array();
+            = $this->readers = [];
 
         $this->recursive = true;
         $this->ignoreDotFile = $this->followSymLinks = false;
@@ -114,9 +113,10 @@ class Reader implements \IteratorAggregate
     /**
      * Implements \IteratorAggregate Interface
      *
-     * @return \Iterator
+     * @return Iterator
+     * @throws Exception
      */
-    public function getIterator()
+    public function getIterator(): Iterator
     {
         return $this->all()->getIterator();
     }
@@ -131,13 +131,13 @@ class Reader implements \IteratorAggregate
      *      $Reader ->files('dc00.jpg')
      *              ->files(array('/tmp/image.jpg', '/tmp/raw.CR2'))
      *
-     * @param  string|array $files The files
+     * @param string|array $files The files
      * @return Reader
      */
-    public function files($files)
+    public function files($files): self
     {
         $this->resetResults();
-        $this->files = array_merge($this->files, (array) $files);
+        $this->files = array_merge($this->files, (array)$files);
 
         return $this;
     }
@@ -152,13 +152,13 @@ class Reader implements \IteratorAggregate
      *      $Reader ->in('documents')
      *              ->in(array('/tmp', '/var'))
      *
-     * @param  string|array $dirs The directories
+     * @param string|array $dirs The directories
      * @return Reader
      */
-    public function in($dirs)
+    public function in($dirs): self
     {
         $this->resetResults();
-        $this->dirs = array_merge($this->dirs, (array) $dirs);
+        $this->dirs = array_merge($this->dirs, (array)$dirs);
 
         return $this;
     }
@@ -167,10 +167,10 @@ class Reader implements \IteratorAggregate
      * Append a reader to this one.
      * Finale result will be the sum of the current reader and all appended ones.
      *
-     * @param  Reader $reader The reader to append
+     * @param Reader $reader The reader to append
      * @return Reader
      */
-    public function append(Reader $reader)
+    public function append(Reader $reader): self
     {
         $this->resetResults();
         $this->readers[] = $reader;
@@ -191,18 +191,18 @@ class Reader implements \IteratorAggregate
      *      $Reader ->in('documents')
      *              ->sort('filename')
      *
-     * @param  string|array $by
+     * @param string|array $by
      * @return Reader
      */
-    public function sort($by)
+    public function sort($by): self
     {
-        static $availableSorts = array(
-        'directory', 'filename', 'createdate', 'modifydate', 'filesize'
-        );
+        static $availableSorts = [
+            'directory', 'filename', 'createdate', 'modifydate', 'filesize'
+        ];
 
-        foreach ((array) $by as $sort) {
+        foreach ((array)$by as $sort) {
 
-            if ( ! in_array($sort, $availableSorts)) {
+            if (!in_array($sort, $availableSorts)) {
                 continue;
             }
             $this->sort[] = $sort;
@@ -229,39 +229,39 @@ class Reader implements \IteratorAggregate
      *      $Reader ->in('documents')
      *              ->exclude(array('test'))
      *
-     * @param  string|array $dirs The directories
+     * @param string|array $dirs The directories
      * @return Reader
      */
-    public function exclude($dirs)
+    public function exclude($dirs): self
     {
         $this->resetResults();
-        $this->excludeDirs = array_merge($this->excludeDirs, (array) $dirs);
+        $this->excludeDirs = array_merge($this->excludeDirs, (array)$dirs);
 
         return $this;
     }
 
     /**
-     * Restrict / Discard files based on extensions
-     * Extensions are case insensitive
+     * Restrict / Discard files based on extensions.
+     * Extensions are case_insensitive.
      *
-     * @param  string|array   $extensions The list of extension
-     * @param  Boolean        $restrict   Toggle restrict/discard method
+     * @param string|array $extensions The list of extension
+     * @param Boolean $restrict        Toggle restrict/discard method
      * @return Reader
      * @throws LogicException
      */
-    public function extensions($extensions, $restrict = true)
+    public function extensions($extensions, bool $restrict = true): self
     {
         $this->resetResults();
 
-        if ( ! is_null($this->extensionsToggle)) {
-            if ((boolean) $restrict !== $this->extensionsToggle) {
+        if (!is_null($this->extensionsToggle)) {
+            if ($restrict !== $this->extensionsToggle) {
                 throw new LogicException('You cannot restrict extensions AND exclude extension at the same time');
             }
         }
 
-        $this->extensionsToggle = (boolean) $restrict;
+        $this->extensionsToggle = (boolean)$restrict;
 
-        $this->extensions = array_merge($this->extensions, (array) $extensions);
+        $this->extensions = array_merge($this->extensions, (array)$extensions);
 
         return $this;
     }
@@ -271,7 +271,7 @@ class Reader implements \IteratorAggregate
      *
      * @return Reader
      */
-    public function followSymLinks()
+    public function followSymLinks(): self
     {
         $this->resetResults();
         $this->followSymLinks = true;
@@ -287,7 +287,7 @@ class Reader implements \IteratorAggregate
      *
      * @return Reader
      */
-    public function ignoreDotFiles()
+    public function ignoreDotFiles(): self
     {
         $this->resetResults();
         $this->ignoreDotFile = true;
@@ -301,7 +301,7 @@ class Reader implements \IteratorAggregate
      *
      * @return Reader
      */
-    public function notRecursive()
+    public function notRecursive(): self
     {
         $this->resetResults();
         $this->recursive = false;
@@ -313,8 +313,9 @@ class Reader implements \IteratorAggregate
      * Return the first result. If no result available, null is returned
      *
      * @return FileEntity
+     * @throws Exception
      */
-    public function getOneOrNull()
+    public function getOneOrNull(): ?FileEntity
     {
         return count($this->all()) === 0 ? null : $this->all()->first();
     }
@@ -324,8 +325,9 @@ class Reader implements \IteratorAggregate
      *
      * @return FileEntity
      * @throws EmptyCollectionException
+     * @throws Exception
      */
-    public function first()
+    public function first(): FileEntity
     {
         if (count($this->all()) === 0) {
             throw new EmptyCollectionException('Collection is empty');
@@ -338,10 +340,11 @@ class Reader implements \IteratorAggregate
      * Perform the scan and returns all the results
      *
      * @return ArrayCollection
+     * @throws Exception
      */
-    public function all()
+    public function all(): ?ArrayCollection
     {
-        if (! $this->collection) {
+        if (!$this->collection) {
             $this->collection = $this->buildQueryAndExecute();
         }
 
@@ -360,7 +363,7 @@ class Reader implements \IteratorAggregate
         return $this->collection;
     }
 
-    public static function create(LoggerInterface $logger)
+    public static function create(LoggerInterface $logger): self
     {
         return new static(new Exiftool($logger), new RDFParser());
     }
@@ -370,7 +373,7 @@ class Reader implements \IteratorAggregate
      *
      * @return Reader
      */
-    protected function resetResults()
+    protected function resetResults(): self
     {
         $this->collection = null;
 
@@ -381,18 +384,20 @@ class Reader implements \IteratorAggregate
      * Build the command returns an ArrayCollection of FileEntity
      *
      * @return ArrayCollection
+     * @throws Exception
      */
-    protected function buildQueryAndExecute()
+    protected function buildQueryAndExecute(): ArrayCollection
     {
         $result = '';
 
         try {
             $result = trim($this->exiftool->executeCommand($this->buildQuery(), $this->timeout));
-        } catch (RuntimeException $e) {
+        }
+        catch (RuntimeException $e) {
             /**
              * In case no file found, an exit code 1 is returned
              */
-            if (! $this->ignoreDotFile) {
+            if (!$this->ignoreDotFile) {
                 throw $e;
             }
         }
@@ -416,7 +421,7 @@ class Reader implements \IteratorAggregate
      */
     protected function computeExcludeDirs(array $rawExcludeDirs, array $rawSearchDirs): array
     {
-        $excludeDirs = array();
+        $excludeDirs = [];
 
         foreach ($rawExcludeDirs as $excludeDir) {
             $found = false;
@@ -428,7 +433,7 @@ class Reader implements \IteratorAggregate
 
                 $supposedExcluded = str_replace($currentPrefix, '', realpath($currentPrefix . $excludeDir));
 
-                if (! $supposedExcluded) {
+                if (!$supposedExcluded) {
                     continue;
                 }
 
@@ -462,7 +467,7 @@ class Reader implements \IteratorAggregate
                         continue;
                     }
 
-                    if ( ! trim($supposedRelative)) {
+                    if (!trim($supposedRelative)) {
                         continue;
                     }
 
@@ -473,7 +478,7 @@ class Reader implements \IteratorAggregate
             }
 
 
-            if (! $found) {
+            if (!$found) {
                 throw new RuntimeException(sprintf("Invalid exclude dir %s ; Exclude dir is limited to the name of a directory at first depth", $excludeDir));
             }
         }
@@ -490,7 +495,7 @@ class Reader implements \IteratorAggregate
      */
     protected function buildQuery(): array
     {
-        if (! $this->dirs && ! $this->files) {
+        if (!$this->dirs && !$this->files) {
             throw new LogicException('You have not set any files or directory');
         }
 
@@ -501,9 +506,10 @@ class Reader implements \IteratorAggregate
         }
 
         if (!empty($this->extensions)) {
-            if (! $this->extensionsToggle) {
+            if (!$this->extensionsToggle) {
                 $extensionPrefix = '--ext';
-            } else {
+            }
+            else {
                 $extensionPrefix = '-ext';
             }
 
@@ -513,7 +519,7 @@ class Reader implements \IteratorAggregate
             }
         }
 
-        if (! $this->followSymLinks) {
+        if (!$this->followSymLinks) {
             $command[] = '-i';
             $command[] = 'SYMLINKS';
         }

@@ -11,6 +11,10 @@
 
 namespace PHPExiftool;
 
+use DOMDocument;
+use DOMElement;
+use DOMNodeList;
+use DOMXPath;
 use PHPExiftool\Driver\TagInterface;
 use PHPExiftool\Driver\TagFactory;
 use PHPExiftool\Driver\Metadata\Metadata;
@@ -37,10 +41,10 @@ class RDFParser
      */
     const RDF_NAMESPACE = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
 
-    protected $XML;
-    protected $DOM;
-    protected $DOMXpath;
-    protected $registeredPrefixes;
+    protected ?string $XML = null;
+    protected ?DOMDocument $DOM = null;
+    protected ?DOMXPath $DOMXpath = null;
+    protected array $registeredPrefixes = [];
 
     public function __destruct()
     {
@@ -50,10 +54,10 @@ class RDFParser
     /**
      * Opens an XML file for parsing
      *
-     * @param  string    $XML
+     * @param string $XML
      * @return RDFParser
      */
-    public function open($XML)
+    public function open(string $XML): self
     {
         $this->close();
 
@@ -67,22 +71,23 @@ class RDFParser
      *
      * @return RDFParser
      */
-    public function close()
+    public function close(): self
     {
         $this->XML = null;
         $this->DOMXpath = null;
         $this->DOM = null;
-        $this->registeredPrefixes = array();
+        $this->registeredPrefixes = [];
 
         return $this;
     }
 
     /**
-     * Parse a XML string and returns an ArrayCollection of FileEntity
+     * Parse an XML string and returns an ArrayCollection of FileEntity
      *
      * @return ArrayCollection
+     * @throws ParseError
      */
-    public function ParseEntities()
+    public function ParseEntities(): ArrayCollection
     {
         /**
          * A default Exiftool XML can contains many RDF Descriptions
@@ -93,14 +98,14 @@ class RDFParser
             /**
              * Let's create a DOMDocument containing a single RDF result
              */
-            $Dom = new \DOMDocument();
+            $Dom = new DOMDocument();
 
             $DomRootElement = $Dom->createElementNS(self::RDF_NAMESPACE, 'rdf:RDF');
             $DomRootElement->appendChild($Dom->importNode($node, true));
 
             $Dom->appendChild($DomRootElement);
 
-            $LocalXpath = new \DOMXPath($Dom);
+            $LocalXpath = new DOMXPath($Dom);
             $LocalXpath->registerNamespace('rdf', self::RDF_NAMESPACE);
 
 
@@ -109,7 +114,9 @@ class RDFParser
             /**
              * Let's associate a Description to the corresponding file
              */
-            $file = $RDFDescriptionRoot->item(0)->getAttribute('rdf:about');
+            /** @var DOMElement $node */
+            $node = $RDFDescriptionRoot->item(0);
+            $file = $node->getAttribute('rdf:about');
 
             $Entities->set($file, new FileEntity($file, $Dom, new static()));
         }
@@ -121,8 +128,9 @@ class RDFParser
      * Parse an Entity associated DOM, returns the metadatas
      *
      * @return MetadataBag
+     * @throws TagUnknown|ParseError
      */
-    public function ParseMetadatas()
+    public function ParseMetadatas(): MetadataBag
     {
         $nodes = $this->getDomXpath()->query('/rdf:RDF/rdf:Description/*');
 
@@ -133,7 +141,8 @@ class RDFParser
 
             try {
                 $tag = TagFactory::getFromRDFTagname($tagname);
-            } catch (TagUnknown $e) {
+            }
+            catch (TagUnknown $e) {
                 continue;
             }
 
@@ -150,23 +159,26 @@ class RDFParser
     /**
      * Returns the first result for a user defined query against the RDF
      *
-     * @param  string         $query
-     * @return ValueInterface The value
+     * @param string $query
+     * @return ?ValueInterface The value
+     * @throws TagUnknown|ParseError
      */
-    public function Query($query)
+    public function Query(string $query): ?ValueInterface
     {
         $QueryParts = explode(':', $query);
 
         $DomXpath = $this->getDomXpath();
 
-        if ( ! in_array($QueryParts[0], $this->registeredPrefixes)) {
+        if (!in_array($QueryParts[0], $this->registeredPrefixes)) {
             return null;
         }
 
         $nodes = $DomXpath->query('/rdf:RDF/rdf:Description/' . $query);
 
-        if ($nodes instanceof \DOMNodeList && $nodes->length > 0) {
-            return $this->readNodeValue($nodes->item(0));
+        if ($nodes instanceof DOMNodeList && $nodes->length > 0) {
+            /** @var DOMElement $node */
+            $node = $nodes->item(0);
+            return $this->readNodeValue($node);
         }
 
         return null;
@@ -175,21 +187,21 @@ class RDFParser
     /**
      * Normalize a tagname based on namespaces redirections
      *
-     * @param  string $tagname The tagname to normalize
+     * @param string $tagname The tagname to normalize
      * @return string The normalized tagname
      */
-    protected function normalize($tagname)
+    protected function normalize(string $tagname): string
     {
-        static $namespacesRedirection = array(
-        'CIFF' => array('Canon', 'CanonRaw'),
-        );
+        static $namespacesRedirection = [
+            'CIFF' => ['Canon', 'CanonRaw'],
+        ];
 
         foreach ($namespacesRedirection as $from => $to) {
             if (strpos($tagname, $from . ':') !== 0) {
                 continue;
             }
 
-            foreach ((array) $to as $substit) {
+            foreach ((array)$to as $substit) {
                 $supposedTagname = str_replace($from . ':', $substit . ':', $tagname);
 
                 if (TagFactory::hasFromRDFTagname($supposedTagname)) {
@@ -204,12 +216,12 @@ class RDFParser
     /**
      * Extract all XML namespaces declared in a XML
      *
-     * @param  \DOMDocument $dom
+     * @param DOMDocument $dom
      * @return array        The namespaces declared in XML
      */
-    protected static function getNamespacesFromXml(\DOMDocument $dom)
+    protected static function getNamespacesFromXml(DOMDocument $dom): array
     {
-        $namespaces = array();
+        $namespaces = [];
 
         $XML = $dom->saveXML();
 
@@ -227,11 +239,12 @@ class RDFParser
     /**
      * Read the node value, decode it if needed
      *
-     * @param  \DOMNode       $node The node to read
-     * @param  TagInterface   $tag  The tag associated
+     * @param DOMElement $node   The node to read
+     * @param ?TagInterface $tag The tag associated
      * @return ValueInterface The value extracted
+     * @throws TagUnknown
      */
-    protected function readNodeValue(\DOMNode $node, TagInterface $tag = null)
+    protected function readNodeValue(DOMElement $node, ?TagInterface $tag = null)
     {
         $nodeName = $this->normalize($node->nodeName);
 
@@ -241,7 +254,7 @@ class RDFParser
 
         if ($node->getElementsByTagNameNS(self::RDF_NAMESPACE, 'Bag')->length > 0) {
 
-            $ret = array();
+            $ret = [];
 
             foreach ($node->getElementsByTagNameNS(self::RDF_NAMESPACE, 'li') as $nodeElement) {
                 $ret[] = $nodeElement->nodeValue;
@@ -249,21 +262,26 @@ class RDFParser
 
             if (is_null($tag) || $tag->isMulti()) {
                 return new Multi($ret);
-            } else {
+            }
+            else {
                 return new Mono(implode(' ', $ret));
             }
-        } elseif ($node->getAttribute('rdf:datatype') === 'http://www.w3.org/2001/XMLSchema#base64Binary') {
+        }
+        elseif ($node->getAttribute('rdf:datatype') === 'http://www.w3.org/2001/XMLSchema#base64Binary') {
 
             if (is_null($tag) || $tag->isBinary()) {
                 return Binary::loadFromBase64(trim($node->nodeValue));
-            } else {
+            }
+            else {
                 return new Mono(base64_decode(trim($node->nodeValue)));
             }
-        } else {
+        }
+        else {
 
-            if ( ! is_null($tag) && $tag->isMulti()) {
+            if (!is_null($tag) && $tag->isMulti()) {
                 return new Multi($node->nodeValue);
-            } else {
+            }
+            else {
                 return new Mono($node->nodeValue);
             }
         }
@@ -272,25 +290,25 @@ class RDFParser
     /**
      * Compute the DOMDocument from the XML
      *
-     * @return \DOMDocument
+     * @return ?DOMDocument
      * @throws LogicException
      * @throws ParseError
      */
-    protected function getDom()
+    protected function getDom(): ?DOMDocument
     {
-        if (! $this->XML) {
+        if (!$this->XML) {
             throw new LogicException('You must open an XML first');
         }
 
-        if (! $this->DOM) {
+        if (!$this->DOM) {
 
-            $this->DOM = new \DOMDocument;
+            $this->DOM = new DOMDocument;
 
             /**
              * We shut up the warning to exclude an exception in case Warnings are
              * transformed in exception
              */
-            if ( ! @$this->DOM->loadXML($this->XML)) {
+            if (!@$this->DOM->loadXML($this->XML)) {
                 throw new ParseError('Unable to load XML');
             }
         }
@@ -301,22 +319,23 @@ class RDFParser
     /**
      * Compute the DOMXpath from the DOMDocument
      *
-     * @return \DOMXpath        The DOMXpath object related to the XML
-     * @throws RuntimeException
+     * @return ?DOMXpath        The DOMXpath object related to the XML
+     * @throws RuntimeException|ParseError
      */
-    protected function getDomXpath()
+    protected function getDomXpath(): ?DOMXPath
     {
-        if (! $this->DOMXpath) {
+        if (!$this->DOMXpath) {
             try {
-                $this->DOMXpath = new \DOMXPath($this->getDom());
-            } catch (ParseError $e) {
+                $this->DOMXpath = new DOMXPath($this->getDom());
+            }
+            catch (ParseError $e) {
                 throw new RuntimeException('Unable to parse the XML');
             }
 
             $this->DOMXpath->registerNamespace('rdf', self::RDF_NAMESPACE);
 
             foreach (static::getNamespacesFromXml($this->getDom()) as $prefix => $uri) {
-                $this->registeredPrefixes = array_merge($this->registeredPrefixes, (array) $prefix);
+                $this->registeredPrefixes = array_merge($this->registeredPrefixes, (array)$prefix);
                 $this->DOMXpath->registerNamespace($prefix, $uri);
             }
         }

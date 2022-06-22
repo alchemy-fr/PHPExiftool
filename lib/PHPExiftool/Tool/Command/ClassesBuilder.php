@@ -273,6 +273,9 @@ class ClassesBuilder extends Command
             case 'var_pstr32':
             case 'var_ustr32':
             case 'unicode':
+            case 'Unicode':
+            case 'GUID':
+            case 'vt_filetime':
 
                 # Apple data structures in PICT images
             case 'Arc':
@@ -313,6 +316,7 @@ class ClassesBuilder extends Command
 
 
             default:
+                $this->output->writeln("");
                 $this->output->writeln(sprintf("No type found for %s @%s", $type, $this->currentXmlLine));
                 break;
         }
@@ -373,10 +377,7 @@ class ClassesBuilder extends Command
                 throw new \LogicException($err);
             }
 
-            //$this->output->writeln($err);
-            return;
-
-            foreach ($properties as $property => $value) {
+/*            foreach ($properties as $property => $value) {
                 if ($this->classes[$classpath]->getProperty($property) != $value) {
 
                     $propertyType = AbstractTag::getAttributeType($property);
@@ -415,7 +416,7 @@ class ClassesBuilder extends Command
                         }
                     }
                 }
-            }
+            }*/
         }
         else {
             $this->classes[$classpath] = new Builder(

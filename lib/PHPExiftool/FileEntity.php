@@ -20,7 +20,6 @@ use PHPExiftool\Driver\Metadata\MetadataBag;
 use PHPExiftool\Driver\Value\ValueInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Cache\InvalidArgumentException;
-use SplFileInfo;
 
 
 /**

@@ -1,6 +1,7 @@
 <?php
 namespace PHPExiftool\Driver;
 
+use Exception;
 use ReflectionClass;
 use ReflectionType;
 
@@ -20,7 +21,7 @@ trait AttributeReflectionTrait
             try {
                 $attrTypes[$key] = $rc->getProperty($key)->getType();
             }
-            catch (\Exception $e) {
+            catch (Exception $e) {
                 // no-op
             }
         }

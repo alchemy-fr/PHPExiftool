@@ -13,8 +13,7 @@ namespace PHPExiftool\Driver;
 
 use JMS\Serializer\Annotation\VirtualProperty;
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use ReflectionClass;
-use ReflectionType;
+
 
 /**
  * Abstract Tag object

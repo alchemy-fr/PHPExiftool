@@ -23,21 +23,21 @@ interface TagInterface
      *
      * @return string
      */
-    public function getId();
+    public function getId(): string;
 
     /**
      * Return the tag name
      *
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * A small string about the Tag
      *
      * @return string
      */
-    public function getDescription();
+    public function getDescription(): string;
 
     /**
      * An array of available values for this tag
@@ -45,44 +45,44 @@ interface TagInterface
      *
      * @return array
      */
-    public function getValues();
+    public function getValues(): array;
 
     /**
      * Returns true if the Tag handles list values
      *
      * @return boolean
      */
-    public function isMulti();
+    public function isMulti(): bool;
 
     /**
      * Returns true if the value is binary
      *
-     * @return type
+     * @return bool
      */
-    public function isBinary();
+    public function isBinary(): bool;
 
     /**
      * Returns tag group name
      *
      * @return string
      */
-    public function getGroupName();
+    public function getGroupName(): string;
 
     /**
      * Returns true if the value can be written in the tag
      *
-     * @return type
+     * @return bool
      */
-    public function isWritable();
+    public function isWritable(): bool;
 
     /**
      * Return the tagname path ; ie GroupName:Name
      *
-     * @return type
+     * @return string
      */
-    public function getTagname();
+    public function getTagname(): string;
 
-    public function getMinLength();
+    public function getMinLength(): int;
 
-    public function getMaxLength();
+    public function getMaxLength(): int;
 }

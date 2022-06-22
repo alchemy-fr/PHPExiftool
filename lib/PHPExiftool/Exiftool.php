@@ -19,8 +19,8 @@ use Symfony\Component\Process\Process;
 
 class Exiftool implements LoggerAwareInterface
 {
-    private LoggerInterface $logger;
-    private $binaryPath;
+    protected LoggerInterface $logger;
+    protected $binaryPath;
 
     public function __construct(LoggerInterface $logger, $binaryPath = null)
     {
@@ -37,6 +37,7 @@ class Exiftool implements LoggerAwareInterface
 
         return $this;
     }
+
 
     /**
      * Execute a command and return the output
