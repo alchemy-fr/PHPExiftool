@@ -22,8 +22,8 @@ use PHPExiftool\Driver\Value\ValueInterface;
  */
 class Metadata
 {
-    protected $tag;
-    protected $value;
+    protected TagInterface $tag;
+    protected ValueInterface $value;
 
     public function __construct(TagInterface $tag, ValueInterface $value)
     {
@@ -33,12 +33,12 @@ class Metadata
         return $this;
     }
 
-    public function getTag()
+    public function getTag(): TagInterface
     {
         return $this->tag;
     }
 
-    public function getValue()
+    public function getValue(): ValueInterface
     {
         return $this->value;
     }

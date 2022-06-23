@@ -14,6 +14,7 @@ namespace PHPExiftool\Driver;
 use JMS\Serializer\Annotation\VirtualProperty;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 
+
 /**
  * Abstract Tag object
  *
@@ -24,30 +25,38 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
  */
 abstract class AbstractTag implements TagInterface
 {
+    use AttributeReflectionTrait;
 
-    protected $Id;
-    protected $Name;
-    protected $Type;
-    protected $Description;
-    protected $Values;
-    protected $FullName;
-    protected $GroupName;
-    protected $g0;
-    protected $g1;
-    protected $g2;
-    protected $MinLength = 0;
-    protected $MaxLength;
-    protected $Writable       = false;
-    protected $flag_Avoid     = false;
-    protected $flag_Binary    = false;
-    protected $flag_Permanent = false;
-    protected $flag_Protected = false;
-    protected $flag_Unsafe    = false;
-    protected $flag_List      = false;
-    protected $flag_Mandatory = false;
-    protected $flag_Bag       = false;
-    protected $flag_Seq       = false;
-    protected $flag_Alt       = false;
+    protected string $Id;
+    protected string $Name;
+    protected string $Type;
+    protected string $PHPType;
+    protected int $Index;
+    protected string $Description;
+    protected array $Values;
+    protected string $FullName;
+    protected string $GroupName;
+    protected string $g0;
+    protected string $g1;
+    protected string $g2;
+    protected int $MinLength = 0;
+    protected int $MaxLength;
+    protected bool $Writable = false;
+    protected bool $flag_Avoid = false;
+    protected bool $flag_Binary = false;
+    protected bool $flag_Permanent = false;
+    protected bool $flag_Protected = false;
+    protected bool $flag_Unsafe = false;
+    protected bool $flag_Unknown = false;
+    protected bool $flag_List = false;
+    protected bool $flag_Mandatory = false;
+    protected bool $flag_Bag = false;
+    protected bool $flag_Seq = false;
+    protected bool $flag_Alt = false;
+    protected string $local_g0;
+    protected string $local_g1;
+    protected string $local_g2;
+
 
     /**
      * Return Tag Id - Tag dependant
@@ -56,7 +65,7 @@ abstract class AbstractTag implements TagInterface
      *
      * @return string
      */
-    public function getId()
+    public function getId(): string
     {
         return $this->Id;
     }
@@ -68,7 +77,7 @@ abstract class AbstractTag implements TagInterface
      *
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -80,7 +89,7 @@ abstract class AbstractTag implements TagInterface
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->Description;
     }
@@ -93,7 +102,7 @@ abstract class AbstractTag implements TagInterface
      *
      * @return array
      */
-    public function getValues()
+    public function getValues(): array
     {
         return $this->Values;
     }
@@ -105,7 +114,7 @@ abstract class AbstractTag implements TagInterface
      *
      * @return boolean
      */
-    public function isMulti()
+    public function isMulti(): bool
     {
         return $this->flag_List;
     }
@@ -115,9 +124,9 @@ abstract class AbstractTag implements TagInterface
      *
      * @VirtualProperty
      *
-     * @return type
+     * @return boolean
      */
-    public function isBinary()
+    public function isBinary(): bool
     {
         return $this->flag_Binary;
     }
@@ -129,7 +138,7 @@ abstract class AbstractTag implements TagInterface
      *
      * @return string
      */
-    public function getGroupName()
+    public function getGroupName(): string
     {
         return $this->GroupName;
     }
@@ -139,9 +148,9 @@ abstract class AbstractTag implements TagInterface
      *
      * @VirtualProperty
      *
-     * @return type
+     * @return boolean
      */
-    public function isWritable()
+    public function isWritable(): bool
     {
         return $this->Writable;
     }
@@ -151,9 +160,9 @@ abstract class AbstractTag implements TagInterface
      *
      * @VirtualProperty
      *
-     * @return type
+     * @return string
      */
-    public function getTagname()
+    public function getTagname(): string
     {
         return $this->GroupName . ':' . $this->Name;
     }
@@ -164,7 +173,7 @@ abstract class AbstractTag implements TagInterface
      *
      * @return integer
      */
-    public function getMinLength()
+    public function getMinLength(): int
     {
         return $this->MinLength;
     }
@@ -175,7 +184,7 @@ abstract class AbstractTag implements TagInterface
      *
      * @return integer
      */
-    public function getMaxLength()
+    public function getMaxLength(): int
     {
         return $this->MaxLength;
     }

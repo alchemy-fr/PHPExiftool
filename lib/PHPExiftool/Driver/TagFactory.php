@@ -11,7 +11,6 @@
 
 namespace PHPExiftool\Driver;
 
-use PHPExiftool\Driver\TagInterface;
 use PHPExiftool\Exception\TagUnknown;
 use PHPExiftool\Tool\Command\ClassesBuilder;
 
@@ -31,7 +30,7 @@ class TagFactory
      * @return TagInterface
      * @throws TagUnknown
      */
-    public static function getFromRDFTagname($tagname)
+    public static function getFromRDFTagname(string $tagname): TagInterface
     {
         $classname = static::classnameFromTagname($tagname);
 
@@ -42,12 +41,12 @@ class TagFactory
         return new $classname;
     }
 
-    public static function hasFromRDFTagname($tagname)
+    public static function hasFromRDFTagname(string $tagname): bool
     {
         return class_exists(static::classnameFromTagname($tagname));
     }
 
-    protected static function classnameFromTagname($tagname)
+    protected static function classnameFromTagname(string $tagname): string
     {
         $tagname = str_replace('/rdf:RDF/rdf:Description/', '', $tagname);
 

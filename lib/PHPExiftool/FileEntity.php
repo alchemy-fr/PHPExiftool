@@ -11,11 +11,16 @@
 
 namespace PHPExiftool;
 
-use Doctrine\Common\Cache\ArrayCache;
-use PHPExiftool\RDFParser;
-use PHPExiftool\FileEntity;
-use PHPExiftool\Driver\Value\ValueInterface;
+
+use Cache\Adapter\PHPArray\ArrayCachePool;
+use DOMDocument;
+use Exception;
+use IteratorAggregate;
 use PHPExiftool\Driver\Metadata\MetadataBag;
+use PHPExiftool\Driver\Value\ValueInterface;
+use Psr\Cache\CacheItemPoolInterface;
+use Psr\Cache\InvalidArgumentException;
+
 
 /**
  *
@@ -23,63 +28,46 @@ use PHPExiftool\Driver\Metadata\MetadataBag;
  * @author      Romain Neutron - imprec@gmail.com
  * @license     http://opensource.org/licenses/MIT MIT
  */
-class FileEntity implements \IteratorAggregate
+class FileEntity implements IteratorAggregate
 {
+    // private DOMDocument $dom;
 
-    /**
-     *
-     * @var \DOMDocument
-     */
-    private $dom;
+    private string $file;
 
-    /**
-     *
-     * @var \SplFileInfo
-     */
-    private $file;
+    private CacheItemPoolInterface $cache;
 
-    /**
-     *
-     * @var ArrayCache
-     */
-    private $cache;
-
-    /**
-     *
-     * @var RDFParser
-     */
-    private $parser;
+    private RDFParser $parser;
 
     /**
      * Construct a new FileEntity
      *
-     * @param  string       $file
-     * @param  \DOMDocument $dom
-     * @param  RDFParser    $parser
+     * @param string $file
+     * @param DOMDocument $dom
+     * @param RDFParser $parser
      * @return FileEntity
      */
-    public function __construct($file, \DOMDocument $dom, RDFParser $parser)
+    public function __construct(string $file, DOMDocument $dom, RDFParser $parser)
     {
-        $this->dom = $dom;
+        // $this->dom = $dom;
         $this->file = $file;
 
-        $this->cache = new ArrayCache();
+        $this->cache = new ArrayCachePool();
 
         $this->parser = $parser->open($dom->saveXML());
 
         return $this;
     }
 
+    /**
+     * @throws InvalidArgumentException
+     * @throws Exception
+     */
     public function getIterator()
     {
         return $this->getMetadatas()->getIterator();
     }
 
-    /**
-     *
-     * @var string
-     */
-    public function getFile()
+    public function getFile(): string
     {
         return $this->file;
     }
@@ -87,20 +75,25 @@ class FileEntity implements \IteratorAggregate
     /**
      *
      * @return MetadataBag
+     * @throws InvalidArgumentException
      */
-    public function getMetadatas()
+    public function getMetadatas(): MetadataBag
     {
-        $key = realpath($this->file);
-
-        if ($this->cache->contains($key)) {
-            return $this->cache->fetch($key);
+        $key = $this->getCacheKey();
+        $ci = $this->cache->getItem($key);
+        if($ci->isHit()) {
+            return $ci->get();
         }
 
         $metadatas = $this->parser->ParseMetadatas();
-
-        $this->cache->save($key, $metadatas);
+        $ci->set($metadatas);
 
         return $metadatas;
+    }
+
+    public function getCacheKey(): string
+    {
+        return urlencode($this->file);    // will encode psr6 reserved chars
     }
 
     /**
@@ -110,7 +103,7 @@ class FileEntity implements \IteratorAggregate
      *
      * @return ValueInterface
      */
-    public function executeQuery($query)
+    public function executeQuery(string $query): ValueInterface
     {
         return $this->parser->Query($query);
     }

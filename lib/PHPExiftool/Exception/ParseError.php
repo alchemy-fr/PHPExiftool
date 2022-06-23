@@ -11,7 +11,9 @@
 
 namespace PHPExiftool\Exception;
 
-class ParseError extends \Exception implements ExceptionInterface
+use Exception;
+
+class ParseError extends Exception implements ExceptionInterface
 {
 
 }

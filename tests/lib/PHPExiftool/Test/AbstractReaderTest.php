@@ -10,16 +10,19 @@
 
 namespace PHPExiftool\Test;
 
+use PHPExiftool\Exception\EmptyCollectionException;
+use PHPExiftool\Exception\LogicException;
+use PHPExiftool\Exception\RuntimeException;
 use PHPExiftool\Reader;
+use PHPUnit_Framework_TestCase;
+use Symfony\Component\Process\Process;
+use PHPExiftool;
 
-abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
+abstract class AbstractReaderTest extends PHPUnit_Framework_TestCase {
 
-    /**
-     * @var Reader
-     */
-    protected $object;
-    protected static $tmpDir;
-    protected static $disableSymLinkTest = false;
+    protected ?Reader $object = null;
+    protected static string $tmpDir = "";
+    protected static bool $disableSymLinkTest = false;
 
     public static function setUpBeforeClass()
     {
@@ -28,12 +31,12 @@ abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
         $tmpDir = __DIR__ . '/tmp';
 
         if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            $command = 'rmdir /q /s ' . escapeshellarg($tmpDir);
+            $command = ['rmdir', '/q', '/s', escapeshellarg($tmpDir)];
         } else {
-            $command = 'rmdir -Rf ' . escapeshellarg($tmpDir);
+            $command = ['rmdir', '-Rf', escapeshellarg($tmpDir)];
         }
 
-        $process = new \Symfony\Component\Process\Process($command);
+        $process = new Process($command);
         $process->run();
 
         if (!is_dir($tmpDir)) {
@@ -167,6 +170,7 @@ abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
     /**
      * @covers PHPExiftool\Reader::files
      * @covers PHPExiftool\Reader::buildQuery
+     * @throws EmptyCollectionException
      */
     public function testFiles()
     {
@@ -268,7 +272,7 @@ abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
                 ->all();
     }
 
-    public function getExclude()
+    public function getExclude(): array
     {
         return array(
             array(self::$tmpDir . '/dir/'),
@@ -285,10 +289,10 @@ abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
      * @dataProvider getWrongExclude
      * @covers PHPExiftool\Reader::computeExcludeDirs
      * @covers \PHPExiftool\Exception\RuntimeException
-     * @expectedException \PHPExiftool\Exception\RuntimeException
      */
     public function testComputeExcludeDirsFail($dir)
     {
+        $this->expectException(RuntimeException::class);
         $reader = $this->getReader();
         $reader
                 ->in(self::$tmpDir)
@@ -296,7 +300,7 @@ abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
                 ->all();
     }
 
-    public function getWrongExclude()
+    public function getWrongExclude(): array
     {
         return array(
             array(self::$tmpDir . '/dir/dir2'),
@@ -347,10 +351,10 @@ abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
     /**
      * @covers PHPExiftool\Reader::extensions
      * @covers \PHPExiftool\Exception\LogicException
-     * @expectedException \PHPExiftool\Exception\LogicException
      */
     public function testExtensionsMisUse()
     {
+        $this->expectException(LogicException::class);
         $reader = $this->getReader();
         $reader->extensions('exiftool')->extensions('jpg', false);
     }
@@ -397,10 +401,10 @@ abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
     /**
      * @covers PHPExiftool\Reader::first
      * @covers \PHPExiftool\Exception\EmptyCollectionException
-     * @expectedException \PHPExiftool\Exception\EmptyCollectionException
      */
     public function testFirstEmpty()
     {
+        $this->expectException(EmptyCollectionException::class);
         $reader = $this->getReader();
         $reader->in(self::$tmpDir)->notRecursive()->extensions(array('jpg', 'cr2'), false);
         $reader->first();
@@ -420,10 +424,10 @@ abstract class AbstractReaderTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers PHPExiftool\Reader::buildQuery
-     * @expectedException \PHPExiftool\Exception\LogicException
      */
     public function testFail()
     {
+        $this->expectException(LogicException::class);
         $reader = $this->getReader();
         $reader->all();
     }

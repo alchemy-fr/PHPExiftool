@@ -19,6 +19,8 @@ namespace PHPExiftool\Driver;
  */
 abstract class AbstractType implements TypeInterface
 {
-    protected $ExiftoolName;
-    protected $PHPMap;
+    use AttributeReflectionTrait;
+
+    protected string $ExiftoolName;
+    protected string $PHPMap;
 }

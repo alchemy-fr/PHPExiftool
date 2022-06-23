@@ -11,7 +11,9 @@
 
 namespace PHPExiftool\Exception;
 
-class TagUnknown extends \Exception implements ExceptionInterface
+use Exception;
+
+class TagUnknown extends Exception implements ExceptionInterface
 {
 
 }

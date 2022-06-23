@@ -20,7 +20,7 @@ use PHPExiftool\Reader;
 class ReaderTest extends AbstractReaderTest
 {
 
-    protected function getReader()
+    protected function getReader(): Reader
     {
         $logger = new Logger('Test');
         $logger->pushHandler(new NullHandler());
