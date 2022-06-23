@@ -85,6 +85,8 @@ class InformationDumper
             $command = array_merge($command, explode(' ', $option));
         }
         $command[] = '-f';
+        $command[] = '-lang';
+        $command[] = 'en';
         $command[] = '-list' . $type;
 
         $xml = $this->exiftool->executeCommand($command);
