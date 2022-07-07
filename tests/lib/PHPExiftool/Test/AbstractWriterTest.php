@@ -106,8 +106,8 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
         $uniqueId = 'UNI-QUE-ID';
 
         $metadatas = new Driver\Metadata\MetadataBag();
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\UniqueDocumentID(), new Driver\Value\Mono($uniqueId)));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPExif\ImageUniqueID(), new Driver\Value\Mono($uniqueId)));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\IPTC\UniqueDocumentID(), new Driver\Value\Mono($uniqueId)));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\XMP_exif\ImageUniqueID(), new Driver\Value\Mono($uniqueId)));
 
         $this->object->erase(true, false);
         $changedFiles = $this->object->write($this->inWithICC, $metadatas, $this->out);
@@ -143,14 +143,14 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
             $found = false;
 
             foreach ($acceptedMetas as $accepted) {
-                if (preg_match('/' . $accepted . '/i', $meta->getTag()->getTagname())) {
+                if (preg_match('/' . $accepted . '/i', $meta->getTag()->getId())) {
                     $found = true;
                     break;
                 }
             }
 
             if (!$found) {
-                $this->fail(sprintf('Unexpected meta %s found', $meta->getTag()->getTagname()));
+                $this->fail(sprintf('Unexpected meta %s found', $meta->getTag()->getId()));
             }
         }
     }
@@ -163,8 +163,8 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
         $uniqueId = 'UNI-QUE-ID';
 
         $metadatas = new Driver\Metadata\MetadataBag();
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\UniqueDocumentID(), new Driver\Value\Mono($uniqueId)));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPExif\ImageUniqueID(), new Driver\Value\Mono($uniqueId)));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\IPTC\UniqueDocumentID(), new Driver\Value\Mono($uniqueId)));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\XMP_exif\ImageUniqueID(), new Driver\Value\Mono($uniqueId)));
 
         $this->object->erase(true, true);
         $changedFiles = $this->object->write($this->inWithICC, $metadatas, $this->out);
@@ -200,14 +200,14 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
             $found = false;
 
             foreach ($acceptedMetas as $accepted) {
-                if (preg_match('/' . $accepted . '/i', $meta->getTag()->getTagname())) {
+                if (preg_match('/' . $accepted . '/i', $meta->getTag()->getId())) {
                     $found = true;
                     break;
                 }
             }
 
             if (!$found) {
-                $this->fail(sprintf('Unexpected meta %s found', $meta->getTag()->getTagname()));
+                $this->fail(sprintf('Unexpected meta %s found', $meta->getTag()->getId()));
             }
         }
     }
@@ -219,9 +219,9 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
     public function testWrite()
     {
         $metadatas = new Driver\Metadata\MetadataBag();
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\XMP_iptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
 
         $changedFiles = $this->object->write($this->in, $metadatas, $this->out);
 
@@ -243,9 +243,9 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
     public function testWriteInPlace()
     {
         $metadatas = new Driver\Metadata\MetadataBag();
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\XMP_iptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
 
         $changedFiles = $this->object->write($this->inPlace, $metadatas);
 
@@ -267,9 +267,9 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
     public function testWriteInPlaceErased()
     {
         $metadatas = new Driver\Metadata\MetadataBag();
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\XMP_iptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
 
         $this->object->erase(true);
         $changedFiles = $this->object->write($this->inPlace, $metadatas);
@@ -314,8 +314,8 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
         ];
 
         $metadatas = new Driver\Metadata\MetadataBag();
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
-        $metadatas->add(new Driver\Metadata\Metadata(new Driver\Tag\XMPIptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\IPTC\ObjectName(), new Driver\Value\Mono('Beautiful Object')));
+        $metadatas->add(new Driver\Metadata\Metadata(new Driver\TagGroup\XMP_iptcExt\PersonInImage(), new Driver\Value\Multi(['Romain', 'Nicolas'])));
 
         $writer = new WriterTester($this->getExiftool());
         $this->assertEmpty($writer->getSyncCommandTester());

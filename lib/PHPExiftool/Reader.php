@@ -499,7 +499,22 @@ class Reader implements IteratorAggregate
             throw new LogicException('You have not set any files or directory');
         }
 
-        $command = ['-n', '-q', '-b', '-X', '-charset', 'UTF8'];
+        $command = [
+            '-n',               // disable print conversion
+            '-q',               // quiet
+            '-b',               // some binary
+            '-X',               // XML
+            '-charset', 'UTF8'
+        ];
+//        $command = [
+//            '-n',
+//            '-q',
+//            '-b',
+//            '-j',               // json
+//            '-D',               // decimal tag id
+//            '-t',               // add table info
+//            '-charset', 'UTF8'
+//        ];
 
         if ($this->recursive) {
             $command[] = '-r';

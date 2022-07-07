@@ -11,6 +11,7 @@
 namespace PHPExiftool\Test\Driver\Metadata;
 
 use PHPExiftool\Driver\AbstractTag;
+use PHPExiftool\Driver\AbstractTagGroup;
 use PHPExiftool\Driver\Value\Mono;
 use PHPExiftool\Driver\Metadata\Metadata;
 
@@ -50,7 +51,7 @@ class MetadataTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class TagTest extends AbstractTag
+class TagTest extends AbstractTagGroup
 {
 
 }

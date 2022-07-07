@@ -15,8 +15,8 @@ use DOMDocument;
 use DOMElement;
 use DOMNodeList;
 use DOMXPath;
-use PHPExiftool\Driver\TagInterface;
-use PHPExiftool\Driver\TagFactory;
+use PHPExiftool\Driver\TagGroupInterface;
+use PHPExiftool\Driver\TagGroupFactory;
 use PHPExiftool\Driver\Metadata\Metadata;
 use PHPExiftool\Driver\Metadata\MetadataBag;
 use PHPExiftool\Driver\Value\Binary;
@@ -140,7 +140,7 @@ class RDFParser
             $tagname = $this->normalize($node->nodeName);
 
             try {
-                $tag = TagFactory::getFromRDFTagname($tagname);
+                $tag = TagGroupFactory::getFromRDFTagname($tagname);
             }
             catch (TagUnknown $e) {
                 continue;
@@ -204,7 +204,7 @@ class RDFParser
             foreach ((array)$to as $substit) {
                 $supposedTagname = str_replace($from . ':', $substit . ':', $tagname);
 
-                if (TagFactory::hasFromRDFTagname($supposedTagname)) {
+                if (TagGroupFactory::hasFromRDFTagname($supposedTagname)) {
                     return $supposedTagname;
                 }
             }
@@ -227,7 +227,7 @@ class RDFParser
 
         $pattern = "(xmlns:([a-zA-Z-_0-9]+)=['|\"]{1}(https?:[/{2,4}|\\{2,4}][\w:#%/;$()~_?/\-=\\\.&]*)['|\"]{1})";
 
-        preg_match_all($pattern, $XML, $matches, PREG_PATTERN_ORDER, 0);
+        preg_match_all($pattern, $XML, $matches, PREG_PATTERN_ORDER);
 
         foreach ($matches[2] as $key => $value) {
             $namespaces[$matches[1][$key]] = $value;
@@ -239,17 +239,20 @@ class RDFParser
     /**
      * Read the node value, decode it if needed
      *
-     * @param DOMElement $node   The node to read
-     * @param ?TagInterface $tag The tag associated
+     * @param DOMElement $node        The node to read
+     * @param ?TagGroupInterface $tag The tag associated
      * @return ValueInterface The value extracted
      * @throws TagUnknown
      */
-    protected function readNodeValue(DOMElement $node, ?TagInterface $tag = null)
+
+// <Sigma:Shadow et:id='14' et:table='Sigma::Main' et:index='1'>-1.1</Sigma:Shadow>
+// <IPTC:Keywords et:id='25' et:table='IPTC::ApplicationRecord'>
+    protected function readNodeValue(DOMElement $node, ?TagGroupInterface $tag = null)
     {
         $nodeName = $this->normalize($node->nodeName);
 
-        if (is_null($tag) && TagFactory::hasFromRDFTagname($nodeName)) {
-            $tag = TagFactory::getFromRDFTagname($nodeName);
+        if (is_null($tag) && TagGroupFactory::hasFromRDFTagname($nodeName)) {
+            $tag = TagGroupFactory::getFromRDFTagname($nodeName);
         }
 
         if ($node->getElementsByTagNameNS(self::RDF_NAMESPACE, 'Bag')->length > 0) {

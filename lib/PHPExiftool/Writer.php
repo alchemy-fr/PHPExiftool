@@ -12,6 +12,7 @@
 namespace PHPExiftool;
 
 use Exception;
+use PHPExiftool\Driver\Metadata\Metadata;
 use PHPExiftool\Driver\Metadata\MetadataBag;
 use PHPExiftool\Exception\InvalidArgumentException;
 use Psr\Log\LoggerInterface;
@@ -387,9 +388,10 @@ class Writer
             $commands[] = 'MWG';
         }
 
+        /** @var Metadata $metadata */
         foreach ($metadatas as $metadata) {
             foreach ($metadata->getValue()->asArray() as $value) {
-                $commands[] = '-' . $metadata->getTag()->getTagname() . '=' . $value;
+                $commands[] = '-' . $metadata->getTag()->getWriteKey() . '=' . $value;
             }
         }
 

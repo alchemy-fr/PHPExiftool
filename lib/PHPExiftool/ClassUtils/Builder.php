@@ -15,15 +15,23 @@ use Exception;
 use InvalidArgumentException;
 use PHPExiftool\Driver\AbstractTag;
 use PHPExiftool\Driver\AbstractType;
+use ReflectionClass;
+use ReflectionNamedType;
+use ReflectionProperty;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Build and write Tag classes
+ * Build and write TagGroup classes
  *
  * @author      Romain Neutron - imprec@gmail.com
  * @license     http://opensource.org/licenses/MIT MIT
  */
 class Builder
 {
+    protected InputInterface $input;
+    protected OutputInterface $output;
+
     protected string $license = '/*
  * This file is part of the PHPExifTool package.
  *
@@ -32,21 +40,31 @@ class Builder
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */';
-    protected int $xmlLine = 0;
-    protected array $duplicateXmlLines = [];
-    protected array $conflictingXmlLines = [];
+//    protected int $xmlLine = 0;
+//    protected array $duplicateXmlLines = [];
+//    protected array $conflictingXmlLines = [];
     protected string $namespace = "";
     protected string $classname = "";
+    protected array $consts = [];
     protected array $properties = [];
     protected $extends;
     protected array $uses = [];
     protected array $classAnnotations = [];
 
+    static ?ReflectionClass $reflectionClass = null;
+
     /**
      * @throws Exception
      */
-    public function __construct(int $xmlLine, string $namespace, string $classname, array $properties, $extends = null, array $uses = [], array $classAnnotations = [])
+    public function __construct(InputInterface $input, OutputInterface $output, string $namespace, string $classname, array $consts, array $properties, $extends = null, array $uses = [], array $classAnnotations = [])
     {
+        // singleton
+        if(is_null(self::$reflectionClass) && $extends) {
+                self::$reflectionClass = new ReflectionClass("PHPExiftool\\Driver\\" . $extends);
+        }
+        $this->input = $input;
+        $this->output = $output;
+
         $namespace = trim($namespace, '\\');
 
         foreach (explode('\\', $namespace) as $piece) {
@@ -62,10 +80,11 @@ class Builder
             throw new Exception(sprintf('Invalid namespace %s', $namespace));
         }
 
-        $this->xmlLine = $xmlLine;
+        // $this->xmlLine = $xmlLine;
         $this->namespace = trim('PHPExiftool\\Driver\\' . $namespace, '\\');
         $this->classname = $classname;
         $this->properties = $properties;
+        $this->consts = $consts;
         $this->extends = $extends;
         $this->uses = $uses;
         $this->classAnnotations = $classAnnotations;
@@ -73,20 +92,20 @@ class Builder
         return $this;
     }
 
-    public function addDuplicate(int $xmlLine, bool $conflicting)
-    {
-        if($conflicting) {
-            $this->conflictingXmlLines[] = $xmlLine;
-        }
-        else {
-            $this->duplicateXmlLines[] = $xmlLine;
-        }
-    }
-
-    public function getXmlLine(): int
-    {
-        return $this->xmlLine;
-    }
+//    public function addDuplicate(int $xmlLine, bool $conflicting)
+//    {
+//        if($conflicting) {
+//            $this->conflictingXmlLines[] = $xmlLine;
+//        }
+//        else {
+//            $this->duplicateXmlLines[] = $xmlLine;
+//        }
+//    }
+//
+//    public function getXmlLine(): int
+//    {
+//        return $this->xmlLine;
+//    }
 
     public function getNamespace(): string
     {
@@ -118,17 +137,18 @@ class Builder
     /**
      * @throws Exception
      */
-    public function write($force = false): Builder
+    protected function write($force = false): Builder
     {
-        if (!$force && file_exists($this->getPathfile())) {
-            throw new Exception(sprintf('%s already exists', $this->getPathfile()));
+        $fp = $this->getPathfile();
+        if (!$force && file_exists($fp)) {
+            throw new Exception(sprintf('%s already exists', $fp));
         }
 
-        if (file_exists($this->getPathfile())) {
-            unlink($this->getPathfile());
+        if (file_exists($fp)) {
+            unlink($fp);
         }
 
-        file_put_contents($this->getPathfile(), $this->generateContent());
+        file_put_contents($fp, $this->generateContent());
 
         return $this;
     }
@@ -144,17 +164,17 @@ class Builder
             $content .= "\n";
         }
 
-        // add debug infos related to xml dump
-        if($this->xmlLine > 0) {    // no line number for "type" classes
-            $content .= "/**\n * XML line : " . $this->xmlLine . "\n";
-            if (!empty($this->duplicateXmlLines)) {
-                $content .= " * Duplicates: [" . join(', ', $this->duplicateXmlLines) . "]\n";
-                if (!empty($this->conflictingXmlLines)) {
-                    $content .= " * Conflictings: [" . join(', ', $this->conflictingXmlLines) . "]\n";
-                }
-            }
-            $content .= " */\n";
-        }
+//        // add debug infos related to xml dump
+//        if($this->xmlLine > 0) {    // no line number for "type" classes
+//            $content .= "/**\n * XML line : " . $this->xmlLine . "\n";
+//            if (!empty($this->duplicateXmlLines)) {
+//                $content .= " * Duplicates: [" . join(', ', $this->duplicateXmlLines) . "]\n";
+//                if (!empty($this->conflictingXmlLines)) {
+//                    $content .= " * Conflictings: [" . join(', ', $this->conflictingXmlLines) . "]\n";
+//                }
+//            }
+//            $content .= " */\n";
+//        }
 
 
         if ($this->classAnnotations) {
@@ -173,6 +193,8 @@ class Builder
 
         $content .= "\n{\n";
 
+        $content .= $this->generateClassConsts($this->consts);
+
         $content .= $this->generateClassProperties($this->properties);
 
         $content .= "\n}\n";
@@ -182,68 +204,152 @@ class Builder
         }
 
         return str_replace(
-            ['<license>', '<namespace>', '<classname>', '<spaces>', '<extends>'],
-            [$this->license, $this->namespace, $this->classname, '    ', $this->extends],
+            ['<license>', '<namespace>', '<classname>', '<extends>'],
+            [$this->license, $this->namespace, $this->classname, $this->extends],
             $content
         );
     }
 
+    protected function generateClassConsts(array $consts, $depth = 0): string
+    {
+        $buffer = "";
+        $space = "  ";
+
+        foreach ($consts as $key => $value) {
+            $buffer .= sprintf("%sconst %s = %s;\n", $space, $key, $this->quote($value));
+        }
+
+        return $buffer;
+    }
+
+    protected function getAttributeProperty(string $key): ?ReflectionProperty
+    {
+        static $attrTypes = [];
+
+        if(!array_key_exists($key, $attrTypes)) {
+            $attrTypes[$key] = null;
+            try {
+                $attrTypes[$key] = self::$reflectionClass->getProperty($key);
+            }
+            catch (Exception $e) {
+                // no-op
+                // throw new Exception(sprintf("Attribute \"%s\" must be defined in %s", $key, self::$reflectionClass->getName()));
+            }
+        }
+        return $attrTypes[$key];
+    }
+
+
     protected function generateClassProperties(array $properties, $depth = 0): string
     {
         $buffer = "";
+        $space = "  ";
+        $spaces = str_repeat($space, $depth);
 
         foreach ($properties as $key => $value) {
 
-            switch($this->extends) {
-                case "AbstractTag":
-                    $attributeType = AbstractTag::getAttributeType($key);
-                    break;
-                case "AbstractType":
-                    $attributeType = AbstractType::getAttributeType($key);
-                    break;
-                default:
-                    $attributeType = "string";
+            if($key === "/**/") {
+                // special key to be rendered as comments
+                $buffer .= $spaces . $space . "/**\n";
+                foreach ($value as $k=>$v) {
+                    $buffer .= sprintf("%s * %s : %s\n", $spaces . $space, $k, $v);
+                }
+                $buffer .= $spaces . $space . " */\n";
+                continue;
             }
 
+
+//            switch($this->extends) {
+//                case "AbstractTag":
+//                    $attributeType = AbstractTag::getAttributeType($key);
+//                    break;
+//                case "AbstractType":
+//                    $attributeType = AbstractType::getAttributeType($key);
+//                    break;
+//                default:
+//                    $attributeType = "string";
+//            }
+
+            $visibility = 'private';
+            $type = '';
+            if(!is_null($attributeProperty = $this->getAttributeProperty($key))) {
+                $type = $attributeProperty->getType();
+                $type = ($type->allowsNull() ? '?' : '') . $type->getName();
+                if ($attributeProperty->isPrivate()) {
+                    $visibility = 'private';
+                }
+                elseif ($attributeProperty->isProtected()) {
+                    $visibility = 'protected';
+                }
+                elseif ($attributeProperty->isPublic()) {
+                    $visibility = 'public';
+                }
+            }
 
             if (is_array($value)) {
-                $attributeType = "array";
-                $val = "[\n" . $this->generateClassProperties($value, $depth + 1);
-
-                for ($i = 0; $i != $depth; $i++) {
-                    $val .= "<spaces>";
+                if($key === '') {
+                    // special case empty key : render down one level
+                    $val = $this->generateClassProperties($value, $depth);
                 }
-
-                $val .= "<spaces>]";
+                else {
+                    $val = "[\n" . $this->generateClassProperties($value, $depth + 1);
+                    $val .= $spaces . $space . "]";
+                }
             }
             else {
-                $val = $this->quote($value, $attributeType);
+                $val = $this->quote($value, $type);
             }
             if ($depth == 0) {
-                $buffer .= sprintf("\n<spaces>protected %s \$%s = %s;\n", $attributeType ?: '', $key, $val);
+                $buffer .= sprintf("\n%s%s %s \$%s = %s;\n",
+                    $space,
+                    $visibility,
+                    $type,
+                    $key,
+                    $val
+                );
             }
             else {
-                for ($i = 0; $i != $depth; $i++) {
-                    $buffer .= "<spaces>";
+                if($key === '') {
+                    // special case empty key : render down one level
+                    $buffer .= $val;
                 }
-                $buffer .= "<spaces>" . $this->quote($key) . " => " . $val . ",\n";
+                else {
+                    $buffer .= $spaces . $space . $this->quote($key) . " => " . $val . ",\n";
+                }
             }
         }
 
         return $buffer;
     }
 
+    protected function generateFlags(string $name)
+    {
+
+    }
+
     protected function checkPHPVarName($var)
     {
-        return preg_match('/^[a-zA-Z]+[a-zA-Z0-9]*$/', $var);
+        return preg_match('/^[a-z]+[\\w]*$/i', $var);
     }
 
     protected function quote($value, $type = null): string
     {
+        if($type && $type[0] == '?') {
+            // nullable type
+            if(is_null($value)) {
+                return 'null';
+            }
+            else {
+                return $this->quote($value, substr($type, 1));
+            }
+        }
         switch($type) {
             case 'string':
                 return "'" . str_replace(['\\', '\''], ['\\\\', '\\\''], $value) . "'";
             case 'bool':
+                if(is_bool($value)) {
+                    return $value ? "true" : "false";
+                }
                 if (in_array(strtolower($value), ['true', 'false'])) {
                     return strtolower($value);
                 }

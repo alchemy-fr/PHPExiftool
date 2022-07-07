@@ -11,21 +11,21 @@
 
 namespace PHPExiftool\Driver\Metadata;
 
-use PHPExiftool\Driver\TagInterface;
+use PHPExiftool\Driver\TagGroupInterface;
 use PHPExiftool\Driver\Value\ValueInterface;
 
 /**
- * Metadata Object for mapping a Tag to a value
+ * Metadata Object for mapping a TagGroup to a value
  *
  * @author      Romain Neutron - imprec@gmail.com
  * @license     http://opensource.org/licenses/MIT MIT
  */
 class Metadata
 {
-    protected TagInterface $tag;
+    protected TagGroupInterface $tag;
     protected ValueInterface $value;
 
-    public function __construct(TagInterface $tag, ValueInterface $value)
+    public function __construct(TagGroupInterface $tag, ValueInterface $value)
     {
         $this->tag = $tag;
         $this->value = $value;
@@ -33,7 +33,7 @@ class Metadata
         return $this;
     }
 
-    public function getTag(): TagInterface
+    public function getTag(): TagGroupInterface
     {
         return $this->tag;
     }

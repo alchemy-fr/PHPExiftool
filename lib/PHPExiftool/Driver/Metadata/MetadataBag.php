@@ -12,9 +12,14 @@
 namespace PHPExiftool\Driver\Metadata;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\Selectable;
 
 /**
  * Container for Metadatas
+ *
+ * @template-implements Collection<string,Metadata>
+ * @template-implements Selectable<string,Metadata>
  *
  * @author      Romain Neutron - imprec@gmail.com
  * @license     http://opensource.org/licenses/MIT MIT

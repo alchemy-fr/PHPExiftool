@@ -15,22 +15,22 @@ use PHPExiftool\Exception\TagUnknown;
 use PHPExiftool\Tool\Command\ClassesBuilder;
 
 /**
- * Metadata Object for mapping a Tag to a value
+ * Metadata Object for mapping a TagGroup to a value
  *
  * @author      Romain Neutron - imprec@gmail.com
  * @license     http://opensource.org/licenses/MIT MIT
  */
-class TagFactory
+class TagGroupFactory
 {
 
     /**
-     * Build a Tag based on his Tagname
+     * Build a TagGroup based on his Tagname
      *
      * @param  string       $tagname
-     * @return TagInterface
+     * @return TagGroupInterface
      * @throws TagUnknown
      */
-    public static function getFromRDFTagname(string $tagname): TagInterface
+    public static function getFromRDFTagname(string $tagname): TagGroupInterface
     {
         $classname = static::classnameFromTagname($tagname);
 
@@ -50,7 +50,7 @@ class TagFactory
     {
         $tagname = str_replace('/rdf:RDF/rdf:Description/', '', $tagname);
 
-        $classname = '\PHPExiftool\Driver\Tag\\' . str_replace(':', '\\', $tagname);
+        $classname = '\\PHPExiftool\\Driver\\TagGroup\\' . str_replace(':', '\\', $tagname);
 
         return ClassesBuilder::generateNamespace($classname);
     }

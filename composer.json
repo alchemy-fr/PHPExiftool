@@ -40,7 +40,8 @@
         "symfony/process": "^5",
         "ext-dom": "*",
         "ext-memcache": "*",
-        "cache/array-adapter": "^1.2"
+        "cache/array-adapter": "^1.2",
+        "ext-json": "*"
     },
     "suggest": {
         "jms/serializer": "To serialize tags",

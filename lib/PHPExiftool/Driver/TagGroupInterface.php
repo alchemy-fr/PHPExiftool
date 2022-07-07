@@ -15,11 +15,11 @@ namespace PHPExiftool\Driver;
  * @author      Romain Neutron - imprec@gmail.com
  * @license     http://opensource.org/licenses/MIT MIT
  */
-interface TagInterface
+interface TagGroupInterface
 {
 
     /**
-     * Return Tag Id - Tag dependant
+     * Return TagGroup Id - TagGroup dependant
      *
      * @return string
      */
@@ -33,11 +33,11 @@ interface TagInterface
     public function getName(): string;
 
     /**
-     * A small string about the Tag
+     * A small string about the TagGroup
      *
      * @return string
      */
-    public function getDescription(): string;
+    public function getDescription(string $lng = 'en'): ?string;
 
     /**
      * An array of available values for this tag
@@ -45,10 +45,10 @@ interface TagInterface
      *
      * @return array
      */
-    public function getValues(): array;
+//    public function getValues(): array;
 
     /**
-     * Returns true if the Tag handles list values
+     * Returns true if the TagGroup handles list values
      *
      * @return boolean
      */
@@ -62,27 +62,11 @@ interface TagInterface
     public function isBinary(): bool;
 
     /**
-     * Returns tag group name
-     *
-     * @return string
-     */
-    public function getGroupName(): string;
-
-    /**
      * Returns true if the value can be written in the tag
      *
      * @return bool
      */
     public function isWritable(): bool;
-
-    /**
-     * Return the tagname path ; ie GroupName:Name
-     *
-     * @return string
-     */
-    public function getTagname(): string;
-
-    public function getMinLength(): int;
 
     public function getMaxLength(): int;
 }
