@@ -51,7 +51,7 @@ class Exiftool implements LoggerAwareInterface
         $process = new Process($command);
         $process->setTimeout($timeout);
 
-        $this->logger->addInfo(sprintf('Exiftool executes command %s', $process->getCommandLine()));
+        $this->logger->info(sprintf('Exiftool executes command %s', $process->getCommandLine()));
 
         $process->run();
 
