@@ -21,7 +21,7 @@
             "type": "package",
             "package": {
                 "name": "exiftool/exiftool",
-                "version": "dev-12",
+                "version": "12.42",
                 "source": {
                     "url": "https://github.com/exiftool/exiftool.git",
                     "type": "git",
@@ -35,7 +35,7 @@
         "doctrine/cache": "^1.0",
         "doctrine/collections": "^1.0",
         "monolog/monolog": "^2.6",
-        "exiftool/exiftool": "dev-12",
+        "exiftool/exiftool": "12.42.*",
         "symfony/console": "^5",
         "symfony/process": "^5",
         "ext-dom": "*",
