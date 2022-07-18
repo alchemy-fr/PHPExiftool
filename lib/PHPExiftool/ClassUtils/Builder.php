@@ -13,13 +13,10 @@ namespace PHPExiftool\ClassUtils;
 
 use Exception;
 use InvalidArgumentException;
-use PHPExiftool\Driver\AbstractTag;
-use PHPExiftool\Driver\AbstractType;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use ReflectionClass;
-use ReflectionNamedType;
 use ReflectionProperty;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Build and write TagGroup classes
@@ -29,9 +26,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class Builder
 {
-    protected InputInterface $input;
-    protected OutputInterface $output;
-
     protected string $license = '/*
  * This file is part of the PHPExifTool package.
  *
@@ -50,20 +44,19 @@ class Builder
     protected $extends;
     protected array $uses = [];
     protected array $classAnnotations = [];
+    protected LoggerInterface $logger;
 
     static ?ReflectionClass $reflectionClass = null;
 
     /**
      * @throws Exception
      */
-    public function __construct(InputInterface $input, OutputInterface $output, string $namespace, string $classname, array $consts, array $properties, $extends = null, array $uses = [], array $classAnnotations = [])
+    public function __construct(string $namespace, string $classname, array $consts, array $properties, $extends = null, array $uses = [], array $classAnnotations = [])
     {
         // singleton
         if(is_null(self::$reflectionClass) && $extends) {
                 self::$reflectionClass = new ReflectionClass("PHPExiftool\\Driver\\" . $extends);
         }
-        $this->input = $input;
-        $this->output = $output;
 
         $namespace = trim($namespace, '\\');
 
@@ -88,6 +81,15 @@ class Builder
         $this->extends = $extends;
         $this->uses = $uses;
         $this->classAnnotations = $classAnnotations;
+
+        $this->logger = new NullLogger();
+
+        return $this;
+    }
+
+    public function setLogger(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
 
         return $this;
     }

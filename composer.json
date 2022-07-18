@@ -40,7 +40,8 @@
         "symfony/process": "^5",
         "ext-dom": "*",
         "cache/array-adapter": "^1.2",
-        "ext-json": "*"
+        "ext-json": "*",
+        "symfony/monolog-bridge": "^5.4"
     },
     "suggest": {
         "jms/serializer": "To serialize tags",

@@ -35,7 +35,7 @@ class tagGroupBuilder extends Builder
             }
             else {
                 if($description !== $this->descriptions[$lng]) {
-                    $this->output->write(sprintf("Conflicting description for group \"%s:%s\" : [%s] \"%s\" != \"%s\"",
+                    $this->logger->alert(sprintf("Conflicting description for group \"%s:%s\" : [%s] \"%s\" != \"%s\"",
                         $this->namespace, $this->classname,
                         $lng, $description, $this->descriptions[$lng]
                     ));
@@ -43,7 +43,7 @@ class tagGroupBuilder extends Builder
                         // arbitrary choice : keep the longest description
                         $this->descriptions[$lng] = $description;
                     }
-                    $this->output->writeln(sprintf(" (keeping \"%s\")", $this->descriptions[$lng]));
+                    $this->logger->alert(sprintf(" (keeping \"%s\")", $this->descriptions[$lng]));
                 }
             }
         }
@@ -63,7 +63,7 @@ class tagGroupBuilder extends Builder
             }
             if($php_type != $this->php_type) {
                 if($this->php_type) {   // do no report same conflict
-                    $this->output->writeln(sprintf("Conflicting php types for group \"%s:%s\" : \"%s\" (php:%s) != \"%s\" (php:%s)",
+                    $this->logger->alert(sprintf("Conflicting php types for group \"%s:%s\" : \"%s\" (php:%s) != \"%s\" (php:%s)",
                         $this->namespace, $this->classname,
                         $type, $php_type, $this->type, $this->php_type
                     ));
@@ -91,7 +91,7 @@ class tagGroupBuilder extends Builder
             $this->writable = $writable ? 1 : 0;
         }
         if(($writable ? 1 : 0) !== $this->writable) {
-            $this->output->writeln(sprintf("Conflicting 'writable' attr for group \"%s:%s\"",
+            $this->logger->alert(sprintf("Conflicting 'writable' attr for group \"%s:%s\"",
                 $this->namespace, $this->classname
             ));
         }
@@ -112,7 +112,7 @@ class tagGroupBuilder extends Builder
 
         if($count !== $this->count) {
             if(!is_null($this->count)) {
-                $this->output->writeln(sprintf("Conflicting 'count' attr for group \"%s:%s\"",
+                $this->logger->alert(sprintf("Conflicting 'count' attr for group \"%s:%s\"",
                     $this->namespace, $this->classname
                 ));
             }
