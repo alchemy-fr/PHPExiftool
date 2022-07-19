@@ -6,6 +6,8 @@ use Psr\Log\NullLogger;
 
 class PHPExiftool
 {
+    const v = 1;
+
     public static function getKnownTagGroups()
     {
         return include __DIR__ . "/Driver/TagGroup/index.php";
