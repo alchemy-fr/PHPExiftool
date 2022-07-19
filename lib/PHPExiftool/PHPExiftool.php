@@ -6,7 +6,7 @@ use Psr\Log\NullLogger;
 
 class PHPExiftool
 {
-    const v = 2;
+    const v = 3;
 
     public static function getKnownTagGroups()
     {
