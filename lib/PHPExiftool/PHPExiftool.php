@@ -6,7 +6,7 @@ use Psr\Log\NullLogger;
 
 class PHPExiftool
 {
-    const v = 3;
+    const v = 4;
 
     public static function getKnownTagGroups()
     {
@@ -18,15 +18,10 @@ class PHPExiftool
         return file_exists(__DIR__ . "/Driver/TagGroup/index.php");
     }
 
-    public static function generateClasses(bool $withMwg = true, array $lngs = ['en'])
+    public static function generateClasses(array $options, array $lngs = ['en'])
     {
-        $options = [];
-        if ($withMwg) {
-            $options[] = InformationDumper::LISTOPTION_MWG;
-        }
-
         $dumper = new InformationDumper(new Exiftool(new NullLogger()));
 
-        $dumper->dumpClasses($lngs);
+        $dumper->dumpClasses($options, $lngs);
     }
 }
