@@ -11,6 +11,11 @@ class PHPExiftool
         return include __DIR__ . "/Driver/TagGroup/index.php";
     }
 
+    public static function isClassesGenerated()
+    {
+        return file_exists(__DIR__ . "/Driver/TagGroup/index.php");
+    }
+
     public static function generateClasses(bool $withMwg = true, array $lngs = ['en'])
     {
         $options = [];

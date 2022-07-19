@@ -28,7 +28,7 @@ class InformationDumper
     /**
      * For use with list option
      */
-    const LISTTYPE_WRITABLE          = 'w';
+    const LISTTYPE_WRITABLE = 'w';
     /**
      * For use with list option
      */
@@ -36,21 +36,21 @@ class InformationDumper
     /**
      * For use with list option
      */
-    const LISTTYPE_WRITABLE_FILEEXT  = 'wf';
+    const LISTTYPE_WRITABLE_FILEEXT = 'wf';
     /**
      * For use with list option
      */
-    const LISTTYPE_SUPPORTED_XML     = 'x';
+    const LISTTYPE_SUPPORTED_XML = 'x';
     /**
      * For use with list option
      */
-    const LISTTYPE_DELETABLE_GROUPS  = 'd';
+    const LISTTYPE_DELETABLE_GROUPS = 'd';
     /**
      * For use with list option
      */
-    const LISTTYPE_GROUPS            = 'g';
+    const LISTTYPE_GROUPS = 'g';
 
-    const LISTOPTION_MWG             = '-use MWG';
+    const LISTOPTION_MWG = '-use MWG';
 
     private Exiftool $exiftool;
     private LoggerInterface $logger;
@@ -80,26 +80,26 @@ class InformationDumper
      * @return DOMDocument
      * @throws Exception
      */
-    public function listDatas(string $type = self::LISTTYPE_SUPPORTED_XML, array $options=array()): DOMDocument
+    public function listDatas(string $type = self::LISTTYPE_SUPPORTED_XML, array $options = []): DOMDocument
     {
-        if ( ! is_array($options)) {
+        if (!is_array($options)) {
             throw new InvalidArgumentException('options must be an array');
         }
 
-        $available = array(
-            self::LISTTYPE_WRITABLE, self::LISTTYPE_SUPPORTED_FILEEXT
-            , self::LISTTYPE_WRITABLE_FILEEXT, self::LISTTYPE_SUPPORTED_XML
-            , self::LISTTYPE_DELETABLE_GROUPS, self::LISTTYPE_GROUPS,
-        );
+        $available = [
+            self::LISTTYPE_WRITABLE, self::LISTTYPE_SUPPORTED_FILEEXT,
+            self::LISTTYPE_WRITABLE_FILEEXT, self::LISTTYPE_SUPPORTED_XML,
+            self::LISTTYPE_DELETABLE_GROUPS, self::LISTTYPE_GROUPS,
+        ];
 
-        if ( ! in_array($type, $available)) {
+        if (!in_array($type, $available)) {
             throw new InvalidArgumentException('Unknown list attribute');
         }
 
         $command = [];
         $available = [self::LISTOPTION_MWG];
-        foreach($options as $option) {
-            if ( ! in_array($option, $available)) {
+        foreach ($options as $option) {
+            if (!in_array($option, $available)) {
                 throw new InvalidArgumentException('Unknown option');
             }
             $command = array_merge($command, explode(' ', $option));
@@ -112,14 +112,14 @@ class InformationDumper
 
         $xml = $this->exiftool->executeCommand($command);
         $dom = new DOMDocument();
-        $dom->loadXML($xml,  4194304 /* XML_PARSE_BIG_LINES */);
+        $dom->loadXML($xml, 4194304 /* XML_PARSE_BIG_LINES */);
 
         return $dom;
     }
 
-    public function dumpClasses(array $lngs)
+    public function dumpClasses(array $options, array $lngs)
     {
-        $dom = $this->listDatas();
+        $dom = $this->listDatas(InformationDumper::LISTTYPE_SUPPORTED_XML, $options);
 
         $this->logger->info('Erasing previous files... ');
         try {
@@ -169,14 +169,14 @@ class InformationDumper
                 $tag_crawler->addNode($tag);
 
                 $tag_name = $tag_crawler->attr('name');
-                if(strtoupper($tag_name) === "RESERVED") {
+                if (strtoupper($tag_name) === "RESERVED") {
                     continue;
                 }
 
                 $tag_g0 = $tag_crawler->attr('g0');
                 $tag_g1 = $tag_crawler->attr('g1');
                 $tag_g2 = $tag_crawler->attr('g2');
-                if($tag_g0 === '*' || $tag_g1 === '*' || $tag_g2 === '*') {
+                if ($tag_g0 === '*' || $tag_g1 === '*' || $tag_g2 === '*') {
                     continue;
                 }
 
@@ -245,7 +245,7 @@ class InformationDumper
 
                     // check that our dispatching method does not build 2 classes for one
                     // this is NOW impossible (same key), but useful with other dispatch algo.
-                    if(array_key_exists($group_id, $group_ids)) {
+                    if (array_key_exists($group_id, $group_ids)) {
                         $this->logger->alert(sprintf("! GROUP_ID \"%s\" from \"%s\" already exists in \"%s\"", $group_id, $fq_classname, $group_ids[$group_id]));
                     }
                     else {
@@ -256,8 +256,8 @@ class InformationDumper
                     $nGroups++;
 
                     $tagGroupBuilder = new tagGroupBuilder(
-                        //"TagGroup\\" . $prefix_ns . "\\". $namespace,
-                        "TagGroup\\" .  $namespace,
+                    //"TagGroup\\" . $prefix_ns . "\\". $namespace,
+                        "TagGroup\\" . $namespace,
                         // "TagGroup\\" . $namespace,
                         $classname,
                         // consts
@@ -265,7 +265,7 @@ class InformationDumper
                         ],
                         // tagProperties
                         [
-                            'id' => $group_id,  // used as full tagname for write ops
+                            'id'   => $group_id,  // used as full tagname for write ops
                             'name' => $tag_name,
 //                            'type' => $tag_type,
                             // 'php_type' => $php_type,
@@ -290,25 +290,25 @@ class InformationDumper
 
                 $tagComments = [
                     'table_name' => $table_name,
-                    'line' => $tag->getLineNo(),
-                    'type' => $tag_type,
-                    'writable' => $tag_writable,
-                    'count' => $tag_count,
-                    'flags' => $tag_flags,
+                    'line'       => $tag->getLineNo(),
+                    'type'       => $tag_type,
+                    'writable'   => $tag_writable,
+                    'count'      => $tag_count,
+                    'flags'      => $tag_flags,
                 ];
 
                 $tagProperties = [
                     //'UKey'        => $fq_classname,
-                    'id'          => $table_name . '.' . $group_id,
+                    'id' => $table_name . '.' . $group_id,
                 ];
 
 
                 // keep "descriptions" on a per-tag level (no high level reconcilaiation)
                 $tagDescriptions = [];
-                foreach($tag_crawler->filter('desc') as $desc) {
+                foreach ($tag_crawler->filter('desc') as $desc) {
                     $descCrawler = new Crawler($desc);
                     $lng = $descCrawler->attr('lang');
-                    if(in_array($lng, $lngs)) {
+                    if (in_array($lng, $lngs)) {
                         $tagDescriptions[$lng] = $descCrawler->text();
                     }
                 }
@@ -354,7 +354,7 @@ class InformationDumper
                 $tagGroupBuilders[$fq_classname]->setWritable($writable);
 
                 // set a "count" attribute at class level (will try to reconciliate)
-                if(!is_null($tag_count)) {
+                if (!is_null($tag_count)) {
                     $tagGroupBuilders[$fq_classname]->setCount((int)$tag_count);
                 }
 
