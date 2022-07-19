@@ -83,7 +83,7 @@ class ClassesBuilder extends Command
         $dumper = new InformationDumper(new Exiftool($logger));
         $dumper->setLogger($logger);
 
-        $dumper->dumpClasses($input->getOption('lng'));
+        $dumper->dumpClasses($options, $input->getOption('lng'));
 
         $this->output->writeln(
             sprintf(
