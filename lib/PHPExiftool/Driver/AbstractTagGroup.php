@@ -138,6 +138,11 @@ abstract class AbstractTagGroup implements TagGroupInterface
         return $this->count;
     }
 
+    public function getPhpType(): ?string
+    {
+        return $this->phpType;
+    }
+
 
     /**
      * Return the tagname

@@ -12,6 +12,7 @@
 namespace PHPExiftool\Driver;
 
 use PHPExiftool\Exception\TagUnknown;
+use PHPExiftool\InformationDumper;
 use PHPExiftool\Tool\Command\ClassesBuilder;
 
 /**
@@ -52,6 +53,6 @@ class TagGroupFactory
 
         $classname = '\\PHPExiftool\\Driver\\TagGroup\\' . str_replace(':', '\\', $tagname);
 
-        return ClassesBuilder::generateNamespace($classname);
+        return InformationDumper::generateNamespace($classname);
     }
 }

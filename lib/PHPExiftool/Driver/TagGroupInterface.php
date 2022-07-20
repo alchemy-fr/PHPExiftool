@@ -26,7 +26,7 @@ interface TagGroupInterface
     public function getId(): string;
 
     /**
-     * Return the tag name
+     * Return the tagGroup name
      *
      * @return string
      */
@@ -60,6 +60,8 @@ interface TagGroupInterface
      * @return bool
      */
     public function isBinary(): bool;
+
+    public function getPhpType(): ?string;
 
     /**
      * Returns true if the value can be written in the tag

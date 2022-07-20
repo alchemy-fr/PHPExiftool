@@ -10,6 +10,7 @@
  * file that was distributed with this source code.
  */
 
+use PHPExiftool\Tool\Command\DumpCommand;
 use Symfony\Component\Console\Application;
 use PHPExiftool\Tool\Command\ClassesBuilder;
 
@@ -22,5 +23,6 @@ if (!class_exists('Symfony\Component\DomCrawler\Crawler')) {
 
 $cli = new Application('PHPExiftool', '0.3.0');
 $cli->addCommands(array(new ClassesBuilder()));
+$cli->addCommands(array(new DumpCommand()));
 
 $cli->run();
