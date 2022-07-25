@@ -37,6 +37,7 @@
         "monolog/monolog": "^2.6",
         "exiftool/exiftool": "*",
         "symfony/console": "^5",
+        "symfony/dom-crawler": "^5",
         "symfony/process": "^5",
         "ext-dom": "*",
         "cache/array-adapter": "^1.2",
@@ -51,7 +52,6 @@
         "jms/serializer": "~3",
         "phpunit/phpunit": "^5",
         "symfony/css-selector": "^5",
-        "symfony/dom-crawler": "^5",
         "symfony/finder": "^5",
         "symfony/yaml": "^3"
     },
