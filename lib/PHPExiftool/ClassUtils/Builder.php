@@ -54,8 +54,8 @@ class Builder
     public function __construct(string $namespace, string $classname, array $consts, array $properties, $extends = null, array $uses = [], array $classAnnotations = [])
     {
         // singleton
-        if(is_null(self::$reflectionClass) && $extends) {
-                self::$reflectionClass = new ReflectionClass("PHPExiftool\\Driver\\" . $extends);
+        if (is_null(self::$reflectionClass) && $extends) {
+            self::$reflectionClass = new ReflectionClass("PHPExiftool\\Driver\\" . $extends);
         }
 
         $namespace = trim($namespace, '\\');
@@ -228,7 +228,7 @@ class Builder
     {
         static $attrTypes = [];
 
-        if(!array_key_exists($key, $attrTypes)) {
+        if (!array_key_exists($key, $attrTypes)) {
             $attrTypes[$key] = null;
             try {
                 $attrTypes[$key] = self::$reflectionClass->getProperty($key);
@@ -238,6 +238,7 @@ class Builder
                 // throw new Exception(sprintf("Attribute \"%s\" must be defined in %s", $key, self::$reflectionClass->getName()));
             }
         }
+
         return $attrTypes[$key];
     }
 
@@ -250,10 +251,10 @@ class Builder
 
         foreach ($properties as $key => $value) {
 
-            if($key === "/**/") {
+            if ($key === "/**/") {
                 // special key to be rendered as comments
                 $buffer .= $spaces . $space . "/**\n";
-                foreach ($value as $k=>$v) {
+                foreach ($value as $k => $v) {
                     $buffer .= sprintf("%s * %s : %s\n", $spaces . $space, $k, $v);
                 }
                 $buffer .= $spaces . $space . " */\n";
@@ -274,7 +275,7 @@ class Builder
 
             $visibility = 'private';
             $type = '';
-            if(!is_null($attributeProperty = $this->getAttributeProperty($key))) {
+            if (!is_null($attributeProperty = $this->getAttributeProperty($key))) {
                 $type = $attributeProperty->getType();
                 $type = ($type->allowsNull() ? '?' : '') . $type->getName();
                 if ($attributeProperty->isPrivate()) {
@@ -289,7 +290,7 @@ class Builder
             }
 
             if (is_array($value)) {
-                if($key === '') {
+                if ($key === '') {
                     // special case empty key : render down one level
                     $val = $this->generateClassProperties($value, $depth);
                 }
@@ -311,7 +312,7 @@ class Builder
                 );
             }
             else {
-                if($key === '') {
+                if ($key === '') {
                     // special case empty key : render down one level
                     $buffer .= $val;
                 }
@@ -336,20 +337,20 @@ class Builder
 
     protected function quote($value, $type = null): string
     {
-        if($type && $type[0] == '?') {
+        if ($type && $type[0] == '?') {
             // nullable type
-            if(is_null($value)) {
+            if (is_null($value)) {
                 return 'null';
             }
             else {
                 return $this->quote($value, substr($type, 1));
             }
         }
-        switch($type) {
+        switch ($type) {
             case 'string':
                 return "'" . str_replace(['\\', '\''], ['\\\\', '\\\''], $value) . "'";
             case 'bool':
-                if(is_bool($value)) {
+                if (is_bool($value)) {
                     return $value ? "true" : "false";
                 }
                 if (in_array(strtolower($value), ['true', 'false'])) {
@@ -361,22 +362,23 @@ class Builder
 
                 // Do not use PHP_INT_MAX as 32/64 bit dependant
 //                if ($data >= -2147483648 && $data <= 2147483647) {
-                    return $data;
+                return $data;
 //                }
-                // return "'" . $value . "'";
+            // return "'" . $value . "'";
 //                throw new \InvalidArgumentException(sprintf("\"%s\" can't be converted to int", $value));
             default:
                 if (ctype_digit(trim($value))) {
                     try {
                         return $this->quote($value, 'int');
                     }
-                    catch(InvalidArgumentException $e) {
+                    catch (InvalidArgumentException $e) {
                         return $this->quote($value, 'string');
                     }
                 }
                 if (in_array(strtolower($value), ['true', 'false'])) {
                     return $this->quote($value, 'bool');
                 }
+
                 return $this->quote($value, 'string');
         }
     }

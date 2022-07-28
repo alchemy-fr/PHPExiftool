@@ -25,7 +25,7 @@ class TagGroupFactory
 {
 
     /**
-     * Build a TagGroup based on his Tagname
+     * Build a TagGroup object based on his id
      *
      * @param  string       $tagname
      * @return TagGroupInterface
@@ -33,7 +33,7 @@ class TagGroupFactory
      */
     public static function getFromRDFTagname(string $tagname): TagGroupInterface
     {
-        $classname = static::classnameFromTagname($tagname);
+        $classname = static::classnameFromRDFTagname($tagname);
 
         if ( ! class_exists($classname)) {
             throw new TagUnknown(sprintf('Unknown tag %s', $tagname));
@@ -44,15 +44,14 @@ class TagGroupFactory
 
     public static function hasFromRDFTagname(string $tagname): bool
     {
-        return class_exists(static::classnameFromTagname($tagname));
+        return class_exists(static::classnameFromRDFTagname($tagname));
     }
 
-    protected static function classnameFromTagname(string $tagname): string
+    protected static function classnameFromRDFTagname(string $RdfName): string
     {
-        $tagname = str_replace('/rdf:RDF/rdf:Description/', '', $tagname);
+        $id = str_replace('/rdf:RDF/rdf:Description/', '', $RdfName);
 
-        $classname = '\\PHPExiftool\\Driver\\TagGroup\\' . str_replace(':', '\\', $tagname);
-
-        return InformationDumper::generateNamespace($classname);
+        return '\\PHPExiftool\\Driver\\TagGroup\\' . InformationDumper::tagGroupIdToFQClassname($id);
     }
+
 }

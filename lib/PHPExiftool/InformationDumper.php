@@ -124,7 +124,8 @@ class InformationDumper
         $this->logger->info('Erasing previous files... ');
         try {
             $dir = __DIR__ . '/Driver/TagGroup/*';
-            @system('rm -R ' . $dir);
+            $output = [];
+            @exec('rm -R' . $dir . ' 2> /dev/null', $output);
         }
         catch (\Exception $e) {
             // no-op
@@ -224,23 +225,23 @@ class InformationDumper
 
                 // first level namespace
                 // $tn = explode('::', $table_name);
-                // $prefix_ns = self::generateClassname($tn[0]);
+                // $prefix_ns = self::escapeClassname($tn[0]);
 
-//                $prefix_ns = self::generateClassname($g1);
+//                $prefix_ns = self::escapeClassname($g1);
                 $prefix_ns = '';
-//                $prefix_ns = self::generateClassname($table_name);
-//                $prefix_ns = self::generateClassname(strtoupper($tag_name[0]));
-//                $namespace = self::generateClassname("ID-" . $tag_id);
-                $namespace = self::generateClassname($g1);
-                $classname = self::generateClassname($tag_name);
+//                $prefix_ns = self::escapeClassname($table_name);
+//                $prefix_ns = self::escapeClassname(strtoupper($tag_name[0]));
+//                $namespace = self::escapeClassname("ID-" . $tag_id);
+                $group_id = $g1 . ":" . $tag_name;
+                $fq_classname = self::tagGroupIdToFQClassname($group_id);
+                list($namespace, $classname) = self::fqClassnameToNamespace($fq_classname);
 
 //                $fq_classname = $prefix_ns . '\\' .  $namespace . '\\' . $classname;   // fully qualified classname
-                $fq_classname = $namespace . '\\' . $classname;   // fully qualified classname
+//                $fq_classname = $namespace . '\\' . $classname;   // fully qualified classname
 
                 // tags with the same id+name reference the same "data" from a client point of vue.
                 // so we group those into a tag group
 //                $group_id = "ID-" . $tag_id . ":" . $tag_name;
-                $group_id = $g1 . ":" . $tag_name;
                 if (!array_key_exists($fq_classname, $tagGroupBuilders)) {
 
                     // check that our dispatching method does not build 2 classes for one
@@ -386,7 +387,7 @@ class InformationDumper
         $this->logger->info(sprintf("%d classes covers %d tags.", $nGroups, $nTags));
 
         $this->logger->info(sprintf("Writing index Table"));
-        $index = array_keys($tagGroupBuilders);
+        $index = array_keys($group_ids);
         sort($index, SORT_NATURAL + SORT_FLAG_CASE);
         $file = __DIR__ . '/Driver/TagGroup/index.php';
         file_put_contents($file, "<?php\nreturn " . var_export($index, true) . ";\n");
@@ -582,7 +583,13 @@ class InformationDumper
         'yield',
     ];
 
-    public static function generateClassname(string $name): string
+    /**
+     * build a valid class name
+     *
+     * @param string $name
+     * @return string
+     */
+    public static function escapeClassname(string $name): string
     {
         $retval = preg_replace('/[\\W_]+/i', '_', $name);
 
@@ -590,20 +597,42 @@ class InformationDumper
             $retval = $retval . '0';
         }
 
-        return $retval;
+        return ucfirst($retval);
     }
 
-
-    public static function generateNamespace(string $namespace): string
+    /**
+     * transforms a taggroup id to a fq (but not including constant root part (vendor)) class name
+     * e.g. "foo:ba#r:for" --> "Foo\Ba_r\For0"
+     *
+     * @param string $id
+     * @return string
+     */
+    public static function tagGroupIdToFQClassname(string $id): string
     {
-        $values = explode('\\', $namespace);
-
-        foreach ($values as $key => $value) {
-            $values[$key] = ucfirst(self::generateClassname($value));
-        }
-
-        return implode('\\', $values);
+        $parts = array_map(
+            function ($part) { return self::escapeClassname($part); },
+            explode(':', $id)
+        );
+        return join('\\', $parts);
     }
 
+    /**
+     * split namespace and name from a fqn
+     * e.g. "Foo\Bar\Baz" --> [ "Foo\Bar" , "Baz" ]
+     *
+     * @param string $fq
+     * @return array
+     * @throws Exception
+     */
+    private static function fqClassnameToNamespace(string $fq): array
+    {
+        $parts = explode('\\', $fq);
+        $name = array_pop($parts);  // remove last (classname)
+        if(!$name) {
+            throw new \Exception(sprintf("Bad FQName \"%s\"", $fq));
+        }
+        $fq = join('\\', $parts);
+        return [$fq ?: '\\' , $name];
+    }
 
 }
