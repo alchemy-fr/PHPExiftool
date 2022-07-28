@@ -82,7 +82,7 @@ class tagGroupBuilder extends Builder
     }
 
     /**
-     * reconciliate "writable" flag (optimistic : one writable tag sets the group as writable)
+     * reconciliate "writable" flag (optimistic : one writable tag sets the taggroup as writable)
      * @param bool $writable
      */
     public function setWritable(bool $writable)
@@ -122,7 +122,7 @@ class tagGroupBuilder extends Builder
     }
 
     /**
-     * reconciliate flags : a flag must be set on all tags to be set on group
+     * reconciliate flags : a flag must be set on all tags to be set on taggroup
      */
     public function setFlags(array $flags)
     {

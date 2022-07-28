@@ -56,14 +56,19 @@ class DumpCommand extends Command
              * @var Metadata $meta
              */
             foreach ($metadataBag as $meta) {
-                $tag = $meta->getTag();
-                $id = $tag->getId();
+                $tagGroup = $meta->getTagGroup();
+                $id = $tagGroup->getId();
                 if(preg_match($filter, $id)) {
-                    $output->writeln(sprintf("<info>%s</info> (name=\"%s\", phpType=\"%s\") ; %s", $id, $tag->getName(), $tag->getPhpType(), $tag->getDescription('en')));
-                    $output->write($tag->isMulti() ? " multi" : " mono");
-                    $output->write($tag->isBinary() ? " binary" : "");
-                    $output->write($tag->isWritable() ? " writable" : " read-only");
-                    $output->writeln($tag->getMaxLength() !== 0 ? (" maxl=" . $tag->getMaxLength()) : "");
+                    $output->writeln(sprintf("<info>%s</info> (name=\"%s\", phpType=\"%s\") ; %s",
+                        $id,
+                        $tagGroup->getName(),
+                        $tagGroup->getPhpType(),
+                        $tagGroup->getDescription('en')
+                    ));
+                    $output->write($tagGroup->isMulti() ? " multi" : " mono");
+                    $output->write($tagGroup->isBinary() ? " binary" : "");
+                    $output->write($tagGroup->isWritable() ? " writable" : " read-only");
+                    $output->writeln($tagGroup->getMaxLength() !== 0 ? (" maxl=" . $tagGroup->getMaxLength()) : "");
 
                     $v = $meta->getValue();
                     $output->writeln(sprintf(" value: \"%s\"", $v->asString()));

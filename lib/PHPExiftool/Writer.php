@@ -391,7 +391,7 @@ class Writer
         /** @var Metadata $metadata */
         foreach ($metadatas as $metadata) {
             foreach ($metadata->getValue()->asArray() as $value) {
-                $commands[] = '-' . $metadata->getTag()->getWriteKey() . '=' . $value;
+                $commands[] = '-' . $metadata->getTagGroup()->getWriteKey() . '=' . $value;
             }
         }
 

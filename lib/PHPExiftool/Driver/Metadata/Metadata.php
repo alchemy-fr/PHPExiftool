@@ -15,27 +15,27 @@ use PHPExiftool\Driver\TagGroupInterface;
 use PHPExiftool\Driver\Value\ValueInterface;
 
 /**
- * Metadata Object for mapping a TagGroup to a value
+ * Metadata Object to map a TagGroup to a value
  *
  * @author      Romain Neutron - imprec@gmail.com
  * @license     http://opensource.org/licenses/MIT MIT
  */
 class Metadata
 {
-    protected TagGroupInterface $tag;
+    protected TagGroupInterface $tagGroup;
     protected ValueInterface $value;
 
-    public function __construct(TagGroupInterface $tag, ValueInterface $value)
+    public function __construct(TagGroupInterface $tagGroup, ValueInterface $value)
     {
-        $this->tag = $tag;
+        $this->tagGroup = $tagGroup;
         $this->value = $value;
 
         return $this;
     }
 
-    public function getTag(): TagGroupInterface
+    public function getTagGroup(): TagGroupInterface
     {
-        return $this->tag;
+        return $this->tagGroup;
     }
 
     public function getValue(): ValueInterface

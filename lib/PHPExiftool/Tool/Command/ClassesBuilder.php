@@ -43,9 +43,9 @@ class ClassesBuilder extends Command
     {
         $this
             ->setName('classes-builder')
-            ->setDescription('Build Tags classes from exiftool documentation.')
+            ->setDescription('Build TagGroup classes from exiftool documentation.')
             ->addOption('with-mwg', '', null, 'Include MWG tags')
-            ->addOption("lng", null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Wanted lng(s) for tag descriptions', [])
+            ->addOption("lng", null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Wanted lng(s) for tag(group) descriptions', [])
             ;
 
         return $this;

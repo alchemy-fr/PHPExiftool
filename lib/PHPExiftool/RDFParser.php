@@ -140,15 +140,15 @@ class RDFParser
             $tagname = $this->normalize($node->nodeName);
 
             try {
-                $tag = TagGroupFactory::getFromRDFTagname($tagname);
+                $tagGroup = TagGroupFactory::getFromRDFTagname($tagname);
             }
             catch (TagUnknown $e) {
                 continue;
             }
 
-            $metaValue = $this->readNodeValue($node, $tag);
+            $metaValue = $this->readNodeValue($node, $tagGroup);
 
-            $metadata = new Metadata($tag, $metaValue);
+            $metadata = new Metadata($tagGroup, $metaValue);
 
             $metadatas->set($tagname, $metadata);
         }
@@ -247,12 +247,12 @@ class RDFParser
 
 // <Sigma:Shadow et:id='14' et:table='Sigma::Main' et:index='1'>-1.1</Sigma:Shadow>
 // <IPTC:Keywords et:id='25' et:table='IPTC::ApplicationRecord'>
-    protected function readNodeValue(DOMElement $node, ?TagGroupInterface $tag = null)
+    protected function readNodeValue(DOMElement $node, ?TagGroupInterface $tagGroup = null)
     {
         $nodeName = $this->normalize($node->nodeName);
 
-        if (is_null($tag) && TagGroupFactory::hasFromRDFTagname($nodeName)) {
-            $tag = TagGroupFactory::getFromRDFTagname($nodeName);
+        if (is_null($tagGroup) && TagGroupFactory::hasFromRDFTagname($nodeName)) {
+            $tagGroup = TagGroupFactory::getFromRDFTagname($nodeName);
         }
 
         if ($node->getElementsByTagNameNS(self::RDF_NAMESPACE, 'Bag')->length > 0) {
@@ -263,7 +263,7 @@ class RDFParser
                 $ret[] = $nodeElement->nodeValue;
             }
 
-            if (is_null($tag) || $tag->isMulti()) {
+            if (is_null($tagGroup) || $tagGroup->isMulti()) {
                 return new Multi($ret);
             }
             else {
@@ -272,7 +272,7 @@ class RDFParser
         }
         elseif ($node->getAttribute('rdf:datatype') === 'http://www.w3.org/2001/XMLSchema#base64Binary') {
 
-            if (is_null($tag) || $tag->isBinary()) {
+            if (is_null($tagGroup) || $tagGroup->isBinary()) {
                 return Binary::loadFromBase64(trim($node->nodeValue));
             }
             else {
@@ -281,7 +281,7 @@ class RDFParser
         }
         else {
 
-            if (!is_null($tag) && $tag->isMulti()) {
+            if (!is_null($tagGroup) && $tagGroup->isMulti()) {
                 return new Multi($node->nodeValue);
             }
             else {

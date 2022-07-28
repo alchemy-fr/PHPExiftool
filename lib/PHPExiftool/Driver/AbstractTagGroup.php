@@ -122,7 +122,7 @@ abstract class AbstractTagGroup implements TagGroupInterface
     }
 
     /**
-     * Returns true if the value can be written in the tag
+     * Returns true if the value can be written in the tagGroup
      *
      * @VirtualProperty
      *
