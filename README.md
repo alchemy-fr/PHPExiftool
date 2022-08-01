@@ -49,9 +49,9 @@ $metadataBag = $reader->files(__FILE__)->first();
 
 foreach ($metadataBag as $metadata) {
     if (ValueInterface::TYPE_BINARY === $metadata->getValue()->getType()) {
-        echo sprintf("\t--> Field %s has binary data" . PHP_EOL, $metadata->getTag());
+        echo sprintf("\t--> Field %s has binary data" . PHP_EOL, $metadata->getTagGroup());
     } else {
-        echo sprintf("\t--> Field %s has value(s) %s" . PHP_EOL, $metadata->getTag(), $metadata->getValue()->asString());
+        echo sprintf("\t--> Field %s has value(s) %s" . PHP_EOL, $metadata->getTagGroup(), $metadata->getValue()->asString());
     }
 }
 ```
@@ -77,9 +77,9 @@ foreach ($reader as $data) {
 
     foreach ($data as $metadata) {
         if (ValueInterface::TYPE_BINARY === $metadata->getValue()->getType()) {
-            echo sprintf("\t--> Field %s has binary data" . PHP_EOL, $metadata->getTag());
+            echo sprintf("\t--> Field %s has binary data" . PHP_EOL, $metadata->getTagGroup());
         } else {
-            echo sprintf("\t--> Field %s has value(s) %s" . PHP_EOL, $metadata->getTag(), $metadata->getValue()->asString());
+            echo sprintf("\t--> Field %s has value(s) %s" . PHP_EOL, $metadata->getTagGroup(), $metadata->getValue()->asString());
         }
     }
 }

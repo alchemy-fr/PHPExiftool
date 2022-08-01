@@ -35,11 +35,11 @@ class MetadataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \PHPExiftool\Driver\Metadata\Metadata::getTag
+     * @covers \PHPExiftool\Driver\Metadata\Metadata::getTagGroup
      */
     public function testGetTag()
     {
-        $this->assertEquals($this->object->getTag(), $this->tag);
+        $this->assertEquals($this->object->getTagGroup(), $this->tag);
     }
 
     /**

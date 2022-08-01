@@ -143,14 +143,14 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
             $found = false;
 
             foreach ($acceptedMetas as $accepted) {
-                if (preg_match('/' . $accepted . '/i', $meta->getTag()->getId())) {
+                if (preg_match('/' . $accepted . '/i', $meta->getTagGroup()->getId())) {
                     $found = true;
                     break;
                 }
             }
 
             if (!$found) {
-                $this->fail(sprintf('Unexpected meta %s found', $meta->getTag()->getId()));
+                $this->fail(sprintf('Unexpected meta %s found', $meta->getTagGroup()->getId()));
             }
         }
     }
@@ -200,14 +200,14 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
             $found = false;
 
             foreach ($acceptedMetas as $accepted) {
-                if (preg_match('/' . $accepted . '/i', $meta->getTag()->getId())) {
+                if (preg_match('/' . $accepted . '/i', $meta->getTagGroup()->getId())) {
                     $found = true;
                     break;
                 }
             }
 
             if (!$found) {
-                $this->fail(sprintf('Unexpected meta %s found', $meta->getTag()->getId()));
+                $this->fail(sprintf('Unexpected meta %s found', $meta->getTagGroup()->getId()));
             }
         }
     }
