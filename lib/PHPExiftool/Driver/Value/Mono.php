@@ -15,7 +15,7 @@ class Mono implements ValueInterface
 {
     protected string $value;
 
-    public function __construct($value)
+    public function __construct($value = null)
     {
         $this->set($value);
     }

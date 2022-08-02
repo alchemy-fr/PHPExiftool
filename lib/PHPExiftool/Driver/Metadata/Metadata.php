@@ -12,6 +12,8 @@
 namespace PHPExiftool\Driver\Metadata;
 
 use PHPExiftool\Driver\TagGroupInterface;
+use PHPExiftool\Driver\Value\Mono;
+use PHPExiftool\Driver\Value\Multi;
 use PHPExiftool\Driver\Value\ValueInterface;
 
 /**
@@ -25,9 +27,12 @@ class Metadata
     protected TagGroupInterface $tagGroup;
     protected ValueInterface $value;
 
-    public function __construct(TagGroupInterface $tagGroup, ValueInterface $value)
+    public function __construct(TagGroupInterface $tagGroup, ValueInterface $value = NULL)
     {
         $this->tagGroup = $tagGroup;
+        if(!$value) {
+            $value = $tagGroup->isMulti() ? new Multi() : new Mono();
+        }
         $this->value = $value;
 
         return $this;
@@ -41,5 +46,10 @@ class Metadata
     public function getValue(): ValueInterface
     {
         return $this->value;
+    }
+
+    public function setValue($value): ValueInterface
+    {
+        return $this->value->set($value);
     }
 }
