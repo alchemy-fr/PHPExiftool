@@ -48,8 +48,10 @@ class Metadata
         return $this->value;
     }
 
-    public function setValue($value): ValueInterface
+    public function setValue($value): self
     {
-        return $this->value->set($value);
+        $this->value->set($value);
+
+        return $this;
     }
 }
