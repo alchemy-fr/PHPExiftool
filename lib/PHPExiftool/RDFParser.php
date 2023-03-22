@@ -170,7 +170,6 @@ class RDFParser
             }
 
             $metaValue = $this->readNodeValue($node, $tagGroup);
-            $this->logger->debug(sprintf("    -> metaValue = \"%s\"", $metaValue));
 
             $metadata = new Metadata($tagGroup, $metaValue);
 
