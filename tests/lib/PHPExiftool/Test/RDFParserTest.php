@@ -10,18 +10,21 @@
 
 namespace PHPExiftool\Test;
 
+use Monolog\Handler\NullHandler;
+use Monolog\Logger;
 use PHPExiftool\RDFParser;
 
 class RDFParserTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @var RDFParser
-     */
-    protected $object;
+    protected RDFParser $object;
+    protected Logger $logger;
 
     protected function setUp()
     {
-        $this->object = new RDFParser;
+        $this->logger = new Logger('Tests');
+        $this->logger->pushHandler(new NullHandler());
+
+        $this->object = new RDFParser($this->logger);
     }
 
     /**

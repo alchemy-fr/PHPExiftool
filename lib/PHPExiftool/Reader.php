@@ -365,7 +365,7 @@ class Reader implements IteratorAggregate
 
     public static function create(LoggerInterface $logger): self
     {
-        return new static(new Exiftool($logger), new RDFParser());
+        return new static(new Exiftool($logger), new RDFParser($logger));
     }
 
     /**

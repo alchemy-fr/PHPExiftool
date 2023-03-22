@@ -72,7 +72,7 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
         $changedFiles = $this->object->write($this->inWithICC, $metadatas, $this->out);
         $this->assertEquals(1, $changedFiles);
 
-        $reader = new Reader($this->getExiftool(), new RDFParser());
+        $reader = new Reader($this->getExiftool(), $this->getRDFParser());
         $metadatasRead = $reader->files($this->out)->first()->getMetadatas();
         $this->assertFalse(is_object($metadatasRead->get('IPTC:ObjectName')));
 
@@ -113,10 +113,10 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
         $changedFiles = $this->object->write($this->inWithICC, $metadatas, $this->out);
         $this->assertEquals(1, $changedFiles);
 
-        $reader = new Reader($this->getExiftool(), new RDFParser());
+        $reader = new Reader($this->getExiftool(), $this->getRDFParser());
         $this->assertGreaterThan(200, count($reader->files($this->in)->first()->getMetadatas()));
 
-        $reader = new Reader($this->getExiftool(), new RDFParser());
+        $reader = new Reader($this->getExiftool(), $this->getRDFParser());
         $this->assertGreaterThan(4, count($reader->files($this->out)->first()->getMetadatas()));
         $this->assertLessThan(30, count($reader->files($this->out)->first()->getMetadatas()));
 
@@ -170,10 +170,10 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
         $changedFiles = $this->object->write($this->inWithICC, $metadatas, $this->out);
         $this->assertEquals(1, $changedFiles);
 
-        $reader = new Reader($this->getExiftool(), new RDFParser());
+        $reader = new Reader($this->getExiftool(), $this->getRDFParser());
         $this->assertGreaterThan(200, count($reader->files($this->in)->first()->getMetadatas()));
 
-        $reader = new Reader($this->getExiftool(), new RDFParser());
+        $reader = new Reader($this->getExiftool(), $this->getRDFParser());
         $this->assertGreaterThan(4, count($reader->files($this->out)->first()->getMetadatas()));
 
         $acceptedMetas = [
@@ -227,7 +227,7 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(1, $changedFiles);
 
-        $reader = new Reader($this->getExiftool(), new RDFParser());
+        $reader = new Reader($this->getExiftool(), $this->getRDFParser());
         $metadatasRead = $reader->files($this->out)->first()->getMetadatas();
 
         $this->assertGreaterThan(200, count($metadatasRead));
@@ -251,7 +251,7 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(1, $changedFiles);
 
-        $reader = new Reader($this->getExiftool(), new RDFParser());
+        $reader = new Reader($this->getExiftool(), $this->getRDFParser());
         $metadatasRead = $reader->files($this->inPlace)->first()->getMetadatas();
 
         $this->assertGreaterThan(200, count($metadatasRead));
@@ -276,7 +276,7 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(1, $changedFiles);
 
-        $reader = new Reader($this->getExiftool(), new RDFParser());
+        $reader = new Reader($this->getExiftool(), $this->getRDFParser());
         $metadatasRead = $reader->files($this->inPlace)->first()->getMetadatas();
 
         $this->assertLessThan(50, count($metadatasRead));
@@ -344,6 +344,8 @@ abstract class AbstractWriterTest extends PHPUnit_Framework_TestCase
     }
 
     abstract protected function getExiftool();
+
+    abstract protected function getRDFParser();
 
     private function _testContains($a, $modes)
     {

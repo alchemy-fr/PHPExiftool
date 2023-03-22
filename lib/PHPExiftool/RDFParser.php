@@ -13,6 +13,7 @@ namespace PHPExiftool;
 
 use DOMDocument;
 use DOMElement;
+use DOMNode;
 use DOMNodeList;
 use DOMXPath;
 use PHPExiftool\Driver\TagGroupInterface;
@@ -28,6 +29,7 @@ use PHPExiftool\Exception\ParseError;
 use PHPExiftool\Exception\RuntimeException;
 use PHPExiftool\Exception\TagUnknown;
 use Doctrine\Common\Collections\ArrayCollection;
+use Psr\Log\LoggerInterface;
 
 /**
  * Exiftool RDF output Parser
@@ -45,7 +47,13 @@ class RDFParser
     protected ?DOMDocument $DOM = null;
     protected ?DOMXPath $DOMXpath = null;
     protected array $registeredPrefixes = [];
+    private LoggerInterface $logger;
 
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+    
     public function __destruct()
     {
         $this->close();
@@ -94,7 +102,11 @@ class RDFParser
          */
         $Entities = new ArrayCollection();
 
+        $this->logger->debug(sprintf("ParseEntities() :: searching '/rdf:RDF/rdf:Description' ..."));
+        /** @var DOMNode $node */
         foreach ($this->getDomXpath()->query('/rdf:RDF/rdf:Description') as $node) {
+            $this->logger->debug(sprintf("  -> found node \"%s\" line %d", $node->nodeName, $node->getLineNo()));
+
             /**
              * Let's create a DOMDocument containing a single RDF result
              */
@@ -118,7 +130,9 @@ class RDFParser
             $node = $RDFDescriptionRoot->item(0);
             $file = $node->getAttribute('rdf:about');
 
-            $Entities->set($file, new FileEntity($file, $Dom, new static()));
+            $Entities->set($file, new FileEntity($file, $Dom, new static($this->logger)));
+
+            $this->logger->debug(sprintf("  -> new dom node \"%s\" line %d associated to file \"%s\"", $node->nodeName, $node->getLineNo(), $file));
         }
 
         return $Entities;
@@ -132,21 +146,31 @@ class RDFParser
      */
     public function ParseMetadatas(): MetadataBag
     {
+        $this->logger->debug(sprintf("ParseMetadatas() :: searching '/rdf:RDF/rdf:Description/*' ..."));
+
         $nodes = $this->getDomXpath()->query('/rdf:RDF/rdf:Description/*');
 
         $metadatas = new MetadataBag();
 
+        /** @var DOMNode $node */
         foreach ($nodes as $node) {
+
             $tagname = $this->normalize($node->nodeName);
+
+            $this->logger->debug(sprintf("  -> found node \"%s\" line %d -> tagname = \"%s\"", $node->nodeName, $node->getLineNo(), $tagname));
 
             try {
                 $tagGroup = TagGroupFactory::getFromRDFTagname($tagname);
+                $this->logger->debug(sprintf("    -> tagGroup class = \"%s\"", get_class($tagGroup)));
+                assert(get_class($tagGroup) === "PHPExiftool\\Driver\\TagGroupInterface");
             }
             catch (TagUnknown $e) {
+                $this->logger->debug(sprintf("    -> \"%s\", ignored", $e->getMessage()));
                 continue;
             }
 
             $metaValue = $this->readNodeValue($node, $tagGroup);
+            $this->logger->debug(sprintf("    -> metaValue = \"%s\"", $metaValue));
 
             $metadata = new Metadata($tagGroup, $metaValue);
 

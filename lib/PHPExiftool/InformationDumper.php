@@ -123,9 +123,9 @@ class InformationDumper
 
         $this->logger->info('Erasing previous files... ');
         try {
-            $dir = __DIR__ . '/Driver/TagGroup/*';
+            $cmd = 'rm -Rf ' . __DIR__ . '/Driver/TagGroup/* 2> /dev/null';
             $output = [];
-            @exec('rm -R' . $dir . ' 2> /dev/null', $output);
+            @exec($cmd, $output);
         }
         catch (\Exception $e) {
             // no-op

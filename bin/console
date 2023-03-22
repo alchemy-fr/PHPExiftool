@@ -21,7 +21,7 @@ if (!class_exists('Symfony\Component\DomCrawler\Crawler')) {
     exit(1);
 }
 
-$cli = new Application('PHPExiftool', '0.3.0');
+$cli = new Application('PHPExiftool', '2.2');
 $cli->addCommands(array(new ClassesBuilder()));
 $cli->addCommands(array(new DumpCommand()));
 

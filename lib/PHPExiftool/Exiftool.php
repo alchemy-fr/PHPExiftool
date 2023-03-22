@@ -20,12 +20,13 @@ use Symfony\Component\Process\Process;
 class Exiftool implements LoggerAwareInterface
 {
     protected LoggerInterface $logger;
-    protected $binaryPath;
+    protected ?string $binaryPath = null;
 
-    public function __construct(LoggerInterface $logger, $binaryPath = null)
+    public function __construct(LoggerInterface $logger, ?string $binaryPath = null)
     {
         $this->logger = $logger;
-        $this->binaryPath = $binaryPath;
+
+        $this->binaryPath = $this->getExecutableBinary($binaryPath);    // ensure executable (find default if $binaryPath === null)
     }
 
     /**
@@ -49,7 +50,7 @@ class Exiftool implements LoggerAwareInterface
      */
     public function executeCommand(array $command, int $timeout = 60): string
     {
-        array_unshift($command, $this->binaryPath ?: self::getBinary());
+        array_unshift($command, $this->binaryPath);
         $process = new Process($command);
         $process->setTimeout($timeout);
 
@@ -63,16 +64,33 @@ class Exiftool implements LoggerAwareInterface
 
         $output = $process->getOutput();
 
+        $this->logger->debug(sprintf("Exiftool output :\n%s", $output));
+
         unset($process);
 
         return $output;
     }
 
+    private function getExecutableBinary(?string $binaryPath = null): string
+    {
+        if(!$binaryPath) {
+            $binaryPath = self::searchBinary($this->logger);
+        }
+        if (is_executable($binaryPath)) {
+            $this->logger->debug(sprintf("Exiftool binary : \"%s\" is executable", $binaryPath));
+            return $binaryPath;
+        }
+        else {
+            throw new RuntimeException(sprintf("Exiftool binary : \"%s\" is not executable", $binaryPath));
+        }
+    }
+
     /**
      *
+     * @param LoggerInterface|null $logger
      * @return string
      */
-    protected static function getBinary(): string
+    protected static function searchBinary(?LoggerInterface $logger = null): string
     {
         static $binary = null;
 
@@ -80,20 +98,45 @@ class Exiftool implements LoggerAwareInterface
             return $binary;
         }
 
-        $dev = __DIR__ . '/../../vendor/exiftool/exiftool/exiftool';
-        $packaged = __DIR__ . '/../../../../exiftool/exiftool/exiftool';
+        $testLocations = [
+            $dev = __DIR__ . '/../../vendor/exiftool/exiftool/exiftool',
+            $packaged = __DIR__ . '/../../../../exiftool/exiftool/exiftool'
+        ];
 
-        foreach (array($packaged, $dev) as $location) {
+        foreach ($testLocations as $i => $location) {
 
             if (defined('PHP_WINDOWS_VERSION_BUILD')) {
                 $location .= '.exe';
             }
 
-            if (is_executable($location)) {
-                return $binary = realpath($location);
+            if($logger) {
+                $logger->debug(sprintf("Searching exiftool binary as \"%s\" ...", $location));
+            }
+
+            $rp = realpath($location);
+            if($rp) {
+                if($logger) {
+                    $logger->debug(sprintf("  -> checking realpath \"%s\"", $rp));
+                }
+                if(is_executable($rp)) {
+                    if ($logger) {
+                        $logger->debug(sprintf("  ->  -> \"%s\" is executable", $rp));
+                        return $binary = $rp;
+                    }
+                }
+                else {
+                    if ($logger) {
+                        $logger->debug(sprintf("  ->  -> \"%s\" is not executable %s", $rp, $i < count($testLocations) ? ", check next" : ""));
+                    }
+                }
+            }
+            else {
+                if($logger) {
+                    $logger->debug(sprintf("  -> realpath(\"%s\") = %s", $location, var_export($rp, true)));
+                }
             }
         }
 
-        throw new RuntimeException('Unable to get exiftool binary');
+        throw new RuntimeException('Unable to find exiftool binary');
     }
 }

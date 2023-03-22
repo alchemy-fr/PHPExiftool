@@ -10,16 +10,16 @@
 
 namespace PHPExiftool\Test;
 
+use Monolog\Handler\NullHandler;
+use Monolog\Logger;
 use PHPExiftool\FileEntity;
 use PHPExiftool\RDFParser;
 use PHPExiftool;
 
 class FileEntityTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @var FileEntity
-     */
-    protected $object;
+    protected FileEntity $object;
+    protected Logger $logger;
 
     /**
      * @covers FileEntity::__construct
@@ -29,7 +29,10 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
         $dom = new \DOMDocument();
         $dom->loadXML(file_get_contents(__DIR__ . '/../../../files/ExifTool.xml'));
 
-        $this->object = new FileEntity('testFile', $dom, new RDFParser());
+        $this->logger = new Logger('Tests');
+        $this->logger->pushHandler(new NullHandler());
+
+        $this->object = new FileEntity('testFile', $dom, new RDFParser($this->logger));
     }
 
     /**
@@ -73,7 +76,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
 
     public function testCacheKey()
     {
-        $o = new FileEntity('bad_{}()/\\@:_chars', new \DOMDocument(), new RDFParser());
+        $o = new FileEntity('bad_{}()/\\@:_chars', new \DOMDocument(), new RDFParser($this->logger));
         $k = $o->getCacheKey();
         $this->assertEquals('bad_%7B%7D%28%29%2F%5C%40%3A_chars', $k);
     }

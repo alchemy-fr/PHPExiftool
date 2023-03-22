@@ -61,12 +61,12 @@ class ClassesBuilder extends Command
         $this->input = $input;
         $this->output = $output;
 
-        $this->output->write('Dumping Exiftool Dictionnary... ');
+        $this->output->writeln('Dumping Exiftool Dictionnary... ');
 
         $logger = new Logger('Builder');
-        $logger->pushHandler(new NullHandler());
+        $logger->pushHandler( new NullHandler());
 
-        if ($input->getOption('verbose')) {
+        if ($output->isDebug()) {
             $logger->pushHandler(new StreamHandler('php://stdout'));
         }
 
