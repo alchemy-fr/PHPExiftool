@@ -14,6 +14,7 @@ namespace PHPExiftool\Driver;
 use PHPExiftool\Exception\TagUnknown;
 use PHPExiftool\InformationDumper;
 use PHPExiftool\Tool\Command\ClassesBuilder;
+use Psr\Log\LoggerInterface;
 
 /**
  * Metadata Object for mapping a TagGroup to a value
@@ -27,16 +28,21 @@ class TagGroupFactory
     /**
      * Build a TagGroup object based on his id
      *
-     * @param  string       $tagname
+     * @param string $tagname
+     * @param LoggerInterface|null $logger
      * @return TagGroupInterface
      * @throws TagUnknown
      */
-    public static function getFromRDFTagname(string $tagname): TagGroupInterface
+    public static function getFromRDFTagname(string $tagname, ?LoggerInterface $logger = null): TagGroupInterface
     {
-        $classname = static::classnameFromRDFTagname($tagname);
+        $classname = static::classnameFromRDFTagname($tagname, $logger);
+
+        if($logger) {
+            $logger->debug(sprintf("classnameFromRDFTagname(\"%s\") ==> \"%s\"", $tagname, $classname));
+        }
 
         if ( ! class_exists($classname)) {
-            throw new TagUnknown(sprintf('Unknown tag %s', $tagname));
+            throw new TagUnknown(sprintf("Unknown tag \"%s\" (class \"%s\" not found)", $tagname, $classname));
         }
 
         return new $classname;
@@ -47,11 +53,15 @@ class TagGroupFactory
         return class_exists(static::classnameFromRDFTagname($tagname));
     }
 
-    protected static function classnameFromRDFTagname(string $RdfName): string
+    protected static function classnameFromRDFTagname(string $RdfName, ?LoggerInterface $logger = null): string
     {
         $id = str_replace('/rdf:RDF/rdf:Description/', '', $RdfName);
+        $FQClassname = InformationDumper::tagGroupIdToFQClassname($id);
+
+        if($logger) {
+            $logger->debug(sprintf("tag id(\"%s\") ==> \"%s\" ; tagGroupIdToFQClassname(\"%s\") ==> \"%s\" ", $RdfName, $id, $id, $FQClassname));
+        }
 
         return '\\PHPExiftool\\Driver\\TagGroup\\' . InformationDumper::tagGroupIdToFQClassname($id);
     }
-
 }

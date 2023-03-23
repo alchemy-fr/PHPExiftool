@@ -160,7 +160,7 @@ class RDFParser
             $this->logger->debug(sprintf("  -> found node \"%s\" line %d -> tagname = \"%s\"", $node->nodeName, $node->getLineNo(), $tagname));
 
             try {
-                $tagGroup = TagGroupFactory::getFromRDFTagname($tagname);
+                $tagGroup = TagGroupFactory::getFromRDFTagname($tagname, $this->logger);
                 $this->logger->debug(sprintf("    -> tagGroup class = \"%s\"", get_class($tagGroup)));
                 assert(get_class($tagGroup) === "PHPExiftool\\Driver\\TagGroupInterface");
             }
@@ -275,7 +275,7 @@ class RDFParser
         $nodeName = $this->normalize($node->nodeName);
 
         if (is_null($tagGroup) && TagGroupFactory::hasFromRDFTagname($nodeName)) {
-            $tagGroup = TagGroupFactory::getFromRDFTagname($nodeName);
+            $tagGroup = TagGroupFactory::getFromRDFTagname($nodeName, $this->logger);
         }
 
         if ($node->getElementsByTagNameNS(self::RDF_NAMESPACE, 'Bag')->length > 0) {
