@@ -47,11 +47,12 @@ class Builder
     protected LoggerInterface $logger;
 
     static ?ReflectionClass $reflectionClass = null;
+    private string $rootNamespace;
 
     /**
      * @throws Exception
      */
-    public function __construct(string $namespace, string $classname, array $consts, array $properties, $extends = null, array $uses = [], array $classAnnotations = [])
+    public function __construct(string $rootNamespace, string $namespace, string $classname, array $consts, array $properties, $extends = null, array $uses = [], array $classAnnotations = [])
     {
         // singleton
         if (is_null(self::$reflectionClass) && $extends) {
@@ -74,7 +75,8 @@ class Builder
         }
 
         // $this->xmlLine = $xmlLine;
-        $this->namespace = trim('PHPExiftool\\Driver\\' . $namespace, '\\');
+        $this->rootNamespace = $rootNamespace;
+        $this->namespace = $namespace;
         $this->classname = $classname;
         $this->properties = $properties;
         $this->consts = $consts;
@@ -129,35 +131,32 @@ class Builder
         $this->properties[$property] = $value;
     }
 
-    public function getPathfile(): string
+    public function getPathfile(string $rootPath): string
     {
-        return __DIR__ . '/../../'
-            . str_replace('\\', '/', $this->namespace) . "/"
-            . $this->classname . '.php';
+        $subdir = str_replace('\\', '/', $this->namespace);
+        @mkdir($rootPath . '/' . $subdir, 0754, true);
+        return $rootPath . '/' . $subdir . '/' . $this->classname . '.php';
     }
 
     /**
      * @throws Exception
      */
-    protected function write($force = false): Builder
+    protected function write(string $rootPath): Builder
     {
-        $fp = $this->getPathfile();
-        if (!$force && file_exists($fp)) {
-            throw new Exception(sprintf('%s already exists', $fp));
-        }
+        $fp = $this->getPathfile($rootPath);
 
         if (file_exists($fp)) {
             unlink($fp);
         }
 
-        file_put_contents($fp, $this->generateContent());
+        file_put_contents($fp, $this->generateContent($rootPath));
 
         return $this;
     }
 
-    public function generateContent()
+    public function generateContent(string $rootPath)
     {
-        $content = "<?php\n\n<license>\n\nnamespace <namespace>;\n\n";
+        $content = "<?php\n\n<license>\n\nnamespace ".$this->rootNamespace.'\\'.$this->namespace.";\n\n";
 
         foreach ($this->uses as $use) {
             $content .= "use " . ltrim($use, "\\") . ";\n";
@@ -201,9 +200,9 @@ class Builder
 
         $content .= "\n}\n";
 
-        if (!is_dir(dirname($this->getPathfile()))) {
-            mkdir(dirname($this->getPathfile()), 0754, true);
-        }
+//        if (!is_dir(dirname($this->getPathfile()))) {
+//            mkdir(dirname($this->getPathfile()), 0754, true);
+//        }
 
         return str_replace(
             ['<license>', '<namespace>', '<classname>', '<extends>'],

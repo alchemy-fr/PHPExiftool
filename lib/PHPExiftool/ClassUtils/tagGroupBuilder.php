@@ -134,7 +134,7 @@ class tagGroupBuilder extends Builder
         }
     }
 
-    public function write($force = false): Builder
+    public function write(string $path): Builder
     {
         $this->properties['phpType'] = $this->php_type ?: "mixed";
         $this->properties['isWritable'] = ($this->writable === 1);
@@ -159,7 +159,7 @@ class tagGroupBuilder extends Builder
 
         $this->properties['tags'] = $this->tags;
 
-        parent::write($force);
+        parent::write($path);
         return $this;
     }
 

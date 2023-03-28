@@ -45,7 +45,10 @@ class ClassesBuilder extends Command
             ->setName('classes-builder')
             ->setDescription('Build TagGroup classes from exiftool documentation.')
             ->addOption('with-mwg', '', null, 'Include MWG tags')
+            ->addOption("path", null, InputOption::VALUE_OPTIONAL, 'Destination root where classes will be generated', "./Driver")
+            ->addOption("namespace", null, InputOption::VALUE_OPTIONAL, 'root namespace', "PHPExiftool\\Driver")
             ->addOption("lng", null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Wanted lng(s) for tag(group) descriptions', [])
+            ->setHelp("Classes will be generated in subdirectory \"".InformationDumper::SUBDIR."\" relative to path option, eg. ./Driver/".InformationDumper::SUBDIR." for default path.")
             ;
 
         return $this;
@@ -75,7 +78,7 @@ class ClassesBuilder extends Command
             $options[] = InformationDumper::LISTOPTION_MWG;
         }
 
-        $dumper = new InformationDumper(new Exiftool($logger));
+        $dumper = new InformationDumper(new Exiftool($logger), $input->getOption('path'), $input->getOption('namespace'));
         $dumper->setLogger($logger);
 
         $dumper->dumpClasses($options, $input->getOption('lng'));

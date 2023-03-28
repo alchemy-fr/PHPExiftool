@@ -13,6 +13,7 @@ namespace PHPExiftool\Test\Driver;
 use PHPExiftool\PHPExiftool;
 use Symfony\Component\Finder\Finder;
 use PHPExiftool\Driver\TagGroupInterface;
+use PHPExiftool\Driver\TagGroup\Helper;
 
 class TagGroupTest extends \PHPUnit_Framework_TestCase {
 
@@ -40,7 +41,7 @@ class TagGroupTest extends \PHPUnit_Framework_TestCase {
 
         $n = 0;
         foreach ($finder as $file) {
-            if($file->getFilename() === "index.php") {
+            if($file->getFilename() === "Helper.php") {
                 continue;
             }
             $n++;
@@ -86,7 +87,7 @@ class TagGroupTest extends \PHPUnit_Framework_TestCase {
             unset($tag);
         }
 
-        self::assertEquals(count(PHPExiftool::getKnownTagGroups()), $n);
+        self::assertEquals(count(Helper::getIndex()), $n);
     }
 
 }

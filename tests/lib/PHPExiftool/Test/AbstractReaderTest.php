@@ -69,7 +69,8 @@ abstract class AbstractReaderTest extends PHPUnit_Framework_TestCase {
 
         if (defined('PHP_WINDOWS_VERSION_BUILD')) {
             self::$disableSymLinkTest = true;
-        } elseif (!is_link(self::$tmpDir . '/symlink')) {
+        }
+        elseif (!is_link(self::$tmpDir . '/symlink')) {
 
             if (!@symlink($tmpDir2, self::$tmpDir . '/symlink')) {
                 self::$disableSymLinkTest = true;

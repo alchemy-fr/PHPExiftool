@@ -22,9 +22,11 @@ use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\Finder\Exception\DirectoryNotFoundException;
 
 class InformationDumper
 {
+    const SUBDIR = "TagGroup";
     /**
      * For use with list option
      */
@@ -55,12 +57,28 @@ class InformationDumper
     private Exiftool $exiftool;
     private LoggerInterface $logger;
     private int $currentXmlLine;
+    private string $rootPath;
+    private string $rootNamespace;
 
 
-    public function __construct(Exiftool $exiftool)
+    public function __construct(Exiftool $exiftool, string $rootPath, string $rootNamespace)
     {
         $this->exiftool = $exiftool;
         $this->logger = new NullLogger();
+        $this->rootNamespace = $rootNamespace . '\\' . self::SUBDIR;
+
+        $c = substr($rootPath, 0, 1);
+        if($c !== '/') {
+            // relative path
+            $rootPath = __DIR__ . '/' . $rootPath;
+        }
+
+        @mkdir($rootPath, 0754, true);
+        $rootPath = realpath($rootPath);
+        if($rootPath === false) {
+            throw new DirectoryNotFoundException(sprintf("Could not find or create directory \"%s\" for PHPExiftool TagGroup classes", $rootPath));
+        }
+        $this->rootPath = $rootPath . '/' . self::SUBDIR;
     }
 
     public function setLogger(LoggerInterface $logger)
@@ -121,9 +139,11 @@ class InformationDumper
     {
         $dom = $this->listDatas(InformationDumper::LISTTYPE_SUPPORTED_XML, $options);
 
-        $this->logger->info('Erasing previous files... ');
+        @mkdir($this->rootPath, 0754, true);
+
+        $this->logger->info(sprintf('Erasing previous files "%s/*" ', $this->rootPath));
         try {
-            $cmd = 'rm -Rf ' . __DIR__ . '/Driver/TagGroup/* 2> /dev/null';
+            $cmd = 'rm -Rf ' . $this->rootPath . '/* 2> /dev/null';
             $output = [];
             @exec($cmd, $output);
         }
@@ -234,7 +254,7 @@ class InformationDumper
 //                $namespace = self::escapeClassname("ID-" . $tag_id);
                 $group_id = $g1 . ":" . $tag_name;
                 $fq_classname = self::tagGroupIdToFQClassname($group_id);
-                list($namespace, $classname) = self::fqClassnameToNamespace($fq_classname);
+                [$namespace, $classname] = self::fqClassnameToNamespace($fq_classname);
 
 //                $fq_classname = $prefix_ns . '\\' .  $namespace . '\\' . $classname;   // fully qualified classname
 //                $fq_classname = $namespace . '\\' . $classname;   // fully qualified classname
@@ -257,9 +277,8 @@ class InformationDumper
                     $nGroups++;
 
                     $tagGroupBuilder = new tagGroupBuilder(
-                    //"TagGroup\\" . $prefix_ns . "\\". $namespace,
-                        "TagGroup\\" . $namespace,
-                        // "TagGroup\\" . $namespace,
+                        $this->rootNamespace,
+                        $namespace,
                         $classname,
                         // consts
                         [
@@ -381,16 +400,23 @@ class InformationDumper
         $this->logger->info(sprintf("Writing %d classes... ", $nGroups));
 
         foreach ($tagGroupBuilders as $fq_classname => $builder) {
-            $builder->write();
+            $builder->write($this->rootPath);
         }
 
         $this->logger->info(sprintf("%d classes covers %d tags.", $nGroups, $nTags));
 
-        $this->logger->info(sprintf("Writing index Table"));
-        $index = array_keys($group_ids);
-        sort($index, SORT_NATURAL + SORT_FLAG_CASE);
-        $file = __DIR__ . '/Driver/TagGroup/index.php';
-        file_put_contents($file, "<?php\nreturn " . var_export($index, true) . ";\n");
+        $this->logger->info(sprintf("Writing helper Table"));
+        $file = $this->rootPath . '/Helper.php';
+        file_put_contents($file,
+            "<?php\n"
+            . "namespace " . $this->rootNamespace . ";\n\n"
+            . "class Helper\n"
+            . "{\n"
+            . "    static function getIndex(): array {\n"
+            . "        return " . var_export($group_ids, true) . ";\n"
+            . "    }\n"
+            . "}\n"
+        );
     }
 
     protected function getPhpType(string $type): ?string

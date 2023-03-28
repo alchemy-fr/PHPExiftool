@@ -12,8 +12,10 @@ namespace PHPExiftool\Test;
 
 use Monolog\Logger;
 use Monolog\Handler\NullHandler;
+use PHPExiftool\Exception\InvalidArgumentException;
 use PHPExiftool\InformationDumper;
 use PHPExiftool\Exiftool;
+use PHPExiftool\Exception\DirectoryNotFoundException;
 
 class InformationDumperTest extends \PHPUnit_Framework_TestCase
 {
@@ -27,7 +29,7 @@ class InformationDumperTest extends \PHPUnit_Framework_TestCase
         $logger = new Logger('Tests');
         $logger->pushHandler(new NullHandler());
 
-        $this->object = new InformationDumper(new Exiftool($logger));
+        $this->object = new InformationDumper(new Exiftool($logger), "./Driver", "PHPExiftool\\Driver");
     }
 
     /**
@@ -40,11 +42,28 @@ class InformationDumperTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers PHPExiftool\InformationDumper::listDatas
-     * @covers \PHPExiftool\Exception\InvalidArgumentException
-     * @expectedException \PHPExiftool\Exception\InvalidArgumentException
+     * @covers InvalidArgumentException
      */
     public function testListDatasInvalidType()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->object->listDatas('Scrooge');
+    }
+
+    /**
+     * @covers PHPExiftool\InformationDumper::listDatas
+     * @covers DirectoryNotFoundException
+     */
+    public function testBadDirectory()
+    {
+        $this->markTestIncomplete(
+            'DirectoryNotFoundException cannot be forced because directory is created.'
+        );
+
+        $this->expectException(DirectoryNotFoundException::class);
+
+        $logger = new Logger('Tests');
+        $logger->pushHandler(new NullHandler());
+        new InformationDumper(new Exiftool($logger), "./unknownDir/foo", "PHPExiftool\\Driver");
     }
 }
