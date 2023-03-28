@@ -17,6 +17,7 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use PHPExiftool\Exiftool;
 use PHPExiftool\InformationDumper;
+use PHPExiftool\PHPExiftool;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -46,9 +47,8 @@ class ClassesBuilder extends Command
             ->setDescription('Build TagGroup classes from exiftool documentation.')
             ->addOption('with-mwg', '', null, 'Include MWG tags')
             ->addOption("path", null, InputOption::VALUE_OPTIONAL, 'Destination root where classes will be generated', "./Driver")
-            ->addOption("namespace", null, InputOption::VALUE_OPTIONAL, 'root namespace', "PHPExiftool\\Driver")
             ->addOption("lng", null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Wanted lng(s) for tag(group) descriptions', [])
-            ->setHelp("Classes will be generated in subdirectory \"".InformationDumper::SUBDIR."\" relative to path option, eg. ./Driver/".InformationDumper::SUBDIR." for default path.")
+            ->setHelp("Classes will be generated in subdirectory \"".PHPExiftool::SUBDIR."\" relative to path option, eg. ./Driver/".PHPExiftool::SUBDIR." for default path.")
             ;
 
         return $this;
@@ -78,7 +78,7 @@ class ClassesBuilder extends Command
             $options[] = InformationDumper::LISTOPTION_MWG;
         }
 
-        $dumper = new InformationDumper(new Exiftool($logger), $input->getOption('path'), $input->getOption('namespace'));
+        $dumper = new InformationDumper(new Exiftool($logger), $input->getOption('path'));
         $dumper->setLogger($logger);
 
         $dumper->dumpClasses($options, $input->getOption('lng'));

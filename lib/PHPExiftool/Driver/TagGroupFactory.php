@@ -13,7 +13,7 @@ namespace PHPExiftool\Driver;
 
 use PHPExiftool\Exception\TagUnknown;
 use PHPExiftool\InformationDumper;
-use PHPExiftool\Tool\Command\ClassesBuilder;
+use PHPExiftool\PHPExiftool;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -62,6 +62,6 @@ class TagGroupFactory
             $logger->debug(sprintf("tag id(\"%s\") ==> \"%s\" ; tagGroupIdToFQClassname(\"%s\") ==> \"%s\" ", $RdfName, $id, $id, $FQClassname));
         }
 
-        return '\\PHPExiftool\\Driver\\TagGroup\\' . InformationDumper::tagGroupIdToFQClassname($id);
+        return PHPExiftool::ROOT_NAMESPACE . '\\' . PHPExiftool::SUBDIR . '\\' . InformationDumper::tagGroupIdToFQClassname($id);
     }
 }

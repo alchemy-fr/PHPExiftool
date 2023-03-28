@@ -26,7 +26,6 @@ use Symfony\Component\Finder\Exception\DirectoryNotFoundException;
 
 class InformationDumper
 {
-    const SUBDIR = "TagGroup";
     /**
      * For use with list option
      */
@@ -61,11 +60,11 @@ class InformationDumper
     private string $rootNamespace;
 
 
-    public function __construct(Exiftool $exiftool, string $rootPath, string $rootNamespace)
+    public function __construct(Exiftool $exiftool, string $rootPath)
     {
         $this->exiftool = $exiftool;
         $this->logger = new NullLogger();
-        $this->rootNamespace = $rootNamespace . '\\' . self::SUBDIR;
+        $this->rootNamespace = PHPExiftool::ROOT_NAMESPACE . '\\' . PHPExiftool::SUBDIR;
 
         $c = substr($rootPath, 0, 1);
         if($c !== '/') {
@@ -78,7 +77,7 @@ class InformationDumper
         if($rootPath === false) {
             throw new DirectoryNotFoundException(sprintf("Could not find or create directory \"%s\" for PHPExiftool TagGroup classes", $rootPath));
         }
-        $this->rootPath = $rootPath . '/' . self::SUBDIR;
+        $this->rootPath = $rootPath . '/' . PHPExiftool::SUBDIR;
     }
 
     public function setLogger(LoggerInterface $logger)
@@ -406,6 +405,7 @@ class InformationDumper
         $this->logger->info(sprintf("%d classes covers %d tags.", $nGroups, $nTags));
 
         $this->logger->info(sprintf("Writing helper Table"));
+        ksort($group_ids, SORT_NATURAL + SORT_FLAG_CASE);
         $file = $this->rootPath . '/Helper.php';
         file_put_contents($file,
             "<?php\n"
