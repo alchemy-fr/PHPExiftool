@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test\Driver\Value;
+namespace lib\PHPExiftool\Test\Driver\Value;
 
 use PHPExiftool\Driver\Value\Multi;
 use PHPExiftool\Driver\Value\ValueInterface;
@@ -21,7 +21,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
     protected $object;
 
     /**
-     * @covers PHPExiftool\Driver\Value\Multi::__construct
+     * @covers Multi::__construct
      */
     protected function setUp()
     {
@@ -29,7 +29,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Multi::getType
+     * @covers Multi::getType
      */
     public function testGetType()
     {
@@ -37,7 +37,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Multi::asArray
+     * @covers Multi::asArray
      */
     public function testAsArray()
     {
@@ -45,7 +45,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Multi::addValue
+     * @covers Multi::addValue
      */
     public function testAddValue()
     {
@@ -54,7 +54,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Multi::reset
+     * @covers Multi::reset
      */
     public function testReset()
     {

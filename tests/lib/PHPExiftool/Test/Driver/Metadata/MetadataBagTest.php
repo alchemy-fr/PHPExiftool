@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test\Driver\Metadata;
+namespace lib\PHPExiftool\Test\Driver\Metadata;
 
 use PHPExiftool\Driver\Metadata\MetadataBag;
 
@@ -25,7 +25,7 @@ class MetadataBagTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Metadata\MetadataBag::filterKeysByRegExp
+     * @covers MetadataBag::filterKeysByRegExp
      */
     public function testFilterKeysByRegExp()
     {

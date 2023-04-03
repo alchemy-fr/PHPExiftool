@@ -26,6 +26,36 @@ class TagGroupFactory
 {
 
     /**
+     * load a class
+     *
+     * @param string $tagname
+     * @param LoggerInterface|null $logger
+     * @throws TagUnknown
+     */
+    public static function loadClass(string $classesRootDirectory, string $classname, ?LoggerInterface $logger = null)
+    {
+        $fullClassname = PHPExiftool::ROOT_NAMESPACE . '\\' . $classname;
+
+        // class loader
+        if ( !class_exists($fullClassname)) {
+            $absClassesRootDirectory = PHPExiftool::getAbsoluteRootPathDirectory($classesRootDirectory);
+            $fpath = $absClassesRootDirectory . '/' . str_replace('\\', '/', $classname) . '.php';
+
+            if ( !file_exists($fpath)) {
+                throw new TagUnknown(sprintf("file \"%s\" not found for class \"%s\"", $fpath, $fullClassname));
+            }
+
+            include_once $fpath;
+
+            if ( !class_exists($fullClassname)) {
+                throw new TagUnknown(sprintf("class \"%s\" not found into \"%s\"", $fullClassname, $fpath));
+            }
+        }
+
+        return new $fullClassname;
+    }
+
+    /**
      * Build a TagGroup object based on his id
      *
      * @param string $tagname
@@ -33,7 +63,7 @@ class TagGroupFactory
      * @return TagGroupInterface
      * @throws TagUnknown
      */
-    public static function getFromRDFTagname(string $tagname, ?LoggerInterface $logger = null): TagGroupInterface
+    public static function getFromRDFTagname(string $classesRootDirectory, string $tagname, ?LoggerInterface $logger = null): TagGroupInterface
     {
         $classname = static::classnameFromRDFTagname($tagname, $logger);
 
@@ -41,16 +71,31 @@ class TagGroupFactory
             $logger->debug(sprintf("classnameFromRDFTagname(\"%s\") ==> \"%s\"", $tagname, $classname));
         }
 
-        if ( ! class_exists($classname)) {
-            throw new TagUnknown(sprintf("Unknown tag \"%s\" (class \"%s\" not found)", $tagname, $classname));
-        }
-
-        return new $classname;
+        return self::loadClass($classesRootDirectory, $classname, $logger);
     }
 
-    public static function hasFromRDFTagname(string $tagname): bool
+    public static function hasFromRDFTagname(string $classesRootDirectory, string $tagname, ?LoggerInterface $logger = null): bool
     {
-        return class_exists(static::classnameFromRDFTagname($tagname));
+        $classname = PHPExiftool::ROOT_NAMESPACE . '\\' . static::classnameFromRDFTagname($tagname, $logger);
+
+        // class loader
+        if ( !class_exists($classname)) {
+            $absClassesRootDirectory = PHPExiftool::getAbsoluteRootPathDirectory($classesRootDirectory);
+            $path = str_replace('\\', '/', InformationDumper::tagGroupIdToFQClassname($tagname));
+            $fpath = $absClassesRootDirectory . '/' .PHPExiftool::SUBDIR . '/' . $path . '.php';
+
+            if ( !file_exists($fpath)) {
+                return false;
+            }
+
+            include_once $fpath;
+
+            if ( !class_exists($classname)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     protected static function classnameFromRDFTagname(string $RdfName, ?LoggerInterface $logger = null): string
@@ -62,6 +107,6 @@ class TagGroupFactory
             $logger->debug(sprintf("tag id(\"%s\") ==> \"%s\" ; tagGroupIdToFQClassname(\"%s\") ==> \"%s\" ", $RdfName, $id, $id, $FQClassname));
         }
 
-        return PHPExiftool::ROOT_NAMESPACE . '\\' . PHPExiftool::SUBDIR . '\\' . InformationDumper::tagGroupIdToFQClassname($id);
+        return PHPExiftool::SUBDIR . '\\' . InformationDumper::tagGroupIdToFQClassname($id);
     }
 }

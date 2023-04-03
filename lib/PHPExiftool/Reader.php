@@ -75,10 +75,15 @@ class Reader implements IteratorAggregate
     /**
      *  Constructor
      */
-    public function __construct(Exiftool $exiftool, RDFParser $parser)
+    private function __construct(Exiftool $exiftool, RDFParser $parser)
     {
         $this->exiftool = $exiftool;
         $this->parser = $parser;
+    }
+
+    public static function create(Exiftool $exiftool, RDFParser $parser)
+    {
+        return new self($exiftool, $parser);
     }
 
     public function __destruct()
@@ -361,11 +366,6 @@ class Reader implements IteratorAggregate
         }
 
         return $this->collection;
-    }
-
-    public static function create(LoggerInterface $logger): self
-    {
-        return new static(new Exiftool($logger), new RDFParser($logger));
     }
 
     /**

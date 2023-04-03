@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test;
+namespace lib\PHPExiftool\Test;
 
-use PHPExiftool\PreviewExtractor;
+use lib\PHPExiftool\PreviewExtractor;
 
 abstract class AbstractPreviewExtractorTest extends \PHPUnit_Framework_TestCase
 {
@@ -50,7 +50,7 @@ abstract class AbstractPreviewExtractorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \PHPExiftool\Exception\LogicException
+     * @expectedException \lib\PHPExiftool\Exception\LogicException
      */
     public function testExtractWrongFile()
     {
@@ -62,7 +62,7 @@ abstract class AbstractPreviewExtractorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \PHPExiftool\Exception\LogicException
+     * @expectedException \lib\PHPExiftool\Exception\LogicException
      */
     public function testExtractWrongDir()
     {

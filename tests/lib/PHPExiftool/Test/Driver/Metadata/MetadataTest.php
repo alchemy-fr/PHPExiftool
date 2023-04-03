@@ -8,9 +8,8 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test\Driver\Metadata;
+namespace lib\PHPExiftool\Test\Driver\Metadata;
 
-use PHPExiftool\Driver\AbstractTag;
 use PHPExiftool\Driver\AbstractTagGroup;
 use PHPExiftool\Driver\Value\Mono;
 use PHPExiftool\Driver\Metadata\Metadata;
@@ -25,7 +24,7 @@ class MetadataTest extends \PHPUnit_Framework_TestCase
     protected $value;
 
     /**
-     * @covers \PHPExiftool\Driver\Metadata\Metadata::__construct
+     * @covers Metadata::__construct
      */
     protected function setUp()
     {
@@ -35,7 +34,7 @@ class MetadataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \PHPExiftool\Driver\Metadata\Metadata::getTagGroup
+     * @covers Metadata::getTagGroup
      */
     public function testGetTag()
     {
@@ -43,7 +42,7 @@ class MetadataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \PHPExiftool\Driver\Metadata\Metadata::getValue
+     * @covers Metadata::getValue
      */
     public function testGetValue()
     {

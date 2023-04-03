@@ -8,13 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test;
+namespace lib\PHPExiftool\Test;
 
 use Monolog\Handler\NullHandler;
 use Monolog\Logger;
 use PHPExiftool\FileEntity;
 use PHPExiftool\RDFParser;
-use PHPExiftool;
+use lib\PHPExiftool;
 
 class FileEntityTest extends \PHPUnit_Framework_TestCase
 {
@@ -32,7 +32,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
         $this->logger = new Logger('Tests');
         $this->logger->pushHandler(new NullHandler());
 
-        $this->object = new FileEntity('testFile', $dom, new RDFParser($this->logger));
+        $this->object = new FileEntity('testFile', $dom, new RDFParser("/tmp", $this->logger));
     }
 
     /**
@@ -76,7 +76,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
 
     public function testCacheKey()
     {
-        $o = new FileEntity('bad_{}()/\\@:_chars', new \DOMDocument(), new RDFParser($this->logger));
+        $o = new FileEntity('bad_{}()/\\@:_chars', new \DOMDocument(), new RDFParser("/tmp", $this->logger));
         $k = $o->getCacheKey();
         $this->assertEquals('bad_%7B%7D%28%29%2F%5C%40%3A_chars', $k);
     }

@@ -67,16 +67,18 @@ class ClassesBuilder extends Command
         $this->output->writeln('Dumping Exiftool Dictionnary... ');
 
         $logger = new Logger('Builder');
-        $logger->pushHandler( new NullHandler());
-
         if ($output->isDebug()) {
             $logger->pushHandler(new StreamHandler('php://stdout'));
+        }
+        else {
+            $logger->pushHandler( new NullHandler());
         }
 
         $options = [];
         if ($input->getOption('with-mwg')) {
             $options[] = InformationDumper::LISTOPTION_MWG;
         }
+
 
         $dumper = new InformationDumper(new Exiftool($logger), $input->getOption('path'));
         $dumper->setLogger($logger);

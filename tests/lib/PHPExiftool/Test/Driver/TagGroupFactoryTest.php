@@ -8,32 +8,47 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test\Driver;
+namespace lib\PHPExiftool\Test\Driver;
 
 use PHPExiftool\Driver\TagGroupFactory;
+use PHPExiftool\Driver\TagGroupInterface;
 use PHPExiftool\Exception\TagUnknown;
+use PHPExiftool\PHPExiftool;
 use PHPUnit_Framework_TestCase;
 // use PHPExiftool\Driver\TagGroup\IPTC\SupplementalCategories;
 
 class TagGroupFactoryTest extends PHPUnit_Framework_TestCase
 {
     protected TagGroupFactory $object;
+    private PHPExiftool $PHPExiftool;
+
+    protected function setUp()
+    {
+        $this->PHPExiftool = new PHPExiftool("/tmp");
+    }
+
+    private function createTagGroup(string $tagName): TagGroupInterface
+    {
+        return $this->PHPExiftool->getFactory()->createTagGroup($tagName);
+    }
+
+
 
     /**
-     * @covers \PHPExiftool\Driver\TagGroupFactory::GetFromRDFTagname
-     * @covers \PHPExiftool\Driver\TagGroupFactory::classnameFromTagname
+     * @covers TagGroupFactory::GetFromRDFTagname
+     * @covers TagGroupFactory::classnameFromTagname
      * @throws TagUnknown
      */
     public function testGetFromRDFTagname()
     {
-        $tag = TagGroupFactory::getFromRDFTagname('IPTC:SupplementalCategories');
-        $this->assertInstanceOf(\PHPExiftool\Driver\TagGroup\IPTC\SupplementalCategories::class, $tag);
+        $tag = TagGroupFactory::getFromRDFTagname("/tmp", 'IPTC:SupplementalCategories');
+        $this->assertInstanceOf(get_class($this->createTagGroup("IPTC:SupplementalCategories")), $tag);
 
-        $tag = TagGroupFactory::getFromRDFTagname('XMP_exif:ApertureValue');
-        $this->assertInstanceOf(\PHPExiftool\Driver\TagGroup\XMP_exif\ApertureValue::class, $tag);
+        $tag = TagGroupFactory::getFromRDFTagname("/tmp", 'XMP_exif:ApertureValue');
+        $this->assertInstanceOf(get_class($this->createTagGroup("XMP_exif:ApertureValue")), $tag);
 
         try {
-            TagGroupFactory::getFromRDFTagname('XMP_exif:NonExistingTag');
+            TagGroupFactory::getFromRDFTagname("/tmp", 'XMP_exif:NonExistingTag');
             $this->fail('Should raise a TagUnknown exception');
         }
         catch (TagUnknown $e) {
@@ -42,23 +57,23 @@ class TagGroupFactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \PHPExiftool\Driver\TagGroupFactory::GetFromRDFTagname
-     * @covers \PHPExiftool\Exception\TagUnknown
+     * @covers TagGroupFactory::GetFromRDFTagname
+     * @covers TagUnknown
      *
      * @throws TagUnknown
      */
     public function testGetFromRDFTagnameFail()
     {
         $this->expectException(TagUnknown::class);
-        TagGroupFactory::getFromRDFTagname('XMP_exif:NonExistingTag');
+        TagGroupFactory::getFromRDFTagname("/tmp", 'XMP_exif:NonExistingTag');
     }
 
     /**
-     * @covers \PHPExiftool\Driver\TagGroupFactory::HasFromRDFTagname
+     * @covers TagGroupFactory::HasFromRDFTagname
      */
     public function testHasFromRDFTagname()
     {
-        $this->assertTrue(TagGroupFactory::hasFromRDFTagname('IPTC:SupplementalCategories'));
-        $this->assertFalse(TagGroupFactory::hasFromRDFTagname('XMP_exif:NonExistingTag'));
+        $this->assertTrue(TagGroupFactory::hasFromRDFTagname("/tmp", 'IPTC:SupplementalCategories'));
+        $this->assertFalse(TagGroupFactory::hasFromRDFTagname("/tmp", 'XMP_exif:NonExistingTag'));
     }
 }

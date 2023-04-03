@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test;
+namespace lib\PHPExiftool\Test;
 
 use Monolog\Logger;
 use Monolog\Handler\NullHandler;
@@ -29,11 +29,11 @@ class InformationDumperTest extends \PHPUnit_Framework_TestCase
         $logger = new Logger('Tests');
         $logger->pushHandler(new NullHandler());
 
-        $this->object = new InformationDumper(new Exiftool($logger), "./Driver", "PHPExiftool\\Driver");
+        $this->object = new InformationDumper(new Exiftool($logger), "/tmp", "PHPExiftool\\Driver");
     }
 
     /**
-     * @covers PHPExiftool\InformationDumper::listDatas
+     * @covers InformationDumper::listDatas
      */
     public function testListDatas()
     {
@@ -41,7 +41,7 @@ class InformationDumperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\InformationDumper::listDatas
+     * @covers InformationDumper::listDatas
      * @covers InvalidArgumentException
      */
     public function testListDatasInvalidType()
@@ -51,7 +51,7 @@ class InformationDumperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\InformationDumper::listDatas
+     * @covers InformationDumper::listDatas
      * @covers DirectoryNotFoundException
      */
     public function testBadDirectory()

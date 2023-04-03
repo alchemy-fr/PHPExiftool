@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test\Driver\Value;
+namespace lib\PHPExiftool\Test\Driver\Value;
 
 use PHPExiftool\Driver\Value\Mono;
 use PHPExiftool\Driver\Value\ValueInterface;
@@ -21,7 +21,7 @@ class MonoTest extends \PHPUnit_Framework_TestCase
     protected $object;
 
     /**
-     * @covers PHPExiftool\Driver\Value\Mono::__construct
+     * @covers Mono::__construct
      */
     protected function setUp()
     {
@@ -29,7 +29,7 @@ class MonoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Mono::getType
+     * @covers Mono::getType
      */
     public function testGetType()
     {
@@ -37,7 +37,7 @@ class MonoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Mono::asString
+     * @covers Mono::asString
      */
     public function testAsString()
     {
@@ -45,7 +45,7 @@ class MonoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Mono::set
+     * @covers Mono::set
      */
     public function testSetValue()
     {

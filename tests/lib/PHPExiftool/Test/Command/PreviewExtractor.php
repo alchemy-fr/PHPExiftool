@@ -8,14 +8,14 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test\Command;
+namespace lib\PHPExiftool\Test\Command;
 
 require_once __DIR__ . '/../AbstractPreviewExtractorTest.php';
 
 use Monolog\Logger;
 use Monolog\Handler\NullHandler;
-use PHPExiftool\AbstractPreviewExtractorTest;
-use PHPExiftool\Exiftool;
+use lib\PHPExiftool\AbstractPreviewExtractorTest;
+use lib\PHPExiftool\Exiftool;
 
 class PreviewExtractor extends AbstractPreviewExtractorTest
 {

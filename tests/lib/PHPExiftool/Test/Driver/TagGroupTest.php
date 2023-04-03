@@ -8,12 +8,14 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test\Driver;
+namespace lib\PHPExiftool\Test\Driver;
 
+use PHPExiftool\Driver\HelperInterface;
+use PHPExiftool\Driver\TagGroupFactory;
 use PHPExiftool\PHPExiftool;
 use Symfony\Component\Finder\Finder;
 use PHPExiftool\Driver\TagGroupInterface;
-use PHPExiftool\Driver\TagGroup\Helper;
+
 
 class TagGroupTest extends \PHPUnit_Framework_TestCase {
 
@@ -23,21 +25,26 @@ class TagGroupTest extends \PHPUnit_Framework_TestCase {
     protected TagGroupInterface $object;
 
     /**
-     * @covers \PHPExiftool\Driver\AbstractTag::getDescription
-     * @covers \PHPExiftool\Driver\AbstractTag::getGroupName
-     * @covers \PHPExiftool\Driver\AbstractTag::getName
-     * @covers \PHPExiftool\Driver\AbstractTag::getTagname
-     * @covers \PHPExiftool\Driver\AbstractTag::getId
-     * @covers \PHPExiftool\Driver\AbstractTag::getValues
-     * @covers \PHPExiftool\Driver\AbstractTag::isMulti
-     * @covers \PHPExiftool\Driver\AbstractTag::isWritable
-     * @covers \PHPExiftool\Driver\AbstractTag::isBinary
+     * @covers AbstractTag::getDescription
+     * @covers AbstractTag::getGroupName
+     * @covers AbstractTag::getName
+     * @covers AbstractTag::getTagname
+     * @covers AbstractTag::getId
+     * @covers AbstractTag::getValues
+     * @covers AbstractTag::isMulti
+     * @covers AbstractTag::isWritable
+     * @covers AbstractTag::isBinary
      */
     public function testConsistency()
     {
+        $PHPExiftool = new PHPExiftool("/tmp");
+
+        /** @var HelperInterface $helper */
+        $helper = $PHPExiftool->getFactory()->getHelper();
+
         //return;
         $finder = new Finder();
-        $finder->files()->in(array(__DIR__ . '/../../../../../lib/PHPExiftool/Driver/TagGroup/'));
+        $finder->files()->in(array('/tmp/TagGroup/'));
 
         $n = 0;
         foreach ($finder as $file) {
@@ -45,14 +52,13 @@ class TagGroupTest extends \PHPUnit_Framework_TestCase {
                 continue;
             }
             $n++;
-            $classname = substr(
-                    str_replace(
-                            array(realpath(__DIR__ . '/../../../../../lib'), '/')
-                            , array('', '\\')
-                            , $file->getRealPath()
-                    ), 0, -4);
 
-            $tag = new $classname;
+            $tagName =
+                    str_replace(
+                            '/', ':', $file->getRelativePath() . '/' . $file->getFilenameWithoutExtension()
+                    );
+
+            $tag = TagGroupFactory::getFromRDFTagname("/tmp", $tagName);
 
             /* @var TagGroupInterface $tag  */
 
@@ -87,7 +93,7 @@ class TagGroupTest extends \PHPUnit_Framework_TestCase {
             unset($tag);
         }
 
-        self::assertEquals(count(Helper::getIndex()), $n);
+        self::assertEquals(count($helper->getIndex()), $n);
     }
 
 }

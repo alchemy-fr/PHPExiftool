@@ -71,9 +71,7 @@ class InformationDumper
             // relative path
             $rootPath = __DIR__ . '/' . $rootPath;
         }
-
-        @mkdir($rootPath, 0754, true);
-        $rootPath = realpath($rootPath);
+        $rootPath = PHPExiftool::getAbsoluteRootPathDirectory($rootPath, true); // true: create if not exists
         if($rootPath === false) {
             throw new DirectoryNotFoundException(sprintf("Could not find or create directory \"%s\" for PHPExiftool TagGroup classes", $rootPath));
         }
@@ -410,7 +408,8 @@ class InformationDumper
         file_put_contents($file,
             "<?php\n"
             . "namespace " . $this->rootNamespace . ";\n\n"
-            . "class Helper\n"
+            . "use PHPExiftool\\Driver\\HelperInterface;\n\n"
+            . "class Helper implements HelperInterface\n"
             . "{\n"
             . "    static function getIndex(): array {\n"
             . "        return " . var_export($group_ids, true) . ";\n"

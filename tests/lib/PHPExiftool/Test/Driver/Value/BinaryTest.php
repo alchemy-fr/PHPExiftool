@@ -8,10 +8,11 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test\Driver\Value;
+namespace lib\PHPExiftool\Test\Driver\Value;
 
 use PHPExiftool\Driver\Value\Binary;
 use PHPExiftool\Driver\Value\ValueInterface;
+use PHPExiftool\Exception\InvalidArgumentException;
 
 class BinaryTest extends \PHPUnit_Framework_TestCase
 {
@@ -21,7 +22,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     protected $object;
 
     /**
-     * @covers PHPExiftool\Driver\Value\Binary::__construct
+     * @covers Binary::__construct
      */
     protected function setUp()
     {
@@ -29,7 +30,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Binary::getType
+     * @covers Binary::getType
      */
     public function testGetType()
     {
@@ -37,7 +38,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Binary::asString
+     * @covers Binary::asString
      */
     public function testAsString()
     {
@@ -45,7 +46,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Binary::asBase64
+     * @covers Binary::asBase64
      */
     public function testAsBase64()
     {
@@ -53,7 +54,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Binary::set
+     * @covers Binary::set
      */
     public function testSetValue()
     {
@@ -62,7 +63,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Binary::setBase64Value
+     * @covers Binary::setBase64Value
      */
     public function testSetBase64Value()
     {
@@ -71,9 +72,9 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Binary::setBase64Value
-     * @covers \PHPExiftool\Exception\InvalidArgumentException
-     * @expectedException \PHPExiftool\Exception\InvalidArgumentException
+     * @covers Binary::setBase64Value
+     * @covers InvalidArgumentException
+     * @expectedException InvalidArgumentException
      */
     public function testSetWrongBase64Value()
     {
@@ -81,7 +82,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Binary::loadFromBase64
+     * @covers Binary::loadFromBase64
      */
     public function testLoadFromBase64()
     {
@@ -91,9 +92,9 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\Driver\Value\Binary::loadFromBase64
-     * @covers \PHPExiftool\Exception\InvalidArgumentException
-     * @expectedException \PHPExiftool\Exception\InvalidArgumentException
+     * @covers Binary::loadFromBase64
+     * @covers InvalidArgumentException
+     * @expectedException InvalidArgumentException
      */
     public function testLoadFromWrongBase64()
     {

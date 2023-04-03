@@ -8,11 +8,15 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test;
+namespace lib\PHPExiftool;
 
 use Monolog\Handler\NullHandler;
 use Monolog\Logger;
 use PHPExiftool\RDFParser;
+use PHPExiftool\Exception\LogicException;
+use PHPExiftool\Exception\ParseErrorException;
+use PHPExiftool\Exception\RuntimeException;
+
 
 class RDFParserTest extends \PHPUnit_Framework_TestCase
 {
@@ -24,19 +28,19 @@ class RDFParserTest extends \PHPUnit_Framework_TestCase
         $this->logger = new Logger('Tests');
         $this->logger->pushHandler(new NullHandler());
 
-        $this->object = new RDFParser($this->logger);
+        $this->object = new RDFParser("/tmp", $this->logger);
     }
 
     /**
-     * @covers PHPExiftool\RDFParser::open
+     * @covers RDFParser::open
      */
     public function testOpen()
     {
-        $this->object->open(file_get_contents(__DIR__ . '/../../../files/simplefile.xml'));
+        $this->object->open(file_get_contents(__DIR__ . '/../../files/simplefile.xml'));
     }
 
     /**
-     * @covers PHPExiftool\RDFParser::close
+     * @covers RDFParser::close
      */
     public function testClose()
     {
@@ -44,15 +48,15 @@ class RDFParserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\RDFParser::ParseEntities
-     * @covers PHPExiftool\RDFParser::getDom
-     * @covers PHPExiftool\RDFParser::getDomXpath
-     * @covers PHPExiftool\RDFParser::getNamespacesFromXml
+     * @covers RDFParser::ParseEntities
+     * @covers RDFParser::getDom
+     * @covers RDFParser::getDomXpath
+     * @covers RDFParser::getNamespacesFromXml
      */
     public function testParseEntities()
     {
         $entities = $this->object
-            ->open(file_get_contents(__DIR__ . '/../../../files/simplefile.xml'))
+            ->open(file_get_contents(__DIR__ . '/../../files/simplefile.xml'))
             ->parseEntities();
 
         $this->assertInstanceOf('\\Doctrine\\Common\\Collections\\ArrayCollection', $entities);
@@ -61,11 +65,11 @@ class RDFParserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\RDFParser::ParseEntities
-     * @covers PHPExiftool\RDFParser::getDom
-     * @covers PHPExiftool\RDFParser::getDomXpath
+     * @covers RDFParser::ParseEntities
+     * @covers RDFParser::getDom
+     * @covers RDFParser::getDomXpath
      * @covers \PHPExiftool\Exception\LogicException
-     * @expectedException \PHPExiftool\Exception\LogicException
+     * @expectedException LogicException
      */
     public function testParseEntitiesWithoutDom()
     {
@@ -73,12 +77,12 @@ class RDFParserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\RDFParser::ParseEntities
-     * @covers PHPExiftool\RDFParser::getDom
-     * @covers PHPExiftool\RDFParser::getDomXpath
-     * @covers \PHPExiftool\Exception\ParseError
+     * @covers RDFParser::ParseEntities
+     * @covers RDFParser::getDom
+     * @covers RDFParser::getDomXpath
+     * @covers \PHPExiftool\Exception\ParseErrorException
      * @covers \PHPExiftool\Exception\RuntimeException
-     * @expectedException \PHPExiftool\Exception\RuntimeException
+     * @expectedException RuntimeException
      */
     public function testParseEntitiesWrongDom()
     {
@@ -86,14 +90,14 @@ class RDFParserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\RDFParser::ParseMetadatas
-     * @covers PHPExiftool\RDFParser::getDom
-     * @covers PHPExiftool\RDFParser::getDomXpath
+     * @covers RDFParser::ParseMetadatas
+     * @covers RDFParser::getDom
+     * @covers RDFParser::getDomXpath
      */
     public function testParseMetadatas()
     {
         $metadatas = $this->object
-            ->open(file_get_contents(__DIR__ . '/../../../files/ExifTool.xml'))
+            ->open(file_get_contents(__DIR__ . '/../../files/ExifTool.xml'))
             ->ParseMetadatas();
 
         $this->assertInstanceOf('\\PHPExiftool\\Driver\\Metadata\\MetadataBag', $metadatas);
@@ -101,8 +105,8 @@ class RDFParserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHPExiftool\RDFParser::Query
-     * @covers PHPExiftool\RDFParser::readNodeValue
+     * @covers RDFParser::Query
+     * @covers RDFParser::readNodeValue
      */
     public function testQuery()
     {

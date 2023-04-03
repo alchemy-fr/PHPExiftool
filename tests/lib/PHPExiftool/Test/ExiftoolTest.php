@@ -8,14 +8,14 @@
  * file that was distributed with this source code.
  */
 
-namespace PHPExiftool\Test;
+namespace lib\PHPExiftool\Test;
 
 use Exception;
 use Monolog\Logger;
 use Monolog\Handler\NullHandler;
 use PHPExiftool\Exception\RuntimeException;
 use PHPExiftool\Exiftool;
-use PHPExiftool;
+use lib\PHPExiftool;
 
 class ExiftoolTest extends \PHPUnit_Framework_TestCase
 {

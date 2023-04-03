@@ -54,14 +54,19 @@ class Writer
     protected int $mode;
     protected int $modules;
     protected bool $erase = false;
-    private Exiftool $exiftool;
+    protected Exiftool $exiftool;
     private bool $eraseProfile = false;
     protected int $timeout = 60;
 
-    public function __construct(Exiftool $exiftool)
+    protected function __construct(Exiftool $exiftool)
     {
         $this->exiftool = $exiftool;
         $this->reset();
+    }
+
+    public static function create(Exiftool $exiftool)
+    {
+        return new self($exiftool);
     }
 
     public function setTimeout($timeout): self
@@ -359,17 +364,6 @@ class Writer
         }
         // too bad
         return null;
-    }
-
-    /**
-     * Factory for standard Writer
-     *
-     * @param LoggerInterface $logger
-     * @return Writer
-     */
-    public static function create(LoggerInterface $logger): self
-    {
-        return new Writer(new Exiftool($logger));
     }
 
     /**
