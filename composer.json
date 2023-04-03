@@ -57,8 +57,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PHPExiftool\\": "lib/PHPExiftool/",
-            "PHPExiftool\\Driver\\TagGroup\\": "lib/PHPExiftool/Driver/TagGroup/"
+            "PHPExiftool\\": "lib/PHPExiftool/"
         }
     },
     "autoload-dev": {
