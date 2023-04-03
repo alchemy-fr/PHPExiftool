@@ -38,8 +38,7 @@ class TagGroupFactory
 
         // class loader
         if ( !class_exists($fullClassname)) {
-            $absClassesRootDirectory = PHPExiftool::getAbsoluteRootPathDirectory($classesRootDirectory);
-            $fpath = $absClassesRootDirectory . '/' . str_replace('\\', '/', $classname) . '.php';
+            $fpath = $classesRootDirectory . '/' . str_replace('\\', '/', $classname) . '.php';
 
             if ( !file_exists($fpath)) {
                 throw new TagUnknown(sprintf("file \"%s\" not found for class \"%s\"", $fpath, $fullClassname));
@@ -80,9 +79,8 @@ class TagGroupFactory
 
         // class loader
         if ( !class_exists($classname)) {
-            $absClassesRootDirectory = PHPExiftool::getAbsoluteRootPathDirectory($classesRootDirectory);
             $path = str_replace('\\', '/', InformationDumper::tagGroupIdToFQClassname($tagname));
-            $fpath = $absClassesRootDirectory . '/' .PHPExiftool::SUBDIR . '/' . $path . '.php';
+            $fpath = $classesRootDirectory . '/' .PHPExiftool::SUBDIR . '/' . $path . '.php';
 
             if ( !file_exists($fpath)) {
                 return false;

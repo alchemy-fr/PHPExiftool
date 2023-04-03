@@ -66,15 +66,6 @@ class InformationDumper
         $this->logger = new NullLogger();
         $this->rootNamespace = PHPExiftool::ROOT_NAMESPACE . '\\' . PHPExiftool::SUBDIR;
 
-        $c = substr($rootPath, 0, 1);
-        if($c !== '/') {
-            // relative path
-            $rootPath = __DIR__ . '/' . $rootPath;
-        }
-        $rootPath = PHPExiftool::getAbsoluteRootPathDirectory($rootPath, true); // true: create if not exists
-        if($rootPath === false) {
-            throw new DirectoryNotFoundException(sprintf("Could not find or create directory \"%s\" for PHPExiftool TagGroup classes", $rootPath));
-        }
         $this->rootPath = $rootPath . '/' . PHPExiftool::SUBDIR;
     }
 

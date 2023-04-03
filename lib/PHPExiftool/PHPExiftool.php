@@ -5,6 +5,7 @@ namespace PHPExiftool;
 use PHPExiftool\Driver\TagGroupFactory;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use PHPExiftool\Exception\DirectoryNotFoundException;
 
 class PHPExiftool
 {
@@ -18,7 +19,15 @@ class PHPExiftool
 
     public function __construct(string $classesRootDirectory, ?LoggerInterface $logger = null)
     {
-        $this->classesRootDirectory = $classesRootDirectory;
+        $c = substr($classesRootDirectory, 0, 1);
+        if($c !== '/') {
+            throw new DirectoryNotFoundException(sprintf("classesRootDirectory must be absolute, \"%s\" given", $classesRootDirectory));
+        }
+        if(!file_exists($classesRootDirectory) || !is_writable($classesRootDirectory)) {
+            throw new DirectoryNotFoundException(sprintf("classesRootDirectory \"%s\" must exists and be writable", $classesRootDirectory));
+        }
+
+        $this->classesRootDirectory = realpath($classesRootDirectory);
         if($logger === null) {
             $logger = new NullLogger();
         }
@@ -40,39 +49,10 @@ class PHPExiftool
         $dumper->dumpClasses($options, $lngs);
     }
 
-    public function getWriter()
-    {
-        return Writer::create(new Exiftool($this->logger));
-    }
-
-    public function createTagGroup($tagGroupId)
-    {
-        return TagGroupFactory::getFromRDFTagname($this->classesRootDirectory, $tagGroupId, $this->logger);
-    }
-
     public function isClassesGenerated(): bool
     {
-        $p = PHPExiftool::getAbsoluteRootPathDirectory($this->classesRootDirectory) . '/' . self::SUBDIR . "/Helper.php";
+        $p = $this->classesRootDirectory . '/' . self::SUBDIR . "/Helper.php";
         return file_exists($p);
-    }
-
-    public static function tagGroupIdToClassname(string $tagGroupId): string
-    {
-        return 'PHPExiftool\\Driver\\TagGroup\\' . InformationDumper::tagGroupIdToFQClassname($tagGroupId);
-    }
-
-    public static function getAbsoluteRootPathDirectory(string $classesRootDirectory, $create = false)
-    {
-        $c = substr(($absClassesRootDirectory = $classesRootDirectory), 0, 1);
-        if($c !== '/') {
-            // relative path
-            $absClassesRootDirectory = __DIR__ . '/' . $absClassesRootDirectory;
-        }
-        if(!file_exists($absClassesRootDirectory) && $create) {
-            @mkdir($absClassesRootDirectory, 0754, true);
-        }
-
-        return realpath($absClassesRootDirectory);
     }
 
     /**
