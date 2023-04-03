@@ -9,7 +9,7 @@ use PHPExiftool\Exception\DirectoryNotFoundException;
 
 class PHPExiftool
 {
-    const v = "3.1.0";
+    const v = "3.1.1";
     const ROOT_NAMESPACE = "PHPExiftool\\Driver";
     const SUBDIR = "TagGroup";
 
