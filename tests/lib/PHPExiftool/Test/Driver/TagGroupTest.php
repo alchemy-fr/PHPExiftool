@@ -13,11 +13,12 @@ namespace lib\PHPExiftool\Test\Driver;
 use PHPExiftool\Driver\HelperInterface;
 use PHPExiftool\Driver\TagGroupFactory;
 use PHPExiftool\PHPExiftool;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 use PHPExiftool\Driver\TagGroupInterface;
 
 
-class TagGroupTest extends \PHPUnit_Framework_TestCase {
+class TagGroupTest extends TestCase {
 
     /**
      * @var TagGroupInterface

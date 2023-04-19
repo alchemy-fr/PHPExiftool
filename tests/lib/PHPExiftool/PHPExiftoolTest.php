@@ -11,17 +11,12 @@
 namespace lib\PHPExiftool;
 
 use PHPExiftool\Exception\DirectoryNotFoundException;
-use PHPExiftool\Exception\EmptyCollectionException;
-use PHPExiftool\Exception\LogicException;
-use PHPExiftool\Exception\RuntimeException;
 use PHPExiftool\PHPExiftool;
 use PHPExiftool\Reader;
-use PHPUnit_Framework_TestCase;
-use Symfony\Component\Process\Process;
+use PHPUnit\Framework\TestCase;
 
 
-
-class PHPExiftoolTest extends \PHPUnit_Framework_TestCase {
+class PHPExiftoolTest extends TestCase {
 
     private ?PHPExiftool $PHPExiftool = null;
     protected static string $tmpDir = "";

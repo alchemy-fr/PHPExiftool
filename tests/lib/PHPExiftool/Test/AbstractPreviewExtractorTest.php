@@ -11,8 +11,10 @@
 namespace lib\PHPExiftool\Test;
 
 use lib\PHPExiftool\PreviewExtractor;
+use PHPExiftool\Exception\LogicException;
+use PHPUnit\Framework\TestCase;
 
-abstract class AbstractPreviewExtractorTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractPreviewExtractorTest extends TestCase
 {
 
     /**
@@ -49,27 +51,23 @@ abstract class AbstractPreviewExtractorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1, $n);
     }
 
-    /**
-     * @expectedException \lib\PHPExiftool\Exception\LogicException
-     */
     public function testExtractWrongFile()
     {
         $extractor = new PreviewExtractor($this->getExiftool());
 
         $tmpDir = sys_get_temp_dir() . '/tests' . mt_rand(10000, 99999);
 
+        $this->expectException(LogicException::class);
         $extractor->extract(__DIR__ . '/ExifTool.jpg', $tmpDir);
     }
 
-    /**
-     * @expectedException \lib\PHPExiftool\Exception\LogicException
-     */
     public function testExtractWrongDir()
     {
         $extractor = new PreviewExtractor($this->getExiftool());
 
         $tmpDir = sys_get_temp_dir() . '/tests' . mt_rand(10000, 99999);
 
+        $this->expectException(LogicException::class);
         $extractor->extract(__DIR__ . '/../../../files/ExifTool.jpg', $tmpDir);
     }
 

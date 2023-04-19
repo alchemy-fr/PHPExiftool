@@ -16,8 +16,9 @@ use Monolog\Handler\NullHandler;
 use PHPExiftool\Exception\RuntimeException;
 use PHPExiftool\Exiftool;
 use lib\PHPExiftool;
+use PHPUnit\Framework\TestCase;
 
-class ExiftoolTest extends \PHPUnit_Framework_TestCase
+class ExiftoolTest extends TestCase
 {
 
     /**

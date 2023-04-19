@@ -14,15 +14,14 @@ use PHPExiftool\Driver\TagGroupFactory;
 use PHPExiftool\Driver\TagGroupInterface;
 use PHPExiftool\Exception\TagUnknown;
 use PHPExiftool\PHPExiftool;
-use PHPUnit_Framework_TestCase;
-// use PHPExiftool\Driver\TagGroup\IPTC\SupplementalCategories;
+use PHPUnit\Framework\TestCase;
 
-class TagGroupFactoryTest extends PHPUnit_Framework_TestCase
+class TagGroupFactoryTest extends TestCase
 {
     protected TagGroupFactory $object;
     private PHPExiftool $PHPExiftool;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->PHPExiftool = new PHPExiftool("/tmp");
     }

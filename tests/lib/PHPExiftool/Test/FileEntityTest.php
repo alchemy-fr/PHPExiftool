@@ -14,9 +14,9 @@ use Monolog\Handler\NullHandler;
 use Monolog\Logger;
 use PHPExiftool\FileEntity;
 use PHPExiftool\RDFParser;
-use lib\PHPExiftool;
+use PHPUnit\Framework\TestCase;
 
-class FileEntityTest extends \PHPUnit_Framework_TestCase
+class FileEntityTest extends TestCase
 {
     protected FileEntity $object;
     protected Logger $logger;
@@ -24,7 +24,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers FileEntity::__construct
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $dom = new \DOMDocument();
         $dom->loadXML(file_get_contents(__DIR__ . '/../../../files/ExifTool.xml'));
@@ -48,7 +48,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetFile()
     {
-        $this->assertInternalType('string', $this->object->getFile());
+        $this->assertIsString($this->object->getFile());
     }
 
     /**
@@ -57,7 +57,7 @@ class FileEntityTest extends \PHPUnit_Framework_TestCase
     public function testGetMetadatas()
     {
         $this->assertInstanceOf('\\PHPExiftool\Driver\Metadata\MetadataBag', $this->object->getMetadatas());
-        $this->assertEquals(348, count($this->object->getMetadatas()));
+        $this->assertCount(348, $this->object->getMetadatas());
     }
 
     /**
