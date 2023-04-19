@@ -3,3 +3,6 @@ composer.lock
 /nbproject/
 /tests/lib/PHPExiftool/Test/tmp
 /vendor
+/.phpunit.result.cache
+/tests/lib/PHPExiftool/tmp
+/tests/files/ExifToolCopied.jpg_original

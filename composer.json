@@ -31,19 +31,19 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8.2",
         "doctrine/cache": "^1.0",
         "doctrine/collections": "^1.0",
         "monolog/monolog": "^2.6",
         "exiftool/exiftool": "*",
-        "symfony/console": "^5",
-        "symfony/css-selector": "^5",
-        "symfony/dom-crawler": "^5",
-        "symfony/process": "^5",
+        "symfony/console": "^5 || ^6.2",
+        "symfony/css-selector": "^5 || ^6.2",
+        "symfony/dom-crawler": "^5 || ^6.2",
+        "symfony/process": "^5 || ^6",
         "ext-dom": "*",
         "cache/array-adapter": "^1.2",
         "ext-json": "*",
-        "symfony/monolog-bridge": "^5.4"
+        "symfony/monolog-bridge": "^5.4 || ^6.2"
     },
     "suggest": {
         "jms/serializer": "To serialize tags",
@@ -51,9 +51,9 @@
     },
     "require-dev": {
         "jms/serializer": "~3",
-        "phpunit/phpunit": "^5",
+        "phpunit/phpunit": "^9.6.7",
         "symfony/finder": "^5",
-        "symfony/yaml": "^3"
+        "symfony/yaml": "^5 || ^6"
     },
     "autoload": {
         "psr-4": {
@@ -63,5 +63,8 @@
     "autoload-dev": {
         "psr-4": {
         }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
     }
 }

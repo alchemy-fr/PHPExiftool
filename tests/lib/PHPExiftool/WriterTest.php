@@ -16,9 +16,8 @@ use PHPExiftool\Exception\InvalidArgumentException;
 use PHPExiftool\PHPExiftool;
 use PHPExiftool\Writer;
 use PHPExiftool\Reader;
-use PHPExiftool\RDFParser;
-use PHPUnit_Framework_TestCase;
 use PHPExiftool\Exception\EmptyCollectionException;
+use PHPUnit\Framework\TestCase;
 
 class WriterTester extends Writer
 {
@@ -46,7 +45,7 @@ class WriterTester extends Writer
     }
 }
 
-class WriterTest extends PHPUnit_Framework_TestCase
+class WriterTest extends TestCase
 {
     protected ?PHPExiftool $PHPExiftool = null;
     protected string $in = "";
@@ -54,7 +53,7 @@ class WriterTest extends PHPUnit_Framework_TestCase
     protected string $inPlace = "";
     protected string $out = "";
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->in = __DIR__ . '/../../files/ExifTool.jpg';
@@ -66,7 +65,7 @@ class WriterTest extends PHPUnit_Framework_TestCase
         $this->PHPExiftool = new PHPExiftool("/tmp");
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         if (file_exists($this->out) && is_writable($this->out)) {
             unlink($this->out);

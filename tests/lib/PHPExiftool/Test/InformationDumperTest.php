@@ -16,15 +16,16 @@ use PHPExiftool\Exception\InvalidArgumentException;
 use PHPExiftool\InformationDumper;
 use PHPExiftool\Exiftool;
 use PHPExiftool\Exception\DirectoryNotFoundException;
+use PHPUnit\Framework\TestCase;
 
-class InformationDumperTest extends \PHPUnit_Framework_TestCase
+class InformationDumperTest extends TestCase
 {
     /**
      * @var InformationDumper
      */
     protected $object;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $logger = new Logger('Tests');
         $logger->pushHandler(new NullHandler());

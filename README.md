@@ -22,7 +22,7 @@ The recommended way to install PHP-Exiftool is [through composer](http://getcomp
 ```JSON
 {
     "require": {
-        "alchemy/phpexiftool": "^0.5.0"
+        "alchemy/phpexiftool": "^4.0"
     }
 }
 ```

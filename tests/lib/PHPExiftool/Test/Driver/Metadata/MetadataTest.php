@@ -13,8 +13,9 @@ namespace lib\PHPExiftool\Test\Driver\Metadata;
 use PHPExiftool\Driver\AbstractTagGroup;
 use PHPExiftool\Driver\Value\Mono;
 use PHPExiftool\Driver\Metadata\Metadata;
+use PHPUnit\Framework\TestCase;
 
-class MetadataTest extends \PHPUnit_Framework_TestCase
+class MetadataTest extends TestCase
 {
     /**
      * @var Metadata
@@ -26,7 +27,7 @@ class MetadataTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers Metadata::__construct
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->tag = new TagTest();
         $this->value = new Mono('valeur');

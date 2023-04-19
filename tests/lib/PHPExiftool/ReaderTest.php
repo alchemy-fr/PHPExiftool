@@ -15,18 +15,18 @@ use PHPExiftool\Exception\LogicException;
 use PHPExiftool\Exception\RuntimeException;
 use PHPExiftool\PHPExiftool;
 use PHPExiftool\Reader;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
 
 
 
-class ReaderTest extends \PHPUnit_Framework_TestCase {
+class ReaderTest extends TestCase {
 
     private ?PHPExiftool $PHPExiftool = null;
     protected static string $tmpDir = "";
     protected static bool $disableSymLinkTest = false;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
 
@@ -105,7 +105,7 @@ class ReaderTest extends \PHPUnit_Framework_TestCase {
 
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->PHPExiftool = new PHPExiftool("/tmp");
@@ -119,7 +119,7 @@ class ReaderTest extends \PHPUnit_Framework_TestCase {
     /**
      * @covers Reader::__destruct
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
     }

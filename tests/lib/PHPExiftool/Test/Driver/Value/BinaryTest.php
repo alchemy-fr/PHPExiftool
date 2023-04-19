@@ -13,8 +13,9 @@ namespace lib\PHPExiftool\Test\Driver\Value;
 use PHPExiftool\Driver\Value\Binary;
 use PHPExiftool\Driver\Value\ValueInterface;
 use PHPExiftool\Exception\InvalidArgumentException;
+use PHPUnit\Framework\TestCase;
 
-class BinaryTest extends \PHPUnit_Framework_TestCase
+class BinaryTest extends TestCase
 {
     /**
      * @var Binary
@@ -24,7 +25,7 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers Binary::__construct
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->object = new Binary('Binary');
     }
@@ -74,10 +75,10 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers Binary::setBase64Value
      * @covers InvalidArgumentException
-     * @expectedException InvalidArgumentException
      */
     public function testSetWrongBase64Value()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->object->setBase64Value('Riri Fifi et Loulou !');
     }
 
@@ -94,10 +95,10 @@ class BinaryTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers Binary::loadFromBase64
      * @covers InvalidArgumentException
-     * @expectedException InvalidArgumentException
      */
     public function testLoadFromWrongBase64()
     {
-        $object = Binary::loadFromBase64('Uncle Scrooge !!!');
+        $this->expectException(InvalidArgumentException::class);
+        Binary::loadFromBase64('Uncle Scrooge !!!');
     }
 }

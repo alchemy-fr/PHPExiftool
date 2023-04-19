@@ -16,14 +16,15 @@ use PHPExiftool\RDFParser;
 use PHPExiftool\Exception\LogicException;
 use PHPExiftool\Exception\ParseErrorException;
 use PHPExiftool\Exception\RuntimeException;
+use PHPUnit\Framework\TestCase;
 
 
-class RDFParserTest extends \PHPUnit_Framework_TestCase
+class RDFParserTest extends TestCase
 {
     protected RDFParser $object;
     protected Logger $logger;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->logger = new Logger('Tests');
         $this->logger->pushHandler(new NullHandler());
@@ -69,10 +70,10 @@ class RDFParserTest extends \PHPUnit_Framework_TestCase
      * @covers RDFParser::getDom
      * @covers RDFParser::getDomXpath
      * @covers \PHPExiftool\Exception\LogicException
-     * @expectedException LogicException
      */
     public function testParseEntitiesWithoutDom()
     {
+        $this->expectException(\LogicException::class);
         $this->object->parseEntities();
     }
 
@@ -82,10 +83,10 @@ class RDFParserTest extends \PHPUnit_Framework_TestCase
      * @covers RDFParser::getDomXpath
      * @covers \PHPExiftool\Exception\ParseErrorException
      * @covers \PHPExiftool\Exception\RuntimeException
-     * @expectedException RuntimeException
      */
     public function testParseEntitiesWrongDom()
     {
+        $this->expectException(\RuntimeException::class);
         $this->object->open('wrong xml')->parseEntities();
     }
 
