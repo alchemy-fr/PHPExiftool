@@ -10,17 +10,18 @@
 
 namespace lib\PHPExiftool\Test;
 
-use lib\PHPExiftool\PreviewExtractor;
+use DirectoryIterator;
+use PHPExiftool\PreviewExtractor;
 use PHPExiftool\Exception\LogicException;
+use PHPExiftool\Exiftool;
 use PHPUnit\Framework\TestCase;
 
 abstract class AbstractPreviewExtractorTest extends TestCase
 {
-
     /**
-     * @covers PHPExiftool\PreviewExtractor::extract
+     * @covers \PHPExiftool\PreviewExtractor::extract
      */
-    public function testExtract()
+    public function testExtract(): void
     {
         $extractor = new PreviewExtractor($this->getExiftool());
 
@@ -30,7 +31,7 @@ abstract class AbstractPreviewExtractorTest extends TestCase
 
         $files = $extractor->extract(__DIR__ . '/../../../files/ExifTool.jpg', $tmpDir);
 
-        $this->assertInstanceOf('\\DirectoryIterator', $files);
+        $this->assertInstanceOf(DirectoryIterator::class, $files);
 
         $n = 0;
         $unlinks = array();
@@ -51,7 +52,7 @@ abstract class AbstractPreviewExtractorTest extends TestCase
         $this->assertEquals(1, $n);
     }
 
-    public function testExtractWrongFile()
+    public function testExtractWrongFile(): void
     {
         $extractor = new PreviewExtractor($this->getExiftool());
 
@@ -61,7 +62,7 @@ abstract class AbstractPreviewExtractorTest extends TestCase
         $extractor->extract(__DIR__ . '/ExifTool.jpg', $tmpDir);
     }
 
-    public function testExtractWrongDir()
+    public function testExtractWrongDir(): void
     {
         $extractor = new PreviewExtractor($this->getExiftool());
 
@@ -71,5 +72,5 @@ abstract class AbstractPreviewExtractorTest extends TestCase
         $extractor->extract(__DIR__ . '/../../../files/ExifTool.jpg', $tmpDir);
     }
 
-    abstract protected function getExiftool();
+    abstract protected function getExiftool(): Exiftool;
 }

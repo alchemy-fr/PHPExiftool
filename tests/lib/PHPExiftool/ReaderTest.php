@@ -10,18 +10,19 @@
 
 namespace lib\PHPExiftool;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Iterator;
 use PHPExiftool\Exception\EmptyCollectionException;
 use PHPExiftool\Exception\LogicException;
 use PHPExiftool\Exception\RuntimeException;
+use PHPExiftool\FileEntity;
 use PHPExiftool\PHPExiftool;
 use PHPExiftool\Reader;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
 
-
-
-class ReaderTest extends TestCase {
-
+class ReaderTest extends TestCase
+{
     private ?PHPExiftool $PHPExiftool = null;
     protected static string $tmpDir = "";
     protected static bool $disableSymLinkTest = false;
@@ -127,36 +128,36 @@ class ReaderTest extends TestCase {
     /**
      * @covers Reader::getIterator
      */
-    public function testGetIterator()
+    public function testGetIterator(): void
     {
         $file = self::$tmpDir . '/test.jpg';
         $reader = $this->createReader();
-        $this->assertInstanceOf('\\Iterator', $reader->files($file)->getIterator());
+        $this->assertInstanceOf(Iterator::class, $reader->files($file)->getIterator());
     }
 
     /**
      * @covers Reader::append
      * @covers Reader::all
      */
-    public function testAppend()
+    public function testAppend(): void
     {
         $reader1 = $this->createReader();
         $file1 = self::$tmpDir . '/test.jpg';
         $file2 = self::$tmpDir . '/test2.jpg';
         $file3 = self::$tmpDir . '/dir/CanonRaw.cr2';
-        $this->assertEquals(1, count($reader1->files($file1)->all()));
+        $this->assertCount(1, $reader1->files($file1)->all());
 
 
         $reader2 = $this->createReader();
         $reader2->files(array($file2, $file3));
-        $this->assertEquals(3, count($reader2->append($reader1)->all()));
+        $this->assertCount(3, $reader2->append($reader1)->all());
     }
 
     /**
      * @covers Reader::sort
      * @covers Reader::all
      */
-    public function testSort()
+    public function testSort(): void
     {
         $file1 = self::$tmpDir . '/test.jpg';
         $file2 = self::$tmpDir . '/test2.jpg';
@@ -180,7 +181,7 @@ class ReaderTest extends TestCase {
      * @covers Reader::buildQuery
      * @throws EmptyCollectionException
      */
-    public function testFiles()
+    public function testFiles(): void
     {
         $reader = $this->createReader();
 
@@ -195,7 +196,7 @@ class ReaderTest extends TestCase {
     /**
      * @covers Reader::resetResults
      */
-    public function testResetFilters()
+    public function testResetFilters(): void
     {
         $reader = $this->createReader();
 
@@ -204,34 +205,34 @@ class ReaderTest extends TestCase {
         $file = self::$tmpDir . '/test2.jpg';
         $reader->files($file)->all();
 
-        $this->assertEquals(2, count($reader->all()));
+        $this->assertCount(2, $reader->all());
     }
 
     /**
      * @covers Reader::ignoreDotFiles
      * @covers Reader::all
      */
-    public function testIgnoreVCS()
+    public function testIgnoreVCS(): void
     {
         $reader = $this->createReader();
 
         $reader->in(self::$tmpDir . '3');
-        $this->assertEquals(1, count($reader->all()));
+        $this->assertCount(1, $reader->all());
     }
 
     /**
      * @covers Reader::ignoreDotFiles
      * @covers Reader::all
      */
-    public function testIgnoreDotFiles()
+    public function testIgnoreDotFiles(): void
     {
         $reader = $this->createReader();
 
         $reader->in(self::$tmpDir . '3');
-        $this->assertEquals(1, count($reader->all()));
+        $this->assertCount(1, $reader->all());
 
         $reader->ignoreDotFiles()->in(self::$tmpDir . '3');
-        $this->assertEquals(0, count($reader->all()));
+        $this->assertCount(0, $reader->all());
     }
 
     /**
@@ -239,15 +240,15 @@ class ReaderTest extends TestCase {
      * @covers Reader::buildQuery
      * @covers Reader::all
      */
-    public function testIn()
+    public function testIn(): void
     {
         $reader = $this->createReader();
 
         $reader->reset()->in(self::$tmpDir);
-        $this->assertEquals(3, count($reader->all()));
+        $this->assertCount(3, $reader->all());
 
         $reader->reset()->in(self::$tmpDir . '/dir');
-        $this->assertEquals(1, count($reader->all()));
+        $this->assertCount(1, $reader->all());
 
         $reader->reset()->in(__DIR__ . '/../../../vendor/exiftool/exiftool/');
 
@@ -263,7 +264,7 @@ class ReaderTest extends TestCase {
      * @covers Reader::buildQuery
      * @covers Reader::all
      */
-    public function testExclude()
+    public function testExclude(): void
     {
         $reader = $this->createReader();
 
@@ -271,7 +272,7 @@ class ReaderTest extends TestCase {
                 ->in(self::$tmpDir)
                 ->exclude(self::$tmpDir . '/dir');
 
-        $this->assertEquals(2, count($reader->all()));
+        $this->assertCount(2, $reader->all());
     }
 
     /**
@@ -279,7 +280,7 @@ class ReaderTest extends TestCase {
      * @covers Reader::computeExcludeDirs
      * @covers Reader::all
      */
-    public function testComputeExcludeDirs($dir)
+    public function testComputeExcludeDirs(string $dir): void
     {
         $reader = $this->createReader();
 
@@ -289,6 +290,9 @@ class ReaderTest extends TestCase {
                 ->all();
     }
 
+    /**
+     * @return array<string>
+     */
     public function getExclude(): array
     {
         return array(
@@ -307,7 +311,7 @@ class ReaderTest extends TestCase {
      * @covers Reader::computeExcludeDirs
      * @covers \PHPExiftool\Exception\RuntimeException
      */
-    public function testComputeExcludeDirsFail($dir)
+    public function testComputeExcludeDirsFail(string $dir): void
     {
         $reader = $this->createReader();
 
@@ -318,6 +322,9 @@ class ReaderTest extends TestCase {
                 ->all();
     }
 
+    /**
+     * @return array<string>
+     */
     public function getWrongExclude(): array
     {
         return array(
@@ -335,42 +342,42 @@ class ReaderTest extends TestCase {
      * @covers Reader::buildQuery
      * @covers Reader::buildQueryAndExecute
      */
-    public function testExtensions()
+    public function testExtensions(): void
     {
         $reader = $this->createReader();
         $reader->in(self::$tmpDir);
-        $this->assertEquals(3, count($reader->all()));
+        $this->assertCount(3, $reader->all());
 
         $reader = $this->createReader();
         $reader->in(self::$tmpDir)->notRecursive()->extensions(array('cr2'));
-        $this->assertEquals(0, count($reader->all()));
+        $this->assertCount(0, $reader->all());
 
         $reader = $this->createReader();
         $reader->in(self::$tmpDir)->extensions(array('cr2'));
-        $this->assertEquals(1, count($reader->all()));
+        $this->assertCount(1, $reader->all());
 
         $reader = $this->createReader();
         $reader->in(self::$tmpDir)->extensions(array('jpg'));
-        $this->assertEquals(2, count($reader->all()));
+        $this->assertCount(2, $reader->all());
 
         $reader = $this->createReader();
         $reader->in(self::$tmpDir)->extensions('jpg')->extensions('cr2');
-        $this->assertEquals(3, count($reader->all()));
+        $this->assertCount(3, $reader->all());
 
         $reader = $this->createReader();
         $reader->in(self::$tmpDir)->extensions(array('jpg'), false);
-        $this->assertEquals(1, count($reader->all()));
+        $this->assertCount(1, $reader->all());
 
         $reader = $this->createReader();
         $reader->in(self::$tmpDir)->extensions(array('cr2', 'jpg'), false)->notRecursive();
-        $this->assertEquals(0, count($reader->all()));
+        $this->assertCount(0, $reader->all());
     }
 
     /**
      * @covers Reader::extensions
      * @covers \PHPExiftool\Exception\LogicException
      */
-    public function testExtensionsMisUse()
+    public function testExtensionsMisUse(): void
     {
         $reader = $this->createReader();
 
@@ -381,7 +388,7 @@ class ReaderTest extends TestCase {
     /**
      * @covers Reader::followSymLinks
      */
-    public function testFollowSymLinks()
+    public function testFollowSymLinks(): void
     {
         if (self::$disableSymLinkTest) {
             $this->markTestSkipped('This system does not support symlinks');
@@ -392,26 +399,26 @@ class ReaderTest extends TestCase {
         $reader->in(self::$tmpDir)
                 ->followSymLinks();
 
-        $this->assertInstanceOf('\\Doctrine\\Common\\Collections\\ArrayCollection', $reader->all());
-        $this->assertEquals(4, count($reader->all()));
+        $this->assertInstanceOf(ArrayCollection::class, $reader->all());
+        $this->assertCount(4, $reader->all());
     }
 
     /**
      * @covers Reader::notRecursive
      * @covers Reader::buildQuery
      */
-    public function testNotRecursive()
+    public function testNotRecursive(): void
     {
         $reader = $this->createReader();
 
         $reader->in(self::$tmpDir)->notRecursive();
-        $this->assertEquals(2, count($reader->all()));
+        $this->assertCount(2, $reader->all());
     }
 
     /**
      * @covers Reader::getOneOrNull
      */
-    public function testGetOneOrNull()
+    public function testGetOneOrNull(): void
     {
         $reader = $this->createReader();
 
@@ -424,7 +431,7 @@ class ReaderTest extends TestCase {
      * @covers Reader::first
      * @covers \PHPExiftool\Exception\EmptyCollectionException
      */
-    public function testFirstEmpty()
+    public function testFirstEmpty(): void
     {
         $reader = $this->createReader();
 
@@ -436,19 +443,19 @@ class ReaderTest extends TestCase {
     /**
      * @covers Reader::first
      */
-    public function testFirst()
+    public function testFirst(): void
     {
         $reader = $this->createReader();
 
         $reader->in(self::$tmpDir);
 
-        $this->assertInstanceOf('\\PHPExiftool\\FileEntity', $reader->first());
+        $this->assertInstanceOf(FileEntity::class, $reader->first());
     }
 
     /**
      * @covers Reader::buildQuery
      */
-    public function testFail()
+    public function testFail(): void
     {
         $reader = $this->createReader();
 
@@ -460,14 +467,14 @@ class ReaderTest extends TestCase {
      * @covers Reader::all
      * @covers Reader::buildQueryAndExecute
      */
-    public function testAll()
+    public function testAll(): void
     {
         $reader = $this->createReader();
 
         $reader->in(self::$tmpDir);
 
-        $this->assertInstanceOf('\\Doctrine\\Common\\Collections\\ArrayCollection', $reader->all());
-        $this->assertEquals(3, count($reader->all()));
+        $this->assertInstanceOf(ArrayCollection::class, $reader->all());
+        $this->assertCount(3, $reader->all());
     }
 
 }

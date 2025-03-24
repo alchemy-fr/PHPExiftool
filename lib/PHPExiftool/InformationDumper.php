@@ -83,7 +83,7 @@ class InformationDumper
      * @return DOMDocument
      * @throws Exception
      */
-    public function listDatas(string $type = self::LISTTYPE_SUPPORTED_XML, array $options = [], array $lngs): DOMDocument
+    public function listDatas(string $type = self::LISTTYPE_SUPPORTED_XML, array $options = [], array $lngs = []): DOMDocument
     {
         if (!is_array($options)) {
             throw new InvalidArgumentException('options must be an array');

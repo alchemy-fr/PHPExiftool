@@ -15,25 +15,23 @@ use Monolog\Logger;
 use Monolog\Handler\NullHandler;
 use PHPExiftool\Exception\RuntimeException;
 use PHPExiftool\Exiftool;
-use lib\PHPExiftool;
 use PHPUnit\Framework\TestCase;
 
 class ExiftoolTest extends TestCase
 {
-
     /**
-     * @covers PHPExiftool\Exiftool::executeCommand
+     * @covers \PHPExiftool\Exiftool::executeCommand
      * @throws Exception
      */
     public function testExecuteCommand()
     {
         $exiftool = new Exiftool($this->getlogger());
-        $this->assertRegExp('/\d+\.\d+/', $exiftool->executeCommand(['-ver']));
+        $this->assertMatchesRegularExpression('/\d+\.\d+/', $exiftool->executeCommand(['-ver']));
     }
 
     /**
-     * @covers PHPExiftool\Exiftool::executeCommand
-     * @covers PHPExiftool\Exception\RuntimeException
+     * @covers \PHPExiftool\Exiftool::executeCommand
+     * @covers \PHPExiftool\Exception\RuntimeException
      * @throws Exception
      */
     public function testExecuteCommandFailed()

@@ -10,8 +10,13 @@
 
 namespace lib\PHPExiftool\Test;
 
+use Iterator;
 use Monolog\Handler\NullHandler;
 use Monolog\Logger;
+use PHPExiftool\Driver\Metadata\MetadataBag;
+use PHPExiftool\Driver\Value\Binary;
+use PHPExiftool\Driver\Value\Mono;
+use PHPExiftool\Driver\Value\Multi;
 use PHPExiftool\FileEntity;
 use PHPExiftool\RDFParser;
 use PHPUnit\Framework\TestCase;
@@ -38,15 +43,15 @@ class FileEntityTest extends TestCase
     /**
      * @covers FileEntity::getIterator
      */
-    public function testGetIterator()
+    public function testGetIterator(): void
     {
-        $this->assertInstanceOf('\\Iterator', $this->object->getIterator());
+        $this->assertInstanceOf(Iterator::class, $this->object->getIterator());
     }
 
     /**
      * @covers FileEntity::getFile
      */
-    public function testGetFile()
+    public function testGetFile(): void
     {
         $this->assertIsString($this->object->getFile());
     }
@@ -54,27 +59,27 @@ class FileEntityTest extends TestCase
     /**
      * @covers FileEntity::getMetadatas
      */
-    public function testGetMetadatas()
+    public function testGetMetadatas(): void
     {
-        $this->assertInstanceOf('\\PHPExiftool\Driver\Metadata\MetadataBag', $this->object->getMetadatas());
+        $this->assertInstanceOf(MetadataBag::class, $this->object->getMetadatas());
         $this->assertCount(348, $this->object->getMetadatas());
     }
 
     /**
      * @covers FileEntity::executeQuery
      */
-    public function testExecuteQuery()
+    public function testExecuteQuery(): void
     {
-        $this->assertInstanceOf('\\PHPExiftool\\Driver\\Value\\Mono', $this->object->executeQuery('IFD0:Copyright'));
+        $this->assertInstanceOf(Mono::class, $this->object->executeQuery('IFD0:Copyright'));
         $this->assertEquals('Copyright 2004 Phil Harvey', $this->object->executeQuery('IFD0:Copyright')->asString());
 
-        $this->assertInstanceOf('\\PHPExiftool\\Driver\\Value\\Binary', $this->object->executeQuery('CIFF:FreeBytes'));
+        $this->assertInstanceOf(Binary::class, $this->object->executeQuery('CIFF:FreeBytes'));
 
-        $this->assertInstanceOf('\\PHPExiftool\\Driver\\Value\\Multi', $this->object->executeQuery('XMP-dc:Subject'));
+        $this->assertInstanceOf(Multi::class, $this->object->executeQuery('XMP-dc:Subject'));
         $this->assertEquals(array('ExifTool', 'Test', 'XMP'), $this->object->executeQuery('XMP-dc:Subject')->asArray());
     }
 
-    public function testCacheKey()
+    public function testCacheKey(): void
     {
         $o = new FileEntity('bad_{}()/\\@:_chars', new \DOMDocument(), new RDFParser("/tmp", $this->logger));
         $k = $o->getCacheKey();

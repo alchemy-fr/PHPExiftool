@@ -13,16 +13,14 @@ namespace lib\PHPExiftool\Test\Driver\Metadata;
 use PHPExiftool\Driver\AbstractTagGroup;
 use PHPExiftool\Driver\Value\Mono;
 use PHPExiftool\Driver\Metadata\Metadata;
+use PHPExiftool\Driver\Value\ValueInterface;
 use PHPUnit\Framework\TestCase;
 
 class MetadataTest extends TestCase
 {
-    /**
-     * @var Metadata
-     */
-    protected $object;
-    protected $tag;
-    protected $value;
+    protected Metadata $object;
+    protected TagTest $tag;
+    protected ValueInterface $value;
 
     /**
      * @covers Metadata::__construct
@@ -37,7 +35,7 @@ class MetadataTest extends TestCase
     /**
      * @covers Metadata::getTagGroup
      */
-    public function testGetTag()
+    public function testGetTag(): void
     {
         $this->assertEquals($this->object->getTagGroup(), $this->tag);
     }
@@ -45,7 +43,7 @@ class MetadataTest extends TestCase
     /**
      * @covers Metadata::getValue
      */
-    public function testGetValue()
+    public function testGetValue(): void
     {
         $this->assertEquals($this->object->getValue(), $this->value);
     }

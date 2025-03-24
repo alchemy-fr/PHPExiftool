@@ -12,20 +12,14 @@ namespace lib\PHPExiftool;
 
 use PHPExiftool\Exception\DirectoryNotFoundException;
 use PHPExiftool\PHPExiftool;
-use PHPExiftool\Reader;
 use PHPUnit\Framework\TestCase;
 
-
-class PHPExiftoolTest extends TestCase {
-
-    private ?PHPExiftool $PHPExiftool = null;
-    protected static string $tmpDir = "";
-    protected static bool $disableSymLinkTest = false;
-
+class PHPExiftoolTest extends TestCase
+{
     /**
      * @covers PHPExiftool::__construct
      */
-    public function testRelativeClassesRootDirectory()
+    public function testRelativeClassesRootDirectory(): void
     {
         $this->expectException(DirectoryNotFoundException::class);
         new PHPExiftool("./relative_dir");
@@ -34,7 +28,7 @@ class PHPExiftoolTest extends TestCase {
     /**
      * @covers PHPExiftool::__construct
      */
-    public function testBadClassesRootDirectory()
+    public function testBadClassesRootDirectory(): void
     {
         $this->expectException(DirectoryNotFoundException::class);
         new PHPExiftool("/non_existing_dir");

@@ -16,10 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 class MultiTest extends TestCase
 {
-    /**
-     * @var Multi
-     */
-    protected $object;
+    protected Multi $object;
 
     /**
      * @covers Multi::__construct
@@ -32,7 +29,7 @@ class MultiTest extends TestCase
     /**
      * @covers Multi::getType
      */
-    public function testGetType()
+    public function testGetType(): void
     {
         $this->assertEquals(ValueInterface::TYPE_MULTI, $this->object->getType());
     }
@@ -40,7 +37,7 @@ class MultiTest extends TestCase
     /**
      * @covers Multi::asArray
      */
-    public function testAsArray()
+    public function testAsArray(): void
     {
         $this->assertEquals(array('hello', 'world !'), $this->object->asArray());
     }
@@ -48,7 +45,7 @@ class MultiTest extends TestCase
     /**
      * @covers Multi::addValue
      */
-    public function testAddValue()
+    public function testAddValue(): void
     {
         $this->object->addValue('tim');
         $this->assertEquals(array('hello', 'world !', 'tim'), $this->object->asArray());
@@ -57,7 +54,7 @@ class MultiTest extends TestCase
     /**
      * @covers Multi::reset
      */
-    public function testReset()
+    public function testReset(): void
     {
         $this->object->reset();
         $this->assertEquals(array(), $this->object->asArray());

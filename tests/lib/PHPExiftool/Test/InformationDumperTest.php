@@ -20,10 +20,7 @@ use PHPUnit\Framework\TestCase;
 
 class InformationDumperTest extends TestCase
 {
-    /**
-     * @var InformationDumper
-     */
-    protected $object;
+    protected InformationDumper $object;
 
     protected function setUp(): void
     {
@@ -36,7 +33,7 @@ class InformationDumperTest extends TestCase
     /**
      * @covers InformationDumper::listDatas
      */
-    public function testListDatas()
+    public function testListDatas(): void
     {
         $this->object->listDatas();
     }
@@ -45,7 +42,7 @@ class InformationDumperTest extends TestCase
      * @covers InformationDumper::listDatas
      * @covers InvalidArgumentException
      */
-    public function testListDatasInvalidType()
+    public function testListDatasInvalidType(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->object->listDatas('Scrooge');
@@ -55,7 +52,7 @@ class InformationDumperTest extends TestCase
      * @covers InformationDumper::listDatas
      * @covers DirectoryNotFoundException
      */
-    public function testBadDirectory()
+    public function testBadDirectory(): void
     {
         $this->markTestIncomplete(
             'DirectoryNotFoundException cannot be forced because directory is created.'

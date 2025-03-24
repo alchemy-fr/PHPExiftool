@@ -15,10 +15,7 @@ use PHPUnit\Framework\TestCase;
 
 class MetadataBagTest extends TestCase
 {
-    /**
-     * @var MetadataBag
-     */
-    protected $object;
+    protected MetadataBag $object;
 
     protected function setUp(): void
     {
@@ -28,12 +25,12 @@ class MetadataBagTest extends TestCase
     /**
      * @covers MetadataBag::filterKeysByRegExp
      */
-    public function testFilterKeysByRegExp()
+    public function testFilterKeysByRegExp(): void
     {
         $this->object->set('oneKey', 'oneValue');
         $this->object->set('oneSecondKey', 'anotherValue');
         $this->object->set('thirdKey', 'thirdValue');
 
-        $this->assertEquals(2, count($this->object->filterKeysByRegExp('/one.*/')));
+        $this->assertCount(2, $this->object->filterKeysByRegExp('/one.*/'));
     }
 }

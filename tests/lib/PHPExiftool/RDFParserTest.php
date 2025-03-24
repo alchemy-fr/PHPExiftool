@@ -10,14 +10,15 @@
 
 namespace lib\PHPExiftool;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Monolog\Handler\NullHandler;
 use Monolog\Logger;
+use PHPExiftool\Driver\Value\Binary;
+use PHPExiftool\Driver\Value\Mono;
+use PHPExiftool\Driver\Value\Multi;
+use PHPExiftool\FileEntity;
 use PHPExiftool\RDFParser;
-use PHPExiftool\Exception\LogicException;
-use PHPExiftool\Exception\ParseErrorException;
-use PHPExiftool\Exception\RuntimeException;
 use PHPUnit\Framework\TestCase;
-
 
 class RDFParserTest extends TestCase
 {
@@ -35,7 +36,7 @@ class RDFParserTest extends TestCase
     /**
      * @covers RDFParser::open
      */
-    public function testOpen()
+    public function testOpen(): void
     {
         $this->object->open(file_get_contents(__DIR__ . '/../../files/simplefile.xml'));
     }
@@ -43,7 +44,7 @@ class RDFParserTest extends TestCase
     /**
      * @covers RDFParser::close
      */
-    public function testClose()
+    public function testClose(): void
     {
         $this->object->close();
     }
@@ -54,15 +55,15 @@ class RDFParserTest extends TestCase
      * @covers RDFParser::getDomXpath
      * @covers RDFParser::getNamespacesFromXml
      */
-    public function testParseEntities()
+    public function testParseEntities(): void
     {
         $entities = $this->object
             ->open(file_get_contents(__DIR__ . '/../../files/simplefile.xml'))
             ->parseEntities();
 
-        $this->assertInstanceOf('\\Doctrine\\Common\\Collections\\ArrayCollection', $entities);
-        $this->assertEquals(1, count($entities));
-        $this->assertInstanceOf('\\PHPExiftool\\FileEntity', $entities->first());
+        $this->assertInstanceOf(ArrayCollection::class, $entities);
+        $this->assertCount(1, $entities);
+        $this->assertInstanceOf(FileEntity::class, $entities->first());
     }
 
     /**
@@ -71,7 +72,7 @@ class RDFParserTest extends TestCase
      * @covers RDFParser::getDomXpath
      * @covers \PHPExiftool\Exception\LogicException
      */
-    public function testParseEntitiesWithoutDom()
+    public function testParseEntitiesWithoutDom(): void
     {
         $this->expectException(\LogicException::class);
         $this->object->parseEntities();
@@ -84,7 +85,7 @@ class RDFParserTest extends TestCase
      * @covers \PHPExiftool\Exception\ParseErrorException
      * @covers \PHPExiftool\Exception\RuntimeException
      */
-    public function testParseEntitiesWrongDom()
+    public function testParseEntitiesWrongDom(): void
     {
         $this->expectException(\RuntimeException::class);
         $this->object->open('wrong xml')->parseEntities();
@@ -95,21 +96,21 @@ class RDFParserTest extends TestCase
      * @covers RDFParser::getDom
      * @covers RDFParser::getDomXpath
      */
-    public function testParseMetadatas()
+    public function testParseMetadatas(): void
     {
         $metadatas = $this->object
             ->open(file_get_contents(__DIR__ . '/../../files/ExifTool.xml'))
             ->ParseMetadatas();
 
         $this->assertInstanceOf('\\PHPExiftool\\Driver\\Metadata\\MetadataBag', $metadatas);
-        $this->assertEquals(348, count($metadatas));
+        $this->assertCount(348, $metadatas);
     }
 
     /**
      * @covers RDFParser::Query
      * @covers RDFParser::readNodeValue
      */
-    public function testQuery()
+    public function testQuery(): void
     {
         $xml = "<?xml version='1.0' encoding='UTF-8'?>
             <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
@@ -136,9 +137,9 @@ class RDFParserTest extends TestCase
         $this->assertNull($null_datas);
         $this->assertNull($null_datas_2);
 
-        $this->assertInstanceOf('\\PHPExiftool\\Driver\\Value\\Mono', $metadata_simple);
-        $this->assertInstanceOf('\\PHPExiftool\\Driver\\Value\\Binary', $metadata_base64);
-        $this->assertInstanceOf('\\PHPExiftool\\Driver\\Value\\Multi', $metadata_multi);
+        $this->assertInstanceOf(Mono::class, $metadata_simple);
+        $this->assertInstanceOf(Binary::class, $metadata_base64);
+        $this->assertInstanceOf(Multi::class, $metadata_multi);
 
         $this->assertEquals('Hello World !', $metadata_simple->asString());
         $this->assertEquals('Hello base64 !', $metadata_base64->asString());

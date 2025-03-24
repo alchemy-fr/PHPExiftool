@@ -17,9 +17,8 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 use PHPExiftool\Driver\TagGroupInterface;
 
-
-class TagGroupTest extends TestCase {
-
+class TagGroupTest extends TestCase
+{
     /**
      * @var TagGroupInterface
      */
@@ -36,7 +35,7 @@ class TagGroupTest extends TestCase {
      * @covers AbstractTag::isWritable
      * @covers AbstractTag::isBinary
      */
-    public function testConsistency()
+    public function testConsistency(): void
     {
         $PHPExiftool = new PHPExiftool("/tmp");
 

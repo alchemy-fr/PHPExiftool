@@ -10,17 +10,14 @@
 
 namespace lib\PHPExiftool\Test\Command;
 
-require_once __DIR__ . '/../AbstractPreviewExtractorTest.php';
-
+use lib\PHPExiftool\Test\AbstractPreviewExtractorTest;
 use Monolog\Logger;
 use Monolog\Handler\NullHandler;
-use lib\PHPExiftool\AbstractPreviewExtractorTest;
-use lib\PHPExiftool\Exiftool;
+use PHPExiftool\Exiftool;
 
 class PreviewExtractor extends AbstractPreviewExtractorTest
 {
-
-    protected function getExiftool()
+    protected function getExiftool(): Exiftool
     {
         $logger = new Logger('Tests');
         $logger->pushHandler(new NullHandler());

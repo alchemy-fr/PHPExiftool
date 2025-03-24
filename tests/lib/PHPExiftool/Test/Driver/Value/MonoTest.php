@@ -16,10 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 class MonoTest extends TestCase
 {
-    /**
-     * @var Mono
-     */
-    protected $object;
+    protected Mono $object;
 
     /**
      * @covers Mono::__construct
@@ -32,7 +29,7 @@ class MonoTest extends TestCase
     /**
      * @covers Mono::getType
      */
-    public function testGetType()
+    public function testGetType(): void
     {
         $this->assertEquals(ValueInterface::TYPE_MONO, $this->object->getType());
     }
@@ -40,7 +37,7 @@ class MonoTest extends TestCase
     /**
      * @covers Mono::asString
      */
-    public function testAsString()
+    public function testAsString(): void
     {
         $this->assertEquals('Hello !', $this->object->asString());
     }
@@ -48,7 +45,7 @@ class MonoTest extends TestCase
     /**
      * @covers Mono::set
      */
-    public function testSetValue()
+    public function testSetValue(): void
     {
         $this->object->set('World !');
         $this->assertEquals('World !', $this->object->asString());
