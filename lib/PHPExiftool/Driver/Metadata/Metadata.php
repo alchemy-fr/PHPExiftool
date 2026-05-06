@@ -27,7 +27,7 @@ class Metadata
     protected TagGroupInterface $tagGroup;
     protected ValueInterface $value;
 
-    public function __construct(TagGroupInterface $tagGroup, ValueInterface $value = NULL)
+    public function __construct(TagGroupInterface $tagGroup, ValueInterface|null $value = NULL)
     {
         $this->tagGroup = $tagGroup;
         if(!$value) {

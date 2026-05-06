@@ -121,7 +121,7 @@ class Reader implements IteratorAggregate
      * @return Iterator
      * @throws Exception
      */
-    public function getIterator(): Iterator
+    public function getIterator(): \Traversable
     {
         return $this->all()->getIterator();
     }
@@ -250,7 +250,7 @@ class Reader implements IteratorAggregate
      * Extensions are case_insensitive.
      *
      * @param string|array $extensions The list of extension
-     * @param Boolean $restrict        Toggle restrict/discard method
+     * @param bool $restrict        Toggle restrict/discard method
      * @return Reader
      * @throws LogicException
      */
@@ -264,7 +264,7 @@ class Reader implements IteratorAggregate
             }
         }
 
-        $this->extensionsToggle = (boolean)$restrict;
+        $this->extensionsToggle = (bool)$restrict;
 
         $this->extensions = array_merge($this->extensions, (array)$extensions);
 
