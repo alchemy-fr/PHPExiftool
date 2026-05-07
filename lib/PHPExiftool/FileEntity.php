@@ -62,7 +62,7 @@ class FileEntity implements IteratorAggregate
      * @throws InvalidArgumentException
      * @throws Exception
      */
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return $this->getMetadatas()->getIterator();
     }

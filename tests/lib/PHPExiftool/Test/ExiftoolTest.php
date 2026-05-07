@@ -28,7 +28,7 @@ class ExiftoolTest extends TestCase
     public function testExecuteCommand()
     {
         $exiftool = new Exiftool($this->getlogger());
-        $this->assertRegExp('/\d+\.\d+/', $exiftool->executeCommand(['-ver']));
+        $this->assertMatchesRegularExpression('/\d+\.\d+/', $exiftool->executeCommand(['-ver']));
     }
 
     /**

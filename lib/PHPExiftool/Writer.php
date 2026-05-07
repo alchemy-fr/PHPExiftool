@@ -108,11 +108,11 @@ class Writer
      * Return true if the mode is enabled
      *
      * @param integer $mode One of the self::MODE_*
-     * @return Boolean True if the mode is enabled
+     * @return bool True if the mode is enabled
      */
     public function isMode(int $mode): bool
     {
-        return (boolean) ($this->mode & $mode);
+        return (bool) ($this->mode & $mode);
     }
 
     /**
@@ -120,7 +120,7 @@ class Writer
      * There's currently only one module self::MODULE_MWG
      *
      * @param integer $module One of the self::MODULE_*
-     * @param Boolean $active Enable or disable the module
+     * @param bool $active Enable or disable the module
      * @return Writer
      */
     public function setModule(int $module, bool $active): self
@@ -138,18 +138,18 @@ class Writer
      * Return true if the module is enabled
      *
      * @param integer $module
-     * @return boolean
+     * @return bool
      */
     public function hasModule(int $module): bool
     {
-        return (boolean) ($this->modules & $module);
+        return (bool) ($this->modules & $module);
     }
 
     /**
      * If set to true, erase all metadatas before write
      *
-     * @param Boolean $boolean            Whether to erase metadata or not before writing.
-     * @param Boolean $maintainICCProfile Whether to maintain or not ICC Profile in case of erasing metadata.
+     * @param bool $boolean            Whether to erase metadata or not before writing.
+     * @param bool $maintainICCProfile Whether to maintain or not ICC Profile in case of erasing metadata.
      */
     public function erase(bool $boolean, bool $maintainICCProfile = false)
     {
@@ -231,7 +231,7 @@ class Writer
      *
      * @throws InvalidArgumentException|Exception
      */
-    public function write(string $file, MetadataBag $metadatas, string $destination = null, array $resolutionXY = array()): ?int
+    public function write(string $file, MetadataBag $metadatas, string|null $destination = null, array $resolutionXY = array()): ?int
     {
         if ( ! file_exists($file)) {
             throw new InvalidArgumentException(sprintf('%s does not exists', $file));
