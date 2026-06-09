@@ -12,7 +12,6 @@
 namespace PHPExiftool;
 
 
-use Cache\Adapter\PHPArray\ArrayCachePool;
 use DOMDocument;
 use Exception;
 use IteratorAggregate;
@@ -20,6 +19,7 @@ use PHPExiftool\Driver\Metadata\MetadataBag;
 use PHPExiftool\Driver\Value\ValueInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Cache\InvalidArgumentException;
+use Symfony\Component\Cache\Adapter\ArrayAdapter;
 
 
 /**
@@ -51,7 +51,7 @@ class FileEntity implements IteratorAggregate
         // $this->dom = $dom;
         $this->file = $file;
 
-        $this->cache = new ArrayCachePool();
+        $this->cache = new ArrayAdapter(storeSerialized: false);
 
         $this->parser = $parser->open($dom->saveXML());
 
