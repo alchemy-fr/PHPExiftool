@@ -57,6 +57,7 @@ class Writer
     protected Exiftool $exiftool;
     private bool $eraseProfile = false;
     protected int $timeout = 60;
+    protected bool $disableConversion = false;
 
     protected function __construct(Exiftool $exiftool)
     {
@@ -82,8 +83,34 @@ class Writer
         $this->modules = 0;
         $this->erase = false;
         $this->eraseProfile = false;
+        $this->disableConversion = false;
 
         return $this;
+    }
+
+    /**
+     * Enable / disable exiftool print conversion (exiftool "-n" option).
+     * When conversion is disabled, values are written as-is (machine readable
+     * values) instead of being converted from their human readable form.
+     *
+     * @param bool $boolean True to disable the conversion
+     * @return Writer
+     */
+    public function disableConversion(bool $boolean = true): self
+    {
+        $this->disableConversion = $boolean;
+
+        return $this;
+    }
+
+    /**
+     * Return true if the print conversion is disabled
+     *
+     * @return bool
+     */
+    public function isConversionDisabled(): bool
+    {
+        return $this->disableConversion;
     }
 
     /**
@@ -178,12 +205,16 @@ class Writer
         if ( ! file_exists($file_dest)) {
             throw new InvalidArgumentException(sprintf('dest %s does not exists', $file_dest));
         }
-        $command = [
+        $command = [];
+        if ($this->disableConversion) {
+            $command[] = '-n';
+        }
+        $command = array_merge($command, [
             '-overwrite_original_in_place',
             '-tagsFromFile',
             $file_src,
             $file_dest
-        ];
+        ]);
         $ret = $this->exiftool->executeCommand($command, $this->timeout);
 
         // exiftool may print (return) a bunch of lines, even for a single command
@@ -250,6 +281,10 @@ class Writer
             '-preserve',
             '-charset UTF8'
         ];
+
+        if ($this->disableConversion) {
+            $common_args[] = '-n';
+        }
 
         $commands_groups = [];
 
