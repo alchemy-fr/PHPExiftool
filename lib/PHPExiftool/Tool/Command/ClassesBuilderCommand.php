@@ -12,17 +12,18 @@
 namespace PHPExiftool\Tool\Command;
 
 use Exception;
+use FilesystemIterator;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
-use PHPExiftool\ClassUtils\tagGroupBuilder;
-use PHPExiftool\Exiftool;
 use PHPExiftool\InformationDumper;
 use PHPExiftool\PHPExiftool;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 
 
 /**
@@ -48,7 +49,7 @@ class ClassesBuilderCommand extends Command
             ->setDescription('Build TagGroup classes from exiftool documentation.')
             ->addOption('with-mwg', '', null, 'Include MWG tags')
             ->addOption("path", null, InputOption::VALUE_OPTIONAL, 'Destination root where classes will be generated', "./Driver")
-            ->addOption("lng", null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Wanted lng(s) for tag(group) descriptions', [])
+            ->addOption("lng", null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Wanted lng(s) for tag(group) descriptions', ['en'])
             ->setHelp("Classes will be generated in subdirectory \"".PHPExiftool::SUBDIR."\" relative to path option, eg. ./Driver/".PHPExiftool::SUBDIR." for default path.")
             ;
 
@@ -87,14 +88,7 @@ class ClassesBuilderCommand extends Command
         $subPath = $path . '/' . PHPExiftool::SUBDIR;      // security : do NOT rm passed cli option
         @mkdir($subPath, 0755, true);
         $logger->info(sprintf('Erasing previous files "%s/*" ', $subPath));
-        try {
-            $cmd = 'rm -Rf ' . $subPath . '/* 2> /dev/null';
-            $output = [];
-            @exec($cmd, $output);
-        }
-        catch (\Exception $e) {
-            // no-op
-        }
+        $this->emptyDirectory($subPath);
         $logger->info('Generating classes... ');
 
         $PHPExiftool = new PHPExiftool($path, $logger);
@@ -112,4 +106,19 @@ class ClassesBuilderCommand extends Command
         return 0;
     }
 
+    private function emptyDirectory(string $directory): void
+    {
+        $files = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($directory, FilesystemIterator::SKIP_DOTS),
+            RecursiveIteratorIterator::CHILD_FIRST
+        );
+        foreach ($files as $file) {
+            if ($file->isDir() && !$file->isLink()) {
+                @rmdir($file->getPathname());
+            }
+            else {
+                @unlink($file->getPathname());
+            }
+        }
+    }
 }
