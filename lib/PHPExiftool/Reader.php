@@ -325,7 +325,9 @@ class Reader implements IteratorAggregate
      */
     public function getOneOrNull(): ?FileEntity
     {
-        return count($this->all()) === 0 ? null : $this->all()->first();
+        $all = $this->all();
+
+        return $all->isEmpty() ? null : $all->first();
     }
 
     /**
@@ -337,11 +339,13 @@ class Reader implements IteratorAggregate
      */
     public function first(): FileEntity
     {
-        if (count($this->all()) === 0) {
+        $all = $this->all();
+
+        if ($all->isEmpty()) {
             throw new EmptyCollectionException('Collection is empty');
         }
 
-        return $this->all()->first();
+        return $all->first();
     }
 
     /**
@@ -353,19 +357,17 @@ class Reader implements IteratorAggregate
     public function all(): ?ArrayCollection
     {
         if (!$this->collection) {
-            $this->collection = $this->buildQueryAndExecute();
-        }
+            $collection = $this->buildQueryAndExecute();
 
-        if ($this->readers) {
-            $elements = $this->collection->toArray();
-
-            $this->collection = null;
-
-            foreach ($this->readers as $reader) {
-                $elements = array_merge($elements, $reader->all()->toArray());
+            if ($this->readers) {
+                $elements = $collection->toArray();
+                foreach ($this->readers as $reader) {
+                    $elements = array_merge($elements, $reader->all()->toArray());
+                }
+                $collection = new ArrayCollection($elements);
             }
 
-            $this->collection = new ArrayCollection($elements);
+            $this->collection = $collection;
         }
 
         return $this->collection;
