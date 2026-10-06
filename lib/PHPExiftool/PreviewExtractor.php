@@ -14,7 +14,6 @@ namespace PHPExiftool;
 use DirectoryIterator;
 use Exception;
 use PHPExiftool\Exception\LogicException;
-use PHPExiftool\Exception\RuntimeException;
 
 class PreviewExtractor // extends Exiftool
 {
@@ -36,15 +35,7 @@ class PreviewExtractor // extends Exiftool
             throw new LogicException(sprintf('%s is not writable', $outputDir));
         }
 
-//        $command = "-if " . escapeshellarg('$photoshopthumbnail') . " -b -PhotoshopThumbnail "
-//            . "-w " . escapeshellarg(realpath($outputDir) . '/PhotoshopThumbnail%c.jpg') . " -execute "
-//            . "-if " . escapeshellarg('$jpgfromraw') . " -b -jpgfromraw "
-//            . "-w " . escapeshellarg(realpath($outputDir) . '/JpgFromRaw%c.jpg') . " -execute "
-//            . "-if " . escapeshellarg('$previewimage') . " -b -previewimage "
-//            . "-w " . escapeshellarg(realpath($outputDir) . '/PreviewImage%c.jpg') . " -execute "
-//            . "-if " . escapeshellarg('$xmp:pageimage') . " -b -xmp:pageimage "
-//            . "-w " . escapeshellarg(realpath($outputDir) . '/XmpPageimage%c.jpg') . " "
-//            . "-common_args -q -m " . $pathfile;
+        $outputDir = realpath($outputDir);
 
         $command = [
             '-if',
@@ -52,28 +43,28 @@ class PreviewExtractor // extends Exiftool
             '-b',
             '-PhotoshopThumbnail',
             '-w',
-            realpath($outputDir) . '/PhotoshopThumbnail%c.jpg',
+            $outputDir . '/PhotoshopThumbnail%c.jpg',
             '-execute',
             '-if',
             '$jpgfromraw',
             '-b',
             '-jpgfromraw',
             '-w',
-            realpath($outputDir) . '/JpgFromRaw%c.jpg',
+            $outputDir . '/JpgFromRaw%c.jpg',
             '-execute',
             '-if',
             '$previewimage',
             '-b',
             '-previewimage',
             '-w',
-            realpath($outputDir) . '/PreviewImage%c.jpg',
+            $outputDir . '/PreviewImage%c.jpg',
             '-execute',
             '-if',
             '$xmp:pageimage',
             '-b',
             '-xmp:pageimage',
             '-w',
-            realpath($outputDir) . '/XmpPageimage%c.jpg',
+            $outputDir . '/XmpPageimage%c.jpg',
             '-common_args',
             '-q',
             '-m',
@@ -83,8 +74,8 @@ class PreviewExtractor // extends Exiftool
         try {
             $this->exiftool->executeCommand($command);
         }
-        catch (RuntimeException | Exception $e) {
-            // no-op
+        catch (Exception $e) {
+            // exiftool exits with an error when no preview matches the conditions
         }
 
         return new DirectoryIterator($outputDir);
