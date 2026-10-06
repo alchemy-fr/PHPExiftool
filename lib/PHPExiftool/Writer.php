@@ -314,7 +314,9 @@ class Writer
             $common_args[] = '-codedcharacterset=utf8';
         }
 
-        $commands_groups[] = $this->getSyncCommand();
+        if ($syncCommand = $this->getSyncCommand()) {
+            $commands_groups[] = $syncCommand;
+        }
 
         if(count($commands_groups) == 0) {
             // nothing to do...
