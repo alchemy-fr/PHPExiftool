@@ -17,7 +17,7 @@ class Multi implements ValueInterface
 
     public function __construct($value = null)
     {
-        if ($value) {
+        if ($value !== null && $value !== '') {
             $this->addValue($value);
         }
     }
