@@ -541,7 +541,7 @@ class Reader implements IteratorAggregate
 
         if ($this->ignoreDotFile) {
             $command[] = '-if';
-            $command[] = "'\$filename !~ /^\./'";
+            $command[] = '$filename !~ /^\./';
         }
 
         foreach ($this->sort as $sort) {

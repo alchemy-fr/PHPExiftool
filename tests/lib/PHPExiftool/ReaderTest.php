@@ -105,6 +105,14 @@ class ReaderTest extends TestCase {
         touch($tmpDir3 . '/.roro/.roro.tmp');
         copy(__DIR__.'/../../files/ExifTool.jpg', $tmpDir3 . '/.exiftool.jpg');
 
+        $tmpDir4 = $tmpDir . '/exiftool_reader4';
+
+        if (!is_dir($tmpDir4)) {
+            mkdir($tmpDir4);
+        }
+
+        copy(__DIR__.'/../../files/ExifTool.jpg', $tmpDir4 . '/visible.jpg');
+        copy(__DIR__.'/../../files/ExifTool.jpg', $tmpDir4 . '/.hidden.jpg');
     }
 
     protected function setUp(): void
@@ -234,6 +242,22 @@ class ReaderTest extends TestCase {
 
         $reader->ignoreDotFiles()->in(self::$tmpDir . '3');
         $this->assertEquals(0, count($reader->all()));
+    }
+
+    /**
+     * @covers Reader::ignoreDotFiles
+     * @covers Reader::buildQuery
+     */
+    public function testIgnoreDotFilesKeepsOtherFiles()
+    {
+        $reader = $this->createReader();
+
+        $reader->in(self::$tmpDir . '4');
+        $this->assertEquals(2, count($reader->all()));
+
+        $reader->ignoreDotFiles();
+        $files = array_map('basename', $reader->all()->getKeys());
+        $this->assertEquals(['visible.jpg'], $files);
     }
 
     /**
