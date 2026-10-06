@@ -39,7 +39,6 @@
         "symfony/dom-crawler": "^5 || ^6.2 || ^7 || ^8",
         "symfony/process": "^5 || ^6 || ^7.4.5 || ^8",
         "ext-dom": "*",
-        "symfony/cache": "^5 || ^6.2 || ^7.0 || ^8",
         "ext-json": "*",
         "symfony/monolog-bridge": "^5.4 || ^6.2 || ^7 || ^8"
     },
