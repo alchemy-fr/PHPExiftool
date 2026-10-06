@@ -47,6 +47,7 @@ class RDFParser
     protected ?DOMDocument $DOM = null;
     protected ?DOMXPath $DOMXpath = null;
     protected array $registeredPrefixes = [];
+    private bool $prefixesRegistered = false;
     private LoggerInterface $logger;
     private string $classesRootDirectory;
 
@@ -87,6 +88,7 @@ class RDFParser
         $this->DOMXpath = null;
         $this->DOM = null;
         $this->registeredPrefixes = [];
+        $this->prefixesRegistered = false;
 
         return $this;
     }
@@ -119,17 +121,10 @@ class RDFParser
 
             $Dom->appendChild($DomRootElement);
 
-            $LocalXpath = new DOMXPath($Dom);
-            $LocalXpath->registerNamespace('rdf', self::RDF_NAMESPACE);
-
-
-            $RDFDescriptionRoot = $LocalXpath->query('/rdf:RDF/rdf:Description');
-
             /**
              * Let's associate a Description to the corresponding file
              */
             /** @var DOMElement $node */
-            $node = $RDFDescriptionRoot->item(0);
             $file = $node->getAttribute('rdf:about');
 
             $Entities->set($file, new FileEntity($file, $Dom, new static($this->classesRootDirectory, $this->logger)));
@@ -192,6 +187,14 @@ class RDFParser
         $QueryParts = explode(':', $query);
 
         $DomXpath = $this->getDomXpath();
+
+        if (!$this->prefixesRegistered) {
+            foreach (static::getNamespacesFromXml($this->getDom()) as $prefix => $uri) {
+                $this->registeredPrefixes[] = $prefix;
+                $DomXpath->registerNamespace($prefix, $uri);
+            }
+            $this->prefixesRegistered = true;
+        }
 
         if (!in_array($QueryParts[0], $this->registeredPrefixes)) {
             return null;
@@ -273,10 +276,11 @@ class RDFParser
 // <IPTC:Keywords et:id='25' et:table='IPTC::ApplicationRecord'>
     protected function readNodeValue(DOMElement $node, ?TagGroupInterface $tagGroup = null)
     {
-        $nodeName = $this->normalize($node->nodeName);
-
-        if (is_null($tagGroup) && TagGroupFactory::hasFromRDFTagname($this->classesRootDirectory, $nodeName, $this->logger)) {
-            $tagGroup = TagGroupFactory::getFromRDFTagname($this->classesRootDirectory, $nodeName, $this->logger);
+        if (is_null($tagGroup)) {
+            $nodeName = $this->normalize($node->nodeName);
+            if (TagGroupFactory::hasFromRDFTagname($this->classesRootDirectory, $nodeName, $this->logger)) {
+                $tagGroup = TagGroupFactory::getFromRDFTagname($this->classesRootDirectory, $nodeName, $this->logger);
+            }
         }
 
         if ($node->getElementsByTagNameNS(self::RDF_NAMESPACE, 'Bag')->length > 0) {
@@ -359,12 +363,8 @@ class RDFParser
                 throw new RuntimeException('Unable to parse the XML');
             }
 
+            // other namespaces are only needed by Query(), which registers them on demand
             $this->DOMXpath->registerNamespace('rdf', self::RDF_NAMESPACE);
-
-            foreach (static::getNamespacesFromXml($this->getDom()) as $prefix => $uri) {
-                $this->registeredPrefixes = array_merge($this->registeredPrefixes, (array)$prefix);
-                $this->DOMXpath->registerNamespace($prefix, $uri);
-            }
         }
 
         return $this->DOMXpath;
