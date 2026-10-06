@@ -33,13 +33,15 @@ class ReaderTest extends TestCase {
         $tmpDir = __DIR__ . '/tmp';
 
         if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            $command = ['rmdir', '/q', '/s', escapeshellarg($tmpDir)];
+            $command = ['cmd', '/c', 'rmdir', '/q', '/s', $tmpDir];
         } else {
-            $command = ['rmdir', '-Rf', escapeshellarg($tmpDir)];
+            $command = ['rm', '-rf', $tmpDir];
         }
 
         $process = new Process($command);
         $process->run();
+        // the directory was removed by an external process: PHP stat/realpath caches are stale
+        clearstatcache(true);
 
         if (!is_dir($tmpDir)) {
             mkdir($tmpDir);
