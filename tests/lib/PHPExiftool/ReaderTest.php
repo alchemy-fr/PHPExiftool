@@ -261,6 +261,21 @@ class ReaderTest extends TestCase {
     }
 
     /**
+     * @covers Reader::reset
+     * @covers Reader::resetResults
+     */
+    public function testResetClearsResults()
+    {
+        $reader = $this->createReader();
+
+        $reader->files(self::$tmpDir . '/test.jpg');
+        $this->assertEquals(1, count($reader->all()));
+
+        $reader->reset()->files([self::$tmpDir . '/test.jpg', self::$tmpDir . '/test2.jpg']);
+        $this->assertEquals(2, count($reader->all()));
+    }
+
+    /**
      * @covers Reader::in
      * @covers Reader::buildQuery
      * @covers Reader::all

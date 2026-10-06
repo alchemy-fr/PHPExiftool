@@ -108,6 +108,7 @@ class Reader implements IteratorAggregate
             = $this->sort
             = $this->readers = [];
 
+        $this->resetResults();
         $this->recursive = true;
         $this->ignoreDotFile = $this->followSymLinks = false;
         $this->extensionsToggle = null;
@@ -204,6 +205,8 @@ class Reader implements IteratorAggregate
         static $availableSorts = [
             'directory', 'filename', 'createdate', 'modifydate', 'filesize'
         ];
+
+        $this->resetResults();
 
         foreach ((array)$by as $sort) {
 
