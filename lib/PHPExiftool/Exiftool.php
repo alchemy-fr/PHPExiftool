@@ -121,12 +121,12 @@ class Exiftool implements LoggerAwareInterface
                 if(is_executable($rp)) {
                     if ($logger) {
                         $logger->debug(sprintf("  ->  -> \"%s\" is executable", $rp));
-                        return $binary = $rp;
                     }
+                    return $binary = $rp;
                 }
                 else {
                     if ($logger) {
-                        $logger->debug(sprintf("  ->  -> \"%s\" is not executable %s", $rp, $i < count($testLocations) ? ", check next" : ""));
+                        $logger->debug(sprintf("  ->  -> \"%s\" is not executable %s", $rp, $i < count($testLocations) - 1 ? ", check next" : ""));
                     }
                 }
             }
