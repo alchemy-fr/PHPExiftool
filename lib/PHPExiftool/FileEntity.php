@@ -51,7 +51,9 @@ class FileEntity implements IteratorAggregate
         // $this->dom = $dom;
         $this->file = $file;
 
-        $this->cache = new ArrayAdapter(storeSerialized: false);
+        // Values are stored as-is (no serialization/clone); positional because the
+        // argument was renamed from $storeSerialized to $deepClone in Symfony 8.1.
+        $this->cache = new ArrayAdapter(0, false);
 
         $this->parser = $parser->open($dom->saveXML());
 
