@@ -75,12 +75,12 @@ class TagGroupFactory
 
     public static function hasFromRDFTagname(string $classesRootDirectory, string $tagname, ?LoggerInterface $logger = null): bool
     {
-        $classname = PHPExiftool::ROOT_NAMESPACE . '\\' . static::classnameFromRDFTagname($tagname, $logger);
+        $relativeClassname = static::classnameFromRDFTagname($tagname, $logger);
+        $classname = PHPExiftool::ROOT_NAMESPACE . '\\' . $relativeClassname;
 
         // class loader
         if ( !class_exists($classname)) {
-            $path = str_replace('\\', '/', InformationDumper::tagGroupIdToFQClassname($tagname));
-            $fpath = $classesRootDirectory . '/' .PHPExiftool::SUBDIR . '/' . $path . '.php';
+            $fpath = $classesRootDirectory . '/' . str_replace('\\', '/', $relativeClassname) . '.php';
 
             if ( !file_exists($fpath)) {
                 return false;
@@ -105,6 +105,6 @@ class TagGroupFactory
             $logger->debug(sprintf("tag id(\"%s\") ==> \"%s\" ; tagGroupIdToFQClassname(\"%s\") ==> \"%s\" ", $RdfName, $id, $id, $FQClassname));
         }
 
-        return PHPExiftool::SUBDIR . '\\' . InformationDumper::tagGroupIdToFQClassname($id);
+        return PHPExiftool::SUBDIR . '\\' . $FQClassname;
     }
 }
