@@ -279,7 +279,8 @@ class Writer
         $common_args = [
             '-ignoreMinorErrors',
             '-preserve',
-            '-charset UTF8'
+            '-charset',
+            'UTF8',
         ];
 
         if ($this->disableConversion) {
@@ -344,7 +345,7 @@ class Writer
         }
         else {
             // every command (even a single one) works on the original file
-            $common_args[] = '-overwrite_original_in_place ';
+            $common_args[] = '-overwrite_original_in_place';
             $common_args[] = $file;
         }
 
