@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [4.x]
+  pull_request:
+
+jobs:
+  tests:
+    name: PHP ${{ matrix.php }}${{ matrix.dependencies == 'lowest' && ' (lowest)' || '' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.2', '8.3', '8.4', '8.5']
+        dependencies: [highest]
+        include:
+          - php: '7.4'
+            dependencies: lowest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, json
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        uses: ramsey/composer-install@v3
+        with:
+          dependency-versions: ${{ matrix.dependencies }}
+
+      - name: Run tests
+        run: vendor/bin/phpunit

@@ -123,7 +123,7 @@ class InformationDumper
         return $dom;
     }
 
-    public function dumpClasses(array $options, array $lngs, callable|null $callback = null)
+    public function dumpClasses(array $options, array $lngs, ?callable $callback = null)
     {
         $dom = $this->listDatas(InformationDumper::LISTTYPE_SUPPORTED_XML, $options, $lngs);
 

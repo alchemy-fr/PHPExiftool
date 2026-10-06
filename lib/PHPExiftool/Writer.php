@@ -262,7 +262,7 @@ class Writer
      *
      * @throws InvalidArgumentException|Exception
      */
-    public function write(string $file, MetadataBag $metadatas, string|null $destination = null, array $resolutionXY = array()): ?int
+    public function write(string $file, MetadataBag $metadatas, ?string $destination = null, array $resolutionXY = array()): ?int
     {
         if ( ! file_exists($file)) {
             throw new InvalidArgumentException(sprintf('%s does not exists', $file));
