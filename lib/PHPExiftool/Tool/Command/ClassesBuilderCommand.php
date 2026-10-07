@@ -83,7 +83,7 @@ class ClassesBuilderCommand extends Command
 
         $path = realpath($input->getOption('path'));
         if($path === false) {
-            throw new Exception(sprintf('Path "%s" does not exists.', $input->getOption('path')));
+            throw new Exception(sprintf('Path "%s" does not exist.', $input->getOption('path')));
         }
         $subPath = $path . '/' . PHPExiftool::SUBDIR;      // security : do NOT rm passed cli option
         if (!is_dir($subPath) && !@mkdir($subPath, 0755, true)) {

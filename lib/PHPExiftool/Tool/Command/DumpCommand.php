@@ -45,7 +45,7 @@ class DumpCommand extends Command
 
         $path = realpath($input->getOption('path'));
         if($path === false) {
-            throw new Exception(sprintf('Path "%s" does not exists.', $input->getOption('path')));
+            throw new Exception(sprintf('Path "%s" does not exist.', $input->getOption('path')));
         }
         $PHPExiftool = new PHPExiftool($path);
         if(!$PHPExiftool->isClassesGenerated()) {

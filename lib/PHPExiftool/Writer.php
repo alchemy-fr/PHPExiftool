@@ -200,10 +200,10 @@ class Writer
     public function copy(string $file_src, string $file_dest): ?int
     {
         if ( ! file_exists($file_src)) {
-            throw new InvalidArgumentException(sprintf('src %s does not exists', $file_src));
+            throw new InvalidArgumentException(sprintf('src %s does not exist', $file_src));
         }
         if ( ! file_exists($file_dest)) {
-            throw new InvalidArgumentException(sprintf('dest %s does not exists', $file_dest));
+            throw new InvalidArgumentException(sprintf('dest %s does not exist', $file_dest));
         }
         $command = [];
         if ($this->disableConversion) {
@@ -235,7 +235,7 @@ class Writer
     public function write(string $file, MetadataBag $metadatas, ?string $destination = null, array $resolutionXY = array()): ?int
     {
         if ( ! file_exists($file)) {
-            throw new InvalidArgumentException(sprintf('%s does not exists', $file));
+            throw new InvalidArgumentException(sprintf('%s does not exist', $file));
         }
 
         // if the -o file exists, exiftool prints an error
