@@ -277,9 +277,11 @@ class RDFParser
     protected function readNodeValue(DOMElement $node, ?TagGroupInterface $tagGroup = null)
     {
         if (is_null($tagGroup)) {
-            $nodeName = $this->normalize($node->nodeName);
-            if (TagGroupFactory::hasFromRDFTagname($this->classesRootDirectory, $nodeName, $this->logger)) {
-                $tagGroup = TagGroupFactory::getFromRDFTagname($this->classesRootDirectory, $nodeName, $this->logger);
+            try {
+                $tagGroup = TagGroupFactory::getFromRDFTagname($this->classesRootDirectory, $this->normalize($node->nodeName), $this->logger);
+            }
+            catch (TagUnknown $e) {
+                // unknown tags are read without type information
             }
         }
 

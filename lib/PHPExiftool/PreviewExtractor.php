@@ -12,8 +12,8 @@
 namespace PHPExiftool;
 
 use DirectoryIterator;
-use Exception;
 use PHPExiftool\Exception\LogicException;
+use PHPExiftool\Exception\RuntimeException;
 
 class PreviewExtractor // extends Exiftool
 {
@@ -74,8 +74,11 @@ class PreviewExtractor // extends Exiftool
         try {
             $this->exiftool->executeCommand($command);
         }
-        catch (Exception $e) {
-            // exiftool exits with an error when no preview matches the conditions
+        catch (RuntimeException $e) {
+            // exiftool exits with code 2 when the -if condition of the last command fails, even if other previews were written
+            if ($e->getCode() !== 2) {
+                throw $e;
+            }
         }
 
         return new DirectoryIterator($outputDir);
