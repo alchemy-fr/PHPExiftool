@@ -200,10 +200,10 @@ class Writer
     public function copy(string $file_src, string $file_dest): ?int
     {
         if ( ! file_exists($file_src)) {
-            throw new InvalidArgumentException(sprintf('src %s does not exists', $file_src));
+            throw new InvalidArgumentException(sprintf('src %s does not exist', $file_src));
         }
         if ( ! file_exists($file_dest)) {
-            throw new InvalidArgumentException(sprintf('dest %s does not exists', $file_dest));
+            throw new InvalidArgumentException(sprintf('dest %s does not exist', $file_dest));
         }
         $command = [];
         if ($this->disableConversion) {
@@ -215,37 +215,7 @@ class Writer
             $file_src,
             $file_dest
         ]);
-        $ret = $this->exiftool->executeCommand($command, $this->timeout);
-
-        // exiftool may print (return) a bunch of lines, even for a single command
-        // e.g. deleting tags of a file with NO tags may return 2 lines...
-        // | exiftool -all:all= notags.jpg
-        // |     0 image files updated
-        // |     1 image files unchanged
-        // ... which is NOT an error,
-        // so it's not easy to decide from the output when something went REALLY wrong
-        $n_unchanged = $n_changed = 0;
-        foreach(explode("\n", $ret) as $line) {
-            if (preg_match("/(\\d+) image files (copied|created|updated|unchanged)/", $line, $matches)) {
-                if($matches[2] == 'unchanged') {
-                    $n_unchanged += (int)($matches[1]);
-                }
-                else {
-                    $n_changed += (int)($matches[1]);
-                }
-            }
-        }
-        // first chance, changes happened
-        if($n_changed > 0) {
-            // return $n_changed;
-            return 1;   // so tests are ok
-        }
-        // second chance, at least one no-op happened
-        if($n_unchanged > 0) {
-            return 1;
-        }
-        // too bad
-        return null;
+        return $this->parseWriteResult($this->exiftool->executeCommand($command, $this->timeout));
     }
 
     /**
@@ -265,7 +235,7 @@ class Writer
     public function write(string $file, MetadataBag $metadatas, ?string $destination = null, array $resolutionXY = array()): ?int
     {
         if ( ! file_exists($file)) {
-            throw new InvalidArgumentException(sprintf('%s does not exists', $file));
+            throw new InvalidArgumentException(sprintf('%s does not exist', $file));
         }
 
         // if the -o file exists, exiftool prints an error
@@ -279,7 +249,8 @@ class Writer
         $common_args = [
             '-ignoreMinorErrors',
             '-preserve',
-            '-charset UTF8'
+            '-charset',
+            'UTF8',
         ];
 
         if ($this->disableConversion) {
@@ -313,7 +284,9 @@ class Writer
             $common_args[] = '-codedcharacterset=utf8';
         }
 
-        $commands_groups[] = $this->getSyncCommand();
+        if ($syncCommand = $this->getSyncCommand()) {
+            $commands_groups[] = $syncCommand;
+        }
 
         if(count($commands_groups) == 0) {
             // nothing to do...
@@ -344,7 +317,7 @@ class Writer
         }
         else {
             // every command (even a single one) works on the original file
-            $common_args[] = '-overwrite_original_in_place ';
+            $common_args[] = '-overwrite_original_in_place';
             $common_args[] = $file;
         }
 
@@ -368,36 +341,25 @@ class Writer
             $commands[] = $a;
         }
 
-        $ret = $this->exiftool->executeCommand($commands, $this->timeout);
+        return $this->parseWriteResult($this->exiftool->executeCommand($commands, $this->timeout));
+    }
 
-        // exiftool may print (return) a bunch of lines, even for a single command
-        // e.g. deleting tags of a file with NO tags may return 2 lines...
-        // | exiftool -all:all= notags.jpg
-        // |     0 image files updated
-        // |     1 image files unchanged
-        // ... which is NOT an error,
-        // so it's not easy to decide from the output when something went REALLY wrong
-        $n_unchanged = $n_changed = 0;
-        foreach(explode("\n", $ret) as $line) {
-            if (preg_match("/(\\d+) image files (copied|created|updated|unchanged)/", $line, $matches)) {
-                if($matches[2] == 'unchanged') {
-                    $n_unchanged += (int)($matches[1]);
-                }
-                else {
-                    $n_changed += (int)($matches[1]);
-                }
-            }
-        }
-        // first chance, changes happened
-        if($n_changed > 0) {
-            // return $n_changed;	// nice but breaks backward compatibility
-            return 1;   		// better, backward compatible and tests are ok
-        }
-        // second chance, at least one no-op happened
-        if($n_unchanged > 0) {
+    /**
+     * exiftool may print a bunch of lines, even for a single command,
+     * e.g. deleting tags of a file with NO tags prints
+     * |     0 image files updated
+     * |     1 image files unchanged
+     * which is NOT an error, so it's not easy to decide from the output when something went REALLY wrong.
+     *
+     * @return int|null 1 if at least one file was processed (even unchanged), null if the output is not understood.
+     *                  The number of processed files is not returned, for backward compatibility.
+     */
+    private function parseWriteResult(string $output): ?int
+    {
+        if (preg_match('/\b[1-9]\d* image files (copied|created|updated|unchanged)/', $output)) {
             return 1;
         }
-        // too bad
+
         return null;
     }
 

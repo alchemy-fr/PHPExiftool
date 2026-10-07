@@ -5,7 +5,6 @@ namespace PHPExiftool\Tool\Command;
 use Exception;
 use PHPExiftool\Driver\Metadata\Metadata;
 use PHPExiftool\PHPExiftool;
-use PHPExiftool\Reader;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -24,6 +23,7 @@ class DumpCommand extends Command
             ->setName('dump')
             ->setDescription('Dump metadata from a file')
             ->addOption('filter', null, InputOption::VALUE_REQUIRED, "Dump only infos for Id's matching this regexp, e.g. \"^(XMP|FILE)\"")
+            ->addOption("path", null, InputOption::VALUE_REQUIRED, 'Root of the generated classes (same as classes-builder --path)', "./Driver")
             ->addArgument('file', InputArgument::OPTIONAL, 'The file')
         ;
 
@@ -42,20 +42,28 @@ class DumpCommand extends Command
             $filter = '';
         }
         $filter = '/' . $filter . '/';
+
+        $path = realpath($input->getOption('path'));
+        if($path === false) {
+            throw new Exception(sprintf('Path "%s" does not exist.', $input->getOption('path')));
+        }
+        $PHPExiftool = new PHPExiftool($path);
+        if(!$PHPExiftool->isClassesGenerated()) {
+            throw new Exception(sprintf('Classes are not generated into "%s", run classes-builder first.', $path));
+        }
+
         /**
          * dump the meta from a file
          */
         if($input->getArgument('file')) {
 
-            $logger = new \Symfony\Bridge\Monolog\Logger("PHPExiftool");
-            $reader = Reader::create($logger);
-            $reader->files($input->getArgument('file'));
-            $metadataBag = $reader->files(__FILE__)->first();
+            $reader = $PHPExiftool->getFactory()->createReader();
+            $fileEntity = $reader->files($input->getArgument('file'))->first();
 
             /**
              * @var Metadata $meta
              */
-            foreach ($metadataBag as $meta) {
+            foreach ($fileEntity as $meta) {
                 $tagGroup = $meta->getTagGroup();
                 $id = $tagGroup->getId();
                 if(preg_match($filter, $id)) {
@@ -77,9 +85,9 @@ class DumpCommand extends Command
         }
         else {
             // no file arg ? dump the dictionnary
-            foreach(PHPExiftool::getKnownTagGroups() as $tagGroup) {
-                if(preg_match($filter, $tagGroup)) {
-                    $output->writeln($tagGroup);
+            foreach(array_keys($PHPExiftool->getFactory()->getHelper()::getIndex()) as $tagGroupId) {
+                if(preg_match($filter, $tagGroupId)) {
+                    $output->writeln($tagGroupId);
                 }
             }
         }

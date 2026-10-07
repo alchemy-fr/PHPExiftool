@@ -59,7 +59,8 @@ class Exiftool implements LoggerAwareInterface
         $this->logger->info(sprintf('Exiftool process returned exitcode = %s', $exitcode));
 
         if ( ! $process->isSuccessful()) {
-            throw new RuntimeException(sprintf("Command \"%s\"\n%s\nfailed : \"%s\", exitcode %s", join(' ', $command), var_export($command, true), $process->getErrorOutput(), $process->getExitCode()));
+            // the exit code is the exception code, so callers can tell exiftool's non-error statuses apart
+            throw new RuntimeException(sprintf("Command \"%s\"\n%s\nfailed : \"%s\", exitcode %s", join(' ', $command), var_export($command, true), $process->getErrorOutput(), $process->getExitCode()), (int)$process->getExitCode());
         }
 
         $output = $process->getOutput();
@@ -121,12 +122,12 @@ class Exiftool implements LoggerAwareInterface
                 if(is_executable($rp)) {
                     if ($logger) {
                         $logger->debug(sprintf("  ->  -> \"%s\" is executable", $rp));
-                        return $binary = $rp;
                     }
+                    return $binary = $rp;
                 }
                 else {
                     if ($logger) {
-                        $logger->debug(sprintf("  ->  -> \"%s\" is not executable %s", $rp, $i < count($testLocations) ? ", check next" : ""));
+                        $logger->debug(sprintf("  ->  -> \"%s\" is not executable %s", $rp, $i < count($testLocations) - 1 ? ", check next" : ""));
                     }
                 }
             }

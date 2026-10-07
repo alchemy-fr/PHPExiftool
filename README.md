@@ -1,6 +1,6 @@
 # PHP-Exiftool
 
-[![Build Status](https://secure.travis-ci.org/alchemy-fr/PHPExiftool.png?branch=master)](http://travis-ci.org/alchemy-fr/PHPExiftool)
+[![CI](https://github.com/alchemy-fr/PHPExiftool/actions/workflows/ci.yml/badge.svg)](https://github.com/alchemy-fr/PHPExiftool/actions/workflows/ci.yml)
 
 This project is a fork of [phpexiftool/phpexiftool](https://github.com/phpexiftool/phpexiftool).
 
@@ -29,25 +29,43 @@ The recommended way to install PHP-Exiftool is [through composer](http://getcomp
 
 ## Usage
 
-### Exiftool Reader
-
-A simple example : how to read metadata from a file:
+PHPExiftool generates one PHP class per exiftool tag group. Those classes are generated
+once, into a writable directory of your choice:
 
 ```php
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Monolog\Logger;
-use PHPExiftool\Reader;
+use PHPExiftool\InformationDumper;
+use PHPExiftool\PHPExiftool;
+
+// An optional PSR-3 logger can be passed as second argument
+$phpExiftool = new PHPExiftool('/path/to/classes');
+
+if (!$phpExiftool->isClassesGenerated()) {
+    $phpExiftool->generateClasses([InformationDumper::LISTOPTION_MWG], ['en']);
+}
+```
+
+Classes can also be generated with the command line tool:
+
+```bash
+bin/console classes-builder --path=/path/to/classes --with-mwg --lng=en
+```
+
+### Exiftool Reader
+
+A simple example : how to read metadata from a file:
+
+```php
 use PHPExiftool\Driver\Value\ValueInterface;
 
-$logger = new Logger('exiftool');
-$reader = Reader::create($logger);
+$reader = $phpExiftool->getFactory()->createReader();
 
-$metadataBag = $reader->files(__FILE__)->first();
+$fileEntity = $reader->files('image.jpg')->first();
 
-foreach ($metadataBag as $metadata) {
+foreach ($fileEntity as $metadata) {
     if (ValueInterface::TYPE_BINARY === $metadata->getValue()->getType()) {
         echo sprintf("\t--> Field %s has binary data" . PHP_EOL, $metadata->getTagGroup());
     } else {
@@ -59,28 +77,19 @@ foreach ($metadataBag as $metadata) {
 An example with directory inspection :
 
 ```php
-use Monolog\Logger;
-use PHPExiftool\Reader;
-use PHPExiftool\Driver\Value\ValueInterface;
-
-$logger = new Logger('exiftool');
-$reader = Reader::create($logger);
+$reader = $phpExiftool->getFactory()->createReader();
 
 $reader
-  ->in(array('documents', '/Picture'))
-  ->extensions(array('doc', 'jpg', 'cr2', 'dng'))
-  ->exclude(array('test', 'tmp'))
+  ->in(['documents', '/Picture'])
+  ->extensions(['doc', 'jpg', 'cr2', 'dng'])
+  ->exclude(['test', 'tmp'])
   ->followSymLinks();
 
-foreach ($reader as $data) {
-    echo "found file " . $data->getFile() . PHP_EOL;
+foreach ($reader as $fileEntity) {
+    echo "found file " . $fileEntity->getFile() . PHP_EOL;
 
-    foreach ($data as $metadata) {
-        if (ValueInterface::TYPE_BINARY === $metadata->getValue()->getType()) {
-            echo sprintf("\t--> Field %s has binary data" . PHP_EOL, $metadata->getTagGroup());
-        } else {
-            echo sprintf("\t--> Field %s has value(s) %s" . PHP_EOL, $metadata->getTagGroup(), $metadata->getValue()->asString());
-        }
+    foreach ($fileEntity as $metadata) {
+        echo sprintf("\t--> Field %s has value(s) %s" . PHP_EOL, $metadata->getTagGroup(), $metadata->getValue()->asString());
     }
 }
 ```
@@ -88,22 +97,15 @@ foreach ($reader as $data) {
 ### Exiftool Writer
 
 ```php
-<?php
-
-require __DIR__ . '/vendor/autoload.php';
-
-use Monolog\Logger;
-use PHPExiftool\Writer;
 use PHPExiftool\Driver\Metadata\Metadata;
 use PHPExiftool\Driver\Metadata\MetadataBag;
-use PHPExiftool\Driver\Tag\IPTC\ObjectName;
 use PHPExiftool\Driver\Value\Mono;
 
-$logger = new Logger('exiftool');
-$writer = Writer::create($logger);
+$factory = $phpExiftool->getFactory();
+$writer = $factory->createWriter();
 
 $bag = new MetadataBag();
-$bag->add(new Metadata(new ObjectName(), new Mono('Pretty cool subject')));
+$bag->add(new Metadata($factory->createTagGroup('IPTC:ObjectName'), new Mono('Pretty cool subject')));
 
 $writer->write('image.jpg', $bag);
 ```

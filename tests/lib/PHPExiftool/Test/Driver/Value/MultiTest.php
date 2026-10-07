@@ -46,6 +46,16 @@ class MultiTest extends TestCase
     }
 
     /**
+     * @covers Multi::__construct
+     */
+    public function testConstructWithFalsyValues()
+    {
+        $this->assertEquals(['0'], (new Multi('0'))->asArray());
+        $this->assertEquals([], (new Multi(''))->asArray());
+        $this->assertEquals([], (new Multi())->asArray());
+    }
+
+    /**
      * @covers Multi::addValue
      */
     public function testAddValue()

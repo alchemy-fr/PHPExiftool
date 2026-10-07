@@ -34,9 +34,21 @@ class TagGroupFactory
      */
     public static function loadClass(string $classesRootDirectory, string $classname, ?LoggerInterface $logger = null)
     {
+        $fullClassname = self::requireClass($classesRootDirectory, $classname);
+
+        return new $fullClassname;
+    }
+
+    /**
+     * Include the generated class file if the class is not loaded yet
+     *
+     * @return string the fully qualified classname
+     * @throws TagUnknown
+     */
+    private static function requireClass(string $classesRootDirectory, string $classname): string
+    {
         $fullClassname = PHPExiftool::ROOT_NAMESPACE . '\\' . $classname;
 
-        // class loader
         if ( !class_exists($fullClassname)) {
             $fpath = $classesRootDirectory . '/' . str_replace('\\', '/', $classname) . '.php';
 
@@ -51,7 +63,7 @@ class TagGroupFactory
             }
         }
 
-        return new $fullClassname;
+        return $fullClassname;
     }
 
     /**
@@ -75,22 +87,11 @@ class TagGroupFactory
 
     public static function hasFromRDFTagname(string $classesRootDirectory, string $tagname, ?LoggerInterface $logger = null): bool
     {
-        $classname = PHPExiftool::ROOT_NAMESPACE . '\\' . static::classnameFromRDFTagname($tagname, $logger);
-
-        // class loader
-        if ( !class_exists($classname)) {
-            $path = str_replace('\\', '/', InformationDumper::tagGroupIdToFQClassname($tagname));
-            $fpath = $classesRootDirectory . '/' .PHPExiftool::SUBDIR . '/' . $path . '.php';
-
-            if ( !file_exists($fpath)) {
-                return false;
-            }
-
-            include_once $fpath;
-
-            if ( !class_exists($classname)) {
-                return false;
-            }
+        try {
+            self::requireClass($classesRootDirectory, static::classnameFromRDFTagname($tagname, $logger));
+        }
+        catch (TagUnknown $e) {
+            return false;
         }
 
         return true;
@@ -105,6 +106,6 @@ class TagGroupFactory
             $logger->debug(sprintf("tag id(\"%s\") ==> \"%s\" ; tagGroupIdToFQClassname(\"%s\") ==> \"%s\" ", $RdfName, $id, $id, $FQClassname));
         }
 
-        return PHPExiftool::SUBDIR . '\\' . InformationDumper::tagGroupIdToFQClassname($id);
+        return PHPExiftool::SUBDIR . '\\' . $FQClassname;
     }
 }

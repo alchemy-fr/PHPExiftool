@@ -61,6 +61,7 @@ class WriterTest extends TestCase
         $this->out = __DIR__ . '/../../files/ExifTool_erased.jpg';
         $this->inPlace = __DIR__ . '/../../files/ExifToolCopied.jpg';
         copy($this->in, $this->inPlace);
+        @unlink($this->inPlace . '_original');
 
         $this->PHPExiftool = new PHPExiftool("/tmp");
     }
@@ -312,6 +313,7 @@ class WriterTest extends TestCase
         $changedFiles = $writer->write($this->inPlace, $metadatas);
 
         $this->assertEquals(1, $changedFiles);
+        $this->assertFileDoesNotExist($this->inPlace . '_original');
 
         $metadatasRead = $reader->files($this->inPlace)->first()->getMetadatas();
 

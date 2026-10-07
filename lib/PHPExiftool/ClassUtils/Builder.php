@@ -134,7 +134,7 @@ class Builder
     public function getPathfile(string $rootPath): string
     {
         $subdir = str_replace('\\', '/', $this->namespace);
-        @mkdir($rootPath . '/' . $subdir, 0754, true);
+        @mkdir($rootPath . '/' . $subdir, 0755, true);
         return $rootPath . '/' . $subdir . '/' . $this->classname . '.php';
     }
 

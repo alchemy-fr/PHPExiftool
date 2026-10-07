@@ -17,9 +17,6 @@ use Exception;
 use IteratorAggregate;
 use PHPExiftool\Driver\Metadata\MetadataBag;
 use PHPExiftool\Driver\Value\ValueInterface;
-use Psr\Cache\CacheItemPoolInterface;
-use Psr\Cache\InvalidArgumentException;
-use Symfony\Component\Cache\Adapter\ArrayAdapter;
 
 
 /**
@@ -34,7 +31,7 @@ class FileEntity implements IteratorAggregate
 
     private string $file;
 
-    private CacheItemPoolInterface $cache;
+    private ?MetadataBag $metadatas = null;
 
     private RDFParser $parser;
 
@@ -51,17 +48,12 @@ class FileEntity implements IteratorAggregate
         // $this->dom = $dom;
         $this->file = $file;
 
-        // Values are stored as-is (no serialization/clone); positional because the
-        // argument was renamed from $storeSerialized to $deepClone in Symfony 8.1.
-        $this->cache = new ArrayAdapter(0, false);
-
         $this->parser = $parser->open($dom->saveXML());
 
         return $this;
     }
 
     /**
-     * @throws InvalidArgumentException
      * @throws Exception
      */
     public function getIterator(): \Traversable
@@ -77,20 +69,14 @@ class FileEntity implements IteratorAggregate
     /**
      *
      * @return MetadataBag
-     * @throws InvalidArgumentException
      */
     public function getMetadatas(): MetadataBag
     {
-        $key = $this->getCacheKey();
-        $ci = $this->cache->getItem($key);
-        if($ci->isHit()) {
-            return $ci->get();
+        if ($this->metadatas === null) {
+            $this->metadatas = $this->parser->ParseMetadatas();
         }
 
-        $metadatas = $this->parser->ParseMetadatas();
-        $ci->set($metadatas);
-
-        return $metadatas;
+        return $this->metadatas;
     }
 
     public function getCacheKey(): string

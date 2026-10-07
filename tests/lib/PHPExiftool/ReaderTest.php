@@ -33,13 +33,15 @@ class ReaderTest extends TestCase {
         $tmpDir = __DIR__ . '/tmp';
 
         if (defined('PHP_WINDOWS_VERSION_BUILD')) {
-            $command = ['rmdir', '/q', '/s', escapeshellarg($tmpDir)];
+            $command = ['cmd', '/c', 'rmdir', '/q', '/s', $tmpDir];
         } else {
-            $command = ['rmdir', '-Rf', escapeshellarg($tmpDir)];
+            $command = ['rm', '-rf', $tmpDir];
         }
 
         $process = new Process($command);
         $process->run();
+        // the directory was removed by an external process: PHP stat/realpath caches are stale
+        clearstatcache(true);
 
         if (!is_dir($tmpDir)) {
             mkdir($tmpDir);
@@ -103,6 +105,14 @@ class ReaderTest extends TestCase {
         touch($tmpDir3 . '/.roro/.roro.tmp');
         copy(__DIR__.'/../../files/ExifTool.jpg', $tmpDir3 . '/.exiftool.jpg');
 
+        $tmpDir4 = $tmpDir . '/exiftool_reader4';
+
+        if (!is_dir($tmpDir4)) {
+            mkdir($tmpDir4);
+        }
+
+        copy(__DIR__.'/../../files/ExifTool.jpg', $tmpDir4 . '/visible.jpg');
+        copy(__DIR__.'/../../files/ExifTool.jpg', $tmpDir4 . '/.hidden.jpg');
     }
 
     protected function setUp(): void
@@ -150,6 +160,32 @@ class ReaderTest extends TestCase {
         $reader2 = $this->createReader();
         $reader2->files(array($file2, $file3));
         $this->assertEquals(3, count($reader2->append($reader1)->all()));
+    }
+
+    /**
+     * @covers Reader::append
+     * @covers Reader::all
+     */
+    public function testAppendReflectsChangesOfAppendedReader()
+    {
+        $file1 = self::$tmpDir . '/test.jpg';
+        $file2 = self::$tmpDir . '/test2.jpg';
+        $file3 = self::$tmpDir . '/dir/CanonRaw.cr2';
+
+        $appended = $this->createReader();
+        $appended->files($file2);
+
+        $reader = $this->createReader();
+        $reader->files($file1)->append($appended);
+        $this->assertEquals(2, count($reader->all()));
+
+        $appended->files($file3);
+        $this->assertEquals(3, count($reader->all()));
+
+        $appended->reset()->files($file3);
+        $files = array_map('basename', $reader->all()->getKeys());
+        sort($files);
+        $this->assertEquals(['CanonRaw.cr2', 'test.jpg'], $files);
     }
 
     /**
@@ -232,6 +268,51 @@ class ReaderTest extends TestCase {
 
         $reader->ignoreDotFiles()->in(self::$tmpDir . '3');
         $this->assertEquals(0, count($reader->all()));
+    }
+
+    /**
+     * @covers Reader::ignoreDotFiles
+     * @covers Reader::buildQuery
+     */
+    public function testIgnoreDotFilesKeepsOtherFiles()
+    {
+        $reader = $this->createReader();
+
+        $reader->in(self::$tmpDir . '4');
+        $this->assertEquals(2, count($reader->all()));
+
+        $reader->ignoreDotFiles();
+        $files = array_map('basename', $reader->all()->getKeys());
+        $this->assertEquals(['visible.jpg'], $files);
+    }
+
+    /**
+     * @covers Reader::ignoreDotFiles
+     * @covers Reader::all
+     */
+    public function testIgnoreDotFilesKeepsExiftoolErrors()
+    {
+        $reader = $this->createReader();
+
+        $reader->ignoreDotFiles()->files(self::$tmpDir . '/does-not-exist.jpg');
+
+        $this->expectException(RuntimeException::class);
+        $reader->all();
+    }
+
+    /**
+     * @covers Reader::reset
+     * @covers Reader::resetResults
+     */
+    public function testResetClearsResults()
+    {
+        $reader = $this->createReader();
+
+        $reader->files(self::$tmpDir . '/test.jpg');
+        $this->assertEquals(1, count($reader->all()));
+
+        $reader->reset()->files([self::$tmpDir . '/test.jpg', self::$tmpDir . '/test2.jpg']);
+        $this->assertEquals(2, count($reader->all()));
     }
 
     /**

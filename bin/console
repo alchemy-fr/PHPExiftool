@@ -11,6 +11,7 @@
  */
 
 use PHPExiftool\Tool\Command\ClassesBuilderCommand;
+use PHPExiftool\PHPExiftool;
 use PHPExiftool\Tool\Command\DumpCommand;
 use Symfony\Component\Console\Application;
 
@@ -21,7 +22,7 @@ if (!class_exists('Symfony\Component\DomCrawler\Crawler')) {
     exit(1);
 }
 
-$cli = new Application('PHPExiftool', '2.2');
+$cli = new Application('PHPExiftool', PHPExiftool::v);
 $cli->addCommands(array(new ClassesBuilderCommand()));
 $cli->addCommands(array(new DumpCommand()));
 

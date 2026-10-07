@@ -108,6 +108,7 @@ class Reader implements IteratorAggregate
             = $this->sort
             = $this->readers = [];
 
+        $this->resetResults();
         $this->recursive = true;
         $this->ignoreDotFile = $this->followSymLinks = false;
         $this->extensionsToggle = null;
@@ -204,6 +205,8 @@ class Reader implements IteratorAggregate
         static $availableSorts = [
             'directory', 'filename', 'createdate', 'modifydate', 'filesize'
         ];
+
+        $this->resetResults();
 
         foreach ((array)$by as $sort) {
 
@@ -322,7 +325,9 @@ class Reader implements IteratorAggregate
      */
     public function getOneOrNull(): ?FileEntity
     {
-        return count($this->all()) === 0 ? null : $this->all()->first();
+        $all = $this->all();
+
+        return $all->isEmpty() ? null : $all->first();
     }
 
     /**
@@ -334,11 +339,13 @@ class Reader implements IteratorAggregate
      */
     public function first(): FileEntity
     {
-        if (count($this->all()) === 0) {
+        $all = $this->all();
+
+        if ($all->isEmpty()) {
             throw new EmptyCollectionException('Collection is empty');
         }
 
-        return $this->all()->first();
+        return $all->first();
     }
 
     /**
@@ -353,19 +360,17 @@ class Reader implements IteratorAggregate
             $this->collection = $this->buildQueryAndExecute();
         }
 
-        if ($this->readers) {
-            $elements = $this->collection->toArray();
-
-            $this->collection = null;
-
-            foreach ($this->readers as $reader) {
-                $elements = array_merge($elements, $reader->all()->toArray());
-            }
-
-            $this->collection = new ArrayCollection($elements);
+        if (!$this->readers) {
+            return $this->collection;
         }
 
-        return $this->collection;
+        // appended readers are merged on each call: they cache their own results and may change after append()
+        $elements = $this->collection->toArray();
+        foreach ($this->readers as $reader) {
+            $elements = array_merge($elements, $reader->all()->toArray());
+        }
+
+        return new ArrayCollection($elements);
     }
 
     /**
@@ -389,15 +394,16 @@ class Reader implements IteratorAggregate
     protected function buildQueryAndExecute(): ArrayCollection
     {
         $result = '';
+        $command = $this->buildQuery();
 
         try {
-            $result = trim($this->exiftool->executeCommand($this->buildQuery(), $this->timeout));
+            $result = trim($this->exiftool->executeCommand($command, $this->timeout));
         }
         catch (RuntimeException $e) {
             /**
-             * In case no file found, an exit code 1 is returned
+             * exiftool exits with code 2 when every file fails the -if condition
              */
-            if (!$this->ignoreDotFile) {
+            if (!$this->ignoreDotFile || $e->getCode() !== 2) {
                 throw $e;
             }
         }
@@ -541,7 +547,7 @@ class Reader implements IteratorAggregate
 
         if ($this->ignoreDotFile) {
             $command[] = '-if';
-            $command[] = "'\$filename !~ /^\./'";
+            $command[] = '$filename !~ /^\./';
         }
 
         foreach ($this->sort as $sort) {
