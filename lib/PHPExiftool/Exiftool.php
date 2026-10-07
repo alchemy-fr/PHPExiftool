@@ -59,7 +59,8 @@ class Exiftool implements LoggerAwareInterface
         $this->logger->info(sprintf('Exiftool process returned exitcode = %s', $exitcode));
 
         if ( ! $process->isSuccessful()) {
-            throw new RuntimeException(sprintf("Command \"%s\"\n%s\nfailed : \"%s\", exitcode %s", join(' ', $command), var_export($command, true), $process->getErrorOutput(), $process->getExitCode()));
+            // the exit code is the exception code, so callers can tell exiftool's non-error statuses apart
+            throw new RuntimeException(sprintf("Command \"%s\"\n%s\nfailed : \"%s\", exitcode %s", join(' ', $command), var_export($command, true), $process->getErrorOutput(), $process->getExitCode()), (int)$process->getExitCode());
         }
 
         $output = $process->getOutput();

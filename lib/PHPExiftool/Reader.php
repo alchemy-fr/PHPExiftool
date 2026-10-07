@@ -357,20 +357,20 @@ class Reader implements IteratorAggregate
     public function all(): ?ArrayCollection
     {
         if (!$this->collection) {
-            $collection = $this->buildQueryAndExecute();
-
-            if ($this->readers) {
-                $elements = $collection->toArray();
-                foreach ($this->readers as $reader) {
-                    $elements = array_merge($elements, $reader->all()->toArray());
-                }
-                $collection = new ArrayCollection($elements);
-            }
-
-            $this->collection = $collection;
+            $this->collection = $this->buildQueryAndExecute();
         }
 
-        return $this->collection;
+        if (!$this->readers) {
+            return $this->collection;
+        }
+
+        // appended readers are merged on each call: they cache their own results and may change after append()
+        $elements = $this->collection->toArray();
+        foreach ($this->readers as $reader) {
+            $elements = array_merge($elements, $reader->all()->toArray());
+        }
+
+        return new ArrayCollection($elements);
     }
 
     /**
@@ -394,15 +394,16 @@ class Reader implements IteratorAggregate
     protected function buildQueryAndExecute(): ArrayCollection
     {
         $result = '';
+        $command = $this->buildQuery();
 
         try {
-            $result = trim($this->exiftool->executeCommand($this->buildQuery(), $this->timeout));
+            $result = trim($this->exiftool->executeCommand($command, $this->timeout));
         }
         catch (RuntimeException $e) {
             /**
-             * In case no file found, an exit code 1 is returned
+             * exiftool exits with code 2 when every file fails the -if condition
              */
-            if (!$this->ignoreDotFile) {
+            if (!$this->ignoreDotFile || $e->getCode() !== 2) {
                 throw $e;
             }
         }

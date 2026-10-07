@@ -86,7 +86,9 @@ class ClassesBuilderCommand extends Command
             throw new Exception(sprintf('Path "%s" does not exists.', $input->getOption('path')));
         }
         $subPath = $path . '/' . PHPExiftool::SUBDIR;      // security : do NOT rm passed cli option
-        @mkdir($subPath, 0755, true);
+        if (!is_dir($subPath) && !@mkdir($subPath, 0755, true)) {
+            throw new Exception(sprintf('Unable to create directory "%s".', $subPath));
+        }
         $logger->info(sprintf('Erasing previous files "%s/*" ', $subPath));
         $this->emptyDirectory($subPath);
         $logger->info('Generating classes... ');
@@ -113,11 +115,11 @@ class ClassesBuilderCommand extends Command
             RecursiveIteratorIterator::CHILD_FIRST
         );
         foreach ($files as $file) {
-            if ($file->isDir() && !$file->isLink()) {
-                @rmdir($file->getPathname());
-            }
-            else {
-                @unlink($file->getPathname());
+            $removed = $file->isDir() && !$file->isLink()
+                ? @rmdir($file->getPathname())
+                : @unlink($file->getPathname());
+            if (!$removed) {
+                throw new Exception(sprintf('Unable to remove "%s".', $file->getPathname()));
             }
         }
     }

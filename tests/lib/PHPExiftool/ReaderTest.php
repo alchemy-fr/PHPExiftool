@@ -163,6 +163,32 @@ class ReaderTest extends TestCase {
     }
 
     /**
+     * @covers Reader::append
+     * @covers Reader::all
+     */
+    public function testAppendReflectsChangesOfAppendedReader()
+    {
+        $file1 = self::$tmpDir . '/test.jpg';
+        $file2 = self::$tmpDir . '/test2.jpg';
+        $file3 = self::$tmpDir . '/dir/CanonRaw.cr2';
+
+        $appended = $this->createReader();
+        $appended->files($file2);
+
+        $reader = $this->createReader();
+        $reader->files($file1)->append($appended);
+        $this->assertEquals(2, count($reader->all()));
+
+        $appended->files($file3);
+        $this->assertEquals(3, count($reader->all()));
+
+        $appended->reset()->files($file3);
+        $files = array_map('basename', $reader->all()->getKeys());
+        sort($files);
+        $this->assertEquals(['CanonRaw.cr2', 'test.jpg'], $files);
+    }
+
+    /**
      * @covers Reader::sort
      * @covers Reader::all
      */
@@ -258,6 +284,20 @@ class ReaderTest extends TestCase {
         $reader->ignoreDotFiles();
         $files = array_map('basename', $reader->all()->getKeys());
         $this->assertEquals(['visible.jpg'], $files);
+    }
+
+    /**
+     * @covers Reader::ignoreDotFiles
+     * @covers Reader::all
+     */
+    public function testIgnoreDotFilesKeepsExiftoolErrors()
+    {
+        $reader = $this->createReader();
+
+        $reader->ignoreDotFiles()->files(self::$tmpDir . '/does-not-exist.jpg');
+
+        $this->expectException(RuntimeException::class);
+        $reader->all();
     }
 
     /**

@@ -34,9 +34,21 @@ class TagGroupFactory
      */
     public static function loadClass(string $classesRootDirectory, string $classname, ?LoggerInterface $logger = null)
     {
+        $fullClassname = self::requireClass($classesRootDirectory, $classname);
+
+        return new $fullClassname;
+    }
+
+    /**
+     * Include the generated class file if the class is not loaded yet
+     *
+     * @return string the fully qualified classname
+     * @throws TagUnknown
+     */
+    private static function requireClass(string $classesRootDirectory, string $classname): string
+    {
         $fullClassname = PHPExiftool::ROOT_NAMESPACE . '\\' . $classname;
 
-        // class loader
         if ( !class_exists($fullClassname)) {
             $fpath = $classesRootDirectory . '/' . str_replace('\\', '/', $classname) . '.php';
 
@@ -51,7 +63,7 @@ class TagGroupFactory
             }
         }
 
-        return new $fullClassname;
+        return $fullClassname;
     }
 
     /**
@@ -75,22 +87,11 @@ class TagGroupFactory
 
     public static function hasFromRDFTagname(string $classesRootDirectory, string $tagname, ?LoggerInterface $logger = null): bool
     {
-        $relativeClassname = static::classnameFromRDFTagname($tagname, $logger);
-        $classname = PHPExiftool::ROOT_NAMESPACE . '\\' . $relativeClassname;
-
-        // class loader
-        if ( !class_exists($classname)) {
-            $fpath = $classesRootDirectory . '/' . str_replace('\\', '/', $relativeClassname) . '.php';
-
-            if ( !file_exists($fpath)) {
-                return false;
-            }
-
-            include_once $fpath;
-
-            if ( !class_exists($classname)) {
-                return false;
-            }
+        try {
+            self::requireClass($classesRootDirectory, static::classnameFromRDFTagname($tagname, $logger));
+        }
+        catch (TagUnknown $e) {
+            return false;
         }
 
         return true;
