@@ -40,7 +40,8 @@ require __DIR__ . '/vendor/autoload.php';
 use PHPExiftool\InformationDumper;
 use PHPExiftool\PHPExiftool;
 
-$phpExiftool = new PHPExiftool('/path/to/classes', $logger /* optional PSR-3 logger */);
+// An optional PSR-3 logger can be passed as second argument
+$phpExiftool = new PHPExiftool('/path/to/classes');
 
 if (!$phpExiftool->isClassesGenerated()) {
     $phpExiftool->generateClasses([InformationDumper::LISTOPTION_MWG], ['en']);
